@@ -58,7 +58,7 @@
                         <a href="#events" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Events</a>
                         <a href="#development" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Development</a>
                         <a href="#partnerships" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Partnerships</a>
-                        <a href="#recruitment" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Recruitment</a>
+                        <a href="#alumni" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Alumni</a>
                         <a href="#contact" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Contact</a>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                 <a href="#events" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Events</a>
                 <a href="#development" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Development</a>
                 <a href="#partnerships" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Partnerships</a>
-                <a href="#recruitment" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Recruitment</a>
+                <a href="#alumni" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Alumni</a>
                 <a href="#contact" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Contact</a>
             </div>
             <div class="pt-4 pb-3 border-t border-gray-200">
@@ -449,10 +449,10 @@
             </div>
     </template>
 
-    <template id="recruitment-page">
-            <div class="page" id="recruitment">
+    <template id="alumni-page">
+            <div class="page" id="alumni">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <h1 class="text-4xl font-bold text-center mb-12">SVMP Recruitment</h1>
+                    <h1 class="text-4xl font-bold text-center mb-12">Alumni</h1>
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
@@ -465,9 +465,17 @@
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="nav-router mt-6 inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">Join Newsletter</a>
                         </div>
                         <div class="card p-8">
-                            <h2 class="text-3xl font-bold mb-4">Campus Ambassador Program</h2>
-                            <p class="text-gray-600 mb-4">Become a leader on your campus. Our ambassadors are the bridge between current students and the alumni association, helping to organize events and share resources.</p>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLdUUhcRhG81tS55cyIunZiBB-hHt4M4bS3HcdE2_NnUgP7w/viewform" target="_blank" class="nav-router font-semibold text-red-800 hover:underline">Volunteer Form &rarr;</a>
+                            <h2 class="text-3xl font-bold mb-4">Volunteering Opportunities</h2>
+                            <p class="text-gray-600 mb-4">We are always looking for additional support for our key initiatives and events and we would love help from incredible alumni like yourself. Please check out our available volunteering opportunities below and consider supporting one of our initiatives.</p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong>Mentorship to Alumni:</strong> Provide mentorship to new SVMP alumni or other alumni looking to connect with someone with similar experience as you.</li>
+                                <li><strong>Campus Ambassador:</strong> Be a point person for recruiting at your undergraduate school or organization.</li>
+                                <li><strong>Recruiting Alumni Regional Lead:</strong> Support recruiting during Q1 to ensure more students learn about SVMP.</li>
+                                <li><strong>City SVMPAA Representative:</strong> Play a vital role in helping us bring our programming to life in cities across the country. Whether it's hosting a brunch, organizing a happy hour, or simply helping coordinate logistics on the ground, your leadership ensures our alumni stay connected, inspired, and in motion.</li>
+                                <li><strong>Board Initiative Support:</strong> Sign up to support the board with additional initiatives of importance.</li>
+                                <li><strong>Other:</strong> Is there something you think you would be able to help with? Let us know!</li>
+                            </ul>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLdUUhcRhG81tS55cyIunZiBB-hHt4M4bS3HcdE2_NnUgP7w/viewform" target="_blank" class="nav-router font-semibold text-red-800 hover:underline mt-6 inline-block">Volunteer Form &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -506,7 +514,7 @@
                 'connect': 'connect-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
-                'recruitment': 'recruitment-page',
+                'alumni': 'alumni-page', // Updated from 'recruitment'
                 'contact': 'contact-page'
             };
 
