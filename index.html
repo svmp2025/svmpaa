@@ -58,7 +58,7 @@
                         <a href="#events" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Events</a>
                         <a href="#development" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Development</a>
                         <a href="#partnerships" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Partnerships</a>
-                        <a href="#Alumni" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Alumni</a>
+                        <a href="#alumni" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Alumni</a>
                         <a href="#contact" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Contact</a>
                     </div>
                 </div>
@@ -452,21 +452,21 @@
     <template id="alumni-page">
            <div class="page" id="alumni">
                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                   <h1 class="text-4xl font-bold text-center mb-12">SVMP Alumni</h1>
+                   <h1 class="text-4xl font-bold text-center mb-12">Get Involved: For Alumni</h1>
                    <div class="grid md:grid-cols-2 gap-12 items-center">
                        <div>
-                           <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
-                           <p class="text-gray-600 mb-4">Your journey with the SVMP community is just beginning. The SVMP Alumni Association is your next step to stay connected and continue your growth.</p>
+                           <h2 class="text-3xl font-bold mb-4">Update Your Contact Information</h2>
+                           <p class="text-gray-600 mb-4">Ensure you receive the latest news, event invitations, and professional development opportunities. Keeping your information current helps us keep you connected!</p>
                            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                  <li>Immediate access to a global network of alumni.</li>
-                                  <li>Invitations to exclusive networking events.</li>
-                                  <li>Access to our mentorship program.</li>
+                                  <li>Receive our quarterly newsletter.</li>
+                                  <li>Get exclusive event invitations.</li>
+                                  <li>Access mentorship program updates.</li>
                            </ul>
-                           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="nav-router mt-6 inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">Join Newsletter</a>
+                           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="nav-router mt-6 inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">Update My Info</a>
                        </div>
                        <div class="card p-8">
-                           <h2 class="text-3xl font-bold mb-4">Campus Ambassador Program</h2>
-                           <p class="text-gray-600 mb-4">Become a leader on your campus. Our ambassadors are the bridge between current students and the alumni association, helping to organize events and share resources.</p>
+                           <h2 class="text-3xl font-bold mb-4">Volunteer Opportunities</h2>
+                           <p class="text-gray-600 mb-4">The SVMP Alumni Association thrives on the dedication of its volunteers. Explore various ways you can contribute your time and expertise to support our community and programs.</p>
                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLdUUhcRhG81tS55cyIunZiBB-hHt4M4bS3HcdE2_NnUgP7w/viewform" target="_blank" class="nav-router font-semibold text-red-800 hover:underline">Volunteer Form &rarr;</a>
                        </div>
                    </div>
@@ -506,7 +506,7 @@
                 'connect': 'connect-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
-                'alumni': 'alumni-page',
+                'alumni': 'alumni-page', // Updated route name
                 'contact': 'contact-page'
             };
 
@@ -534,7 +534,8 @@
 
             function updateActiveLink(pageId) {
                 navLinks.forEach(link => {
-                    if (link.href.includes(`#${pageId}`)) {
+                    // Check both href and dataset.route if applicable, to ensure correct active state
+                    if (link.href.includes(`#${pageId}`) || (link.dataset.route === pageId)) {
                         link.classList.add('active');
                     } else {
                         link.classList.remove('active');
@@ -559,8 +560,11 @@
                 if (e.target.closest('.nav-router')) {
                     e.preventDefault();
                     const href = e.target.closest('.nav-router').href;
-                    const newHash = new URL(href).hash;
-                    if(window.location.hash !== newHash) {
+                    // Safely extract hash without relying on full URL parsing which can be slow
+                    const hashIndex = href.indexOf('#');
+                    const newHash = (hashIndex !== -1) ? href.substring(hashIndex + 1) : '';
+
+                    if(window.location.hash.substring(1) !== newHash) { // Compare just the hash part
                         window.location.hash = newHash;
                     }
                 }
