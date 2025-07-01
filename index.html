@@ -555,26 +555,29 @@
             
             // --- Event Listeners ---
             document.body.addEventListener('click', function(e) {
-                const navRouterLink = e.target.closest('.nav-router');
-                if (navRouterLink) {
-                    const href = navRouterLink.getAttribute('href');
-                    const isExternal = navRouterLink.getAttribute('target') === '_blank'; // Check if it's an external link
+                const clickedLink = e.target.closest('a.nav-router'); // Ensure it's an anchor with nav-router class
 
-                    if (isExternal) {
-                        // Let the browser handle external links naturally (open in new tab due to target="_blank")
-                        return; 
+                if (clickedLink) {
+                    const href = clickedLink.getAttribute('href');
+                    const targetAttr = clickedLink.getAttribute('target');
+
+                    // If it's an external link (has target="_blank"), let the browser handle it naturally
+                    if (targetAttr === '_blank') {
+                        return; // Exit the function, don't preventDefault
                     }
 
                     // For internal navigation (hash links)
-                    e.preventDefault(); // Prevent default anchor jump for internal links
-                    const newHash = (href && href.startsWith('#')) ? href.substring(1) : '';
+                    e.preventDefault(); // Prevent default browser jump/reload
+
+                    const newHash = href.substring(href.indexOf('#') + 1); // Get the hash part (e.g., "home", "about")
 
                     // Only change hash if it's different to trigger router logic
                     if (window.location.hash.substring(1) !== newHash) { 
-                        window.location.hash = newHash;
+                        window.location.hash = newHash; // This will trigger the hashchange event, which calls handleRouteChange
                     } else {
-                        // If already on the same page, scroll to top (e.g., clicking Home when already on Home)
+                        // If clicking the current page's link, ensure active class is set and scroll to top
                         window.scrollTo(0, 0);
+                        updateActiveLink(newHash); // Manually update active class if hash didn't change
                     }
                 }
             });
