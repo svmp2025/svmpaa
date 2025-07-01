@@ -453,7 +453,7 @@
             <div class="page" id="alumni">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <h1 class="text-4xl font-bold text-center mb-12">Alumni Portal</h1>
-                    <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="space-y-16"> <!-- Changed from grid lg:grid-cols-2 to space-y-16 for vertical stacking -->
                         <div>
                             <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
                             <p class="text-gray-600 mb-4">Your journey with the SVMP community is just beginning. The SVMP Alumni Association is your next step to stay connected and continue your growth.</p>
@@ -597,19 +597,24 @@
             }
             
             // --- Event Listeners ---
-            window.addEventListener('hashchange', handleRouteChange);
-            
             document.body.addEventListener('click', function(e) {
-                if (e.target.closest('.nav-router')) {
-                    e.preventDefault();
-                    const href = e.target.closest('.nav-router').href;
-                    const newHash = new URL(href).hash;
-                    if(window.location.hash !== newHash) {
-                        window.location.hash = newHash;
+                const navRouterElement = e.target.closest('.nav-router');
+                if (navRouterElement) {
+                    // Check if the link is an internal anchor link (same origin and has a hash)
+                    // If it's an external link, or an internal link without a hash, let the browser handle it.
+                    if (navRouterElement.hash && navRouterElement.origin === window.location.origin) {
+                        e.preventDefault(); // Prevent default only for internal hash-based navigation
+                        const newHash = navRouterElement.hash;
+                        if(window.location.hash !== newHash) {
+                            window.location.hash = newHash;
+                        }
                     }
+                    // For external links, default behavior (opening in a new tab due to target="_blank") will proceed.
                 }
             });
 
+            window.addEventListener('hashchange', handleRouteChange);
+            
             mobileMenuButton.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
             });
