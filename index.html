@@ -82,7 +82,7 @@
                 <a href="#about" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">About Us</a>
                 <a href="#events" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Events</a>
                 <a href="#development" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Development</a>
-                <a href="#partnerships" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Partnerships</a>
+                <a href="#partnerships" class="nav-link nav-router block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Partnerships</a>
                 <a href="#alumni" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Alumni</a>
                 <a href="#contact" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Contact</a>
             </div>
@@ -389,9 +389,9 @@
                 <!-- Current Partners -->
                 <h2 class="text-3xl font-bold mb-8">Our Partners</h2>
                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center mb-16">
-                       <!-- Placeholder Partner -->
+                       <!-- Leland Partner -->
                        <div class="p-4">
-                           <img src="https://placehold.co/200x100/e2e8f0/4a5568?text=Leland" alt="Leland Logo" class="h-16 mx-auto grayscale hover:grayscale-0 transition">
+                           <img src="images/leland.avif" alt="Leland Logo" class="h-16 mx-auto grayscale hover:grayscale-0 transition">
                        </div>
                        <div class="p-4">
                            <img src="https://placehold.co/200x100/e2e8f0/4a5568?text=Partner+2" alt="Partner Logo" class="h-16 mx-auto grayscale hover:grayscale-0 transition">
@@ -534,38 +534,38 @@
 
             function updateActiveLink(pageId) {
                 navLinks.forEach(link => {
-                    // Check both href and dataset.route if applicable, to ensure correct active state
-                    if (link.href.includes(`#${pageId}`) || (link.dataset.route === pageId)) {
+                    // Remove active class from all nav links first
+                    link.classList.remove('active'); 
+                    // Add active class if link href matches current pageId
+                    if (link.href.includes(`#${pageId}`)) {
                         link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
                     }
                 });
             }
 
-            // Handle initial page load
+            // Handle initial page load and hash changes
             function handleRouteChange() {
                 const hash = window.location.hash.substring(1) || 'home';
                 if(routes[hash]) {
                     loadPage(hash);
                 } else {
-                    loadPage('home'); // Fallback to home
+                    loadPage('home'); // Fallback to home if hash is unrecognized
                 }
             }
             
             // --- Event Listeners ---
-            window.addEventListener('hashchange', handleRouteChange);
-            
             document.body.addEventListener('click', function(e) {
-                if (e.target.closest('.nav-router')) {
-                    e.preventDefault();
-                    const href = e.target.closest('.nav-router').href;
-                    // Safely extract hash without relying on full URL parsing which can be slow
-                    const hashIndex = href.indexOf('#');
-                    const newHash = (hashIndex !== -1) ? href.substring(hashIndex + 1) : '';
+                const navRouterLink = e.target.closest('.nav-router');
+                if (navRouterLink) {
+                    e.preventDefault(); // Prevent default anchor link behavior
+                    const href = navRouterLink.getAttribute('href');
+                    const newHash = (href && href.startsWith('#')) ? href.substring(1) : '';
 
-                    if(window.location.hash.substring(1) !== newHash) { // Compare just the hash part
+                    // Only change hash if it's different to prevent unnecessary reloads
+                    if(window.location.hash.substring(1) !== newHash) { 
                         window.location.hash = newHash;
+                    } else if (!navRouterLink.getAttribute('target')) { // If hash is same, but not an external link, scroll to top
+                         window.scrollTo(0, 0); // Ensure scroll to top if already on page (e.g. clicking home while on home)
                     }
                 }
             });
@@ -574,10 +574,10 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-
             // Initial load
             handleRouteChange();
         });
     </script>
 </body>
 </html>
+
