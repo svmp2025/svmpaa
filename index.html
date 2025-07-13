@@ -38,6 +38,25 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .location {
+            display: inline-flex;
+            align-items: flex-start;
+            font-style: normal;
+            color: #4A5568;
+            font-size: 0.9em;
+            background-color: #F7FAFC;
+            padding: 0.35rem 0.6rem;
+            border-radius: 0.375rem;
+            border: 1px solid #E2E8F0;
+        }
+        .location svg {
+            margin-top: 0.125rem; /* Vertically align icon better */
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -160,9 +179,9 @@
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="card p-6 text-center">
                             <i data-feather="calendar" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">2025 Alumni Reunion <span class="text-gray-500 text-base font-normal">(Registration Closed)</span></h3>
+                            <h3 class="font-bold text-xl mb-2">2025 Alumni Reunion</h3>
                             <p class="text-gray-600 mb-4">July 18-20, 2025 | Boston, MA</p>
-                            <span class="inline-block bg-gray-400 text-gray-700 font-semibold py-2 px-6 rounded-md cursor-not-allowed">Registration Closed</span>
+                            <a href="#reunion-agenda" class="nav-router font-semibold text-red-800 hover:underline">View Agenda &rarr;</a>
                         </div>
                         <div class="card p-6 text-center">
                            <i data-feather="map-pin" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
@@ -293,11 +312,11 @@
                             <p class="text-sm text-gray-600">Boston, MA</p>
                         </div>
                         <div class="md:w-2/4">
-                            <h3 class="font-bold text-xl">2025 Alumni Reunion <span class="text-gray-500 text-base font-normal">(Registration Closed)</span></h3>
+                            <h3 class="font-bold text-xl">2025 Alumni Reunion</h3>
                             <p class="text-gray-700">The flagship event for networking, development, and reconnection.</p>
                         </div>
                         <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                            <span class="inline-block bg-gray-400 text-gray-700 font-semibold py-2 px-6 rounded-md cursor-not-allowed">Registration Closed</span>
+                             <a href="#reunion-agenda" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Agenda</a>
                         </div>
                     </div>
                         <div class="card md:flex items-center p-6">
@@ -524,6 +543,337 @@
             </div>
     </template>
 
+    <!-- Reunion Agenda Page Template -->
+    <template id="reunion-agenda-page">
+        <div class="page" id="reunion-agenda">
+            <!-- New Hero Section for Reunion Page -->
+            <div class="relative bg-gray-900 text-white">
+                <div class="absolute inset-0">
+                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Reunion';">
+                    <div class="absolute inset-0 bg-gray-900/60"></div>
+                </div>
+                <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">2025 SVMP Alumni Reunion</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-300">Boston & Cambridge, MA | July 18-20, 2025</p>
+                </div>
+            </div>
+            
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Itinerary Section -->
+                    <section id="itinerary" class="mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Itinerary</h2>
+                        <div class="space-y-12">
+                            <!-- Friday -->
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h3 class="text-2xl font-bold text-red-800">Friday, July 18th</h3>
+                                <p class="text-gray-600 mb-6">Arrival & Connection in Boston, MA</p>
+                                <ul role="list" class="space-y-6">
+                                   <li class="relative flex gap-x-4">
+                                       <div class="absolute left-3 top-0 flex w-6 justify-center h-full">
+                                           <div class="w-px bg-gray-200"></div>
+                                       </div>
+                                       <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                                           <div class="h-2 w-2 rounded-full bg-red-700 ring-1 ring-red-800"></div>
+                                       </div>
+                                       <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">7:00pm</p>
+                                       <div class="flex-auto">
+                                           <p class="font-medium text-gray-900">SVMPAA Alumni Welcome Cocktail Hour <span class="text-sm font-medium text-gray-500">(Optional)</span></p>
+                                           <div class="location mt-2">
+                                                <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                                <span>Saguaro Garden Bar (Kendall Square)</span>
+                                           </div>
+                                       </div>
+                                   </li>
+                                   <li class="relative flex gap-x-4">
+                                       <div class="absolute left-3 top-0 flex w-6 justify-center h-full invisible">
+                                           <div class="w-px bg-gray-200"></div>
+                                       </div>
+                                       <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                                           <div class="h-2 w-2 rounded-full bg-gray-400 ring-1 ring-gray-500"></div>
+                                       </div>
+                                       <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">10:00pm</p>
+                                       <div class="flex-auto">
+                                           <p class="font-medium text-gray-900">After Hours Night Out <span class="text-sm font-medium text-gray-500">(Optional)</span></p>
+                                       </div>
+                                   </li>
+                                </ul>
+                            </div>
+
+                            <!-- Saturday -->
+                             <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border-2 border-red-700">
+                                <h3 class="text-2xl font-bold text-red-800">Saturday, July 19th <span class="text-sm font-medium text-red-600 ml-2">(Mandatory)</span></h3>
+                                <p class="text-gray-600 mb-6">Reunion, Development, & Networking at Harvard Business School</p>
+                                <ul role="list" class="saturday-timeline-list space-y-6">
+                                    <!-- Dynamically generate timeline items for Saturday -->
+                                </ul>
+                            </div>
+
+                            <!-- Sunday -->
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h3 class="text-2xl font-bold text-red-800">Sunday, July 20th</h3>
+                                <p class="text-gray-600 mb-6">Networking & Goodbyes in Cambridge, MA</p>
+                                 <ul role="list" class="space-y-6">
+                                   <li class="relative flex gap-x-4">
+                                       <div class="absolute left-3 top-0 flex w-6 justify-center h-full invisible">
+                                           <div class="w-px bg-gray-200"></div>
+                                       </div>
+                                       <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                                           <div class="h-2 w-2 rounded-full bg-red-700 ring-1 ring-red-800"></div>
+                                       </div>
+                                       <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">10:00am</p>
+                                       <div class="flex-auto">
+                                           <p class="font-medium text-gray-900">SVMPAA Coffee / Breakfast + Farewell <span class="text-sm font-medium text-gray-500">(Optional)</span></p>
+                                           <div class="location mt-1">
+                                                <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                                <div>
+                                                    <span>Winthrop Park</span>
+                                                    <span class="block text-xs text-gray-500 mt-1">Options: Tatte Bakery & Cafe, Peet’s Coffee, Black Sheep Bagel, Flour Bakery</span>
+                                                </div>
+                                           </div>
+                                       </div>
+                                   </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Chatbot Section -->
+                    <section id="chatbot" class="mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Ask a Question</h2>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div id="chat-window" class="h-80 overflow-y-auto mb-4 p-4 bg-gray-50 rounded-lg border flex flex-col space-y-4">
+                                <!-- Initial bot message -->
+                                <div class="flex justify-start">
+                                    <div class="bg-gray-200 text-gray-800 py-2 px-4 rounded-lg max-w-sm">
+                                        <p>Hello! Ask me anything about the 2025 reunion.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <input type="text" id="chat-input" class="w-full border rounded-l-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Type your question...">
+                                <button id="chat-send-btn" class="bg-red-800 text-white font-bold py-3 px-6 rounded-r-lg hover:bg-red-900 focus:outline-none transition-colors duration-300">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section id="faq">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Frequently Asked Questions</h2>
+                        <div id="faq-container" class="space-y-4">
+                            <!-- FAQ items will be injected here by JS -->
+                        </div>
+                    </section>
+
+                    <div class="text-center mt-12 border-t pt-8">
+                        <a href="#events" class="nav-router inline-block bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-md hover:bg-gray-300 transition">&larr; Back to All Events</a>
+                    </div>
+                </div>
+
+            </div>
+            <script>
+            // This script should be scoped to this template load.
+            (function() {
+                // --- Itinerary Data ---
+                const saturdayEvents = [
+                   { time: '8:30am', event: 'Arrival to Harvard Business School + Check In', location: 'Spangler 051 Auditorium (Spangler Center)' },
+                   { time: '9:00am', event: 'Breakfast + Welcome Plenary (w/ Angie)', location: 'Spangler Center' },
+                   { time: '9:30am', event: 'SVMPAA Board of Directors Presentation', location: 'Spangler Center' },
+                   { time: '10:30am', event: 'Icebreakers + Breakout Groups', location: 'Spangler Center' },
+                   { time: '11:00am', event: 'Harvard iLab Tour (w/ Philippe Rival)', location: 'Harvard iLab' },
+                   { time: '12:00pm', event: 'Lunch', location: 'Spangler Center' },
+                   { time: '1:30pm', event: 'HBS Coffee Break', location: 'Spangler Center' },
+                   { time: '2:30pm', event: 'AMA: Graduate School Student Panel', location: 'Spangler Center' },
+                   { time: '3:15pm', event: 'Leland MBA Prep Presentation', location: 'Spangler Center' },
+                   { time: '4:15pm', event: 'SVMPAA Reunion Closing', location: 'Spangler Center' },
+                   { time: '5:00pm', event: 'SVMPAA Group Photo', location: 'Classroom + Baker Library' },
+                   { time: '7:00pm', event: 'SVMPAA Alumni Dinner (on your own)', location: null },
+                   { time: '9:00pm', event: 'After Hours Night Out', location: null, optional: true },
+                ];
+                
+                const saturdayList = document.querySelector('.saturday-timeline-list');
+                if(saturdayList) {
+                    saturdayEvents.forEach((item, index) => {
+                       const isLast = index === saturdayEvents.length - 1;
+                       const li = document.createElement('li');
+                       li.className = 'relative flex gap-x-4';
+                       
+                       let locationHtml = '';
+                       if (item.location) {
+                           locationHtml = `<div class="location mt-1">
+                                <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>${item.location}</span>
+                            </div>`;
+                       }
+
+                       let optionalHtml = '';
+                       if (item.optional) {
+                           optionalHtml = '<span class="text-sm font-medium text-gray-500 ml-2">(Optional)</span>';
+                       }
+                       
+                       li.innerHTML = `
+                           <div class="absolute left-3 top-0 flex w-6 justify-center h-full ${isLast ? 'invisible' : ''}">
+                               <div class="w-px bg-gray-200"></div>
+                           </div>
+                           <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                               <div class="h-2 w-2 rounded-full ${item.location ? 'bg-red-700 ring-1 ring-red-800' : 'bg-gray-400 ring-1 ring-gray-500'}"></div>
+                           </div>
+                           <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">${item.time}</p>
+                           <div class="flex-auto">
+                               <p class="font-medium text-gray-900">${item.event}${optionalHtml}</p>
+                               ${locationHtml}
+                           </div>
+                       `;
+                       saturdayList.appendChild(li);
+                   });
+                }
+
+
+                // FAQ Data
+                const faqs = [
+                   { question: "What is the goal of the event?", answer: "The goal of this event is to bring together SVMP alumni from different classes, universities, and places for networking and connection. Friday and Sunday's focus will be to connect with one another socially while Saturday will have a main focus of professional development." },
+                   { question: "When is the reunion taking place?", answer: "Friday, July 18th through the 20th. Saturday the 19th is a mandatory day of attendance for those who wish to come." },
+                   { question: "Where will the reunion take place?", answer: "The Boston/Cambridge area in Massachusetts. Specifically the Harvard Business School campus on Saturday." },
+                   { question: "Who can attend?", answer: "Any Harvard Business School Summer Venture in Management Program alumni." },
+                   { question: "Can I bring a plus one?", answer: "Only SVMP alumni are welcome to the official Saturday reunion events but additional guests may come to the after hours events." },
+                   { question: "How do I RSVP?", answer: 'Please complete the RSVP Form here: <a href="https://forms.gle/aErkRL1zrNKKCEZBA" target="_blank" class="text-red-800 hover:underline">https://forms.gle/aErkRL1zrNKKCEZBA</a>. If your attendance to the event changes, please reach out to our email (svmpalumniassociation@gmail.com).' },
+                   { question: "What should I wear?", answer: "Friday and Sunday are truly casual while Saturday is business casual while we are on campus." },
+                   { question: "I am going to be parking on campus, do I need a pass?", answer: "In the official RSVP form there is a selection to choose if you are parking on campus. Closer to the event we will provide you with more details so you are able to park on campus." },
+                   { question: "What should I bring to the events Saturday?", answer: "There are no required items to bring on Saturday except yourself!" },
+                   { question: "What meals will be provided at the event?", answer: "Saturday's breakfast and lunch will be covered by HBS at this time." },
+                   { question: "Are there any recommended lodging options?", answer: "Many alumni have utilized short term rentals via Airbnb or hotels in the Cambridge/Boston area. One option that has been consistently utilized is the Courtyard Boston Cambridge Marriott hotel which is 4 minutes away from campus. HBS is unable to offer on campus housing at this time." },
+                   { question: "How does one get around Boston and Cambridge?", answer: "While you are welcome to bring your own car, many alumni have chosen to uber/lyft or use the Boston subway system. Transportation to and from the event will not be covered by SVMPAA at this time." },
+                   { question: "Where and when will information about the event be posted?", answer: "We will be consistently sending updates via email and post these updates on Linkedin and Facebook via our SVMPAA groups." },
+                   { question: "Is there a dedicated chat for this event?", answer: 'There is a 2025 Reunion Groupme that will be a great place to see updates before and during the event. The link to access is here: <a href="https://groupme.com/join_group/107332311/bnXTvwPe" target="_blank" class="text-red-800 hover:underline">https://groupme.com/join_group/107332311/bnXTvwPe</a>' },
+                   { question: "How do I get more involved with SVMPAA?", answer: "Please reach out to svmpalumniassociation@gmail.com with your interest and look out for calls to action on our social media pages and email to get alumni more involved." },
+                   { question: "If I have a question, who should I contact?", answer: 'If you have any specific questions, feel free to contact us at <a href="mailto:svmpalumniassociation@gmail.com" class="text-red-800 hover:underline">svmpalumniassociation@gmail.com</a>.' },
+                ];
+
+                // --- Chatbot Logic ---
+                const chatWindow = document.getElementById('chat-window');
+                const chatInput = document.getElementById('chat-input');
+                const chatSendBtn = document.getElementById('chat-send-btn');
+
+                const faqKeywords = [
+                   { keywords: ['goal', 'purpose'], answer: faqs[0].answer },
+                   { keywords: ['when', 'date', 'dates'], answer: faqs[1].answer },
+                   { keywords: ['where', 'location', 'place', 'campus'], answer: faqs[2].answer },
+                   { keywords: ['who can attend', 'who is invited', 'attend'], answer: faqs[3].answer },
+                   { keywords: ['plus one', 'guest', 'bring someone'], answer: faqs[4].answer },
+                   { keywords: ['rsvp', 'register'], answer: faqs[5].answer },
+                   { keywords: ['wear', 'dress code', 'attire'], answer: faqs[6].answer },
+                   { keywords: ['parking', 'park my car', 'parking pass'], answer: faqs[7].answer },
+                   { keywords: ['what to bring', 'bring with me', 'required items'], answer: faqs[8].answer },
+                   { keywords: ['meals', 'food', 'breakfast', 'lunch', 'dinner'], answer: faqs[9].answer },
+                   { keywords: ['lodging', 'hotel', 'housing', 'stay', 'airbnb'], answer: faqs[10].answer },
+                   { keywords: ['transportation', 'get around', 'uber', 'lyft', 'subway'], answer: faqs[11].answer },
+                   { keywords: ['information', 'updates'], answer: faqs[12].answer },
+                   { keywords: ['chat', 'groupme'], answer: faqs[13].answer },
+                   { keywords: ['get involved', 'volunteer'], answer: faqs[14].answer },
+                   { keywords: ['question', 'contact', 'help'], answer: faqs[15].answer },
+                ];
+
+                const displayMessage = (message, sender) => {
+                    const messageWrapper = document.createElement('div');
+                    const messageBubble = document.createElement('div');
+                    
+                    messageWrapper.classList.add('flex');
+                    messageBubble.classList.add('py-2', 'px-4', 'rounded-lg', 'max-w-sm');
+
+                    if (sender === 'user') {
+                        messageWrapper.classList.add('justify-end');
+                        messageBubble.classList.add('bg-red-800', 'text-white');
+                        messageBubble.textContent = message;
+                    } else {
+                        messageWrapper.classList.add('justify-start');
+                        messageBubble.classList.add('bg-gray-200', 'text-gray-800');
+                        messageBubble.innerHTML = message;
+                    }
+                    
+                    messageWrapper.appendChild(messageBubble);
+                    chatWindow.appendChild(messageWrapper);
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                };
+
+                const getBotResponse = (userInput) => {
+                    const lowerInput = userInput.toLowerCase();
+                    let foundAnswer = null;
+
+                    for (const item of faqKeywords) {
+                        for (const keyword of item.keywords) {
+                            const regex = new RegExp('\\b' + keyword + '\\b', 'i');
+                            if (regex.test(lowerInput)) {
+                                foundAnswer = item.answer;
+                                break;
+                            }
+                        }
+                        if (foundAnswer) break;
+                    }
+
+                    const botMessage = foundAnswer 
+                        ? foundAnswer 
+                        : "I'm not sure about that. Please check out the FAQs below or email us at <a href='mailto:svmpalumniassociation@gmail.com' class='text-red-800 hover:underline'>svmpalumniassociation@gmail.com</a> for more questions.";
+
+                    setTimeout(() => displayMessage(botMessage, 'bot'), 400);
+                };
+
+                const handleSendMessage = () => {
+                    const userInput = chatInput.value.trim();
+                    if (userInput) {
+                        displayMessage(userInput, 'user');
+                        getBotResponse(userInput);
+                        chatInput.value = '';
+                    }
+                };
+                
+                chatSendBtn.addEventListener('click', handleSendMessage);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') handleSendMessage();
+                });
+
+                // --- FAQ Accordion Logic ---
+                const faqContainer = document.getElementById('faq-container');
+                faqs.forEach((faq) => {
+                    const faqItem = document.createElement('div');
+                    faqItem.className = 'bg-white rounded-lg shadow-md';
+                    faqItem.innerHTML = `
+                        <button class="accordion-toggle w-full text-left p-4 font-semibold text-gray-800 hover:bg-gray-100 flex justify-between items-center rounded-lg transition-colors duration-200">
+                            <span>${faq.question}</span>
+                            <svg class="w-6 h-6 shrink-0 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 border-t border-gray-200 text-gray-700">
+                                ${faq.answer}
+                            </div>
+                        </div>
+                    `;
+                    faqContainer.appendChild(faqItem);
+                });
+
+                faqContainer.addEventListener('click', function(e) {
+                    const toggle = e.target.closest('.accordion-toggle');
+                    if (toggle) {
+                        const content = toggle.nextElementSibling;
+                        const icon = toggle.querySelector('svg');
+                        const isOpening = !content.style.maxHeight;
+
+                        faqContainer.querySelectorAll('.accordion-content').forEach(item => item.style.maxHeight = null);
+                        faqContainer.querySelectorAll('.accordion-toggle svg').forEach(item => item.classList.remove('rotate-180'));
+                        
+                        if (isOpening) {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                            icon.classList.add('rotate-180');
+                        }
+                    }
+                });
+            })();
+            </script>
+        </div>
+    </template>
+
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
@@ -541,8 +891,9 @@
                 'connect': 'connect-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
-                'get-involved': 'get-involved-page', // Updated from 'alumni'
-                'contact': 'contact-page'
+                'get-involved': 'get-involved-page',
+                'contact': 'contact-page',
+                'reunion-agenda': 'reunion-agenda-page' // New route for the reunion agenda
             };
 
             function loadPage(pageId) {
@@ -554,10 +905,12 @@
                     const template = document.getElementById(templateId);
                     if (template) {
                         const clone = template.content.cloneNode(true);
-                        const pageElement = clone.querySelector('.page');
                         mainContent.appendChild(clone);
                         // Trigger fade-in animation
-                        setTimeout(() => pageElement.classList.add('active'), 0);
+                        const pageElement = mainContent.querySelector('.page');
+                        if(pageElement) {
+                             setTimeout(() => pageElement.classList.add('active'), 0);
+                        }
                         // Re-run feather icons replacement after new content is added
                         feather.replace();
                     }
@@ -571,7 +924,9 @@
 
             function updateActiveLink(pageId) {
                 navLinks.forEach(link => {
-                    if (link.href.includes(`#${pageId}`)) {
+                    // Special handling for reunion agenda to keep "Events" tab active
+                    const linkPageId = link.href.split('#')[1];
+                    if (linkPageId === pageId || (pageId === 'reunion-agenda' && linkPageId === 'events')) {
                         link.classList.add('active');
                     } else {
                         link.classList.remove('active');
@@ -593,19 +948,15 @@
             document.body.addEventListener('click', function(e) {
                 const navRouterElement = e.target.closest('.nav-router');
                 if (navRouterElement) {
-                    // Check if the link is an internal anchor link (same origin and has a hash)
-                    // If it's an external link, or an internal link without a hash, let the browser handle it.
                     if (navRouterElement.hash && navRouterElement.origin === window.location.origin) {
-                        e.preventDefault(); // Prevent default only for internal hash-based navigation
+                        e.preventDefault(); 
                         const newHash = navRouterElement.hash;
                         if(window.location.hash !== newHash) {
                             window.location.hash = newHash;
                         } else {
-                            // If clicking the same link, still reload the page content
                             handleRouteChange();
                         }
                     }
-                    // For external links, default behavior (opening in a new tab due to target="_blank") will proceed.
                 }
             });
 
