@@ -329,7 +329,7 @@
                                 <p class="text-gray-700">Welcome to your official induction into the SVMP Alumni Association! This virtual event is an exclusive opportunity for the SVMP Class of 2025 and Board Members to connect, share insights, and learn about the future of the association.</p>
                             </div>
                             <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                                    <a href="#" target="_blank" class="inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">Coming soon!</a>
+                                    <a href="#" target="_blank" class="inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">Coming Soon!</a>
                             </div>
                         </div>
                 </div>
@@ -628,7 +628,7 @@
                                                 <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                                 <div>
                                                     <span>Winthrop Park</span>
-                                                    <span class="block text-xs text-gray-500 mt-1">Options: Tatte Bakery & Cafe, Peet’s Coffee, Black Sheep Bagel, Flour Bakery</span>
+                                                    <span class="block text-xs text-gray-500 mt-1">Suggestions: Tatte Bakery & Cafe, Peet’s Coffee, Black Sheep Bagel, Flour Bakery</span>
                                                 </div>
                                            </div>
                                        </div>
@@ -686,10 +686,11 @@
                    { time: '12:00pm', event: 'Lunch', location: 'Spangler Center' },
                    { time: '1:30pm', event: 'HBS Coffee Break', location: 'Spangler Center' },
                    { time: '2:30pm', event: 'AMA: Graduate School Student Panel', location: 'Spangler Center' },
-                   { time: '3:15pm', event: 'Leland MBA Prep Presentation', location: 'Spangler Center' },
+                   { time: '3:30pm', event: 'Quick Break', location: null },
+                   { time: '3:45pm', event: 'Leland Presentation', location: 'Spangler Center' },
                    { time: '4:15pm', event: 'SVMPAA Reunion Closing', location: 'Spangler Center' },
                    { time: '5:00pm', event: 'SVMPAA Group Photo', location: 'Classroom + Baker Library' },
-                   { time: '7:00pm', event: 'SVMPAA Alumni Dinner (on your own)', location: null },
+                   { time: '7:00pm', event: 'SVMPAA Alumni Dinner (on your own)', suggestions: 'Suggestions: Banyan Bar + Refuge, Coquette, Bar Vlaha, Figaros, Contessa, KAIA South End, Quincy Market, Time Out Market Boston' },
                    { time: '9:00pm', event: 'After Hours Night Out', location: null, optional: true },
                 ];
                 
@@ -706,7 +707,10 @@
                                 <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 <span>${item.location}</span>
                             </div>`;
+                       } else if (item.suggestions) {
+                           locationHtml = `<div class="mt-1 text-sm text-gray-500">${item.suggestions}</div>`;
                        }
+
 
                        let optionalHtml = '';
                        if (item.optional) {
