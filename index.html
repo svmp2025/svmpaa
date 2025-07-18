@@ -61,7 +61,6 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -94,7 +93,6 @@
                 </div>
             </div>
         </nav>
-        <!-- Mobile menu, show/hide based on menu state. -->
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Home</a>
@@ -116,8 +114,7 @@
     </header>
 
     <main id="main-content">
-        <!-- Page content will be injected here -->
-    </main>
+        </main>
 
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -153,10 +150,8 @@
         </div>
     </footer>
     
-    <!-- Page Templates -->
     <template id="home-page">
         <div class="page" id="home">
-            <!-- Hero Section -->
             <div class="relative bg-gray-900 text-white">
                 <div class="absolute inset-0">
                     <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Community';">
@@ -172,7 +167,6 @@
                 </div>
             </div>
 
-            <!-- Upcoming Events Section -->
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Upcoming Events</h2>
@@ -199,7 +193,6 @@
         <div class="page" id="about">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <h1 class="text-4xl font-bold text-center mb-12">About SVMPAA</h1>
-                <!-- Mission, Vision, Values -->
                 <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
                     <div>
                         <i data-feather="target" class="h-10 w-10 mx-auto text-red-800 mb-3"></i>
@@ -218,8 +211,7 @@
                     </div>
                 </div>
                 
-                <!-- History -->
-                    <div class="bg-white p-8 rounded-lg shadow-md mb-16">
+                <div class="bg-white p-8 rounded-lg shadow-md mb-16">
                         <h2 class="text-3xl font-bold text-center mb-6">History of SVMPAA</h2>
                         <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed space-y-4">
                             <p>
@@ -234,59 +226,50 @@
                         </div>
                     </div>
 
-                <!-- Board Members -->
                 <h2 class="text-3xl font-bold text-center mb-10">Meet the Board</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Odina Eshxanova -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/odina-pfp.jpeg" alt="Odina Eshxanova Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Odina';">
                         <h3 class="font-bold text-xl">Odina Eshxanova</h3>
                         <p class="text-red-800 font-semibold mb-2">President</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
-                    <!-- Holly Harmon -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/holly-pfp.jpeg" alt="Holly Harmon Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Holly';">
                         <h3 class="font-bold text-xl">Holly Harmon</h3>
                         <p class="text-red-800 font-semibold mb-2">Coordinator of the Board</p>
                         <p class="text-gray-600 text-sm">SVMP 19’</p>
                     </div>
-                    <!-- Brian Oviedo -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/brian-pfp.png" alt="Brian Oviedo Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
                         <h3 class="font-bold text-xl">Brian Oviedo</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of Marketing</p>
                         <p class="text-gray-600 text-sm">SVMP 23’</p>
                     </div>
-                    <!-- Tony Nguyen -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/dcfd59c824b39a7f4be779cfa234a9638a844e67/images/tony.png" alt="Tony Nguyen Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Tony';">
                         <h3 class="font-bold text-xl">Tony Nguyen</h3>
                         <p class="text-red-800 font-semibold mb-2">Alumni Liaison - Internal Events</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
-                    <!-- Dawson Templin -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/dawson-pfp.jpeg" alt="Dawson Templin Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Dawson';">
                         <h3 class="font-bold text-xl">Dawson Templin</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of Strategic Partnerships</p>
                         <p class="text-gray-600 text-sm">SVMP 24’</p>
                     </div>
-                    <!-- Paola Colon -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/paola-pfp.jpeg" alt="Paola Colon Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Paola';">
                         <h3 class="font-bold text-xl">Paola Colon</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of Alumni Relations</p>
                         <p class="text-gray-600 text-sm">SVMP 23’</p>
                     </div>
-                    <!-- Porter Alexander Tynes III -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/dcfd59c824b39a7f4be779cfa234a9638a844e67/images/porter.png" alt="Porter Alexander Tynes III Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Porter';">
                         <h3 class="font-bold text-xl">Porter Alexander Tynes III</h3>
                         <p class="text-red-800 font-semibold mb-2">Alumni Liaison - External Events</p>
                         <p class="text-gray-600 text-sm">SVMP 24’</p>
                     </div>
-                    <!-- Marvelous Ekeh -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/marvelous-pfp.jpeg" alt="Marvelous Ekeh Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Marvelous';">
                         <h3 class="font-bold text-xl">Marvelous Ekeh</h3>
@@ -303,7 +286,6 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h1 class="text-4xl font-bold text-center mb-12">SVMPAA Events</h1>
                 
-                <!-- Upcoming Events -->
                 <h2 class="text-3xl font-bold mb-8">Upcoming</h2>
                 <div class="space-y-6 mb-16">
                     <div class="card md:flex items-center p-6">
@@ -334,7 +316,6 @@
                         </div>
                 </div>
 
-                <!-- Text for volunteering -->
                 <div class="text-center mt-16 mb-12">
                     <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
                         Interested in hosting a local meetup?
@@ -344,7 +325,6 @@
                     </a>
                 </div>
 
-                <!-- Past Events -->
                 <h2 class="text-3xl font-bold mb-8">Past Event Highlights</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                         <div class="card overflow-hidden">
@@ -402,10 +382,8 @@
                     <h1 class="text-4xl font-bold text-center mb-12">Partnerships</h1>
                     <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">We collaborate with leading organizations to provide exclusive benefits and opportunities to our alumni.</p>
 
-                <!-- Current Partners -->
                 <h2 class="text-3xl font-bold mb-8">Our Partners</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center mb-16">
-                        <!-- Leland Partner Logo -->
                         <div class="p-4 col-span-full md:col-span-1 md:col-start-2">
                             <a href="https://www.joinleland.com/" target="_blank">
                                 <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/leland.avif" alt="Leland Logo" class="h-28 w-auto mx-auto grayscale hover:grayscale-0 transition" onerror="this.onerror=null;this.src='https://placehold.co/200x112?text=Leland';">
@@ -413,8 +391,7 @@
                         </div>
                     </div>
 
-                <!-- Benefits -->
-                    <div class="bg-white p-8 rounded-lg shadow-md mb-16">
+                <div class="bg-white p-8 rounded-lg shadow-md mb-16">
                         <h2 class="text-3xl font-bold text-center mb-6">Partnership Benefits for Alumni</h2>
                         <ul class="list-disc list-inside max-w-2xl mx-auto space-y-2 text-gray-700">
                             <li>Exclusive scholarships for graduate programs.</li>
@@ -424,7 +401,6 @@
                         </ul>
                     </div>
                 
-                    <!-- Become a Partner -->
                     <div class="text-center">
                         <h2 class="text-3xl font-bold mb-4">Become a Partner</h2>
                         <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">Interested in connecting with a diverse and talented network of emerging leaders? Partner with SVMPAA to create mutually beneficial opportunities.</p>
@@ -447,7 +423,6 @@
                         <p class="text-gray-600 mb-4">Connect with experienced alumni for guidance and support. Whether you're a mentor or mentee, this program fosters meaningful relationships.</p>
                         <a href="#get-involved" class="nav-router font-semibold text-red-800 hover:underline">Get Involved &rarr;</a>
                     </div>
-                    <!-- New "Free Resume & LinkedIn Support" Box -->
                     <div class="card p-6">
                         <i data-feather="file-text" class="h-10 w-10 text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2">Free Resume & LinkedIn Support</h2>
@@ -463,8 +438,7 @@
             <div class="page" id="get-involved">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <h1 class="text-4xl font-bold text-center mb-12">Get Involved</h1>
-                    <div class="space-y-16"> <!-- Changed from grid lg:grid-cols-2 to space-y-16 for vertical stacking -->
-                        <div>
+                    <div class="space-y-16"> <div>
                             <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
                             <p class="text-gray-600 mb-4">Your journey with the SVMP community is just beginning. The SVMP Alumni Association is your next step to stay connected and continue your growth.</p>
                             <ul class="list-disc list-inside space-y-2 text-gray-700">
@@ -543,10 +517,8 @@
             </div>
     </template>
 
-    <!-- Reunion Agenda Page Template -->
     <template id="reunion-agenda-page">
         <div class="page" id="reunion-agenda">
-            <!-- New Hero Section for Reunion Page -->
             <div class="relative bg-gray-900 text-white">
                 <div class="absolute inset-0">
                     <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Reunion';">
@@ -560,11 +532,9 @@
             
              <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div class="max-w-4xl mx-auto">
-                    <!-- Itinerary Section -->
                     <section id="itinerary" class="mb-12">
                         <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Itinerary</h2>
                         <div class="space-y-12">
-                            <!-- Friday -->
                             <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                                 <h3 class="text-2xl font-bold text-red-800">Friday, July 18th</h3>
                                 <p class="text-gray-600 mb-6">Arrival & Connection in Boston, MA</p>
@@ -600,16 +570,13 @@
                                 </ul>
                             </div>
 
-                            <!-- Saturday -->
-                             <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border-2 border-red-700">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border-2 border-red-700">
                                 <h3 class="text-2xl font-bold text-red-800">Saturday, July 19th <span class="text-sm font-medium text-red-600 ml-2">(Mandatory)</span></h3>
                                 <p class="text-gray-600 mb-6">Reunion, Development, & Networking at Harvard Business School</p>
                                 <ul role="list" class="saturday-timeline-list space-y-6">
-                                    <!-- Dynamically generate timeline items for Saturday -->
-                                </ul>
+                                    </ul>
                             </div>
 
-                            <!-- Sunday -->
                             <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                                 <h3 class="text-2xl font-bold text-red-800">Sunday, July 20th</h3>
                                 <p class="text-gray-600 mb-6">Networking & Goodbyes in Cambridge, MA</p>
@@ -638,12 +605,10 @@
                         </div>
                     </section>
 
-                    <!-- Chatbot Section -->
                     <section id="chatbot" class="mb-12">
                         <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Ask a Question</h2>
                         <div class="bg-white p-6 rounded-lg shadow-md">
                             <div id="chat-window" class="h-80 overflow-y-auto mb-4 p-4 bg-gray-50 rounded-lg border flex flex-col space-y-4">
-                                <!-- Initial bot message -->
                                 <div class="flex justify-start">
                                     <div class="bg-gray-200 text-gray-800 py-2 px-4 rounded-lg max-w-sm">
                                         <p>Hello! Ask me anything about the 2025 reunion.</p>
@@ -659,12 +624,10 @@
                         </div>
                     </section>
 
-                    <!-- FAQ Section -->
                     <section id="faq">
                         <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Frequently Asked Questions</h2>
                         <div id="faq-container" class="space-y-4">
-                            <!-- FAQ items will be injected here by JS -->
-                        </div>
+                            </div>
                     </section>
 
                     <div class="text-center mt-12 border-t pt-8">
@@ -743,7 +706,7 @@
                    { question: "Who can attend?", answer: "Any Harvard Business School Summer Venture in Management Program alumni.", keywords: ['who can attend', 'who is invited', 'attend'] },
                    { question: "Can I bring a plus one?", answer: "Only SVMP alumni are welcome to the official Saturday reunion events but additional guests may come to the after hours events.", keywords: ['plus one', 'guest', 'bring someone'] },
                    { question: "What should I wear?", answer: "Friday and Sunday are truly casual while Saturday is business casual while we are on campus.", keywords: ['wear', 'dress code', 'attire'] },
-                   { question: "I am going to be parking on campus, do I need a pass?", answer: "In the official RSVP form there is a selection to choose if you are parking on campus. Closer to the event we will provide you with more details so you are able to park on campus.", keywords: ['parking', 'park my car', 'parking pass'] },
+                   { question: "I am going to be parking on campus, do I need a pass?", answer: "When you arrive at the HBS Surface Lot (117 Western Ave), you will need to provide the name of the event title, Summer Venture in Management Program Alumni Event (SVMP AA). Upon event identification, the Parking Services Monitor will issue an access card and provide any relevant parking information, if needed.", keywords: ['parking', 'park my car', 'parking pass'] },
                    { question: "What should I bring to the events Saturday?", answer: "There are no required items to bring on Saturday except yourself!", keywords: ['what to bring', 'bring with me', 'required items'] },
                    { question: "What meals will be provided at the event?", answer: "Saturday's breakfast and lunch will be covered by HBS at this time.", keywords: ['meals', 'food', 'breakfast', 'lunch', 'dinner'] },
                    { question: "Are there any recommended lodging options?", answer: "Many alumni have utilized short term rentals via Airbnb or hotels in the Cambridge/Boston area. One option that has been consistently utilized is the Courtyard Boston Cambridge Marriott hotel which is 4 minutes away from campus. HBS is unable to offer on campus housing at this time.", keywords: ['lodging', 'hotel', 'housing', 'stay', 'airbnb'] },
