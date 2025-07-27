@@ -38,29 +38,18 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
+        .carousel-item {
+            display: none;
+            transition: opacity 0.5s ease-in-out;
         }
-        .location {
-            display: inline-flex;
-            align-items: flex-start;
-            font-style: normal;
-            color: #4A5568;
-            font-size: 0.9em;
-            background-color: #F7FAFC;
-            padding: 0.35rem 0.6rem;
-            border-radius: 0.375rem;
-            border: 1px solid #E2E8F0;
-        }
-        .location svg {
-            margin-top: 0.125rem; /* Vertically align icon better */
+        .carousel-item.active {
+            display: block;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -93,6 +82,7 @@
                 </div>
             </div>
         </nav>
+        <!-- Mobile menu, show/hide based on menu state. -->
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Home</a>
@@ -114,7 +104,8 @@
     </header>
 
     <main id="main-content">
-        </main>
+        <!-- Page content will be injected here -->
+    </main>
 
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -150,11 +141,13 @@
         </div>
     </footer>
     
+    <!-- Page Templates -->
     <template id="home-page">
         <div class="page" id="home">
+            <!-- Hero Section -->
             <div class="relative bg-gray-900 text-white">
                 <div class="absolute inset-0">
-                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Community';">
+                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2172_jpg.JPEG" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Community';">
                     <div class="absolute inset-0 bg-gray-900/60"></div>
                 </div>
                 <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
@@ -167,21 +160,18 @@
                 </div>
             </div>
 
+            <!-- Upcoming Events Section -->
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Upcoming Events</h2>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="card p-6 text-center">
-                            <i data-feather="calendar" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">2025 Alumni Reunion</h3>
-                            <p class="text-gray-600 mb-4">July 18-20, 2025 | Boston, MA</p>
-                            <a href="#reunion-agenda" class="nav-router font-semibold text-red-800 hover:underline">View Agenda &rarr;</a>
-                        </div>
-                        <div class="card p-6 text-center">
-                           <i data-feather="map-pin" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">Welcome Home: SVMP Alumni Induction & Reflections</h3>
-                            <p class="text-gray-600 mb-4">July 27th (Virtual Meeting)</p>
-                            <a href="#events" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
+                    <div class="flex justify-center">
+                        <div class="w-full md:w-2/3 lg:w-1/3">
+                            <div class="card p-6 text-center">
+                               <i data-feather="map-pin" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
+                                <h3 class="font-bold text-xl mb-2">Welcome Home: SVMP Alumni Induction & Reflections</h3>
+                                <p class="text-gray-600 mb-4">August 10th (Virtual Meeting)</p>
+                                <a href="#induction-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -193,6 +183,7 @@
         <div class="page" id="about">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <h1 class="text-4xl font-bold text-center mb-12">About SVMPAA</h1>
+                <!-- Mission, Vision, Values -->
                 <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
                     <div>
                         <i data-feather="target" class="h-10 w-10 mx-auto text-red-800 mb-3"></i>
@@ -211,7 +202,8 @@
                     </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-md mb-16">
+                <!-- History -->
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-16">
                         <h2 class="text-3xl font-bold text-center mb-6">History of SVMPAA</h2>
                         <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed space-y-4">
                             <p>
@@ -226,50 +218,59 @@
                         </div>
                     </div>
 
+                <!-- Board Members -->
                 <h2 class="text-3xl font-bold text-center mb-10">Meet the Board</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Odina Eshxanova -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/odina-pfp.jpeg" alt="Odina Eshxanova Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Odina';">
                         <h3 class="font-bold text-xl">Odina Eshxanova</h3>
                         <p class="text-red-800 font-semibold mb-2">President</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
+                    <!-- Holly Harmon -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/holly-pfp.jpeg" alt="Holly Harmon Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Holly';">
                         <h3 class="font-bold text-xl">Holly Harmon</h3>
                         <p class="text-red-800 font-semibold mb-2">Coordinator of the Board</p>
                         <p class="text-gray-600 text-sm">SVMP 19’</p>
                     </div>
+                    <!-- Brian Oviedo -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/brian-pfp.png" alt="Brian Oviedo Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
                         <h3 class="font-bold text-xl">Brian Oviedo</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of Marketing</p>
                         <p class="text-gray-600 text-sm">SVMP 23’</p>
                     </div>
+                    <!-- Tony Nguyen -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/dcfd59c824b39a7f4be779cfa234a9638a844e67/images/tony.png" alt="Tony Nguyen Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Tony';">
                         <h3 class="font-bold text-xl">Tony Nguyen</h3>
                         <p class="text-red-800 font-semibold mb-2">Alumni Liaison - Internal Events</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
+                    <!-- Dawson Templin -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/dawson-pfp.jpeg" alt="Dawson Templin Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Dawson';">
                         <h3 class="font-bold text-xl">Dawson Templin</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of Strategic Partnerships</p>
                         <p class="text-gray-600 text-sm">SVMP 24’</p>
                     </div>
+                    <!-- Paola Colon -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/paola-pfp.jpeg" alt="Paola Colon Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Paola';">
                         <h3 class="font-bold text-xl">Paola Colon</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of Alumni Relations</p>
                         <p class="text-gray-600 text-sm">SVMP 23’</p>
                     </div>
+                    <!-- Porter Alexander Tynes III -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/dcfd59c824b39a7f4be779cfa234a9638a844e67/images/porter.png" alt="Porter Alexander Tynes III Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Porter';">
                         <h3 class="font-bold text-xl">Porter Alexander Tynes III</h3>
                         <p class="text-red-800 font-semibold mb-2">Alumni Liaison - External Events</p>
                         <p class="text-gray-600 text-sm">SVMP 24’</p>
                     </div>
+                    <!-- Marvelous Ekeh -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/marvelous-pfp.jpeg" alt="Marvelous Ekeh Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Marvelous';">
                         <h3 class="font-bold text-xl">Marvelous Ekeh</h3>
@@ -286,36 +287,25 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h1 class="text-4xl font-bold text-center mb-12">SVMPAA Events</h1>
                 
+                <!-- Upcoming Events -->
                 <h2 class="text-3xl font-bold mb-8">Upcoming</h2>
                 <div class="space-y-6 mb-16">
                     <div class="card md:flex items-center p-6">
                         <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
-                            <p class="text-lg font-semibold">July 18-20, 2025</p>
-                            <p class="text-sm text-gray-600">Boston, MA</p>
+                            <p class="text-lg font-semibold">August 10th</p>
+                            <p class="text-sm text-gray-600">Virtual Meeting</p>
                         </div>
                         <div class="md:w-2/4">
-                            <h3 class="font-bold text-xl">2025 Alumni Reunion</h3>
-                            <p class="text-gray-700">The flagship event for networking, development, and reconnection.</p>
+                            <h3 class="font-bold text-xl">Welcome Home: SVMP Alumni Induction & Reflections</h3>
+                            <p class="text-gray-700">Welcome to your official induction into the SVMP Alumni Association! This virtual event is an exclusive opportunity for the SVMP Class of 2025 and Board Members to connect, share insights, and learn about the future of the association.</p>
                         </div>
                         <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                             <a href="#reunion-agenda" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Agenda</a>
+                                <a href="#induction-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
                         </div>
                     </div>
-                        <div class="card md:flex items-center p-6">
-                            <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
-                                <p class="text-lg font-semibold">July 27th</p>
-                                <p class="text-sm text-gray-600">Virtual Meeting</p>
-                            </div>
-                            <div class="md:w-2/4">
-                                <h3 class="font-bold text-xl">Welcome Home: SVMP Alumni Induction & Reflections</h3>
-                                <p class="text-gray-700">Welcome to your official induction into the SVMP Alumni Association! This virtual event is an exclusive opportunity for the SVMP Class of 2025 and Board Members to connect, share insights, and learn about the future of the association.</p>
-                            </div>
-                            <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                                    <a href="#" target="_blank" class="inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">RSVP</a>
-                            </div>
-                        </div>
                 </div>
 
+                <!-- Text for volunteering -->
                 <div class="text-center mt-16 mb-12">
                     <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
                         Interested in hosting a local meetup?
@@ -325,19 +315,139 @@
                     </a>
                 </div>
 
+                <!-- Past Events -->
                 <h2 class="text-3xl font-bold mb-8">Past Event Highlights</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                        <div class="card overflow-hidden">
-                            <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Stay+Tuned" alt="Coming Soon" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="font-bold text-lg">Cool Fun Event</h3>
-                            </div>
+                <div class="grid md:grid-cols-1 gap-8">
+                     <a href="#reunion-recap" class="nav-router card overflow-hidden block hover:shadow-xl">
+                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="Reunion Hero Image" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x192?text=Reunion';">
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-2">2025 Alumni Reunion</h3>
+                            <p class="text-gray-500 text-sm mb-4">July 18-20, 2025 | Boston & Cambridge, MA</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                The 2025 Alumni Reunion was an incredible success, bringing together alumni from across the years for a memorable weekend...
+                            </p>
+                             <span class="font-semibold text-red-800 hover:underline">Read More & View Photos &rarr;</span>
                         </div>
+                    </a>
+                    <div class="card overflow-hidden">
+                        <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Stay+Tuned" alt="Coming Soon" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg">Cool Fun Event</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </template>
     
+    <template id="reunion-recap-page">
+        <div class="page" id="reunion-recap">
+             <!-- Hero Section -->
+            <div class="relative bg-gray-900 text-white">
+                <div class="absolute inset-0">
+                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Reunion" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Reunion';">
+                    <div class="absolute inset-0 bg-gray-900/60"></div>
+                </div>
+                <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">2025 Alumni Reunion Recap</h1>
+                    <p class="mt-4 text-lg text-gray-300">July 18-20, 2025 | Boston & Cambridge, MA</p>
+                </div>
+            </div>
+            
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <!-- Event Description -->
+                <section class="mb-16">
+                     <div class="max-w-3xl mx-auto text-center">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            The 2025 Alumni Reunion was an incredible success, bringing together alumni from across the years for a memorable weekend of connection, professional development, and celebration. Highlights included the inspiring welcome plenary, the insightful graduate school panel, and the tour of the Harvard iLab. The energy was palpable, reinforcing the strength and vibrancy of our community. Thank you to everyone who attended and made this event so special!
+                        </p>
+                     </div>
+                </section>
+
+                <!-- Reunion Reel -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-center mb-8">Reunion Highlight Reel</h2>
+                    <div class="max-w-xl mx-auto">
+                        <div style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
+                            <iframe src="https://www.instagram.com/reel/DMYpLUIxwFI/embed" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" class="rounded-lg shadow-2xl" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Image Carousel -->
+                <section class="mb-16">
+                    <h2 class="text-3xl font-bold text-center mb-8">Event Gallery</h2>
+                    <div id="image-carousel" class="relative max-w-3xl mx-auto shadow-2xl rounded-lg overflow-hidden">
+                        <div id="carousel-inner" class="relative w-full h-96">
+                            <!-- Images will be inserted here by JS -->
+                        </div>
+                        <button id="prev-btn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75 transition">
+                            <i data-feather="chevron-left"></i>
+                        </button>
+                        <button id="next-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75 transition">
+                             <i data-feather="chevron-right"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Google Drive Upload -->
+                <section class="text-center bg-red-50 py-12 rounded-lg">
+                     <h2 class="text-3xl font-bold mb-4">Share Your Photos!</h2>
+                     <p class="text-gray-700 max-w-2xl mx-auto mb-6">
+                        Have photos from the reunion? Help us build our collective memory by adding them to our shared Google Drive folder.
+                     </p>
+                     <a href="https://drive.google.com/drive/folders/18Zuvm0PLlRAk1CarPGMQBLWPBTilqiwm" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">
+                         <i data-feather="upload-cloud" class="mr-2"></i>
+                         Add to Shared Album
+                     </a>
+                </section>
+
+                 <!-- Feedback Form -->
+                <section class="text-center mt-16">
+                     <h2 class="text-3xl font-bold mb-4">We Value Your Feedback</h2>
+                     <p class="text-gray-700 max-w-2xl mx-auto mb-6">
+                        Help us make future events even better. Please take a moment to share your feedback.
+                     </p>
+                     <a href="https://forms.gle/uHTpUxWM3WpXNXZq9" target="_blank" class="inline-flex items-center bg-gray-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-gray-900 transition">
+                         <i data-feather="edit-3" class="mr-2"></i>
+                         Provide Feedback
+                     </a>
+                </section>
+
+            </div>
+        </div>
+    </template>
+    
+    <template id="induction-event-page">
+        <div class="page" id="induction-event">
+            <div class="bg-gray-800">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white text-center">
+                    <h1 class="text-4xl font-bold mb-4">Welcome Home: SVMP Alumni Induction & Reflections</h1>
+                    <p class="text-lg text-red-100">August 10th | Virtual Meeting</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                 <div class="max-w-3xl mx-auto text-center">
+                     <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+                        <h2 class="text-3xl font-bold mb-4">Event Details</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Welcome to your official induction into the SVMP Alumni Association! This virtual event is an exclusive opportunity for the SVMP Class of 2025 and Board Members to connect, share insights, and learn about the future of the association.
+                        </p>
+                     </div>
+
+                     <a href="https://meet.google.com/vft-pqmz-xzb?hs=224" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                        <i data-feather="video" class="mr-2"></i>
+                        Join Virtual Event
+                    </a>
+                    
+                    <div class="mt-12">
+                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </template>
+
     <template id="connect-page">
             <div class="page" id="connect">
                 <div class="bg-red-800">
@@ -382,8 +492,10 @@
                     <h1 class="text-4xl font-bold text-center mb-12">Partnerships</h1>
                     <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">We collaborate with leading organizations to provide exclusive benefits and opportunities to our alumni.</p>
 
+                <!-- Current Partners -->
                 <h2 class="text-3xl font-bold mb-8">Our Partners</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center mb-16">
+                        <!-- Leland Partner Logo -->
                         <div class="p-4 col-span-full md:col-span-1 md:col-start-2">
                             <a href="https://www.joinleland.com/" target="_blank">
                                 <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/leland.avif" alt="Leland Logo" class="h-28 w-auto mx-auto grayscale hover:grayscale-0 transition" onerror="this.onerror=null;this.src='https://placehold.co/200x112?text=Leland';">
@@ -391,7 +503,8 @@
                         </div>
                     </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-md mb-16">
+                <!-- Benefits -->
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-16">
                         <h2 class="text-3xl font-bold text-center mb-6">Partnership Benefits for Alumni</h2>
                         <ul class="list-disc list-inside max-w-2xl mx-auto space-y-2 text-gray-700">
                             <li>Exclusive scholarships for graduate programs.</li>
@@ -401,6 +514,7 @@
                         </ul>
                     </div>
                 
+                    <!-- Become a Partner -->
                     <div class="text-center">
                         <h2 class="text-3xl font-bold mb-4">Become a Partner</h2>
                         <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">Interested in connecting with a diverse and talented network of emerging leaders? Partner with SVMPAA to create mutually beneficial opportunities.</p>
@@ -423,6 +537,7 @@
                         <p class="text-gray-600 mb-4">Connect with experienced alumni for guidance and support. Whether you're a mentor or mentee, this program fosters meaningful relationships.</p>
                         <a href="#get-involved" class="nav-router font-semibold text-red-800 hover:underline">Get Involved &rarr;</a>
                     </div>
+                    <!-- New "Free Resume & LinkedIn Support" Box -->
                     <div class="card p-6">
                         <i data-feather="file-text" class="h-10 w-10 text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2">Free Resume & LinkedIn Support</h2>
@@ -438,7 +553,8 @@
             <div class="page" id="get-involved">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <h1 class="text-4xl font-bold text-center mb-12">Get Involved</h1>
-                    <div class="space-y-16"> <div>
+                    <div class="space-y-16"> <!-- Changed from grid lg:grid-cols-2 to space-y-16 for vertical stacking -->
+                        <div>
                             <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
                             <p class="text-gray-600 mb-4">Your journey with the SVMP community is just beginning. The SVMP Alumni Association is your next step to stay connected and continue your growth.</p>
                             <ul class="list-disc list-inside space-y-2 text-gray-700">
@@ -517,312 +633,6 @@
             </div>
     </template>
 
-    <template id="reunion-agenda-page">
-        <div class="page" id="reunion-agenda">
-            <div class="relative bg-gray-900 text-white">
-                <div class="absolute inset-0">
-                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Reunion';">
-                    <div class="absolute inset-0 bg-gray-900/60"></div>
-                </div>
-                <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
-                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">2025 SVMP Alumni Reunion</h1>
-                    <p class="mt-4 text-lg md:text-xl text-gray-300">Boston & Cambridge, MA | July 18-20, 2025</p>
-                </div>
-            </div>
-            
-             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="max-w-4xl mx-auto">
-                    <section id="itinerary" class="mb-12">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Itinerary</h2>
-                        <div class="space-y-12">
-                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                                <h3 class="text-2xl font-bold text-red-800">Friday, July 18th</h3>
-                                <p class="text-gray-600 mb-6">Arrival & Connection in Boston, MA</p>
-                                <ul role="list" class="space-y-6">
-                                   <li class="relative flex gap-x-4">
-                                       <div class="absolute left-3 top-0 flex w-6 justify-center h-full">
-                                           <div class="w-px bg-gray-200"></div>
-                                       </div>
-                                       <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
-                                           <div class="h-2 w-2 rounded-full bg-red-700 ring-1 ring-red-800"></div>
-                                       </div>
-                                       <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">7:00pm</p>
-                                       <div class="flex-auto">
-                                           <p class="font-medium text-gray-900">SVMPAA Alumni Welcome Cocktail Hour <span class="text-sm font-medium text-gray-500">(Optional)</span></p>
-                                           <div class="location mt-2">
-                                                <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                                <span>Saguaro Garden Bar (Kendall Square)</span>
-                                           </div>
-                                       </div>
-                                   </li>
-                                   <li class="relative flex gap-x-4">
-                                       <div class="absolute left-3 top-0 flex w-6 justify-center h-full invisible">
-                                           <div class="w-px bg-gray-200"></div>
-                                       </div>
-                                       <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
-                                           <div class="h-2 w-2 rounded-full bg-gray-400 ring-1 ring-gray-500"></div>
-                                       </div>
-                                       <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">10:00pm</p>
-                                       <div class="flex-auto">
-                                           <p class="font-medium text-gray-900">After Hours Night Out <span class="text-sm font-medium text-gray-500">(Optional)</span></p>
-                                       </div>
-                                   </li>
-                                </ul>
-                            </div>
-
-                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border-2 border-red-700">
-                                <h3 class="text-2xl font-bold text-red-800">Saturday, July 19th <span class="text-sm font-medium text-red-600 ml-2">(Mandatory)</span></h3>
-                                <p class="text-gray-600 mb-6">Reunion, Development, & Networking at Harvard Business School</p>
-                                <ul role="list" class="saturday-timeline-list space-y-6">
-                                    </ul>
-                            </div>
-
-                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                                <h3 class="text-2xl font-bold text-red-800">Sunday, July 20th</h3>
-                                <p class="text-gray-600 mb-6">Networking & Goodbyes in Cambridge, MA</p>
-                                 <ul role="list" class="space-y-6">
-                                   <li class="relative flex gap-x-4">
-                                       <div class="absolute left-3 top-0 flex w-6 justify-center h-full invisible">
-                                           <div class="w-px bg-gray-200"></div>
-                                       </div>
-                                       <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
-                                           <div class="h-2 w-2 rounded-full bg-red-700 ring-1 ring-red-800"></div>
-                                       </div>
-                                       <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">10:00am</p>
-                                       <div class="flex-auto">
-                                           <p class="font-medium text-gray-900">SVMPAA Coffee / Breakfast + Farewell <span class="text-sm font-medium text-gray-500">(Optional)</span></p>
-                                           <div class="location mt-1">
-                                                <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                                <div>
-                                                    <span>Winthrop Park</span>
-                                                    <span class="block text-xs text-gray-500 mt-1">Suggestions: Tatte Bakery & Cafe, Peet’s Coffee, Black Sheep Bagel, Flour Bakery</span>
-                                                </div>
-                                           </div>
-                                       </div>
-                                   </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="chatbot" class="mb-12">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Ask a Question</h2>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <div id="chat-window" class="h-80 overflow-y-auto mb-4 p-4 bg-gray-50 rounded-lg border flex flex-col space-y-4">
-                                <div class="flex justify-start">
-                                    <div class="bg-gray-200 text-gray-800 py-2 px-4 rounded-lg max-w-sm">
-                                        <p>Hello! Ask me anything about the 2025 reunion.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <input type="text" id="chat-input" class="w-full border rounded-l-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Type your question...">
-                                <button id="chat-send-btn" class="bg-red-800 text-white font-bold py-3 px-6 rounded-r-lg hover:bg-red-900 focus:outline-none transition-colors duration-300">
-                                    Send
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="faq">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-red-200 pb-2">Frequently Asked Questions</h2>
-                        <div id="faq-container" class="space-y-4">
-                            </div>
-                    </section>
-
-                    <div class="text-center mt-12 border-t pt-8">
-                        <a href="#events" class="nav-router inline-block bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-md hover:bg-gray-300 transition">&larr; Back to All Events</a>
-                    </div>
-                </div>
-
-            </div>
-            <script>
-            // This script should be scoped to this template load.
-            (function() {
-                // --- Itinerary Data ---
-                const saturdayEvents = [
-                   { time: '8:30am', event: 'Arrival to Harvard Business School + Check In', location: 'Spangler 051 Auditorium (Spangler Center)' },
-                   { time: '9:00am', event: 'Breakfast + Welcome Plenary (w/ Angie)', location: 'Spangler Center' },
-                   { time: '9:30am', event: 'SVMPAA Board of Directors Presentation', location: 'Spangler Center' },
-                   { time: '10:30am', event: 'Icebreakers + Breakout Groups', location: 'Spangler Center' },
-                   { time: '11:00am', event: 'Harvard iLab Tour (w/ Philippe Rival)', location: 'Harvard iLab' },
-                   { time: '12:00pm', event: 'Lunch', location: 'Spangler Center' },
-                   { time: '1:30pm', event: 'HBS Coffee Break', location: 'Spangler Center' },
-                   { time: '2:30pm', event: 'AMA: Graduate School Student Panel', location: 'Spangler Center' },
-                   { time: '3:30pm', event: 'Quick Break', location: null },
-                   { time: '3:45pm', event: 'Leland Presentation', location: 'Spangler Center' },
-                   { time: '4:15pm', event: 'SVMPAA Reunion Closing', location: 'Spangler Center' },
-                   { time: '5:00pm', event: 'SVMPAA Group Photo', location: 'Classroom + Baker Library' },
-                   { time: '7:00pm', event: 'SVMPAA Alumni Dinner (on your own)', suggestions: 'Suggestions: Banyan Bar + Refuge, Coquette, Bar Vlaha, Figaros, Contessa, KAIA South End, Quincy Market, Time Out Market Boston' },
-                   { time: '9:00pm', event: 'After Hours Night Out', location: null, optional: true },
-                ];
-                
-                const saturdayList = document.querySelector('.saturday-timeline-list');
-                if(saturdayList) {
-                    saturdayEvents.forEach((item, index) => {
-                       const isLast = index === saturdayEvents.length - 1;
-                       const li = document.createElement('li');
-                       li.className = 'relative flex gap-x-4';
-                       
-                       let locationHtml = '';
-                       if (item.location) {
-                           locationHtml = `<div class="location mt-1">
-                                <svg class="w-4 h-4 mr-2 text-red-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <span>${item.location}</span>
-                            </div>`;
-                       } else if (item.suggestions) {
-                           locationHtml = `<div class="mt-1 text-sm text-gray-500">${item.suggestions}</div>`;
-                       }
-
-
-                       let optionalHtml = '';
-                       if (item.optional) {
-                           optionalHtml = '<span class="text-sm font-medium text-gray-500 ml-2">(Optional)</span>';
-                       }
-                       
-                       li.innerHTML = `
-                           <div class="absolute left-3 top-0 flex w-6 justify-center h-full ${isLast ? 'invisible' : ''}">
-                               <div class="w-px bg-gray-200"></div>
-                           </div>
-                           <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
-                               <div class="h-2 w-2 rounded-full ${item.location ? 'bg-red-700 ring-1 ring-red-800' : 'bg-gray-400 ring-1 ring-gray-500'}"></div>
-                           </div>
-                           <p class="flex-none pt-0.5 font-semibold text-gray-700 w-20">${item.time}</p>
-                           <div class="flex-auto">
-                               <p class="font-medium text-gray-900">${item.event}${optionalHtml}</p>
-                               ${locationHtml}
-                           </div>
-                       `;
-                       saturdayList.appendChild(li);
-                   });
-                }
-
-
-                // FAQ Data
-                const faqs = [
-                   { question: "What is the goal of the event?", answer: "The goal of this event is to bring together SVMP alumni from different classes, universities, and places for networking and connection. Friday and Sunday's focus will be to connect with one another socially while Saturday will have a main focus of professional development.", keywords: ['goal', 'purpose'] },
-                   { question: "When is the reunion taking place?", answer: "Friday, July 18th through the 20th. Saturday the 19th is a mandatory day of attendance for those who wish to come.", keywords: ['when', 'date', 'dates'] },
-                   { question: "Where will the reunion take place?", answer: "The Boston/Cambridge area in Massachusetts. Specifically the Harvard Business School campus on Saturday.", keywords: ['where', 'location', 'place', 'campus'] },
-                   { question: "Who can attend?", answer: "Any Harvard Business School Summer Venture in Management Program alumni.", keywords: ['who can attend', 'who is invited', 'attend'] },
-                   { question: "Can I bring a plus one?", answer: "Only SVMP alumni are welcome to the official Saturday reunion events but additional guests may come to the after hours events.", keywords: ['plus one', 'guest', 'bring someone'] },
-                   { question: "What should I wear?", answer: "Friday and Sunday are truly casual while Saturday is business casual while we are on campus.", keywords: ['wear', 'dress code', 'attire'] },
-                   { question: "I am going to be parking on campus, do I need a pass?", answer: "When you arrive at the HBS Surface Lot (117 Western Ave), you will need to provide the name of the event title, Summer Venture in Management Program Alumni Event (SVMP AA). Upon event identification, the Parking Services Monitor will issue an access card and provide any relevant parking information, if needed.", keywords: ['parking', 'park my car', 'parking pass'] },
-                   { question: "What should I bring to the events Saturday?", answer: "There are no required items to bring on Saturday except yourself!", keywords: ['what to bring', 'bring with me', 'required items'] },
-                   { question: "What meals will be provided at the event?", answer: "Saturday's breakfast and lunch will be covered by HBS at this time.", keywords: ['meals', 'food', 'breakfast', 'lunch', 'dinner'] },
-                   { question: "Are there any recommended lodging options?", answer: "Many alumni have utilized short term rentals via Airbnb or hotels in the Cambridge/Boston area. One option that has been consistently utilized is the Courtyard Boston Cambridge Marriott hotel which is 4 minutes away from campus. HBS is unable to offer on campus housing at this time.", keywords: ['lodging', 'hotel', 'housing', 'stay', 'airbnb'] },
-                   { question: "How does one get around Boston and Cambridge?", answer: "While you are welcome to bring your own car, many alumni have chosen to uber/lyft or use the Boston subway system. Transportation to and from the event will not be covered by SVMPAA at this time.", keywords: ['transportation', 'get around', 'uber', 'lyft', 'subway'] },
-                   { question: "Where and when will information about the event be posted?", answer: "We will be consistently sending updates via email and post these updates on Linkedin and Facebook via our SVMPAA groups.", keywords: ['information', 'updates'] },
-                   { question: "Is there a dedicated chat for this event?", answer: 'There is a 2025 Reunion Groupme that will be a great place to see updates before and during the event. The link to access is here: <a href="https://groupme.com/join_group/107332311/bnXTvwPe" target="_blank" class="text-red-800 hover:underline">https://groupme.com/join_group/107332311/bnXTvwPe</a>', keywords: ['chat', 'groupme'] },
-                   { question: "How do I get more involved with SVMPAA?", answer: "Please reach out to svmpalumniassociation@gmail.com with your interest and look out for calls to action on our social media pages and email to get alumni more involved.", keywords: ['get involved', 'volunteer'] },
-                   { question: "If I have a question, who should I contact?", answer: 'If you have any specific questions, feel free to contact us at <a href="mailto:svmpalumniassociation@gmail.com" class="text-red-800 hover:underline">svmpalumniassociation@gmail.com</a>.', keywords: ['question', 'contact', 'help'] },
-                ];
-
-                // --- Chatbot Logic ---
-                const chatWindow = document.getElementById('chat-window');
-                const chatInput = document.getElementById('chat-input');
-                const chatSendBtn = document.getElementById('chat-send-btn');
-
-                const displayMessage = (message, sender) => {
-                    const messageWrapper = document.createElement('div');
-                    const messageBubble = document.createElement('div');
-                    
-                    messageWrapper.classList.add('flex');
-                    messageBubble.classList.add('py-2', 'px-4', 'rounded-lg', 'max-w-sm');
-
-                    if (sender === 'user') {
-                        messageWrapper.classList.add('justify-end');
-                        messageBubble.classList.add('bg-red-800', 'text-white');
-                        messageBubble.textContent = message;
-                    } else {
-                        messageWrapper.classList.add('justify-start');
-                        messageBubble.classList.add('bg-gray-200', 'text-gray-800');
-                        messageBubble.innerHTML = message;
-                    }
-                    
-                    messageWrapper.appendChild(messageBubble);
-                    chatWindow.appendChild(messageWrapper);
-                    chatWindow.scrollTop = chatWindow.scrollHeight;
-                };
-
-                const getBotResponse = (userInput) => {
-                    const lowerInput = userInput.toLowerCase();
-                    let foundAnswer = null;
-
-                    for (const faq of faqs) {
-                        if (faq.keywords) { 
-                            for (const keyword of faq.keywords) {
-                                const regex = new RegExp('\\b' + keyword + '\\b', 'i');
-                                if (regex.test(lowerInput)) {
-                                    foundAnswer = faq.answer;
-                                    break;
-                                }
-                            }
-                        }
-                        if (foundAnswer) break;
-                    }
-
-                    const botMessage = foundAnswer 
-                        ? foundAnswer 
-                        : "I'm not sure about that. Please check out the FAQs below or email us at <a href='mailto:svmpalumniassociation@gmail.com' class='text-red-800 hover:underline'>svmpalumniassociation@gmail.com</a> for more questions.";
-
-                    setTimeout(() => displayMessage(botMessage, 'bot'), 400);
-                };
-
-                const handleSendMessage = () => {
-                    const userInput = chatInput.value.trim();
-                    if (userInput) {
-                        displayMessage(userInput, 'user');
-                        getBotResponse(userInput);
-                        chatInput.value = '';
-                    }
-                };
-                
-                chatSendBtn.addEventListener('click', handleSendMessage);
-                chatInput.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') handleSendMessage();
-                });
-
-                // --- FAQ Accordion Logic ---
-                const faqContainer = document.getElementById('faq-container');
-                faqs.forEach((faq) => {
-                    const faqItem = document.createElement('div');
-                    faqItem.className = 'bg-white rounded-lg shadow-md';
-                    faqItem.innerHTML = `
-                        <button class="accordion-toggle w-full text-left p-4 font-semibold text-gray-800 hover:bg-gray-100 flex justify-between items-center rounded-lg transition-colors duration-200">
-                            <span>${faq.question}</span>
-                            <svg class="w-6 h-6 shrink-0 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="p-4 border-t border-gray-200 text-gray-700">
-                                ${faq.answer}
-                            </div>
-                        </div>
-                    `;
-                    faqContainer.appendChild(faqItem);
-                });
-
-                faqContainer.addEventListener('click', function(e) {
-                    const toggle = e.target.closest('.accordion-toggle');
-                    if (toggle) {
-                        const content = toggle.nextElementSibling;
-                        const icon = toggle.querySelector('svg');
-                        const isOpening = !content.style.maxHeight;
-
-                        faqContainer.querySelectorAll('.accordion-content').forEach(item => item.style.maxHeight = null);
-                        faqContainer.querySelectorAll('.accordion-toggle svg').forEach(item => item.classList.remove('rotate-180'));
-                        
-                        if (isOpening) {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                            icon.classList.add('rotate-180');
-                        }
-                    }
-                });
-            })();
-            </script>
-        </div>
-    </template>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
@@ -837,16 +647,83 @@
                 'home': 'home-page',
                 'about': 'about-page',
                 'events': 'events-page',
+                'reunion-recap': 'reunion-recap-page',
+                'induction-event': 'induction-event-page',
                 'connect': 'connect-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
                 'get-involved': 'get-involved-page',
-                'contact': 'contact-page',
-                'reunion-agenda': 'reunion-agenda-page' // New route for the reunion agenda
+                'contact': 'contact-page'
             };
 
+            function initCarousel() {
+                const carouselInner = document.getElementById('carousel-inner');
+                if (!carouselInner) return;
+
+                const images = [
+                    "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2172_jpg.JPEG",
+                    "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2309.JPEG",
+                    "https://raw.githubusercontent.com/svmp2025/svmpaa/39ba824926c3648a661c5b9a0a0fb06d063dbac1/images/IMG_2256.JPEG",
+                    "https://raw.githubusercontent.com/svmp2025/svmpaa/c3aaa4f60525f3da03b885a39dede5978a4eedd5/images/IMG_6726.jpg",
+                    "https://raw.githubusercontent.com/svmp2025/svmpaa/c3aaa4f60525f3da03b885a39dede5978a4eedd5/images/IMG_6800.jpg",
+                    "https://raw.githubusercontent.com/svmp2025/svmpaa/fe24e6ad046241fbc039fd2221a1d77778380640/images/IMG_6817_(1).jpg"
+                ];
+
+                images.forEach((src, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'carousel-item absolute w-full h-full';
+                    if (index === 0) item.classList.add('active', 'opacity-100');
+                    else item.classList.add('opacity-0');
+                    
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = `Reunion Photo ${index + 1}`;
+                    img.className = 'w-full h-full object-cover';
+                    img.onerror=function() { 
+                        this.parentElement.style.display = 'none';
+                     };
+                    item.appendChild(img);
+                    carouselInner.appendChild(item);
+                });
+
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+                let currentIndex = 0;
+                const items = Array.from(carouselInner.querySelectorAll('.carousel-item'));
+                const totalItems = items.length;
+
+                if (totalItems <= 1) {
+                    if(prevBtn) prevBtn.style.display = 'none';
+                    if(nextBtn) nextBtn.style.display = 'none';
+                    return;
+                }
+
+                function showSlide(index) {
+                    items.forEach((item) => {
+                        item.classList.remove('active', 'opacity-100');
+                        item.classList.add('opacity-0');
+                    });
+                    items[index].classList.add('active', 'opacity-100');
+                    items[index].classList.remove('opacity-0');
+                }
+
+                if(prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                        showSlide(currentIndex);
+                    });
+                }
+
+                if(nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        currentIndex = (currentIndex + 1) % totalItems;
+                        showSlide(currentIndex);
+                    });
+                }
+            }
+
+
             function loadPage(pageId) {
-                // Clear existing content
                 mainContent.innerHTML = '';
                 
                 const templateId = routes[pageId];
@@ -855,27 +732,29 @@
                     if (template) {
                         const clone = template.content.cloneNode(true);
                         mainContent.appendChild(clone);
-                        // Trigger fade-in animation
+                        
                         const pageElement = mainContent.querySelector('.page');
                         if(pageElement) {
                              setTimeout(() => pageElement.classList.add('active'), 0);
                         }
-                        // Re-run feather icons replacement after new content is added
+                        
                         feather.replace();
+                        
+                        if (pageId === 'reunion-recap') {
+                            initCarousel();
+                        }
                     }
                 }
                 
                 updateActiveLink(pageId);
                 window.scrollTo(0, 0);
-                // Close mobile menu on navigation
-                mobileMenu.classList.add('hidden');
+                if (mobileMenu) mobileMenu.classList.add('hidden');
             }
 
             function updateActiveLink(pageId) {
                 navLinks.forEach(link => {
-                    // Special handling for reunion agenda to keep "Events" tab active
                     const linkPageId = link.href.split('#')[1];
-                    if (linkPageId === pageId || (pageId === 'reunion-agenda' && linkPageId === 'events')) {
+                    if (linkPageId === pageId) {
                         link.classList.add('active');
                     } else {
                         link.classList.remove('active');
@@ -883,7 +762,6 @@
                 });
             }
 
-            // Handle initial page load
             function handleRouteChange() {
                 const hash = window.location.hash.substring(1) || 'home';
                 if(routes[hash]) {
@@ -893,7 +771,6 @@
                 }
             }
             
-            // --- Event Listeners ---
             document.body.addEventListener('click', function(e) {
                 const navRouterElement = e.target.closest('.nav-router');
                 if (navRouterElement) {
@@ -903,6 +780,7 @@
                         if(window.location.hash !== newHash) {
                             window.location.hash = newHash;
                         } else {
+                            // If clicking the same link, reload the content
                             handleRouteChange();
                         }
                     }
@@ -911,14 +789,15 @@
 
             window.addEventListener('hashchange', handleRouteChange);
             
-            mobileMenuButton.addEventListener('click', function () {
-                mobileMenu.classList.toggle('hidden');
-            });
+            if(mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function () {
+                    if (mobileMenu) mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-
-            // Initial load
             handleRouteChange();
         });
     </script>
 </body>
 </html>
+
