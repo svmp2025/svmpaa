@@ -164,14 +164,20 @@
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Upcoming Events</h2>
-                    <div class="flex justify-center">
-                        <div class="w-full md:w-2/3 lg:w-1/3">
-                            <div class="card p-6 text-center">
-                               <i data-feather="map-pin" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                                <h3 class="font-bold text-xl mb-2">Welcome Home: SVMP Alumni Induction & Reflections</h3>
-                                <p class="text-gray-600 mb-4">August 10th (Virtual Meeting)</p>
-                                <a href="#induction-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
-                            </div>
+                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <!-- Induction Event -->
+                        <div class="card p-6 text-center">
+                           <i data-feather="map-pin" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
+                            <h3 class="font-bold text-xl mb-2">Welcome Home: SVMP Alumni Induction & Reflections</h3>
+                            <p class="text-gray-600 mb-4">August 10th (Virtual Meeting)</p>
+                            <a href="#induction-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
+                        </div>
+                        <!-- Bridge Year Event -->
+                        <div class="card p-6 text-center">
+                           <i data-feather="trending-up" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
+                            <h3 class="font-bold text-xl mb-2">The Bridge Year: The Strategy for the In Between</h3>
+                            <p class="text-gray-600 mb-4">August 24th (Virtual Meeting)</p>
+                            <a href="#bridge-year-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -301,6 +307,19 @@
                         </div>
                         <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
                                 <a href="#induction-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
+                        </div>
+                    </div>
+                    <div class="card md:flex items-center p-6">
+                        <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
+                            <p class="text-lg font-semibold">August 24th</p>
+                            <p class="text-sm text-gray-600">7:30 PM EST | Virtual</p>
+                        </div>
+                        <div class="md:w-2/4">
+                            <h3 class="font-bold text-xl">The Bridge Year: The Strategy for the In Between</h3>
+                            <p class="text-gray-700">Join us for a virtual conversation on navigating pivotal moments with Ashley Renée Reid.</p>
+                        </div>
+                        <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
+                            <a href="#bridge-year-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
                         </div>
                     </div>
                 </div>
@@ -435,6 +454,44 @@
                     </a>
                     
                     <div class="mt-12">
+                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="bridge-year-event-page">
+        <div class="page" id="bridge-year-event">
+            <div class="relative bg-gray-900 text-white">
+                <div class="absolute inset-0">
+                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/df0e8a57ea9284f6532af47631bc2185de6a10d2/images/1755563953149.jpeg" alt="The Bridge Year Event" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Event';">
+                    <div class="absolute inset-0 bg-gray-900/60"></div>
+                </div>
+                <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">The Bridge Year: The Strategy for the In Between</h1>
+                    <p class="mt-4 text-lg text-red-100">Sunday, August 24th | 7:30 PM EST | Virtual Meeting</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                 <div class="max-w-3xl mx-auto">
+                     <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+                        <h2 class="text-3xl font-bold mb-4">Event Details</h2>
+                        <div class="text-gray-700 leading-relaxed text-lg space-y-4">
+                            <p>Transitions are some of the most defining moments in our lives. Whether you’re moving from school to the workplace, considering a career pivot, or navigating a season of personal growth, the “in between” can feel uncertain—but it’s also where the foundation for long-term success is built.</p>
+                            <p>Join the SVMP Alumni Association on Sunday, August 24th at 7:30 PM EST for The Bridge Year: The Strategy for the In Between, a virtual conversation designed to help alumni think intentionally about navigating these pivotal moments.</p>
+                            <p>We are excited to feature Ashley Renée Reid, Principal & Director of Platform at Union Heritage, who will share insights on making bold but strategic choices during transitional years, building networks of support, and turning uncertainty into opportunity.</p>
+                        </div>
+                     </div>
+    
+                     <div class="text-center">
+                        <a href="https://meet.google.com/wxz-hfhw-vya" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                            <i data-feather="video" class="mr-2"></i>
+                            Join Virtual Event
+                        </a>
+                     </div>
+    
+                    <div class="mt-12 text-center">
                          <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
                     </div>
                  </div>
@@ -643,6 +700,7 @@
                 'events': 'events-page',
                 'reunion-recap': 'reunion-recap-page',
                 'induction-event': 'induction-event-page',
+                'bridge-year-event': 'bridge-year-event-page',
                 'connect': 'connect-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
