@@ -164,20 +164,15 @@
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Upcoming Events</h2>
-                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        <!-- Induction Event -->
-                        <div class="card p-6 text-center">
-                           <i data-feather="map-pin" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">Welcome Home: SVMP Alumni Induction & Reflections</h3>
-                            <p class="text-gray-600 mb-4">August 10th (Virtual Meeting)</p>
-                            <a href="#induction-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
-                        </div>
-                        <!-- Bridge Year Event -->
-                        <div class="card p-6 text-center">
-                           <i data-feather="trending-up" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">The Bridge Year: The Strategy for the In Between</h3>
-                            <p class="text-gray-600 mb-4">August 24th (Virtual Meeting)</p>
-                            <a href="#bridge-year-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
+                    <div class="flex justify-center">
+                        <div class="w-full md:w-2/3 lg:w-1/2">
+                            <!-- Bridge Year Event -->
+                            <div class="card p-6 text-center">
+                               <i data-feather="trending-up" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
+                                <h3 class="font-bold text-xl mb-2">The Bridge Year: The Strategy for the In Between</h3>
+                                <p class="text-gray-600 mb-4">August 24th (Virtual Meeting)</p>
+                                <a href="#bridge-year-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -298,19 +293,6 @@
                 <div class="space-y-6 mb-16">
                     <div class="card md:flex items-center p-6">
                         <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
-                            <p class="text-lg font-semibold">August 10th</p>
-                            <p class="text-sm text-gray-600">Virtual Meeting</p>
-                        </div>
-                        <div class="md:w-2/4">
-                            <h3 class="font-bold text-xl">Welcome Home: SVMP Alumni Induction & Reflections</h3>
-                            <p class="text-gray-700">Welcome to your official induction into the SVMP Alumni Association! This virtual event is an exclusive opportunity for the SVMP Class of 2025 and Board Members to connect, share insights, and learn about the future of the association.</p>
-                        </div>
-                        <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                                <a href="#induction-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
-                        </div>
-                    </div>
-                    <div class="card md:flex items-center p-6">
-                        <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
                             <p class="text-lg font-semibold">August 24th</p>
                             <p class="text-sm text-gray-600">7:30 PM EST | Virtual</p>
                         </div>
@@ -346,6 +328,17 @@
                                 The 2025 Alumni Reunion was an incredible success, bringing together alumni from across the years for a memorable weekend...
                             </p>
                              <span class="font-semibold text-red-800 hover:underline">Read More & View Photos &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="#induction-event" class="nav-router card overflow-hidden block hover:shadow-xl">
+                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/07b72cc06f016ff3eaff27bfb68f27ff24b19d6e/images/IMG_2172_jpg.JPEG" alt="Induction Event" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-2xl mb-2">Welcome Home: SVMP Alumni Induction & Reflections</h3>
+                            <p class="text-gray-500 text-sm mb-4">August 10th | Virtual Meeting</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                An exclusive virtual event for the SVMP Class of 2025 and Board Members to connect, share insights, and kick off their journey with the alumni association.
+                            </p>
+                             <span class="font-semibold text-red-800 hover:underline">View Event Details &rarr;</span>
                         </div>
                     </a>
                 </div>
@@ -433,10 +426,14 @@
     
     <template id="induction-event-page">
         <div class="page" id="induction-event">
-            <div class="bg-gray-800">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white text-center">
-                    <h1 class="text-4xl font-bold mb-4">Welcome Home: SVMP Alumni Induction & Reflections</h1>
-                    <p class="text-lg text-red-100">August 10th | Virtual Meeting</p>
+            <div class="relative bg-gray-900 text-white">
+                <div class="absolute inset-0">
+                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/07b72cc06f016ff3eaff27bfb68f27ff24b19d6e/images/IMG_2172_jpg.JPEG" alt="SVMP Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Event';">
+                    <div class="absolute inset-0 bg-gray-900/60"></div>
+                </div>
+                <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Welcome Home: SVMP Alumni Induction & Reflections</h1>
+                    <p class="mt-4 text-lg text-red-100">August 10th | Virtual Meeting</p>
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -447,11 +444,6 @@
                             Welcome to your official induction into the SVMP Alumni Association! This virtual event is an exclusive opportunity for the SVMP Class of 2025 and Board Members to connect, share insights, and learn about the future of the association.
                         </p>
                      </div>
-
-                     <a href="https://meet.google.com/vft-pqmz-xzb?hs=224" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
-                        <i data-feather="video" class="mr-2"></i>
-                        Join Virtual Event
-                    </a>
                     
                     <div class="mt-12">
                          <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
@@ -475,14 +467,47 @@
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                  <div class="max-w-3xl mx-auto">
-                     <div class="bg-white p-8 rounded-lg shadow-md mb-12">
-                        <h2 class="text-3xl font-bold mb-4">Event Details</h2>
-                        <div class="text-gray-700 leading-relaxed text-lg space-y-4">
-                            <p>Transitions are some of the most defining moments in our lives. Whether you’re moving from school to the workplace, considering a career pivot, or navigating a season of personal growth, the “in between” can feel uncertain—but it’s also where the foundation for long-term success is built.</p>
-                            <p>Join the SVMP Alumni Association on Sunday, August 24th at 7:30 PM EST for The Bridge Year: The Strategy for the In Between, a virtual conversation designed to help alumni think intentionally about navigating these pivotal moments.</p>
-                            <p>We are excited to feature Ashley Renée Reid, Principal & Director of Platform at Union Heritage, who will share insights on making bold but strategic choices during transitional years, building networks of support, and turning uncertainty into opportunity.</p>
-                        </div>
+                     <!-- About the Event -->
+                     <div class="bg-white p-8 rounded-lg shadow-md mb-12 text-center">
+                        <h2 class="text-3xl font-bold mb-4">About the Event</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                           Transitions are some of the most defining moments in our lives. Whether you’re moving from school to the workplace, considering a career pivot, or navigating a season of personal growth, the “in between” can feel uncertain—but it’s also where the foundation for long-term success is built. Join us for a virtual conversation to think intentionally about navigating these pivotal moments.
+                        </p>
                      </div>
+
+                    <!-- Key Takeaways -->
+                    <div class="mb-12">
+                        <h2 class="text-3xl font-bold text-center mb-8">What You'll Learn</h2>
+                        <div class="grid md:grid-cols-3 gap-8 text-center">
+                            <div>
+                                <i data-feather="target" class="h-10 w-10 mx-auto text-red-800 mb-3"></i>
+                                <h3 class="text-xl font-semibold mb-2">Strategic Choices</h3>
+                                <p class="text-gray-600">Make bold but strategic choices during transitional years.</p>
+                            </div>
+                            <div>
+                                <i data-feather="users" class="h-10 w-10 mx-auto text-red-800 mb-3"></i>
+                                <h3 class="text-xl font-semibold mb-2">Build Your Network</h3>
+                                <p class="text-gray-600">Build networks of support to help you through uncertainty.</p>
+                            </div>
+                            <div>
+                                <i data-feather="zap" class="h-10 w-10 mx-auto text-red-800 mb-3"></i>
+                                <h3 class="text-xl font-semibold mb-2">Create Opportunity</h3>
+                                <p class="text-gray-600">Learn how to turn moments of uncertainty into opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Speaker -->
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+                         <h2 class="text-3xl font-bold text-center mb-8">Featured Speaker</h2>
+                         <div class="flex flex-col sm:flex-row items-center text-center sm:text-left">
+                             <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/2b65f810720bb7e18203d237e49a75323e659765/images/1686005050026.jpeg" alt="Ashley Renée Reid" class="w-32 h-32 rounded-full mx-auto sm:mx-0 sm:mr-8 mb-4 sm:mb-0 object-cover flex-shrink-0">
+                             <div>
+                                <h3 class="text-2xl font-bold">Ashley Renée Reid</h3>
+                                <p class="text-red-800 font-semibold">Principal & Director of Platform at Union Heritage</p>
+                             </div>
+                         </div>
+                    </div>
     
                      <div class="text-center">
                         <a href="https://meet.google.com/wxz-hfhw-vya" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
@@ -852,4 +877,6 @@
     </script>
 </body>
 </html>
+```
+
 
