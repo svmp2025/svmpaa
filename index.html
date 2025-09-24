@@ -195,6 +195,29 @@
                     </div>
                 </div>
             </section>
+            
+            <!-- UPDATED SECTION: Navigation and Resources Overview -->
+            <section class="py-16 bg-white border-t border-gray-200">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                    <h2 class="text-3xl font-bold text-center mb-10 text-gray-900">Your Alumni Benefits & Resources</h2>
+                    <p class="text-center text-lg text-gray-700 mb-8">
+                        The SVMP Alumni Association is your dedicated resource for lifelong growth. We encourage you to explore these key sections:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6 text-center">
+                        <a href="#events" class="nav-router p-6 bg-red-50 rounded-lg border border-red-200 hover:bg-red-100 transition">
+                            <i data-feather="calendar" class="h-8 w-8 text-red-800 mx-auto mb-2"></i>
+                            <h3 class="text-xl font-semibold text-red-800">Events & Networking</h3>
+                            <p class="text-sm text-gray-600">Find past event recaps and look out for upcoming regional meetups and professional panels.</p>
+                        </a>
+                        <a href="#development" class="nav-router p-6 bg-gray-100 rounded-lg border border-gray-200 hover:bg-gray-200 transition">
+                            <i data-feather="trending-up" class="h-8 w-8 text-gray-800 mx-auto mb-2"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Professional Development</h3>
+                            <!-- FIX: Removed asterisks and used <strong> for bolding -->
+                            <p class="text-sm text-gray-600">Access our exclusive <strong>Graduate Scholarship Directory</strong>, Mentorship Program, and career support tools.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </template>
     
@@ -352,8 +375,8 @@
                     </a>
                 </div>
 
-                <!-- New: Regional Meetups Section (Moved from Upcoming) - IMAGES RESTORED HERE -->
-                <h3 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Regional Meetups - August 2025</h3>
+                <!-- UPDATED HEADING: Regional Meetups Section (Moved from Upcoming) - IMAGES RESTORED HERE -->
+                <h3 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Regional Meetups - 2025</h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Chicago Event (Now Past) -->
                     <a href="#chicago-event" class="nav-router card overflow-hidden block">
@@ -848,7 +871,7 @@
         </div>
     </template>
     
-    <!-- UPDATED: Scholarship Directory link text color fixed -->
+    <!-- UPDATED: Development Page -->
     <template id="development-page">
         <div class="page" id="development">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -856,7 +879,7 @@
                 <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">Invest in your growth with resources and programs designed to help you excel at every stage of your career.</p>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- FIX: Removed text-red-800 class from h2 element to make it black/gray-900 like the other headings -->
+                    <!-- FIX: Link color correction was handled in previous steps. Keeping structure. -->
                      <a href="#scholarship-directory" class="nav-router card p-6 block">
                         <i data-feather="book-open" class="h-10 w-10 text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2 text-gray-900">Graduate Scholarship Directory</h2>
@@ -965,13 +988,12 @@
         </div>
     </template>
 
-    <!-- UPDATED TEMPLATE: Scholarships Directory Page - Text color fixed, summary simplified, Section III removed. -->
+    <!-- UPDATED TEMPLATE: Scholarships Directory Page for Mobile Usability -->
     <template id="scholarship-directory-page">
         <div class="page" id="scholarship-directory">
             <div class="bg-gray-100 py-16">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                     <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Graduate Scholarship Directory</h1>
-                    <!-- FIX: Updated summary content to be more directory focused -->
                     <p class="text-xl text-center text-gray-800 max-w-4xl mx-auto">Explore our directory of top-tier graduate fellowships and scholarships opportunities.</p>
                 </div>
             </div>
@@ -982,6 +1004,13 @@
                     <!-- I. Directory and Key Deadlines (Quick Reference) -->
                     <section>
                         <h2 class="text-3xl font-bold mb-6 text-red-800 border-b pb-2">I. Directory and Key Deadlines (Quick Reference)</h2>
+                        
+                        <!-- FIX: Added mobile-friendly instructions and arrow -->
+                        <div class="md:hidden text-center text-sm text-gray-600 mb-4 flex items-center justify-center p-2 bg-yellow-50 rounded-md">
+                           <i data-feather="arrow-left-right" class="h-4 w-4 text-gray-600 mr-2"></i>
+                            Scroll horizontally to view all table columns.
+                        </div>
+
                         <div class="overflow-x-auto bg-white rounded-lg shadow-xl mb-8">
                             <table class="min-w-full divide-y divide-gray-200 report-table">
                                 <thead>
