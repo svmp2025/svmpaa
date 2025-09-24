@@ -13,10 +13,12 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Active link styling for main and mobile nav */
         .nav-link.active {
             color: #991b1b; /* dark red */
             font-weight: 600;
         }
+        /* SPA transition styles */
         .page {
             display: none;
         }
@@ -28,6 +30,7 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* Card hover effect */
         .card {
             background-color: white;
             border-radius: 0.5rem;
@@ -38,16 +41,30 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
+        /* Carousel visibility and transition styles */
         .carousel-item {
             display: none;
             transition: opacity 0.5s ease-in-out;
+            position: absolute; /* Ensures slides stack properly for transition */
         }
         .carousel-item.active {
             display: block;
         }
+        /* Custom styles for tables within the long report */
+        .report-table th, .report-table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+            font-size: 0.875rem;
+        }
+        .report-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: #1f2937;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 flocked-gray-800">
 
     <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
@@ -58,6 +75,7 @@
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-12 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x48?text=Logo';">
                     </a>
                 </div>
+                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#home" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Home</a>
@@ -69,11 +87,13 @@
                         <a href="#contact" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Contact</a>
                     </div>
                 </div>
-                    <div class="hidden md:block">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700">
-                                Join Newsletter
-                        </a>
+                <!-- Newsletter Button -->
+                <div class="hidden md:block">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700">
+                        Join Newsletter
+                    </a>
                 </div>
+                <!-- Mobile Menu Button -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" id="mobile-menu-button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
@@ -95,9 +115,9 @@
             </div>
             <div class="pt-4 pb-3 border-t border-gray-200">
                 <div class="flex items-center px-5">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="w-full text-center inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700">
-                                Join Our Newsletter
-                        </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="w-full text-center inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700">
+                        Join Our Newsletter
+                    </a>
                 </div>
             </div>
         </div>
@@ -122,12 +142,12 @@
                         <li><a href="#contact" class="nav-router text-base text-gray-400 hover:text-white">Contact Us</a></li>
                     </ul>
                 </div>
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Connect</h3>
-                        <ul class="mt-4 space-y-2">
-                            <li><a href="mailto:svmpalumniassociation@gmail.com" class="text-base text-gray-400 hover:text-white">Email Us</a></li>
-                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="text-base text-gray-400 hover:text-white">Newsletter</a></li>
-                        </ul>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Connect</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="mailto:svmpalumniassociation@gmail.com" class="text-base text-gray-400 hover:text-white">Email Us</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="text-base text-gray-400 hover:text-white">Newsletter</a></li>
+                    </ul>
                 </div>
                 <div class="flex space-x-6 mt-4 md:mt-0 md:justify-self-end">
                     <a href="https://www.linkedin.com/company/hbs-svmp-alumni-association/" target="_blank" class="text-gray-400 hover:text-white"><span class="sr-only">LinkedIn</span><i data-feather="linkedin"></i></a>
@@ -164,34 +184,13 @@
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Upcoming Events</h2>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                        <!-- Chicago Event -->
-                        <div class="card p-6 text-center">
-                           <i data-feather="wind" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">Chicago: Meet-Up</h3>
-                            <p class="text-gray-600 mb-4">August 27th (In-Person)</p>
-                            <a href="#chicago-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
-                        </div>
-                         <!-- Los Angeles Event -->
-                        <div class="card p-6 text-center">
-                           <i data-feather="moon" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">Los Angeles: Happy Hour</h3>
-                            <p class="text-gray-600 mb-4">August 29th (In-Person)</p>
-                            <a href="#la-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
-                        </div>
-                        <!-- Arlington Event -->
-                        <div class="card p-6 text-center">
-                           <i data-feather="flag" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">Arlington: Happy Hour</h3>
-                            <p class="text-gray-600 mb-4">August 29th (In-Person)</p>
-                            <a href="#arlington-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
-                        </div>
-                         <!-- San Diego Event -->
-                        <div class="card p-6 text-center">
-                           <i data-feather="sun" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
-                            <h3 class="font-bold text-xl mb-2">San Diego: Happy Hour</h3>
-                            <p class="text-gray-600 mb-4">August 31st (In-Person)</p>
-                            <a href="#sd-event" class="nav-router font-semibold text-red-800 hover:underline">View Details &rarr;</a>
+                    <!-- Placeholder for Upcoming Events -->
+                    <div class="space-y-6 mb-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                        <div class="card p-6 text-center col-span-full">
+                           <i data-feather="calendar" class="h-12 w-12 text-red-800 mx-auto mb-4"></i>
+                            <h3 class="font-bold text-xl mb-2 text-gray-900">More Events to Come!</h3>
+                            <p class="text-gray-600 mb-4">We are busy planning our next series of events, both virtual and in-person regional meetups. Stay tuned to our newsletter for announcements!</p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="font-semibold text-red-800 hover:underline">Subscribe to Newsletter &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +201,7 @@
     <template id="about-page">
         <div class="page" id="about">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <h1 class="text-4xl font-bold text-center mb-12">About SVMPAA</h1>
+                <h1 class="text-4xl font-bold text-center mb-12">About SVMPAA</h1>
                 <!-- Mission, Vision, Values -->
                 <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
                     <div>
@@ -223,20 +222,20 @@
                 </div>
                 
                 <!-- History -->
-                    <div class="bg-white p-8 rounded-lg shadow-md mb-16">
-                        <h2 class="text-3xl font-bold text-center mb-6">History of SVMPAA</h2>
-                        <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed space-y-4">
-                            <p>
-                                As the official alumni association for the Harvard Business School's Summer Venture in Management Program (SVMP), we are dedicated to fostering the continued success and development of tomorrow's leaders.
-                            </p>
-                            <p>
-                                The Harvard Business School SVMP Alumni Association empowers our alumni by promoting graduate-level education, advancing career and professional growth, and encouraging community service. We achieve this through robust information sharing, strategic relationship building, and engaging social activities. Through key partnerships, we provide exclusive benefits and opportunities to our members.
-                            </p>
-                            <p>
-                                For more information about the Summer Venture in Management Program, please visit the official Harvard Business School website: <a href="https://www.hbs.edu/mba/admissions/college-students/svmp" target="_blank" class="text-red-800 hover:underline">https://www.hbs.edu/mba/admissions/college-students/svmp</a>.
-                            </p>
-                        </div>
+                <div class="bg-white p-8 rounded-lg shadow-md mb-16">
+                    <h2 class="text-3xl font-bold text-center mb-6">History of SVMPAA</h2>
+                    <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed space-y-4">
+                        <p>
+                            As the official alumni association for the Harvard Business School's Summer Venture in Management Program (SVMP), we are dedicated to fostering the continued success and development of tomorrow's leaders.
+                        </p>
+                        <p>
+                            The Harvard Business School SVMP Alumni Association empowers our alumni by promoting graduate-level education, advancing career and professional growth, and encouraging community service. We achieve this through robust information sharing, strategic relationship building, and engaging social activities. Through key partnerships, we provide exclusive benefits and opportunities to our members.
+                        </p>
+                        <p>
+                            For more information about the Summer Venture in Management Program, please visit the official Harvard Business School website: <a href="https://www.hbs.edu/mba/admissions/college-students/svmp" target="_blank" class="text-red-800 hover:underline">https://www.hbs.edu/mba/admissions/college-students/svmp</a>.
+                        </p>
                     </div>
+                </div>
 
                 <!-- Board Members -->
                 <h2 class="text-3xl font-bold text-center mb-10">Meet the Board</h2>
@@ -307,61 +306,11 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h1 class="text-4xl font-bold text-center mb-12">SVMPAA Events</h1>
                 
-                <!-- Upcoming Events -->
+                <!-- Upcoming Events (NOW JUST A PLACEHOLDER) -->
                 <h2 class="text-3xl font-bold mb-8">Upcoming</h2>
-                <div class="space-y-6 mb-16">
-                     <div class="card md:flex items-center p-6">
-                        <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
-                            <p class="text-lg font-semibold">August 27th</p>
-                            <p class="text-sm text-gray-600">6:00 PM CST</p>
-                        </div>
-                        <div class="md:w-2/4">
-                            <h3 class="font-bold text-xl">Chicago – Meet-Up</h3>
-                            <p class="text-gray-700">Join us for coffee & happy hour on the Riverwalk!</p>
-                        </div>
-                        <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                            <a href="#chicago-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
-                        </div>
-                    </div>
-                     <div class="card md:flex items-center p-6">
-                        <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
-                            <p class="text-lg font-semibold">August 29th</p>
-                            <p class="text-sm text-gray-600">6:00 PM EST</p>
-                        </div>
-                        <div class="md:w-2/4">
-                            <h3 class="font-bold text-xl">Arlington – Happy Hour</h3>
-                            <p class="text-gray-700">Come connect with fellow alumni for an evening of networking and good vibes!</p>
-                        </div>
-                        <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                            <a href="#arlington-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
-                        </div>
-                    </div>
-                     <div class="card md:flex items-center p-6">
-                        <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
-                            <p class="text-lg font-semibold">August 29th</p>
-                            <p class="text-sm text-gray-600">7 PM PST</p>
-                        </div>
-                        <div class="md:w-2/4">
-                            <h3 class="font-bold text-xl">Los Angeles – Happy Hour Connect</h3>
-                            <p class="text-gray-700">Connect with LA alumni at Rocky and Riley’s.</p>
-                        </div>
-                        <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                            <a href="#la-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
-                        </div>
-                    </div>
-                     <div class="card md:flex items-center p-6">
-                        <div class="md:w-1/4 text-center md:text-left mb-4 md:mb-0">
-                            <p class="text-lg font-semibold">August 31st</p>
-                            <p class="text-sm text-gray-600">2 PM PST</p>
-                        </div>
-                        <div class="md:w-2/4">
-                            <h3 class="font-bold text-xl">San Diego – Happy Hour Connect</h3>
-                            <p class="text-gray-700">Join us at The Rose Wine Bar for an afternoon of connection.</p>
-                        </div>
-                        <div class="md:w-1/4 text-center md:text-right mt-4 md:mt-0">
-                            <a href="#sd-event" class="nav-router inline-block bg-red-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-red-900 transition">View Event</a>
-                        </div>
-                    </div>
+                <div class="space-y-6 mb-16 text-center py-12 card bg-white">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">More Events to Come!</h3>
+                    <p class="text-lg text-gray-600">We are busy planning our next series of events, both virtual and in-person regional meetups. Stay tuned to our newsletter for announcements!</p>
                 </div>
 
                 <!-- Text for volunteering -->
@@ -376,8 +325,9 @@
 
                 <!-- Past Events -->
                 <h2 class="text-3xl font-bold mb-8">Past Event Highlights</h2>
-                <div class="grid md:grid-cols-1 gap-8">
-                     <a href="#reunion-recap" class="nav-router card overflow-hidden block hover:shadow-xl">
+                <div class="grid md:grid-cols-1 gap-8 mb-12">
+                    <!-- Existing Past Event: 2025 Alumni Reunion -->
+                    <a href="#reunion-recap" class="nav-router card overflow-hidden block hover:shadow-xl">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="Reunion Hero Image" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x192?text=Reunion';">
                         <div class="p-6">
                             <h3 class="font-bold text-2xl mb-2">2025 Alumni Reunion</h3>
@@ -385,9 +335,10 @@
                             <p class="text-gray-700 leading-relaxed mb-4">
                                 The 2025 Alumni Reunion was an incredible success, bringing together alumni from across the years for a memorable weekend...
                             </p>
-                             <span class="font-semibold text-red-800 hover:underline">Read More & View Photos &rarr;</span>
+                            <span class="font-semibold text-red-800 hover:underline">Read More & View Photos &rarr;</span>
                         </div>
                     </a>
+                    <!-- Existing Past Event: Alumni Induction -->
                     <a href="#induction-event" class="nav-router card overflow-hidden block hover:shadow-xl">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/07b72cc06f016ff3eaff27bfb68f27ff24b19d6e/images/IMG_2172_jpg.JPEG" alt="Induction Event" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -396,8 +347,37 @@
                             <p class="text-gray-700 leading-relaxed mb-4">
                                 An exclusive virtual event for the SVMP Class of 2025 and Board Members to connect, share insights, and kick off their journey with the alumni association.
                             </p>
-                             <span class="font-semibold text-red-800 hover:underline">View Event Details &rarr;</span>
+                            <span class="font-semibold text-red-800 hover:underline">View Event Details &rarr;</span>
                         </div>
+                    </a>
+                </div>
+
+                <!-- New: Regional Meetups Section (Moved from Upcoming) -->
+                <h3 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Regional Meetups - August 2025</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Chicago Event (Now Past) -->
+                    <a href="#chicago-event" class="nav-router card p-4 block text-center">
+                        <i data-feather="wind" class="h-8 w-8 text-red-800 mx-auto mb-2"></i>
+                        <h4 class="font-bold text-lg mb-1">Chicago: Meet-Up</h4>
+                        <p class="text-sm text-gray-600">Aug 27th | Riverwalk</p>
+                    </a>
+                    <!-- Arlington Event (Now Past) -->
+                    <a href="#arlington-event" class="nav-router card p-4 block text-center">
+                        <i data-feather="flag" class="h-8 w-8 text-red-800 mx-auto mb-2"></i>
+                        <h4 class="font-bold text-lg mb-1">Arlington: Happy Hour</h4>
+                        <p class="text-sm text-gray-600">Aug 29th | Arlington, VA</p>
+                    </a>
+                    <!-- Los Angeles Event (Now Past) -->
+                    <a href="#la-event" class="nav-router card p-4 block text-center">
+                        <i data-feather="moon" class="h-8 w-8 text-red-800 mx-auto mb-2"></i>
+                        <h4 class="font-bold text-lg mb-1">Los Angeles: Happy Hour</h4>
+                        <p class="text-sm text-gray-600">Aug 29th | Rocky and Riley’s</p>
+                    </a>
+                    <!-- San Diego Event (Now Past) -->
+                    <a href="#sd-event" class="nav-router card p-4 block text-center">
+                        <i data-feather="sun" class="h-8 w-8 text-red-800 mx-auto mb-2"></i>
+                        <h4 class="font-bold text-lg mb-1">San Diego: Happy Hour</h4>
+                        <p class="text-sm text-gray-600">Aug 31st | The Rose Wine Bar</p>
                     </a>
                 </div>
             </div>
@@ -421,17 +401,18 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <!-- Event Description -->
                 <section class="mb-16">
-                     <div class="max-w-3xl mx-auto text-center">
+                    <div class="max-w-3xl mx-auto text-center">
                         <p class="text-gray-700 leading-relaxed text-lg">
                             The 2025 Alumni Reunion was an incredible success, bringing together alumni from across the years for a memorable weekend of connection, professional development, and celebration. Highlights included the inspiring welcome plenary, the insightful graduate school panel, and the tour of the Harvard iLab. The energy was palpable, reinforcing the strength and vibrancy of our community. Thank you to everyone who attended and made this event so special!
                         </p>
-                     </div>
+                    </div>
                 </section>
 
                 <!-- Reunion Reel -->
                 <section class="mb-16">
                     <h2 class="text-3xl font-bold text-center mb-8">Reunion Highlight Reel</h2>
                     <div class="max-w-xl mx-auto">
+                        <!-- Instagram Reel Embed (using aspect ratio for vertical video) -->
                         <div style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
                             <iframe src="https://www.instagram.com/reel/DMYpLUIxwFI/embed" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" class="rounded-lg shadow-2xl" frameborder="0" allowfullscreen></iframe>
                         </div>
@@ -449,33 +430,33 @@
                             <i data-feather="chevron-left"></i>
                         </button>
                         <button id="next-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75 transition">
-                             <i data-feather="chevron-right"></i>
+                           <i data-feather="chevron-right"></i>
                         </button>
                     </div>
                 </section>
 
                 <!-- Google Drive Upload -->
                 <section class="text-center bg-red-50 py-12 rounded-lg">
-                     <h2 class="text-3xl font-bold mb-4">Share Your Photos!</h2>
-                     <p class="text-gray-700 max-w-2xl mx-auto mb-6">
+                    <h2 class="text-3xl font-bold mb-4">Share Your Photos!</h2>
+                    <p class="text-gray-700 max-w-2xl mx-auto mb-6">
                         Have photos from the reunion? Help us build our collective memory by adding them to our shared Google Drive folder.
-                     </p>
-                     <a href="https://drive.google.com/drive/folders/18Zuvm0PLlRAk1CarPGMQBLWPBTilqiwm" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">
-                         <i data-feather="upload-cloud" class="mr-2"></i>
-                         Add to Shared Album
-                     </a>
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/18Zuvm0PLlRAk1CarPGMQBLWPBTilqiwm" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">
+                        <i data-feather="upload-cloud" class="mr-2"></i>
+                        Add to Shared Album
+                    </a>
                 </section>
 
-                 <!-- Feedback Form -->
+                <!-- Feedback Form -->
                 <section class="text-center mt-16">
-                     <h2 class="text-3xl font-bold mb-4">We Value Your Feedback</h2>
-                     <p class="text-gray-700 max-w-2xl mx-auto mb-6">
+                    <h2 class="text-3xl font-bold mb-4">We Value Your Feedback</h2>
+                    <p class="text-gray-700 max-w-2xl mx-auto mb-6">
                         Help us make future events even better. Please take a moment to share your feedback.
-                     </p>
-                     <a href="https://forms.gle/uHTpUxWM3WpXNXZq9" target="_blank" class="inline-flex items-center bg-gray-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-gray-900 transition">
-                         <i data-feather="edit-3" class="mr-2"></i>
-                         Provide Feedback
-                     </a>
+                    </p>
+                    <a href="https://forms.gle/uHTpUxWM3WpXNXZq9" target="_blank" class="inline-flex items-center bg-gray-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-gray-900 transition">
+                        <i data-feather="edit-3" class="mr-2"></i>
+                        Provide Feedback
+                    </a>
                 </section>
 
             </div>
@@ -495,18 +476,18 @@
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                 <div class="max-w-3xl mx-auto text-center">
-                     <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+                <div class="max-w-3xl mx-auto text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-12">
                         <h2 class="text-3xl font-bold mb-4">Event Details</h2>
                         <p class="text-gray-700 leading-relaxed text-lg">
                             Welcome to your official induction into the SVMP Alumni Association! This virtual event is an exclusive opportunity for the SVMP Class of 2025 and Board Members to connect, share insights, and learn about the future of the association.
                         </p>
-                     </div>
+                    </div>
                     
                     <div class="mt-12">
-                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </template>
@@ -523,14 +504,14 @@
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-                 <div class="max-w-3xl mx-auto">
-                     <!-- About the Event -->
-                     <div class="bg-white p-8 rounded-lg shadow-md mb-12 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <!-- About the Event -->
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-12 text-center">
                         <h2 class="text-3xl font-bold mb-4">About the Event</h2>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                           Transitions are some of the most defining moments in our lives. Whether you’re moving from school to the workplace, considering a career pivot, or navigating a season of personal growth, the “in between” can feel uncertain—but it’s also where the foundation for long-term success is built. Join us for a virtual conversation to think intentionally about navigating these pivotal moments.
+                            Transitions are some of the most defining moments in our lives. Whether you’re moving from school to the workplace, considering a career pivot, or navigating a season of personal growth, the “in between” can feel uncertain—but it’s also where the foundation for long-term success is built. Join us for a virtual conversation to think intentionally about navigating these pivotal moments.
                         </p>
-                     </div>
+                    </div>
 
                     <!-- Key Takeaways -->
                     <div class="mb-12">
@@ -556,89 +537,27 @@
 
                     <!-- Featured Speaker -->
                     <div class="bg-white p-8 rounded-lg shadow-md mb-12">
-                         <h2 class="text-3xl font-bold text-center mb-8">Featured Speaker</h2>
-                         <div class="flex flex-col sm:flex-row items-center text-center sm:text-left">
-                             <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/2b65f810720bb7e18203d237e49a75323e659765/images/1686005050026.jpeg" alt="Ashley Renée Reid" class="w-32 h-32 rounded-full mx-auto sm:mx-0 sm:mr-8 mb-4 sm:mb-0 object-cover flex-shrink-0">
-                             <div>
+                        <h2 class="text-3xl font-bold text-center mb-8">Featured Speaker</h2>
+                        <div class="flex flex-col sm:flex-row items-center text-center sm:text-left">
+                            <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/2b65f810720bb7e18203d237e49a75323e659765/images/1686005050026.jpeg" alt="Ashley Renée Reid" class="w-32 h-32 rounded-full mx-auto sm:mx-0 sm:mr-8 mb-4 sm:mb-0 object-cover flex-shrink-0">
+                            <div>
                                 <h3 class="text-2xl font-bold">Ashley Renée Reid</h3>
                                 <p class="text-red-800 font-semibold">Principal & Director of Platform at Union Heritage</p>
-                             </div>
-                         </div>
+                            </div>
+                        </div>
                     </div>
     
-                     <div class="text-center">
+                    <div class="text-center">
                         <a href="https://meet.google.com/wxz-hfhw-vya" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
                             <i data-feather="video" class="mr-2"></i>
                             Join Virtual Event
                         </a>
-                     </div>
+                    </div>
     
                     <div class="mt-12 text-center">
-                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
                     </div>
-                 </div>
-            </div>
-        </div>
-    </template>
-
-    <template id="atlanta-event-page">
-        <div class="page" id="atlanta-event">
-            <div class="w-full h-64 md:h-80">
-                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?q=80&w=2070&auto=format&fit=crop" alt="Atlanta Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Atlanta';">
-            </div>
-            <div class="bg-white shadow-md">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">Atlanta – Coffee & Connect</h1>
-                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Saturday, August 24th | 10 AM - 12 PM EST</p>
                 </div>
-            </div>
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                    <!-- Left Column -->
-                    <div class="lg:col-span-2">
-                        <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
-                            <div class="space-y-4 text-gray-700">
-                                <div class="flex items-start">
-                                    <i data-feather="calendar" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
-                                    <div>
-                                        <h3 class="font-semibold">When & Where</h3>
-                                        <p>Saturday, August 24th, 10 AM - 12 PM EST</p>
-                                        <a href="https://www.google.com/maps/search/?api=1&query=Momo+Cafe+Midtown+Atlanta" target="_blank" class="text-red-800 hover:underline">Momo Café (Midtown)</a>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                     <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
-                                    <div>
-                                        <h3 class="font-semibold">About The Event</h3>
-                                        <p>Excited to kick off our SVMP Alumni Association Coffee & Connect in Atlanta! Join us for conversation and community.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Right Column -->
-                    <div>
-                         <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="text-2xl font-bold mb-4">Meet Your Hosts</h2>
-                            <p class="text-gray-700">Grateful to our City Representatives for bringing alumni together.</p>
-                            <ul class="mt-2 font-semibold text-gray-800">
-                                <li>Paola C.</li>
-                                <li>Bradley H.</li>
-                                <li>Dawson T.</li>
-                            </ul>
-                        </div>
-                    </div>
-                 </div>
-                 <div class="text-center mt-12">
-                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdI-dT0huRAOZ_hSkvPxpJNUUf_38l02sYuzLELcEl100o3uA/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
-                        <i data-feather="check-circle" class="mr-2"></i>
-                        RSVP Here
-                    </a>
-                    <div class="mt-12">
-                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
-                    </div>
-                 </div>
             </div>
         </div>
     </template>
@@ -648,14 +567,14 @@
             <div class="w-full h-64 md:h-80">
                 <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/los-angeles-city-skyline.jpg" alt="Los Angeles Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Los+Angeles';">
             </div>
-             <div class="bg-white shadow-md">
+               <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
                     <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">Los Angeles – Happy Hour Connect</h1>
                     <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Thursday, August 29th | 7 PM PST</p>
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
                     <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
@@ -664,15 +583,15 @@
                                 <div class="flex items-start">
                                     <i data-feather="calendar" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">When & Where</h3>
+                                        <h3 class="semibold">When & Where</h3>
                                         <p>Thursday, August 29th, 7 PM PST</p>
                                         <a href="https://www.google.com/maps/search/?api=1&query=Rocky+and+Riley's+Los+Angeles" target="_blank" class="text-red-800 hover:underline">Rocky and Riley’s</a>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
-                                     <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">About The Event</h3>
+                                        <h3 class="semibold">About The Event</h3>
                                         <p>Los Angeles alumni—let’s connect! Join us for an evening of networking and community. RSVP encouraged!</p>
                                     </div>
                                 </div>
@@ -681,24 +600,24 @@
                     </div>
                     <!-- Right Column -->
                     <div>
-                         <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
-                            <p class="text-gray-700">Special thanks to our City Representative for hosting.</p>
+                            <p class="gray-700">Special thanks to our City Representative for hosting.</p>
                             <ul class="mt-2 font-semibold text-gray-800">
                                 <li>Debra Erdenemandakh</li>
                             </ul>
                         </div>
                     </div>
-                 </div>
-                 <div class="text-center mt-12">
-                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRgclTnCgf7Te81NM_CMlM1W2rC9Jk1wm3LA2OMKCb7cISUA/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRgclTnCgf7Te81NM_CMlM1W2rC9Jk1wm3LA2OMKCb7cISUA/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
                         <i data-feather="check-circle" class="mr-2"></i>
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </template>
@@ -708,14 +627,14 @@
             <div class="w-full h-64 md:h-80">
                 <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/San%20diego.jpg" alt="San Diego Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=San+Diego';">
             </div>
-             <div class="bg-white shadow-md">
+               <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
                     <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">San Diego – Happy Hour Connect</h1>
                     <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Saturday, August 31st | 2 PM PST</p>
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
                     <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
@@ -724,15 +643,15 @@
                                 <div class="flex items-start">
                                     <i data-feather="calendar" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">When & Where</h3>
+                                        <h3 class="semibold">When & Where</h3>
                                         <p>Saturday, August 31st, 2 PM PST</p>
                                         <a href="https://www.google.com/maps/search/?api=1&query=The+Rose+Wine+Bar+San+Diego" target="_blank" class="text-red-800 hover:underline">The Rose Wine Bar</a>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
-                                     <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">About The Event</h3>
+                                        <h3 class="semibold">About The Event</h3>
                                         <p>San Diego, we’re next! Join us for an afternoon of connection and fellowship. Please RSVP to confirm your spot!</p>
                                     </div>
                                 </div>
@@ -741,24 +660,24 @@
                     </div>
                     <!-- Right Column -->
                     <div>
-                         <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
-                            <p class="text-gray-700">Thank you to our City Representative for hosting.</p>
+                            <p class="gray-700">Thank you to our City Representative for hosting.</p>
                             <ul class="mt-2 font-semibold text-gray-800">
                                 <li>Tania Barajas</li>
                             </ul>
                         </div>
                     </div>
-                 </div>
-                 <div class="text-center mt-12">
-                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3o52ciId1bD4ffh-XS4GW_WVLvYgq_o1x8ery3g_aPEZPrg/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3o52ciId1bD4ffh-XS4GW_WVLvYgq_o1x8ery3g_aPEZPrg/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
                         <i data-feather="check-circle" class="mr-2"></i>
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </template>
@@ -768,14 +687,14 @@
             <div class="w-full h-64 md:h-80">
                 <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1524168272322-93fe2db5e9e0?q=80&w=1974&auto=format&fit=crop" alt="Chicago Riverwalk" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Chicago';">
             </div>
-             <div class="bg-white shadow-md">
+               <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
                     <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">SVMPAA Chicago Meet-Up</h1>
                     <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Wednesday, August 27th | 6:00 PM CST</p>
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
                     <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
@@ -784,15 +703,15 @@
                                 <div class="flex items-start">
                                     <i data-feather="calendar" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">When & Where</h3>
+                                        <h3 class="semibold">When & Where</h3>
                                         <p>Wednesday, August 27th, 6:00 PM CST</p>
                                         <a href="https://www.google.com/maps/search/?api=1&query=Tiny+Tapp+Cafe+Bar+Chicago" target="_blank" class="text-red-800 hover:underline">Tiny Tapp Café & Bar, 55 W Riverwalk, Chicago</a>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
-                                     <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">About The Event</h3>
+                                        <h3 class="semibold">About The Event</h3>
                                         <p>Join us for coffee & happy hour on the Riverwalk! Let’s connect, network, and catch up with fellow alumni!</p>
                                     </div>
                                 </div>
@@ -801,24 +720,24 @@
                     </div>
                     <!-- Right Column -->
                     <div>
-                         <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
-                            <p class="text-gray-700">Special thanks to our City Representative for hosting.</p>
+                            <p class="gray-700">Special thanks to our City Representative for hosting.</p>
                             <ul class="mt-2 font-semibold text-gray-800">
                                 <li>Victor Leca</li>
                             </ul>
                         </div>
                     </div>
-                 </div>
-                 <div class="text-center mt-12">
-                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3Fqt7fR8bhHsHbXNCrdA0X_tLzAYNj2acyXcn0oZJtZ6Y7Q/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3Fqt7fR8bhHsHbXNCrdA0X_tLzAYNj2acyXcn0oZJtZ6Y7Q/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
                         <i data-feather="check-circle" class="mr-2"></i>
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </template>
@@ -828,14 +747,14 @@
             <div class="w-full h-64 md:h-80">
                 <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1621532353754-59a43a41b2d1?q=80&w=1974&auto=format&fit=crop" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
             </div>
-             <div class="bg-white shadow-md">
+               <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
                     <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">SVMPAA Arlington Happy Hour</h1>
                     <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Friday, August 29th | 6:00 PM EST</p>
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
                     <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
@@ -844,15 +763,15 @@
                                 <div class="flex items-start">
                                     <i data-feather="calendar" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">When & Where</h3>
+                                        <h3 class="semibold">When & Where</h3>
                                         <p>Friday, August 29th, 6:00 PM EST</p>
                                         <a href="https://www.google.com/maps/search/?api=1&query=4238+Wilson+Blvd+Ste+1180,+Arlington,+VA+22203" target="_blank" class="text-red-800 hover:underline">4238 Wilson Blvd Ste 1180, Arlington, VA 22203</a>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
-                                     <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="font-semibold">About The Event</h3>
+                                        <h3 class="semibold">About The Event</h3>
                                         <p>Come connect with fellow alumni for an evening of networking and good vibes! We can’t wait to see you there!</p>
                                     </div>
                                 </div>
@@ -861,111 +780,81 @@
                     </div>
                     <!-- Right Column -->
                     <div>
-                         <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
-                            <p class="text-gray-700">Special thanks to our City Representative for hosting.</p>
+                            <p class="gray-700">Special thanks to our City Representative for hosting.</p>
                             <ul class="mt-2 font-semibold text-gray-800">
                                 <li>Casey Pettiford</li>
                             </ul>
                         </div>
                     </div>
-                 </div>
-                 <div class="text-center mt-12">
-                     <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfHOJv71l6EQMsw-Tsubke0cgS-LSa-YqB2pWWpI-htIEh_Pg/viewform?usp=send_form" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfHOJv71l6EQMsw-Tsubke0cgS-LSa-YqB2pWWpI-htIEh_Pg/viewform?usp=send_form" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
                         <i data-feather="check-circle" class="mr-2"></i>
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
-    </template>
-
-    <template id="connect-page">
-            <div class="page" id="connect">
-                <div class="bg-red-800">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white text-center">
-                        <h1 class="text-4xl font-bold mb-4">Connect With Us</h1>
-                        <p class="max-w-2xl mx-auto text-lg text-red-100">Stay updated, get involved, and be part of the conversation. Join our newsletter and follow our social channels.</p>
-                    </div>
-                </div>
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <div class="grid lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
-                            <p class="text-gray-600 mb-6">Be the first to know about upcoming events, professional development opportunities, and exclusive alumni news. No spam, just value. Keep your contact information up-to-date.</p>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="inline-block bg-red-800 text-white font-semibold py-3 px-6 rounded-md hover:bg-red-900 transition">Subscribe Now</a>
-                        </div>
-                        <div>
-                            <h2 class="text-3xl font-bold mb-4">Follow Our Socials</h2>
-                            <p class="text-gray-600 mb-6">Join our official channels for real-time updates, discussions, and networking.</p>
-                            <div class="space-y-4">
-                                <a href="https://www.linkedin.com/company/hbs-svmp-alumni-association/" target="_blank" class="flex items-center card p-4">
-                                    <i data-feather="linkedin" class="h-8 w-8 text-blue-700"></i>
-                                    <span class="ml-4 font-semibold text-lg">LinkedIn</span>
-                                </a>
-                                <a href="https://www.facebook.com/groups/SVMPAA" target="_blank" class="flex items-center card p-4">
-                                    <i data-feather="facebook" class="h-8 w-8 text-blue-800"></i>
-                                    <span class="ml-4 font-semibold text-lg">Facebook</span>
-                                </a>
-                                    <a href="#" class="flex items-center card p-4">
-                                        <i data-feather="slack" class="h-8 w-8 text-purple-600"></i>
-                                        <span class="ml-4 font-semibold text-lg">Slack</span>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </template>
     
     <template id="partnerships-page">
         <div class="page" id="partnerships">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <h1 class="text-4xl font-bold text-center mb-12">Partnerships</h1>
-                    <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">We collaborate with leading organizations to provide exclusive benefits and opportunities to our alumni.</p>
+                <h1 class="text-4xl font-bold text-center mb-12">Partnerships</h1>
+                <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">We collaborate with leading organizations to provide exclusive benefits and opportunities to our alumni.</p>
 
                 <!-- Current Partners -->
                 <h2 class="text-3xl font-bold mb-8">Our Partners</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center mb-16">
-                        <!-- Leland Partner Logo -->
-                        <div class="p-4 col-span-full md:col-span-1 md:col-start-2">
-                            <a href="https://www.joinleland.com/" target="_blank">
-                                <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/leland.avif" alt="Leland Logo" class="h-28 w-auto mx-auto grayscale hover:grayscale-0 transition" onerror="this.onerror=null;this.src='https://placehold.co/200x112?text=Leland';">
-                            </a>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center mb-16">
+                    <!-- Leland Partner Logo -->
+                    <div class="p-4 col-span-full md:col-span-1 md:col-start-2">
+                        <a href="https://www.joinleland.com/" target="_blank">
+                            <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/leland.avif" alt="Leland Logo" class="h-28 w-auto mx-auto grayscale hover:grayscale-0 transition" onerror="this.onerror=null;this.src='https://placehold.co/200x112?text=Leland';">
+                        </a>
                     </div>
+                </div>
 
                 <!-- Benefits -->
-                    <div class="bg-white p-8 rounded-lg shadow-md mb-16">
-                        <h2 class="text-3xl font-bold text-center mb-6">Partnership Benefits for Alumni</h2>
-                        <ul class="list-disc list-inside max-w-2xl mx-auto space-y-2 text-gray-700">
-                            <li>Exclusive scholarships for graduate programs.</li>
-                            <li>Priority access and open seats at partner events and workshops.</li>
-                            <li>Discounts on services for career coaching, test prep, and more.</li>
-                            <li>Direct networking opportunities with partner organizations.</li>
-                        </ul>
-                    </div>
+                <div class="bg-white p-8 rounded-lg shadow-md mb-16">
+                    <h2 class="text-3xl font-bold text-center mb-6">Partnership Benefits for Alumni</h2>
+                    <ul class="list-disc list-inside max-w-2xl mx-auto space-y-2 text-gray-700">
+                        <li>Exclusive scholarships for graduate programs.</li>
+                        <li>Priority access and open seats at partner events and workshops.</li>
+                        <li>Discounts on services for career coaching, test prep, and more.</li>
+                        <li>Direct networking opportunities with partner organizations.</li>
+                    </ul>
+                </div>
                 
-                    <!-- Become a Partner -->
-                    <div class="text-center">
-                        <h2 class="text-3xl font-bold mb-4">Become a Partner</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">Interested in connecting with a diverse and talented network of emerging leaders? Partner with SVMPAA to create mutually beneficial opportunities.</p>
-                        <a href="#contact" class="nav-router inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">Contact Us</a>
-                    </div>
+                <!-- Become a Partner -->
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold mb-4">Become a Partner</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">Interested in connecting with a diverse and talented network of emerging leaders? Partner with SVMPAA to create mutually beneficial opportunities.</p>
+                    <a href="#contact" class="nav-router inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">Contact Us</a>
+                </div>
             </div>
         </div>
     </template>
     
+    <!-- UPDATED: Scholarship Directory link text color fixed -->
     <template id="development-page">
-            <div class="page" id="development">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <h1 class="text-4xl font-bold text-center mb-12">Professional Development</h1>
-                    <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">Invest in your growth with resources and programs designed to help you excel at every stage of your career.</p>
+        <div class="page" id="development">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <h1 class="text-4xl font-bold text-center mb-12">Professional Development</h1>
+                <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">Invest in your growth with resources and programs designed to help you excel at every stage of your career.</p>
 
                 <div class="grid md:grid-cols-2 gap-8">
+                    <!-- FIX: Removed text-red-800 class from h2 element to make it black/gray-900 like the other headings -->
+                     <a href="#scholarship-directory" class="nav-router card p-6 block">
+                        <i data-feather="book-open" class="h-10 w-10 text-red-800 mb-3"></i>
+                        <h2 class="text-2xl font-semibold mb-2 text-gray-900">Graduate Scholarship Directory</h2>
+                        <p class="text-gray-600 mb-4">Explore our strategic analysis and directory of top-tier graduate, MBA, and Law School fellowships (Rhodes, KHS, Forté, Truman, etc.).</p>
+                        <span class="font-semibold text-red-800 hover:underline">View Full Directory &rarr;</span>
+                    </a>
                     <div class="card p-6">
                         <i data-feather="users" class="h-10 w-10 text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2">Mentorship Program</h2>
@@ -981,92 +870,349 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     </template>
 
     <template id="get-involved-page">
-            <div class="page" id="get-involved">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <h1 class="text-4xl font-bold text-center mb-12">Get Involved</h1>
-                    <div class="space-y-16"> <!-- Changed from grid lg:grid-cols-2 to space-y-16 for vertical stacking -->
-                        <div>
-                            <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
-                            <p class="text-gray-600 mb-4">Your journey with the SVMP community is just beginning. The SVMP Alumni Association is your next step to stay connected and continue your growth.</p>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                    <li>Immediate access to a global network of alumni.</li>
-                                    <li>Invitations to exclusive networking events.</li>
-                                    <li>Access to our mentorship program.</li>
-                            </ul>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="nav-router mt-6 inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">Join Newsletter</a>
-                        </div>
-                        <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="text-3xl font-bold mb-4">Volunteering Opportunities</h2>
-                            <p class="text-gray-600 mb-6">We are always looking for additional support for our key initiatives and events and we would love help from incredible alumni like yourself. Please check out our available volunteering opportunities below and consider supporting one of our initiatives.</p>
-                            <div class="space-y-4">
-                                <div class="flex items-start bg-gray-50 p-4 rounded-md">
-                                    <i data-feather="users" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
-                                    <div>
-                                        <h3 class="font-bold text-lg mb-1">Mentorship to Alumni</h3>
-                                        <p class="text-gray-600 text-sm">Provide mentorship to new SVMP alumni or other alumni looking to connect with someone with similar experience as you.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-50 p-4 rounded-md">
-                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
-                                    <div>
-                                        <h3 class="font-bold text-lg mb-1">Campus Ambassador</h3>
-                                        <p class="text-gray-600 text-sm">Be a point person for recruiting at your undergraduate school or organization.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-50 p-4 rounded-md">
-                                    <i data-feather="award" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
-                                    <div>
-                                        <h3 class="font-bold text-lg mb-1">Recruiting Alumni Regional Lead</h3>
-                                        <p class="text-gray-600 text-sm">Support recruiting during Q1 to ensure more students learn about SVMP.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-50 p-4 rounded-md">
-                                    <i data-feather="compass" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
-                                    <div>
-                                        <h3 class="font-bold text-lg mb-1">City SVMPAA Representative</h3>
-                                        <p class="text-gray-600 text-sm">Play a vital role in helping us bring our programming to life in cities across the country. Whether it's hosting a brunch, organizing a happy hour, or simply helping coordinate logistics on the ground, your leadership ensures our alumni stay connected, inspired, and in motion.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-50 p-4 rounded-md">
-                                    <i data-feather="clipboard" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
-                                    <div>
-                                        <h3 class="font-bold text-lg mb-1">Board Initiative Support</h3>
-                                        <p class="text-gray-600 text-sm">Sign up to support the board with additional initiatives of importance.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-50 p-4 rounded-md">
-                                    <i data-feather="plus-circle" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
-                                    <div>
-                                        <h3 class="font-bold text-lg mb-1">Other</h3>
-                                        <p class="text-gray-600 text-sm">Is there something you think you would be able to help with? Let us know!</p>
-                                    </div>
+        <div class="page" id="get-involved">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <h1 class="text-4xl font-bold text-center mb-12">Get Involved</h1>
+                <div class="space-y-16"> <!-- Changed from grid lg:grid-cols-2 to space-y-16 for vertical stacking -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
+                        <p class="text-gray-600 mb-4">Your journey with the SVMP community is just beginning. The SVMP Alumni Association is your next step to stay connected and continue your growth.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Immediate access to a global network of alumni.</li>
+                            <li>Invitations to exclusive networking events.</li>
+                            <li>Access to our mentorship program.</li>
+                        </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="nav-router mt-6 inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">Join Newsletter</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h2 class="text-3xl font-bold mb-4">Volunteering Opportunities</h2>
+                        <p class="text-gray-600 mb-6">We are always looking for additional support for our key initiatives and events and we would love help from incredible alumni like yourself. Please check out our available volunteering opportunities below and consider supporting one of our initiatives.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start bg-gray-50 p-4 rounded-md">
+                                <i data-feather="users" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Mentorship to Alumni</h3>
+                                    <p class="text-gray-600 text-sm">Provide mentorship to new SVMP alumni or other alumni looking to connect with someone with similar experience as you.</p>
                                 </div>
                             </div>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLdUUhcRhG81tS55cyIunZiBB-hHt4M4bS3HcdE2_NnUgP7w/viewform" target="_blank" class="font-semibold text-red-800 hover:underline mt-6 inline-block">Volunteer Form &rarr;</a>
+                            <div class="flex items-start bg-gray-50 p-4 rounded-md">
+                                <i data-feather="map-pin" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Campus Ambassador</h3>
+                                    <p class="text-gray-600 text-sm">Be a point person for recruiting at your undergraduate school or organization.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-gray-50 p-4 rounded-md">
+                                <i data-feather="award" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Recruiting Alumni Regional Lead</h3>
+                                    <p class="text-gray-600 text-sm">Support recruiting during Q1 to ensure more students learn about SVMP.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-gray-50 p-4 rounded-md">
+                                <i data-feather="compass" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">City SVMPAA Representative</h3>
+                                    <p class="text-gray-600 text-sm">Play a vital role in helping us bring our programming to life in cities across the country. Whether it's hosting a brunch, organizing a happy hour, or simply helping coordinate logistics on the ground, your leadership ensures our alumni stay connected, inspired, and in motion.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-gray-50 p-4 rounded-md">
+                                <i data-feather="clipboard" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Board Initiative Support</h3>
+                                    <p class="text-gray-600 text-sm">Sign up to support the board with additional initiatives of importance.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-gray-50 p-4 rounded-md">
+                                <i data-feather="plus-circle" class="h-6 w-6 text-red-800 flex-shrink-0 mt-1 mr-3"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Other</h3>
+                                    <p class="text-gray-600 text-sm">Is there something you think you would be able to help with? Let us know!</p>
+                                </div>
+                            </div>
                         </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLdUUhcRhG81tS55cyIunZiBB-hHt4M4bS3HcdE2_NnUgP7w/viewform" target="_blank" class="font-semibold text-red-800 hover:underline mt-6 inline-block">Volunteer Form &rarr;</a>
                     </div>
                 </div>
             </div>
+        </div>
     </template>
     
     <template id="contact-page">
-            <div class="page" id="contact">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <h1 class="text-4xl font-bold text-center mb-12">Contact Us</h1>
-                    <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
-                        <p class="text-center text-gray-600 mb-6">Have a question, feedback, or want to get more involved? Please email us directly using the address below.</p>
-                            <div class="text-center mt-6">
-                                <p class="text-lg text-gray-800 font-semibold mb-4">General Inquiries:</p>
-                                <p class="text-sm text-gray-600">Email us at: <a href="mailto:svmpalumniassociation@gmail.com" class="font-medium text-red-800 hover:underline">svmpalumniassociation@gmail.com</a></p>
-                            </div>
+        <div class="page" id="contact">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <h1 class="text-4xl font-bold text-center mb-12">Contact Us</h1>
+                <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-center text-gray-600 mb-6">Have a question, feedback, or want to get more involved? Please email us directly using the address below.</p>
+                    <div class="text-center mt-6">
+                        <p class="text-lg text-gray-800 font-semibold mb-4">General Inquiries:</p>
+                        <p class="text-sm text-gray-600">Email us at: <a href="mailto:svmpalumniassociation@gmail.com" class="font-medium text-red-800 hover:underline">svmpalumniassociation@gmail.com</a></p>
                     </div>
                 </div>
             </div>
+        </div>
     </template>
+
+    <!-- UPDATED TEMPLATE: Scholarships Directory Page - Text color fixed, summary simplified, Section III removed. -->
+    <template id="scholarship-directory-page">
+        <div class="page" id="scholarship-directory">
+            <div class="bg-gray-100 py-16">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                    <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Graduate Scholarship Directory</h1>
+                    <!-- FIX: Updated summary content to be more directory focused -->
+                    <p class="text-xl text-center text-gray-800 max-w-4xl mx-auto">Explore our directory of top-tier graduate fellowships and scholarships opportunities.</p>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-7xl">
+                <div class="max-w-6xl mx-auto space-y-12 text-gray-800">
+                    
+                    <!-- I. Directory and Key Deadlines (Quick Reference) -->
+                    <section>
+                        <h2 class="text-3xl font-bold mb-6 text-red-800 border-b pb-2">I. Directory and Key Deadlines (Quick Reference)</h2>
+                        <div class="overflow-x-auto bg-white rounded-lg shadow-xl mb-8">
+                            <table class="min-w-full divide-y divide-gray-200 report-table">
+                                <thead>
+                                    <tr>
+                                        <th class="px-6 py-3">Program Name</th>
+                                        <th class="px-6 py-3">Academic Focus</th>
+                                        <th class="px-6 py-3">Key Deadline Cited</th>
+                                        <th class="px-6 py-3">Primary Official URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Knight-Hennessy Scholars (KHS)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Master’s, MBA, JD (Stanford)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Oct 8, 2025, 1:00 pm PT</td>
+                                        <td class="px-6 py-4"><a href="https://knight-hennessy.stanford.edu/admission" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Rhodes Scholarship</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Master’s, JD (Oxford)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Applications for 2026 are currently open</td>
+                                        <td class="px-6 py-4"><a href="https://www.rhodeshouse.ox.ac.uk/scholarships/applications/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Gates Cambridge Scholarship</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Master’s, JD (Cambridge)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Oct 15, 2025 (US Round 1)</td>
+                                        <td class="px-6 py-4"><a href="https://www.gatescambridge.org/apply/how-to-apply/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Fulbright U.S. Student Program</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">International Study/Research</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Oct 7, 2025, 5 pm ET (National Deadline)</td>
+                                        <td class="px-6 py-4"><a href="https://us.fulbrightonline.org/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Paul & Daisy Soros Fellowships</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Any U.S. Graduate Degree (New Americans)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Oct 30, 2025</td>
+                                        <td class="px-6 py-4"><a href="https://pdsoros.org/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Truman Scholarship</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">JD, MPP, MPA, MSW (Public Service)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">First Tuesday in February</td>
+                                        <td class="px-6 py-4"><a href="https://www.truman.gov/apply" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Skoll Scholarship (MBA)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">MBA (Oxford Social Impact)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Varies by MBA admissions stage</td>
+                                        <td class="px-6 py-4"><a href="https://www.skollcentre.org/skoll-scholarship" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Forté Fellowship</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">MBA (Women in Leadership)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Varies by partner school</td>
+                                        <td class="px-6 py-4"><a href="https://www.fortefoundation.org/mba/fellows/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Reaching Out MBA (ROMBA)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">MBA (LGBTQ+ Leaders)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Varies by partner school</td>
+                                        <td class="px-6 py-4"><a href="https://reachingoutmba.org/fellowship/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Equal Justice Works Fellowship</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">JD (Project-Based Legal Work)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Varies by Host Organization</td>
+                                        <td class="px-6 py-4"><a href="https://www.equaljusticeworks.org/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">Harvard Public Service Fellowship</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Summer placements (UG/Grad)</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">Varies by year (Up to $8,000 for grad students)</td>
+                                        <td class="px-6 py-4"><a href="https://service.harvard.edu/fellowships" target="_blank" class="text-red-600 hover:underline">Link</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- II. Detailed Program Guides (New Section with per-program cards) -->
+                    <section>
+                        <h2 class="text-3xl font-bold mb-6 text-red-800 border-b pb-2">II. Detailed Program Guides</h2>
+                        <p class="text-lg leading-relaxed mb-8">
+                            These competitive awards generally fall into three main focus areas: Global Academic Excellence, Domestic Public Service, and Targeted Professional Pipeline.
+                        </p>
+                        <div class="space-y-10">
+
+                            <!-- 1. Program: Rhodes Scholarship -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="globe" class="h-6 w-6 text-red-800 mr-3"></i>1. Rhodes Scholarship (University of Oxford)</h3>
+                                <p class="leading-relaxed mb-3">The world's oldest international scholarship, dedicated to developing individuals with the courage to effect change. It funds postgraduate study at the University of Oxford.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Full tuition, fees, health surcharge, and a substantial annual stipend (£19,800 for 2024/25).</li>
+                                    <li><strong>Core Requirements:</strong> Exceptional academic record (often GPA > 3.7), ethical leadership, and application through a specific country constituency.</li>
+                                    <li><strong>Key Eligibility:</strong> U.S. or eligible country citizenship. Age varies by constituency (often 25-28 maximum).</li>
+                                    <li><strong>Link:</strong> <a href="https://www.rhodeshouse.ox.ac.uk/scholarships/applications/" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 2. Program: Knight-Hennessy Scholars -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="flag" class="h-6 w-6 text-red-800 mr-3"></i>2. Knight-Hennessy Scholars (KHS - Stanford)</h3>
+                                <p class="leading-relaxed mb-3">A fully funded program for future global leaders pursuing any graduate degree (Master’s, MBA, JD, PhD) at Stanford University.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Full tuition, stipends, and program enrichment.</li>
+                                    <li><strong>Core Requirements:</strong> Independence of Thought, Purposeful Leadership, and Civic Mindset.</li>
+                                    <li><strong>Key Eligibility:</strong> All nationalities. Must have earned first bachelor’s degree in January 2019 or later (for 2026 cohort).</li>
+                                    <li><strong>Dual Application:</strong> Candidates must <strong>simultaneously apply to and be accepted by</strong> their chosen Stanford graduate program and KHS.</li>
+                                    <li><strong>Link:</strong> <a href="https://knight-hennessy.stanford.edu/admission" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 3. Program: Gates Cambridge Scholarship -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="book-open" class="h-6 w-6 text-red-800 mr-3"></i>3. Gates Cambridge Scholarship (University of Cambridge)</h3>
+                                <p class="leading-relaxed mb-3">A prestigious fellowship for postgraduate study (Master’s, PhD) at Cambridge, exclusively for <strong>non-UK citizens</strong>. Focuses on those committed to improving the lives of others.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Fully funded, covering cost of study, maintenance, and flight costs.</li>
+                                    <li><strong>Core Requirements:</strong> Strong academic record (GPA > 3.7) and dedication to service.</li>
+                                    <li><strong>Key Eligibility:</strong> Non-UK citizens only. Cannot fund a course already in progress.</li>
+                                    <li><strong>Link:</strong> <a href="https://www.gatescambridge.org/apply/how-to-apply/" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 4. Program: Fulbright U.S. Student Program -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="map" class="h-6 w-6 text-red-800 mr-3"></i>4. Fulbright U.S. Student Program</h3>
+                                <p class="leading-relaxed mb-3">Provides fellowships for U.S. citizens to pursue graduate study, conduct research, or teach English abroad in over 140 countries.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Round-trip transportation, maintenance stipend, and health benefits (varies by award type and country).</li>
+                                    <li><strong>Core Requirement:</strong> Detailed proposal (for Study/Research) or focus on cultural exchange (for ETA).</li>
+                                    <li><strong>Key Eligibility:</strong> U.S. Citizens only. Targets early-career professionals (less than 7 years experience).</li>
+                                    <li><strong>Application Path:</strong> Highly encouraged to apply through an institutional <strong>Fulbright Program Advisor (FPA)</strong> for mentorship and advocacy.</li>
+                                    <li><strong>Link:</strong> <a href="https://us.fulbrightonline.org/" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 5. Program: Paul & Daisy Soros Fellowships -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="award" class="h-6 w-6 text-red-800 mr-3"></i>5. Paul & Daisy Soros Fellowships for New Americans</h3>
+                                <p class="leading-relaxed mb-3">Merit-based funding for <strong>New Americans</strong> (immigrants and children of immigrants) pursuing any full-time graduate degree in the United States.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Up to $25,000 in stipends and 50% tuition support for 1-2 years.</li>
+                                    <li><strong>Core Requirements:</strong> Academic merit and demonstrated potential for significant contributions to U.S. culture and society.</li>
+                                    <li><strong>Key Eligibility:</strong> Must be a New American and <strong>30 years or younger</strong> by the deadline.</li>
+                                    <li><strong>Field:</strong> Highest degree of flexibility; funds any advanced U.S. graduate degree field.</li>
+                                    <li><strong>Link:</strong> <a href="https://pdsoros.org/" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 6. Program: Truman Scholarship -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="briefcase" class="h-6 w-6 text-red-800 mr-3"></i>6. Truman Scholarship</h3>
+                                <p class="leading-relaxed mb-3">Prepares future public service leaders, offering up to $30,000 for graduate education (JD, MPP, MPA, MSW, etc.) focused on public sector careers.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Up to $30,000 for graduate school costs.</li>
+                                    <li><strong>Core Requirements:</strong> Commitment to public service, detailed career plans, and documented record of service.</li>
+                                    <li><strong>Key Eligibility:</strong> U.S. Citizens only. Must be a <strong>college junior</strong> (junior-level student). Minimum GPA of 3.5 is expected.</li>
+                                    <li><strong>Mandatory Nomination:</strong> Requires a <strong>mandatory institutional nomination</strong> from the undergraduate school's advisor.</li>
+                                    <li><strong>Link:</strong> <a href="https://www.truman.gov/apply" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 7. Program: Equal Justice Works Fellowship - ICON ADDED -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="gavel" class="h-6 w-6 text-red-800 mr-3"></i>7. Equal Justice Works (EJW) Fellowship</h3>
+                                <p class="leading-relaxed mb-3">Supports law graduates committed to public interest law, funding two years of project-based legal work at a non-profit organization.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Salary and comprehensive benefits for two years.</li>
+                                    <li><strong>Core Requirement:</strong> Candidates must design a viable legal initiative and secure commitment from a <strong>host organization</strong> before applying.</li>
+                                    <li><strong>Key Eligibility:</strong> Law graduates committed to public interest.</li>
+                                    <li><strong>Post-Award:</strong> Fellows join a robust network of over 2,700 public interest lawyers.</li>
+                                    <li><strong>Link:</strong> <a href="https://www.equaljusticeworks.org/" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 8. Program: Skoll Scholarship (MBA) -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="users" class="h-6 w-6 text-red-800 mr-3"></i>8. Skoll Scholarship (Oxford MBA - Social Impact)</h3>
+                                <p class="leading-relaxed mb-3">A highly specialized scholarship covering <strong>full Oxford MBA tuition</strong> for individuals who demonstrate exceptional entrepreneurial experience and a focus on social impact.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Full Oxford MBA tuition and a stipend for living expenses.</li>
+                                    <li><strong>Core Requirement:</strong> Demonstrated track record in social entrepreneurship and social impact.</li>
+                                    <li><strong>Key Eligibility:</strong> Must be accepted into the Oxford MBA program (integrated process).</li>
+                                    <li><strong>Target:</strong> Social entrepreneurs who meet the rigorous standards of the Oxford MBA.</li>
+                                    <li><strong>Link:</strong> <a href="https://www.skollcentre.org/skoll-scholarship" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 9. Program: Forté Fellowship (MBA) -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="heart" class="h-6 w-6 text-red-800 mr-3"></i>9. Forté Fellowship (MBA - Women in Leadership)</h3>
+                                <p class="leading-relaxed mb-3">Aims to increase the representation of women in business leadership by offering scholarships to women admitted to Forte's network of partner business schools.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Monetary award varies by school, plus access to a powerful professional network.</li>
+                                    <li><strong>Core Requirement:</strong> Must be admitted to a participating MBA program.</li>
+                                    <li><strong>Application:</strong> Candidates <strong>do not apply directly</strong> to Forté. Member schools select fellows from their admitted female student pool.</li>
+                                    <li><strong>Link:</strong> <a href="https://www.fortefoundation.org/mba/fellows/" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 10. Program: Reaching Out MBA (ROMBA) Fellowship -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="shuffle" class="h-6 w-6 text-red-800 mr-3"></i>10. Reaching Out MBA (ROMBA) Fellowship</h3>
+                                <p class="leading-relaxed mb-3">Supports <strong>LGBTQ+ students</strong> applying to and attending partner MBA programs globally, nurturing future LGBTQ+ leadership in business.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Minimum $20,000 scholarship over the course of the MBA program.</li>
+                                    <li><strong>Core Requirement:</strong> Must be admitted to a partner MBA program and demonstrate a commitment to serving the LGBTQ+ community.</li>
+                                    <li><strong>Mechanism:</strong> Candidates are encouraged to use the "Express Interest" mechanism on the ROMBA website to signal their profile early to admissions committees.</li>
+                                    <li><strong>Link:</strong> <a href="https://reachingoutmba.org/fellowship/" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 11. Program: Harvard Public Service Fellowship -->
+                            <div class="card p-6 border-l-4 border-red-500">
+                                <h3 class="text-2xl font-semibold mb-2 text-gray-900 flex items-center"><i data-feather="activity" class="h-6 w-6 text-red-800 mr-3"></i>11. Harvard Presidential Public Service Fellowship (PPSF)</h3>
+                                <p class="leading-relaxed mb-3">Provides financial support for Harvard students engaging in 8-week summer service placements and internships that serve the common good in the U.S.</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                                    <li><strong>What it Funds:</strong> Up to $5,000 (undergrad) / $8,000 (grad students) for summer opportunities.</li>
+                                    <li><strong>Core Requirements:</strong> Focus on direct, tangible community contribution and civic engagement.</li>
+                                    <li><strong>Key Eligibility:</strong> Must be a current Harvard student (not graduating in the application cycle).</li>
+                                    <li><strong>Restriction:</strong> Explicitly excludes funding for research or thesis-related activities.</li>
+                                    <li><strong>Link:</strong> <a href="https://service.harvard.edu/fellowships" target="_blank" class="text-red-600 hover:underline">Official Application Page</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                <a href="#development" class="nav-router text-red-800 hover:underline font-medium">&larr; Back to Professional Development</a>
+            </div>
+        </div>
+    </template>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1077,37 +1223,40 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // --- Basic SPA Router ---
+            // --- Basic SPA Router - UPDATED with new route name ---
             const routes = {
                 'home': 'home-page',
                 'about': 'about-page',
                 'events': 'events-page',
                 'reunion-recap': 'reunion-recap-page',
                 'induction-event': 'induction-event-page',
+                'bridge-year-event': 'bridge-year-event-page',
                 'la-event': 'la-event-page',
                 'sd-event': 'sd-event-page',
                 'chicago-event': 'chicago-event-page',
                 'arlington-event': 'arlington-event-page',
-                'connect': 'connect-page',
+                'contact': 'contact-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
+                'scholarship-directory': 'scholarship-directory-page', // UPDATED ROUTE KEY
                 'get-involved': 'get-involved-page',
-                'contact': 'contact-page'
             };
 
             function initCarousel() {
                 const carouselInner = document.getElementById('carousel-inner');
                 if (!carouselInner) return;
 
+                // Image URLs for the reunion recap carousel
                 const images = [
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2172_jpg.JPEG",
-                    "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2309.JPEG",
+                    "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c6299ddb6aa/images/IMG_2309.JPEG",
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/39ba824926c3648a661c5b9a0a0fb06d063dbac1/images/IMG_2256.JPEG",
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/c3aaa4f60525f3da03b885a39dede5978a4eedd5/images/IMG_6726.jpg",
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/c3aaa4f60525f3da03b885a39dede5978a4eedd5/images/IMG_6800.jpg",
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/fe24e6ad046241fbc039fd2221a1d77778380640/images/IMG_6817_(1).jpg"
                 ];
 
+                carouselInner.innerHTML = ''; // Clear existing content before inserting
                 images.forEach((src, index) => {
                     const item = document.createElement('div');
                     item.className = 'carousel-item absolute w-full h-full';
@@ -1119,8 +1268,11 @@
                     img.alt = `Reunion Photo ${index + 1}`;
                     img.className = 'w-full h-full object-cover';
                     img.onerror=function() { 
+                        // If image fails to load, remove its container element to maintain layout integrity
                         this.parentElement.style.display = 'none';
-                     };
+                        // Re-initialize carousel if removing an image changes total count
+                        initCarousel(); 
+                    };
                     item.appendChild(img);
                     carouselInner.appendChild(item);
                 });
@@ -1128,22 +1280,25 @@
                 const prevBtn = document.getElementById('prev-btn');
                 const nextBtn = document.getElementById('next-btn');
                 let currentIndex = 0;
-                const items = Array.from(carouselInner.querySelectorAll('.carousel-item'));
+                const items = Array.from(carouselInner.querySelectorAll('.carousel-item')).filter(item => item.style.display !== 'none');
                 const totalItems = items.length;
 
                 if (totalItems <= 1) {
                     if(prevBtn) prevBtn.style.display = 'none';
                     if(nextBtn) nextBtn.style.display = 'none';
                     return;
+                } else {
+                     if(prevBtn) prevBtn.style.display = 'block';
+                    if(nextBtn) nextBtn.style.display = 'block';
                 }
 
                 function showSlide(index) {
                     items.forEach((item) => {
-                        item.classList.remove('active', 'opacity-100');
-                        item.classList.add('opacity-0');
+                        item.style.opacity = '0';
+                        item.classList.remove('active');
                     });
-                    items[index].classList.add('active', 'opacity-100');
-                    items[index].classList.remove('opacity-0');
+                    items[index].classList.add('active');
+                    items[index].style.opacity = '1';
                 }
 
                 if(prevBtn) {
@@ -1174,7 +1329,8 @@
                         
                         const pageElement = mainContent.querySelector('.page');
                         if(pageElement) {
-                             setTimeout(() => pageElement.classList.add('active'), 0);
+                            // Delay adding the active class to trigger the CSS animation
+                            setTimeout(() => pageElement.classList.add('active'), 0);
                         }
                         
                         feather.replace();
@@ -1186,17 +1342,28 @@
                 }
                 
                 updateActiveLink(pageId);
-                window.scrollTo(0, 0);
-                if (mobileMenu) mobileMenu.classList.add('hidden');
+                window.scrollTo(0, 0); // Scroll to top on page change
+                if (mobileMenu) mobileMenu.classList.add('hidden'); // Close mobile menu after navigation
             }
 
             function updateActiveLink(pageId) {
+                // Clear all active classes
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Set active class for the current main navigation link
+                let mainPageId = pageId;
+                // If it's a sub-page (like an event detail page or a resource page), highlight the relevant main navigation link
+                if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap')) {
+                    mainPageId = 'events';
+                } else if (mainPageId === 'scholarship-directory') { // Handle the new page (updated name)
+                    mainPageId = 'development';
+                }
+                
+
                 navLinks.forEach(link => {
-                    const linkPageId = link.href.split('#')[1];
-                    if (linkPageId === pageId) {
+                    const linkHash = link.href.split('#')[1];
+                    if (linkHash === mainPageId) {
                         link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
                     }
                 });
             }
@@ -1206,16 +1373,19 @@
                 if(routes[hash]) {
                     loadPage(hash);
                 } else {
-                    loadPage('home'); // Fallback to home
+                    // Fallback to home if hash is not found
+                    loadPage('home'); 
                 }
             }
             
             document.body.addEventListener('click', function(e) {
                 const navRouterElement = e.target.closest('.nav-router');
                 if (navRouterElement) {
+                    // Only intercept internal hash links
                     if (navRouterElement.hash && navRouterElement.origin === window.location.origin) {
                         e.preventDefault(); 
                         const newHash = navRouterElement.hash;
+                        
                         if(window.location.hash !== newHash) {
                             window.location.hash = newHash;
                         } else {
@@ -1234,6 +1404,7 @@
                 });
             }
 
+            // Initial load
             handleRouteChange();
         });
     </script>
