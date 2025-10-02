@@ -85,7 +85,7 @@
     <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Changed from justify-between to ensure menu starts closer to logo, using ml-auto to push the CTA right -->
+            <!-- ADJUSTED: Removed justify-between, using gap-x-6 and ml-auto for balance -->
             <div class="flex items-center h-20 gap-x-6"> 
                 <div class="flex-shrink-0">
                     <a href="#home" class="nav-router">
@@ -93,10 +93,10 @@
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
                     </a>
                 </div>
-                <!-- Desktop Navigation and CTA - Consolidated for better spacing -->
-                <div class="hidden md:flex items-center space-x-6 ml-auto">
-                    <!-- Navigation Links -->
-                    <div class="flex items-baseline space-x-4">
+                <!-- Desktop Navigation and CTA - Adjusted spacing/placement -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <!-- Navigation Links - Added ml-6 to reduce distance from logo, and removed ml-auto from parent container. -->
+                    <div class="flex items-baseline space-x-4 ml-6">
                         <a href="#home" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Home</a>
                         <a href="#about" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">About Us</a>
                         <a href="#events" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Events</a>
@@ -105,8 +105,8 @@
                         <a href="#get-involved" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Get Involved</a>
                         <a href="#contact" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Contact</a>
                     </div>
-                    <!-- Newsletter Button -->
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700">
+                    <!-- Newsletter Button - Pushed to the far right using ml-auto -->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 ml-auto">
                         Join Newsletter
                     </a>
                 </div>
