@@ -85,7 +85,8 @@
     <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <!-- Changed from justify-between to ensure menu starts closer to logo, using ml-auto to push the CTA right -->
+            <div class="flex items-center h-20 gap-x-6"> 
                 <div class="flex-shrink-0">
                     <a href="#home" class="nav-router">
                         <!-- UPDATED: Logo size increased to h-16 -->
@@ -93,7 +94,7 @@
                     </a>
                 </div>
                 <!-- Desktop Navigation and CTA - Consolidated for better spacing -->
-                <div class="hidden md:flex items-center space-x-6">
+                <div class="hidden md:flex items-center space-x-6 ml-auto">
                     <!-- Navigation Links -->
                     <div class="flex items-baseline space-x-4">
                         <a href="#home" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Home</a>
