@@ -50,15 +50,15 @@
         .carousel-item.active {
             display: block;
         }
-        /* Custom styles for tables within the long report */
+        /* Custom styles for tables within the long report (NO LONGER USED, but kept for general table styling) */
         .report-table th, .report-table td {
-            padding: 0.5rem;
+            padding: 0.75rem 1.5rem; /* Increased padding */
             border-bottom: 1px solid #e5e7eb;
             text-align: left;
             font-size: 0.875rem;
         }
         .report-table th {
-            background-color: #f9fafb;
+            background-color: #f3f4f6;
             font-weight: 600;
             color: #1f2937;
         }
@@ -78,6 +78,7 @@
         .event-button:hover {
             background-color: #7f1d1d; /* red-900 */
         }
+        /* Removed .loader styles */
     </style>
 </head>
 <body class="bg-gray-50 flocked-gray-800">
@@ -88,7 +89,6 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
                     <a href="#home" class="nav-router">
-                        <!-- UPDATED: Logo size increased to h-16 -->
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
                     </a>
                 </div>
@@ -198,51 +198,16 @@
                 </div>
             </div>
 
-            <!-- Upcoming Events Section - UPDATED TO SHOW ACTUAL EVENTS -->
+            <!-- Upcoming Events Section (October events removed) -->
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Featured Upcoming Events</h2>
-                    <!-- Listing the top 4 events chronologically and by type -->
-                    <div class="space-y-6 mb-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-
-                        <!-- 1. Top Business Schools Present (External) - VERTICALLY ALIGNED -->
-                        <div class="card p-5 h-full border-t-4 border-gray-600 flex flex-col justify-between">
-                           <div>
-                                <i data-feather="briefcase" class="h-6 w-6 text-gray-600 mb-2"></i>
-                                <p class="text-xs font-medium text-gray-500 uppercase">External MBA</p>
-                                <h3 class="font-bold text-lg mb-1 text-gray-900">The Value of an MBA</h3>
-                                <p class="text-sm text-gray-700 mb-4">Oct 22 | 6:00 PM CDT | Virtual</p>
-                            </div>
-                            <a href="https://apply.chicagobooth.edu/register/?id=14e55ba7-c6df-4a04-a68c-1047be52e3bd" target="_blank" class="event-button w-full">Register Now</a>
-                        </div>
-
-                        <!-- 2. Harvard SVMPAA Happy Hour: Boston (Community) - VERTICALLY ALIGNED -->
-                         <div class="card p-5 h-full border-t-4 border-red-800 flex flex-col justify-between">
-                            <div>
-                                <i data-feather="coffee" class="h-6 w-6 text-red-800 mb-2"></i>
-                                <p class="text-xs font-medium text-red-700 uppercase">Community Meetup</p>
-                                <h3 class="font-bold text-lg mb-1 text-gray-900">Boston Happy Hour</h3>
-                                <p class="text-sm text-gray-700 mb-4">Oct 23 | 6:00 PM ET | In-Person</p>
-                            </div>
-                            <a href="#boston-event" class="event-button w-full nav-router">RSVP Here</a>
-                        </div>
-
-                        <!-- 3. HBS Admissions Overview and Q&A (External) - VERTICALLY ALIGNED -->
-                        <div class="card p-5 h-full border-t-4 border-gray-600 flex flex-col justify-between">
-                            <div>
-                                <i data-feather="video" class="h-6 w-6 text-gray-600 mb-2"></i>
-                                <p class="text-xs font-medium text-gray-500 uppercase">External HBS</p>
-                                <h3 class="font-bold text-lg mb-1 text-gray-900">HBS Admissions Q&A</h3>
-                                <p class="text-sm text-gray-700 mb-4">Oct 29 | 5:00 PM ET | Virtual</p>
-                            </div>
-                            <a href="https://apply.hbs.edu/register/?id=90fcac52-e90f-4535-8b9e-e7b9acb85e82" target="_blank" class="event-button w-full">Register Now</a>
-                        </div>
-                        
-                        <!-- 4. See all Events CTA - Already uses flex to center content -->
-                        <a href="#events" class="nav-router card p-5 h-full text-center flex flex-col justify-center items-center bg-white border border-gray-200 hover:bg-red-50 transition">
+                    <!-- Only the CTA remains. Use flex for centering if only one item remains. -->
+                    <div class="flex justify-center max-w-6xl mx-auto">
+                        <a href="#events" class="nav-router card p-5 h-full text-center flex flex-col justify-center items-center bg-white border border-gray-200 hover:bg-red-50 transition w-full max-w-sm">
                            <i data-feather="arrow-right-circle" class="h-10 w-10 text-red-800 mb-2"></i>
-                            <h3 class="font-bold text-lg mb-2 text-red-800">View All 5+ Events</h3>
-                            <p class="text-sm text-gray-700">Check the full calendar for deferred enrollment sessions and regional meetups.</p>
+                            <h3 class="font-bold text-lg mb-2 text-red-800">View All Upcoming Events</h3>
+                            <p class="text-sm text-gray-700">Explore the full calendar for virtual and regional meetups.</p>
                         </a>
                     </div>
                 </div>
@@ -384,49 +349,46 @@
                 <!-- Upcoming Events - NEW SECTION -->
                 <h2 class="text-3xl font-bold mb-8 text-gray-900 border-b pb-2">Upcoming Events</h2>
                 
-                <!-- SVMPAA Community Events (Oct 23) -->
-                <h3 class="text-2xl font-bold mb-6 text-red-800">SVMPAA Community Events</h3>
-                <div class="space-y-4 mb-16">
-                    
-                    <!-- 1. Harvard SVMPAA Happy Hour: Boston - Highlighted Card -->
-                    <a href="#boston-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center bg-red-50 hover:bg-red-100 transition">
-                        <div>
-                            <h4 class="font-bold text-xl text-red-800 mb-1">Harvard SVMPAA Happy Hour: Boston</h4>
-                            <p class="text-sm text-gray-700 mb-2">
-                                <strong>📍 Lamplighter Brewing Co., Cambridge, MA</strong><br>
-                                <strong>🗓 Thursday, October 23, 2025 | 6:00–8:00 PM</strong>
-                            </p>
-                            <p class="text-sm text-gray-700">Join fellow SVMP alumni for an evening of connection, conversation, and community.</p>
-                        </div>
-                        <span class="event-button mt-4 md:mt-0">RSVP Here</span>
-                    </a>
-                </div>
+                <!-- REMOVED: SVMPAA Community Events (Alumni-Hosted) Oct 23 -->
 
-                <!-- MBA Informational Events (Combined Section, Renamed, Parenthetical Removed) -->
-                <h3 class="text-2xl font-bold mb-6 text-gray-700">MBA Informational Events</h3>
+                <!-- MBA Informational Events (HBS & External) -->
+                <h3 class="text-2xl font-bold mb-6 text-gray-700">MBA Informational Events (External & Virtual)</h3>
                 <div class="space-y-4 mb-8">
                     
-                    <!-- 1. Top Business Schools Present: The Value of an MBA (Oct 22) -->
+                    <!-- REMOVED: 1. Top Business Schools Present: The Value of an MBA (Oct 22) -->
+                    <!-- REMOVED: 2. HBS Admissions Overview and Q&A (Oct 29) -->
+
+                    <!-- NEW: Peek Into the MBA (Virtual) - Nov 5 -->
                     <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
                         <div>
-                            <h4 class="font-bold text-xl text-gray-900 mb-1">Top Business Schools Present: The Value of an MBA <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Wednesday, October 22 | 6:00 - 7:30 PM CDT</strong></p>
-                            <p class="text-sm text-gray-700">A joint webinar (including Chicago Booth) discussing the transformative impact of an MBA degree.</p>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">Peek Into the MBA <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Wednesday, November 5, 2025 | 7:30 PM - 9:30 PM ET</strong></p>
+                            <p class="text-sm text-gray-700">A deeper dive into the Harvard Business School MBA experience.</p>
                         </div>
-                        <a href="https://apply.chicagobooth.edu/register/?id=14e55ba7-c6df-4a04-a68c-1047be52e3bd" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
+                        <a href="https://apply.hbs.edu/register/?id=bd7f7b5c-e54a-4502-9759-0fcf9fa1370d" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
                     </div>
                     
-                    <!-- 2. HBS Admissions Overview and Q&A (Oct 29) -->
+                    <!-- NEW: 2+2 Program Information Session (Virtual) - Nov 6 -->
                     <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
                         <div>
-                            <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Admissions Overview and Q&A <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Wednesday, October 29, 2025 | 5:00 PM ET</strong></p>
-                            <p class="text-sm text-gray-700">Direct overview of the HBS application process and an essential Q&A session with the admissions team.</p>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">2+2 Program Information Session <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Thursday, November 6, 2025 | 4:00 PM - 4:45 PM ET</strong></p>
+                            <p class="text-sm text-gray-700">Essential information for the HBS deferred admission program aimed at undergraduates.</p>
                         </div>
-                        <a href="https://apply.hbs.edu/register/?id=90fcac52-e90f-4535-8b9e-e7b9acb85e82" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
+                        <a href="https://apply.hbs.edu/register/?id=228c0ab4-fde4-4d2a-bdd4-c35fbdfcc487" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
                     </div>
-                    
-                     <!-- 3. UCLA Anderson Deferred Enrollment Insight (Deferred) -->
+
+                     <!-- NEW: Admissions Overview Q&A (Virtual) - Nov 25 -->
+                    <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">Admissions Overview Q&A <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Tuesday, November 25, 2025 | 12:00 PM - 12:45 PM ET</strong></p>
+                            <p class="text-sm text-gray-700">A midday session to answer your final questions about the HBS application process.</p>
+                        </div>
+                        <a href="https://apply.hbs.edu/register/?id=cde15bc5-b5bc-4f1c-9a25-c37afe55956d" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
+                    </div>
+
+                     <!-- Existing Deferred UCLA -->
                     <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
                         <div>
                             <h4 class="font-bold text-xl text-gray-900 mb-1">UCLA Anderson Deferred Enrollment Insight <span class="text-sm font-normal text-gray-500">(In-Person - Los Angeles)</span></h4>
@@ -435,7 +397,7 @@
                         <a href="https://apply.anderson.ucla.edu/register/DEPUCLA" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
                     </div>
 
-                    <!-- 4. Berkeley Haas Deferred Enrollment Insight (Deferred) -->
+                    <!-- Existing Deferred Berkeley -->
                     <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
                         <div>
                             <h4 class="font-bold text-xl text-gray-900 mb-1">Berkeley Haas Deferred Enrollment Insight <span class="text-sm font-normal text-gray-500">(In-Person - Berkeley)</span></h4>
@@ -443,6 +405,72 @@
                         </div>
                         <a href="https://applynow.haas.berkeley.edu/register/DeferredMBABerkeley2025" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
                     </div>
+                </div>
+
+                <!-- HBS Regional Sessions -->
+                <h3 class="text-2xl font-bold mb-6 text-gray-700">HBS Regional Information Sessions</h3>
+                <div class="space-y-4 mb-8">
+                    
+                    <!-- NEW: NYC - Nov 5 -->
+                    <a href="#nyc-hbs-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Information Session: New York City</h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Wednesday, November 5, 2025 | 6:00 PM - 7:30 PM ET</strong></p>
+                            <p class="text-sm text-gray-700">Join HBS Admissions in NYC for a deep dive into the MBA program and application process.</p>
+                        </div>
+                        <span class="event-button mt-4 md:mt-0">View Details</span>
+                    </a>
+
+                    <!-- NEW: LA - Nov 10 -->
+                    <a href="#la-ucla-hbs-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Information Session: Los Angeles (UCLA)</h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Monday, November 10, 2025 | 5:30 PM - 7:00 PM PT</strong></p>
+                            <p class="text-sm text-gray-700">An in-person HBS session held at UCLA, focusing on the career path and MBA experience.</p>
+                        </div>
+                        <span class="event-button mt-4 md:mt-0">View Details</span>
+                    </a>
+
+                    <!-- NEW: Nashville Vanderbilt - Nov 12 -->
+                    <a href="#nashville-vandy-hbs-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Information Session: Nashville (Vanderbilt)</h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Wednesday, November 12, 2025 | 6:15 PM - 7:30 PM CT</strong></p>
+                            <p class="text-sm text-gray-700">Connect with the HBS team at Vanderbilt University.</p>
+                        </div>
+                        <span class="event-button mt-4 md:mt-0">View Details</span>
+                    </a>
+
+                    <!-- NEW: San Francisco USF - Nov 13 (Morning) -->
+                    <a href="#sf-usf-hbs-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Information Session: San Francisco (USF)</h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Thursday, November 13, 2025 | 11:45 AM - 12:45 PM PT</strong></p>
+                            <p class="text-sm text-gray-700">A convenient lunchtime session hosted at the University of San Francisco.</p>
+                        </div>
+                        <span class="event-button mt-4 md:mt-0">View Details</span>
+                    </a>
+
+                    <!-- NEW: Nashville General - Nov 13 (Evening) -->
+                    <a href="#nashville-general-hbs-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Information Session: Nashville (Downtown)</h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Thursday, November 13, 2025 | 6:00 PM - 7:30 PM CT</strong></p>
+                            <p class="text-sm text-gray-700">A general HBS Information Session held in the Nashville city center.</p>
+                        </div>
+                        <span class="event-button mt-4 md:mt-0">View Details</span>
+                    </a>
+
+                    <!-- NEW: San Francisco General - Nov 20 -->
+                    <a href="#sf-general-hbs-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Information Session: San Francisco (General)</h4>
+                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Thursday, November 20, 2025 | 6:00 PM - 7:30 PM PT</strong></p>
+                            <p class="text-sm text-gray-700">The last HBS session in the Bay Area this month, covering the core MBA curriculum and life on campus.</p>
+                        </div>
+                        <span class="event-button mt-4 md:mt-0">View Details</span>
+                    </a>
+
                 </div>
 
 
@@ -605,55 +633,323 @@
         </div>
     </template>
     
-    <template id="boston-event-page">
-        <div class="page" id="boston-event">
+    <!-- REMOVED: boston-event-page template -->
+
+    <template id="nyc-hbs-event-page">
+        <div class="page" id="nyc-hbs-event">
             <div class="w-full h-64 md:h-80">
-                <!-- UPDATED IMAGE SOURCE -->
-                <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/13cc8e0468e0d1527c0961e503bc4b9138f4b8fb/images/boston.webp" alt="Lamplighter Brewing Co. Boston" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Boston+Happy+Hour';">
+                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+NYC+Session" alt="NYC Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+NYC+Session';">
             </div>
                <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">Harvard SVMPAA Happy Hour: Boston</h1>
-                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Thursday, October 23, 2025 | 6:00–8:00 PM</p>
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: New York City</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Wednesday, November 5, 2025 | 6:00 PM - 7:30 PM ET</p>
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                    <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Event Details</h2>
                             <div class="space-y-4 text-gray-700">
                                 <div class="flex items-start">
-                                    <i data-feather="calendar" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
-                                        <h3 class="semibold">When & Where</h3>
-                                        <p>Thursday, October 23, 2025, 6:00–8:00 PM</p>
-                                        <a href="https://www.google.com/maps/search/?api=1&query=Lamplighter+Brewing+Co.,+284+Broadway,+Cambridge,+MA+02139" target="_blank" class="text-red-800 hover:underline">Lamplighter Brewing Co., 284 Broadway, Cambridge, MA 02139</a>
+                                        <h3 class="semibold">Location</h3>
+                                        <p>Specific location details will be provided upon registration.</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
                                     <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
                                     <div>
                                         <h3 class="semibold">About The Event</h3>
-                                        <p>Join fellow SVMP alumni for an evening of connection, conversation, and community. This is our latest opportunity to gather in Boston—don’t miss it!</p>
+                                        <p>An in-person information session hosted by HBS Admissions for prospective students in the New York City area.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column -->
                     <div>
                         <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="text-2xl font-bold mb-4">Hosted By</h2>
-                            <p class="gray-700">Your SVMPAA Team</p>
+                            <h2 class="text-2xl font-bold mb-4">Host</h2>
+                            <p class="gray-700">Harvard Business School Admissions</p>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSet6yCF0RwCggalELOlNUCR9L5-oMkxVTMP1W8jowQZCT4pQA/viewform" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                    <a href="https://apply.hbs.edu/register/?id=15132de7-06c7-4a6c-b52d-83770f0c7cde" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
                         <i data-feather="check-circle" class="mr-2"></i>
-                        RSVP Here
+                        Register on HBS Site
+                    </a>
+                    <div class="mt-12">
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="la-ucla-hbs-event-page">
+        <div class="page" id="la-ucla-hbs-event">
+            <div class="w-full h-64 md:h-80">
+                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+UCLA+Session" alt="UCLA Campus" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+UCLA+Session';">
+            </div>
+               <div class="bg-white shadow-md">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: Los Angeles (UCLA)</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Monday, November 10, 2025 | 5:30 PM - 7:00 PM PT</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
+                            <div class="space-y-4 text-gray-700">
+                                <div class="flex items-start">
+                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">Location</h3>
+                                        <p>Held at the UCLA Campus (details via registration link).</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">About The Event</h3>
+                                        <p>A regional session organized by HBS to discuss the MBA program, targeting students and professionals in the greater Los Angeles area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Host</h2>
+                            <p class="gray-700">Harvard Business School Admissions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://apply.hbs.edu/register/?id=7a346193-8626-42bb-97ca-b035845f7554" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                        <i data-feather="check-circle" class="mr-2"></i>
+                        Register on HBS Site
+                    </a>
+                    <div class="mt-12">
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="nashville-vandy-hbs-event-page">
+        <div class="page" id="nashville-vandy-hbs-event">
+            <div class="w-full h-64 md:h-80">
+                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+Vanderbilt+Session" alt="Vanderbilt Campus" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+Vanderbilt+Session';">
+            </div>
+               <div class="bg-white shadow-md">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: Nashville (Vanderbilt)</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Wednesday, November 12, 2025 | 6:15 PM - 7:30 PM CT</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
+                            <div class="space-y-4 text-gray-700">
+                                <div class="flex items-start">
+                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">Location</h3>
+                                        <p>Held at Vanderbilt University (details via registration link).</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">About The Event</h3>
+                                        <p>This session is a chance to learn directly from HBS representatives about the MBA program at the Vanderbilt campus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Host</h2>
+                            <p class="gray-700">Harvard Business School Admissions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://apply.hbs.edu/register/?id=29c7eabb-e624-4516-a9b1-e0b4602d73cc" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                        <i data-feather="check-circle" class="mr-2"></i>
+                        Register on HBS Site
+                    </a>
+                    <div class="mt-12">
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="nashville-general-hbs-event-page">
+        <div class="page" id="nashville-general-hbs-event">
+            <div class="w-full h-64 md:h-80">
+                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+Nashville+Session" alt="Nashville Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+Nashville+Session';">
+            </div>
+               <div class="bg-white shadow-md">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: Nashville (Downtown)</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Thursday, November 13, 2025 | 6:00 PM - 7:30 PM CT</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
+                            <div class="space-y-4 text-gray-700">
+                                <div class="flex items-start">
+                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">Location</h3>
+                                        <p>Specific location details in the Nashville city area will be provided upon registration.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">About The Event</h3>
+                                        <p>A regional information session for the Nashville community hosted by HBS Admissions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Host</h2>
+                            <p class="gray-700">Harvard Business School Admissions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://apply.hbs.edu/register/?id=3b5dd02a-67d4-41e0-b570-4e070c63dac5" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                        <i data-feather="check-circle" class="mr-2"></i>
+                        Register on HBS Site
+                    </a>
+                    <div class="mt-12">
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="sf-usf-hbs-event-page">
+        <div class="page" id="sf-usf-hbs-event">
+            <div class="w-full h-64 md:h-80">
+                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+USF+Session" alt="USF Campus" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+USF+Session';">
+            </div>
+               <div class="bg-white shadow-md">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: San Francisco (USF)</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Thursday, November 13, 2025 | 11:45 AM - 12:45 PM PT</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
+                            <div class="space-y-4 text-gray-700">
+                                <div class="flex items-start">
+                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">Location</h3>
+                                        <p>Held at the University of San Francisco Campus (details via registration link).</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">About The Event</h3>
+                                        <p>A one-hour lunchtime information session focusing on the HBS MBA and 2+2 deferred admissions programs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Host</h2>
+                            <p class="gray-700">Harvard Business School Admissions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://apply.hbs.edu/register/?id=5154d85a-f2b5-419d-8749-2d07ce8820ec" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                        <i data-feather="check-circle" class="mr-2"></i>
+                        Register on HBS Site
+                    </a>
+                    <div class="mt-12">
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="sf-general-hbs-event-page">
+        <div class="page" id="sf-general-hbs-event">
+            <div class="w-full h-64 md:h-80">
+                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+San+Francisco+Session" alt="San Francisco Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+San+Francisco+Session';">
+            </div>
+               <div class="bg-white shadow-md">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: San Francisco (General)</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Thursday, November 20, 2025 | 6:00 PM - 7:30 PM PT</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
+                            <div class="space-y-4 text-gray-700">
+                                <div class="flex items-start">
+                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">Location</h3>
+                                        <p>Specific location in San Francisco will be provided upon registration.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">About The Event</h3>
+                                        <p>An evening information session hosted by HBS Admissions for prospective students in the Bay Area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Host</h2>
+                            <p class="gray-700">Harvard Business School Admissions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://apply.hbs.edu/register/?id=2d1ff8bc-21a7-4aa5-8a09-e1f5f8ca4064" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                        <i data-feather="check-circle" class="mr-2"></i>
+                        Register on HBS Site
                     </a>
                     <div class="mt-12">
                         <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
@@ -1013,7 +1309,7 @@
         </div>
     </template>
     
-    <!-- UPDATED: Development Page -->
+    <!-- UPDATED: Development Page (Scholarship directory simplified) -->
     <template id="development-page">
         <div class="page" id="development">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -1021,7 +1317,6 @@
                 <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">Invest in your growth with resources and programs designed to help you excel at every stage of your career.</p>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- FIX: Link color correction was handled in previous steps. Keeping structure. -->
                      <a href="#scholarship-directory" class="nav-router card p-6 block">
                         <i data-feather="book-open" class="h-10 w-10 text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2 text-gray-900">Graduate Scholarship Directory</h2>
@@ -1130,267 +1425,64 @@
         </div>
     </template>
 
-    <!-- REDESIGNED TEMPLATE (Apple Marketing Persona) -->
+    <!-- REVERTED: Scholarship Directory (Simplified Static Version) -->
     <template id="scholarship-directory-page">
         <div class="page" id="scholarship-directory">
             <div class="bg-white py-20 border-b border-gray-200">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                    <!-- CHANGE 1: Updated top red text -->
                     <p class="text-sm font-semibold text-red-700 uppercase tracking-widest text-center mb-3">Graduate Scholarship Directory</p>
                     <h1 class="text-5xl md:text-6xl font-extrabold text-center text-gray-900 mb-6 tracking-tight">Master Your Future.</h1>
                     <p class="text-xl md:text-2xl font-light text-center text-gray-700 max-w-4xl mx-auto">
-                        Your exclusive strategy to fund advanced degrees. We've compiled the world's most competitive fellowships and scholarships, curated for maximum impact.
+                        Your resource for identifying and strategizing applications for the world's most competitive fellowships and scholarships.
                     </p>
                 </div>
             </div>
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-7xl">
-                <div class="max-w-6xl mx-auto space-y-16 text-gray-800">
+                <div class="max-w-4xl mx-auto space-y-10 text-gray-800">
                     
-                    <!-- I. Actionable Deadlines & Directory -->
-                    <section>
-                        <h2 class="text-3xl font-bold mb-6 text-red-800 border-b pb-2">I. The Global Calendar: Critical Deadlines</h2>
+                    <section class="p-8 bg-white rounded-lg shadow-lg border-t-4 border-red-500">
+                        <h2 class="text-3xl font-bold mb-4 text-red-800">Key Global Fellowships</h2>
+                        <p class="text-gray-700 mb-6">These are the major awards for graduate study. Check the official websites frequently for the most accurate deadlines (typically early Fall).</p>
                         
-                        <div class="md:hidden text-center text-sm text-gray-600 mb-4 flex items-center justify-center p-2 bg-yellow-50 rounded-md">
-                           <i data-feather="arrow-left-right" class="h-4 w-4 text-gray-600 mr-2"></i>
-                            Scroll horizontally to view full data on mobile.
-                        </div>
-
-                        <div class="overflow-x-auto bg-white rounded-lg shadow-xl mb-8 border border-gray-200">
-                            <table class="min-w-full divide-y divide-gray-200 report-table">
-                                <thead>
-                                    <tr>
-                                        <th class="px-6 py-3">Program Name</th>
-                                        <th class="px-6 py-3">Academic Focus</th>
-                                        <th class="px-6 py-3">Key Deadline Cited</th>
-                                        <th class="px-6 py-3">Primary Official URL</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Fulbright U.S. Student Program</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">International Study/Research</td>
-                                        <td class="px-6 py-4 whitespace-nowrap font-semibold text-red-700">Oct 7, 2025, 5 pm ET (National)</td>
-                                        <td class="px-6 py-4"><a href="https://us.fulbrightonline.org/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Knight-Hennessy Scholars (KHS)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Master’s, MBA, JD (Stanford)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap font-semibold text-red-700">Oct 8, 2025, 1:00 pm PT</td>
-                                        <td class="px-6 py-4"><a href="https://knight-hennessy.stanford.edu/admission" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Gates Cambridge Scholarship</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Master’s, JD (Cambridge)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap font-semibold text-red-700">Oct 15, 2025 (US Round 1)</td>
-                                        <td class="px-6 py-4"><a href="https://www.gatescambridge.org/apply/how-to-apply/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Paul & Daisy Soros Fellowships</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Any U.S. Graduate Degree (New Americans)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap font-semibold text-red-700">Oct 30, 2025</td>
-                                        <td class="px-6 py-4"><a href="https://pdsoros.org/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Rhodes Scholarship</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Master’s, JD (Oxford)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Applications for 2026 are currently open</td>
-                                        <td class="px-6 py-4"><a href="https://www.rhodeshouse.ox.ac.uk/scholarships/applications/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Truman Scholarship</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">JD, MPP, MPA, MSW (Public Service)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">First Tuesday in February</td>
-                                        <td class="px-6 py-4"><a href="https://www.truman.gov/apply" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Skoll Scholarship (MBA)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">MBA (Oxford Social Impact)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Varies by MBA admissions stage</td>
-                                        <td class="px-6 py-4"><a href="https://www.skollcentre.org/skoll-scholarship" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Forté Fellowship</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">MBA (Women in Leadership)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Varies by partner school</td>
-                                        <td class="px-6 py-4"><a href="https://www.fortefoundation.org/mba/fellows/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Reaching Out MBA (ROMBA)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">MBA (LGBTQ+ Leaders)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Varies by partner school</td>
-                                        <td class="px-6 py-4"><a href="https://reachingoutmba.org/fellowship/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Equal Justice Works Fellowship</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">JD (Project-Based Legal Work)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Varies by Host Organization</td>
-                                        <td class="px-6 py-4"><a href="https://www.equaljusticeworks.org/" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">Harvard Public Service Fellowship</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Summer placements (UG/Grad)</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">Varies by year (Up to $8,000 for grad students)</td>
-                                        <td class="px-6 py-4"><a href="https://service.harvard.edu/fellowships" target="_blank" class="text-red-600 hover:underline">Link</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i data-feather="book" class="h-6 w-6 text-gray-600 mr-3 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Knight-Hennessy Scholars (KHS)</h3>
+                                    <p class="text-sm text-gray-600">Full funding for any graduate degree at Stanford University.</p>
+                                    <a href="https://knight-hennessy.stanford.edu/admission" target="_blank" class="text-red-600 hover:underline text-sm font-medium">Official Website &rarr;</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="globe" class="h-6 w-6 text-gray-600 mr-3 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Rhodes Scholarship</h3>
+                                    <p class="text-sm text-gray-600">The world's oldest international scholarship, funding postgraduate study at the University of Oxford.</p>
+                                    <a href="https://www.rhodeshouse.ox.ac.uk/scholarships/applications/" target="_blank" class="text-red-600 hover:underline text-sm font-medium">Official Website &rarr;</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="send" class="h-6 w-6 text-gray-600 mr-3 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Fulbright U.S. Student Program</h3>
+                                    <p class="text-sm text-gray-600">Grants for graduate study, research, or teaching English abroad.</p>
+                                    <a href="https://us.fulbrightonline.org/" target="_blank" class="text-red-600 hover:underline text-sm font-medium">Official Website &rarr;</a>
+                                </div>
+                            </div>
                         </div>
                     </section>
-
-                    <!-- II. Detailed Program Guides -->
-                    <section>
-                        <h2 class="text-3xl font-bold mb-8 text-red-800 border-b pb-2">II. Detailed Program Guides</h2>
-                        <p class="text-lg leading-relaxed mb-10 text-gray-700">
-                            The difference between applying and securing a fellowship is strategy. Review the core requirements, key eligibility, and application mechanism for the most highly sought-after awards globally.
-                        </p>
-                        <div class="space-y-10">
-
-                            <!-- 1. Program: Rhodes Scholarship -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="globe" class="h-6 w-6 text-red-800 mr-3"></i>1. Rhodes Scholarship (University of Oxford)</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">The world's oldest international scholarship, dedicated to developing individuals with the courage to effect change. It funds postgraduate study at the University of Oxford.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Full tuition, fees, health surcharge, and a substantial annual stipend (£19,800 for 2024/25).</li>
-                                    <li><strong>Core Requirements:</strong> Exceptional academic record (often GPA > 3.7), ethical leadership, and application through a specific country constituency.</li>
-                                    <li><strong>Key Eligibility:</strong> U.S. or eligible country citizenship. Age varies by constituency (often 25-28 maximum).</li>
-                                    <li><strong>Link:</strong> <a href="https://www.rhodeshouse.ox.ac.uk/scholarships/applications/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-                            
-                            <!-- 2. Program: Knight-Hennessy Scholars -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="flag" class="h-6 w-6 text-red-800 mr-3"></i>2. Knight-Hennessy Scholars (KHS - Stanford)</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">A fully funded program for future global leaders pursuing any graduate degree (Master’s, MBA, JD, PhD) at Stanford University.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Full tuition, stipends, and program enrichment.</li>
-                                    <li><strong>Core Requirements:</strong> Independence of Thought, Purposeful Leadership, and Civic Mindset.</li>
-                                    <li><strong>Key Eligibility:</strong> All nationalities. Must have earned first bachelor’s degree in January 2019 or later (for 2026 cohort).</li>
-                                    <li><strong>Dual Application:</strong> Candidates must <strong>simultaneously apply to and be accepted by</strong> their chosen Stanford graduate program and KHS.</li>
-                                    <li><strong>Link:</strong> <a href="https://knight-hennessy.stanford.edu/admission" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 3. Program: Gates Cambridge Scholarship -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="book-open" class="h-6 w-6 text-red-800 mr-3"></i>3. Gates Cambridge Scholarship (University of Cambridge)</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">A prestigious fellowship for postgraduate study (Master’s, PhD) at Cambridge, exclusively for **non-UK citizens**. Focuses on those committed to improving the lives of others.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Fully funded, covering cost of study, maintenance, and flight costs.</li>
-                                    <li><strong>Core Requirements:</strong> Strong academic record (GPA > 3.7) and dedication to service.</li>
-                                    <li><strong>Key Eligibility:</strong> Non-UK citizens only. Cannot fund a course already in progress.</li>
-                                    <li><strong>Link:</strong> <a href="https://www.gatescambridge.org/apply/how-to-apply/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 4. Program: Fulbright U.S. Student Program -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="map" class="h-6 w-6 text-red-800 mr-3"></i>4. Fulbright U.S. Student Program</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">Provides fellowships for U.S. citizens to pursue graduate study, conduct research, or teach English abroad in over 140 countries.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Round-trip transportation, maintenance stipend, and health benefits (varies by award type and country).</li>
-                                    <li><strong>Core Requirement:</strong> Detailed proposal (for Study/Research) or focus on cultural exchange (for ETA).</li>
-                                    <li><strong>Key Eligibility:</strong> U.S. Citizens only. Targets early-career professionals (less than 7 years experience).</li>
-                                    <li><strong>Application Path:</strong> Highly encouraged to apply through an institutional <strong>Fulbright Program Advisor (FPA)</strong> for mentorship and advocacy.</li>
-                                    <li><strong>Link:</strong> <a href="https://us.fulbrightonline.org/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-                            
-                            <!-- 5. Program: Paul & Daisy Soros Fellowships -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="award" class="h-6 w-6 text-red-800 mr-3"></i>5. Paul & Daisy Soros Fellowships for New Americans</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">Merit-based funding for **New Americans** (immigrants and children of immigrants) pursuing any full-time graduate degree in the United States.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Up to $25,000 in stipends and 50% tuition support for 1-2 years.</li>
-                                    <li><strong>Core Requirements:</strong> Academic merit and demonstrated potential for significant contributions to U.S. culture and society.</li>
-                                    <li><strong>Key Eligibility:</strong> Must be a New American and **30 years or younger** by the deadline.</li>
-                                    <li><strong>Field:</strong> Highest degree of flexibility; funds any advanced U.S. graduate degree field.</li>
-                                    <li><strong>Link:</strong> <a href="https://pdsoros.org/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 6. Program: Truman Scholarship -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="briefcase" class="h-6 w-6 text-red-800 mr-3"></i>6. Truman Scholarship</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">Prepares future public service leaders, offering up to $30,000 for graduate education (JD, MPP, MPA, MSW, etc.) focused on public sector careers.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Up to $30,000 for graduate school costs.</li>
-                                    <li><strong>Core Requirements:</strong> Commitment to public service, detailed career plans, and documented record of service.</li>
-                                    <li><strong>Key Eligibility:</strong> U.S. Citizens only. Must be a **college junior** (junior-level student). Minimum GPA of 3.5 is expected.</li>
-                                    <li><strong>Mandatory Nomination:</strong> Requires a **mandatory institutional nomination** from the undergraduate school's advisor.</li>
-                                    <li><strong>Link:</strong> <a href="https://www.truman.gov/apply" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-                            
-                            <!-- 7. Program: Equal Justice Works Fellowship - ICON ADDED -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="gavel" class="h-6 w-6 text-red-800 mr-3"></i>7. Equal Justice Works (EJW) Fellowship</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">Supports law graduates committed to public interest law, funding two years of project-based legal work at a non-profit organization.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Salary and comprehensive benefits for two years.</li>
-                                    <li><strong>Core Requirement:</strong> Candidates must design a viable legal initiative and secure commitment from a **host organization** before applying.</li>
-                                    <li><strong>Key Eligibility:</strong> Law graduates committed to public interest.</li>
-                                    <li><strong>Post-Award:</strong> Fellows join a robust network of over 2,700 public interest lawyers.</li>
-                                    <li><strong>Link:</strong> <a href="https://www.equaljusticeworks.org/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-                            
-                            <!-- 8. Program: Skoll Scholarship (MBA) -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="users" class="h-6 w-6 text-red-800 mr-3"></i>8. Skoll Scholarship (Oxford MBA - Social Impact)</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">A highly specialized scholarship covering **full Oxford MBA tuition** for individuals who demonstrate exceptional entrepreneurial experience and a focus on social impact.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Full Oxford MBA tuition and a stipend for living expenses.</li>
-                                    <li><strong>Core Requirement:</strong> Demonstrated track record in social entrepreneurship and social impact.</li>
-                                    <li><strong>Key Eligibility:</strong> Must be accepted into the Oxford MBA program (integrated process).</li>
-                                    <li><strong>Target:</strong> Social entrepreneurs who meet the rigorous standards of the Oxford MBA.</li>
-                                    <li><strong>Link:</strong> <a href="https://www.skollcentre.org/skoll-scholarship" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 9. Program: Forté Fellowship (MBA) -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="heart" class="h-6 w-6 text-red-800 mr-3"></i>9. Forté Fellowship (MBA - Women in Leadership)</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">Aims to increase the representation of women in business leadership by offering scholarships to women admitted to Forte's network of partner business schools.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Monetary award varies by school, plus access to a powerful professional network.</li>
-                                    <li><strong>Core Requirement:</strong> Must be admitted to a participating MBA program.</li>
-                                    <li><strong>Application:</strong> Candidates **do not apply directly** to Forté. Member schools select fellows from their admitted female student pool.</li>
-                                    <li><strong>Link:</strong> <a href="https://www.fortefoundation.org/mba/fellows/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-                            
-                            <!-- 10. Program: Reaching Out MBA (ROMBA) Fellowship -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="shuffle" class="h-6 w-6 text-red-800 mr-3"></i>10. Reaching Out MBA (ROMBA) Fellowship</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">Supports **LGBTQ+ students** applying to and attending partner MBA programs globally, nurturing future LGBTQ+ leadership in business.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Minimum $20,000 scholarship over the course of the MBA program.</li>
-                                    <li><strong>Core Requirement:</strong> Must be admitted to a partner MBA program and demonstrate a commitment to serving the LGBTQ+ community.</li>
-                                    <li><strong>Mechanism:</strong> Candidates are encouraged to use the "Express Interest" mechanism on the ROMBA website to signal their profile early to admissions committees.</li>
-                                    <li><strong>Link:</strong> <a href="https://reachingoutmba.org/fellowship/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- 11. Program: Harvard Public Service Fellowship -->
-                            <div class="card p-8 border-l-4 border-red-700 shadow-lg">
-                                <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="activity" class="h-6 w-6 text-red-800 mr-3"></i>11. Harvard Presidential Public Service Fellowship (PPSF)</h3>
-                                <p class="leading-relaxed mb-4 text-gray-700">Provides financial support for Harvard students engaging in 8-week summer service placements and internships that serve the common good in the U.S.</p>
-                                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
-                                    <li><strong>What it Funds:</strong> Up to $5,000 (undergrad) / $8,000 (grad students) for summer opportunities.</li>
-                                    <li><strong>Core Requirements:</strong> Focus on direct, tangible community contribution and civic engagement.</li>
-                                    <li><strong>Key Eligibility:</strong> Must be a current Harvard student (not graduating in the application cycle).</li>
-                                    <li><strong>Restriction:</strong> Explicitly excludes funding for research or thesis-related activities.</li>
-                                    <li><strong>Link:</strong> <a href="https://service.harvard.edu/fellowships" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
+                    
+                    <section class="p-8 bg-gray-100 rounded-lg shadow-inner">
+                        <h2 class="text-3xl font-bold mb-4 text-gray-900">Need Guidance?</h2>
+                        <p class="text-gray-700 mb-6">Securing a fellowship requires long-term strategy and advising. Leverage these additional resources:</p>
+                        <a href="https://www.joinleland.com/" target="_blank" class="nav-router inline-block bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition">
+                            Explore Advising (Leland)
+                        </a>
                     </section>
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-                <!-- CHANGE 2: Reverted bottom link text -->
                 <a href="#development" class="nav-router text-red-800 hover:underline font-medium">&larr; Return to Professional Development</a>
             </div>
         </div>
@@ -1398,6 +1490,19 @@
 
 
     <script>
+        // --- API & Utility Helpers (REMOVED) ---
+
+        // The dynamic API functions (doApiCallWithRetry, fetchScholarshipInfo, renderScholarshipData, renderSources, renderError) 
+        // and global API variables have been removed to comply with the request to eliminate the dynamic feature.
+
+        /** Delays execution for a given number of milliseconds. */
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+
+        // --- Main SPA Logic (Updated) ---
+
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
 
@@ -1406,7 +1511,7 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // --- Basic SPA Router - UPDATED with new route name ---
+            // --- Basic SPA Router - UPDATED with new route name and new HBS event routes (Boston removed) ---
             const routes = {
                 'home': 'home-page',
                 'about': 'about-page',
@@ -1418,11 +1523,17 @@
                 'sd-event': 'sd-event-page',
                 'chicago-event': 'chicago-event-page',
                 'arlington-event': 'arlington-event-page',
-                'boston-event': 'boston-event-page', // NEW ROUTE
+                // Removed 'boston-event' route
+                'nyc-hbs-event': 'nyc-hbs-event-page', // NEW ROUTE
+                'la-ucla-hbs-event': 'la-ucla-hbs-event-page', // NEW ROUTE
+                'nashville-vandy-hbs-event': 'nashville-vandy-hbs-event-page', // NEW ROUTE
+                'nashville-general-hbs-event': 'nashville-general-hbs-event-page', // NEW ROUTE
+                'sf-usf-hbs-event': 'sf-usf-hbs-event-page', // NEW ROUTE
+                'sf-general-hbs-event': 'sf-general-hbs-event-page', // NEW ROUTE
                 'contact': 'contact-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
-                'scholarship-directory': 'scholarship-directory-page', // UPDATED ROUTE KEY
+                'scholarship-directory': 'scholarship-directory-page', 
                 'get-involved': 'get-involved-page',
             };
 
@@ -1473,7 +1584,7 @@
                     return;
                 } else {
                      if(prevBtn) prevBtn.style.display = 'block';
-                    if(nextBtn) nextBtn.style.display = 'block';
+                     if(nextBtn) nextBtn.style.display = 'block';
                 }
 
                 function showSlide(index) {
@@ -1519,9 +1630,12 @@
                         
                         feather.replace();
                         
+                        // --- Dynamic Page Initialization ---
                         if (pageId === 'reunion-recap') {
                             initCarousel();
                         }
+                        
+                        // Removed dynamic directory initialization logic
                     }
                 }
                 
