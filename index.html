@@ -1167,7 +1167,7 @@
                                 <p class="leading-relaxed mb-4 text-gray-700">A prestigious fellowship for postgraduate study (Master’s, PhD) at Cambridge, exclusively for **non-UK citizens**. Focuses on those committed to improving the lives of others.</p>
                                 <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-600">
                                     <li><strong>What it Funds:</strong> Fully funded, covering cost of study, maintenance, and flight costs.</li>
-                                    <li><strong>Core Requirements:</strong> Strong academic record (GPA > 3.7) and dedication to service.</li>
+                                    <li><strong>Core Requirements:</strong> Strong academic record (often GPA > 3.7), ethical leadership, and dedication to service.</li>
                                     <li><strong>Key Eligibility:</strong> Non-UK citizens only. Cannot fund a course already in progress.</li>
                                     <li><strong>Link:</strong> <a href="https://www.gatescambridge.org/apply/how-to-apply/" target="_blank" class="text-red-600 hover:underline font-semibold">Official Application Page</a></li>
                                 </ul>
@@ -1305,19 +1305,18 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // --- Basic SPA Router - UPDATED to remove all removed event routes ---
+            // --- Basic SPA Router - Cleaned and Verified ---
             const routes = {
                 'home': 'home-page',
                 'about': 'about-page',
                 'events': 'events-page',
                 'reunion-recap': 'reunion-recap-page',
-                'bridge-year-event': 'bridge-year-event-page', // Induction event removed from here
+                'bridge-year-event': 'bridge-year-event-page',
                 'la-event': 'la-event-page',
                 'sd-event': 'sd-event-page',
                 'chicago-event': 'chicago-event-page',
                 'arlington-event': 'arlington-event-page',
-                // Only keeping the one remaining November HBS event detail page route
-                'sf-general-hbs-event': 'sf-general-hbs-event-page', 
+                'sf-general-hbs-event': 'sf-general-hbs-event-page', // SF Event Route
                 'contact': 'contact-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
