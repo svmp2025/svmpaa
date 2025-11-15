@@ -1467,6 +1467,7 @@
                 const navRouterElement = e.target.closest('.nav-router');
                 if (navRouterElement) {
                     // Only intercept internal hash links
+                    // CRITICAL FIX: Ensure the routing logic is executed for all hash changes
                     if (navRouterElement.hash && navRouterElement.origin === window.location.origin) {
                         e.preventDefault(); 
                         const newHash = navRouterElement.hash;
@@ -1474,8 +1475,11 @@
                         if(window.location.hash !== newHash) {
                             window.location.hash = newHash;
                         } else {
-                            // If clicking the same link, reload the content
-                            handleRouteChange();
+                            // If clicking the same link, manually trigger loadPage (which handles the view change)
+                            const pageId = newHash.substring(1);
+                            if(routes[pageId]) {
+                                loadPage(pageId);
+                            }
                         }
                     }
                 }
