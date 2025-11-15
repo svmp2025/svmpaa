@@ -213,7 +213,8 @@
                                 <h3 class="font-bold text-lg mb-1 text-gray-900">HBS Info Session: San Francisco</h3>
                                 <p class="text-sm text-gray-700 mb-4">Nov 20 | 6:00 PM PT | In-Person</p>
                             </div>
-                            <a href="#sf-general-hbs-event" class="event-button w-full nav-router">View Details</a>
+                            <!-- UPDATED LINK: Direct registration and removed nav-router -->
+                            <a href="https://apply.hbs.edu/register/?id=2d1ff8bc-21a7-4aa5-8a09-e1f5f8ca4064" target="_blank" class="event-button w-full">Register Now</a>
                         </div>
 
                         <!-- 2. Admissions Overview Q&A (Virtual) - Nov 25 -->
@@ -396,13 +397,14 @@
                 <div class="space-y-4 mb-8">
                     
                     <!-- KEPT: San Francisco General - Nov 20 (Moved to top as it's chronologically first remaining regional event) -->
-                    <a href="#sf-general-hbs-event" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
+                    <!-- UPDATED LINK: Direct registration and removed nav-router -->
+                    <a href="https://apply.hbs.edu/register/?id=2d1ff8bc-21a7-4aa5-8a09-e1f5f8ca4064" target="_blank" class="card p-6 border-l-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-50 transition">
                         <div>
                             <h4 class="font-bold text-xl text-gray-900 mb-1">HBS Information Session: San Francisco (General)</h4>
                             <p class="text-sm text-gray-600 mb-2"><strong>🗓 Thursday, November 20, 2025 | 6:00 PM - 7:30 PM PT</strong></p>
                             <p class="text-sm text-gray-700">The last HBS session in the Bay Area this month, covering the core MBA curriculum and life on campus.</p>
                         </div>
-                        <span class="event-button mt-4 md:mt-0">View Details</span>
+                        <span class="event-button mt-4 md:mt-0">Register Now</span>
                     </a>
 
                 </div>
@@ -448,7 +450,7 @@
                     </a>
                     <!-- Arlington Event (Now Past) - UPDATED IMAGE LINK -->
                     <a href="#arlington-event" class="nav-router card overflow-hidden block">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=Arlington';">
+                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
                         <div class="p-4 text-center">
                             <h4 class="font-bold text-lg mb-1">Arlington: Happy Hour</h4>
                             <p class="text-sm text-gray-600">Aug 29th | Arlington, VA</p>
@@ -1281,6 +1283,60 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
                 <!-- CHANGE 2: Reverted bottom link text -->
                 <a href="#development" class="nav-router text-red-800 hover:underline font-medium">&larr; Return to Professional Development</a>
+            </div>
+        </div>
+    </template>
+
+    <template id="sf-general-hbs-event-page">
+        <div class="page" id="sf-general-hbs-event">
+            <div class="w-full h-64 md:h-80">
+                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+San+Francisco+Session" alt="San Francisco Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+San+Francisco+Session';">
+            </div>
+               <div class="bg-white shadow-md">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: San Francisco (General)</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Thursday, November 20, 2025 | 6:00 PM - 7:30 PM PT</p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
+                            <div class="space-y-4 text-gray-700">
+                                <div class="flex items-start">
+                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">Location</h3>
+                                        <p>Specific location in San Francisco will be provided upon registration.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="semibold">About The Event</h3>
+                                        <p>An evening information session hosted by HBS Admissions for prospective students in the Bay Area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h2 class="text-2xl font-bold mb-4">Host</h2>
+                            <p class="gray-700">Harvard Business School Admissions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://apply.hbs.edu/register/?id=2d1ff8bc-21a7-4aa5-8a09-e1f5f8ca4064" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
+                        <i data-feather="check-circle" class="mr-2"></i>
+                        Register Now
+                    </a>
+                    <div class="mt-12">
+                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                    </div>
+                </div>
             </div>
         </div>
     </template>
