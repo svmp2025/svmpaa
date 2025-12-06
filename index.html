@@ -198,14 +198,26 @@
                 </div>
             </div>
 
-            <!-- Featured Upcoming Events Section (Restored 2 Featured Events) -->
+            <!-- Featured Upcoming Events Section -->
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Featured Upcoming Events</h2>
-                    <!-- Listing the top 2 events plus the CTA -->
+                    <!-- Listing the top events plus the CTA -->
                     <div class="space-y-6 mb-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-                        <!-- 1. Life at HBS Chat with the African American Student Union (AASU) - Dec 1 -->
+                        <!-- Featured: Campus Ambassador Kick-Off - Dec 11 -->
+                        <div class="card p-5 h-full border-t-4 border-red-800 flex flex-col justify-between shadow-lg transform scale-105 md:scale-100 md:hover:scale-105 transition-transform duration-300 bg-red-50">
+                             <div>
+                                <i data-feather="flag" class="h-6 w-6 text-red-800 mb-2"></i>
+                                <p class="text-xs font-bold text-red-800 uppercase">Alumni Call to Action</p>
+                                <h3 class="font-bold text-lg mb-1 text-gray-900">Campus Ambassador Kick-Off</h3>
+                                <p class="text-sm text-gray-700 mb-4">Dec 11 | 7:00 PM ET | Recruiting 2026</p>
+                                <p class="text-sm text-gray-600 mb-4 line-clamp-3">Help us connect talented students with SVMP. Join the board for this kick-off meeting.</p>
+                            </div>
+                            <a href="#ambassador-kickoff" class="nav-router event-button w-full">Learn More & RSVP</a>
+                        </div>
+
+                        <!-- 1. Life at HBS Chat - Dec 1 -->
                         <div class="card p-5 h-full border-t-4 border-gray-600 flex flex-col justify-between">
                             <div>
                                 <i data-feather="video" class="h-6 w-6 text-gray-600 mb-2"></i>
@@ -215,7 +227,7 @@
                             </div>
                             <a href="https://apply.hbs.edu/register/?id=5b5555c0-99fb-45e2-9409-efb5c0a3e9e5" target="_blank" class="event-button w-full">Register Now</a>
                         </div>
-
+                        
                         <!-- 2. Student Insights: Life at HBS - Dec 2 -->
                         <div class="card p-5 h-full border-t-4 border-gray-600 flex flex-col justify-between">
                             <div>
@@ -227,11 +239,11 @@
                             <a href="https://apply.hbs.edu/register/?id=8cc98335-e7ff-43e8-b905-8b8c7e856548" target="_blank" class="event-button w-full">Register Now</a>
                         </div>
                         
-                        <!-- 3. See all Events CTA -->
-                        <a href="#events" class="nav-router card p-5 h-full text-center flex flex-col justify-center items-center bg-white border border-gray-200 hover:bg-red-50 transition">
-                           <i data-feather="arrow-right-circle" class="h-10 w-10 text-red-800 mb-2"></i>
-                            <h3 class="font-bold text-lg mb-2 text-red-800">View All Events</h3>
-                            <p class="text-sm text-gray-700">Explore the full calendar for all upcoming sessions.</p>
+                        <!-- 3. See all Events CTA (Shifted to fit grid if needed, or kept) -->
+                    </div>
+                    <div class="text-center mt-8">
+                         <a href="#events" class="nav-router inline-flex items-center text-red-800 font-semibold hover:underline">
+                            View Full Events Calendar <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
                         </a>
                     </div>
                 </div>
@@ -253,7 +265,6 @@
                         <a href="#development" class="nav-router p-6 bg-gray-100 rounded-lg border border-gray-200 hover:bg-gray-200 transition">
                             <i data-feather="trending-up" class="h-8 w-8 text-gray-800 mx-auto mb-2"></i>
                             <h3 class="text-xl font-semibold text-gray-800">Professional Development</h3>
-                            <!-- FIX: Removed asterisks and used <strong> for bolding -->
                             <p class="text-sm text-gray-600">Access our exclusive <strong>Graduate Scholarship Directory</strong>, Mentorship Program, and career support tools.</p>
                         </a>
                     </div>
@@ -373,10 +384,7 @@
                 <!-- Upcoming Events - NEW SECTION -->
                 <h2 class="text-3xl font-bold mb-8 text-gray-900 border-b pb-2">Upcoming Events</h2>
                 
-                <!-- REMOVED: SVMPAA Community Events (Alumni-Hosted) Oct 23 -->
-
                 <!-- MBA Informational Events (HBS & External) -->
-                <h3 class="text-2xl font-bold mb-6 text-gray-700">MBA Informational Events (External & Virtual)</h3>
                 <div class="space-y-4 mb-8">
                     
                     <!-- NEW: Life at HBS Chat with the African American Student Union (AASU) - Dec 1 -->
@@ -397,6 +405,21 @@
                             <p class="text-sm text-gray-700">A discussion panel featuring current HBS students sharing their perspectives on campus life and the academic rigor.</p>
                         </div>
                         <a href="https://apply.hbs.edu/register/?id=8cc98335-e7ff-43e8-b905-8b8c7e856548" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
+                    </div>
+
+                    <!-- NEW: SVMPAA Campus Ambassador Program Kick-Off Zoom - Dec 11 -->
+                    <div class="card p-6 border-l-4 border-red-800 bg-red-50 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-100 transition shadow-sm">
+                        <div class="max-w-2xl">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 border border-red-200">
+                                    Alumni Only
+                                </span>
+                            </div>
+                            <h4 class="font-bold text-xl text-red-900 mb-1">SVMPAA Campus Ambassador Program Kick-Off Zoom</h4>
+                            <p class="text-sm text-gray-800 mb-2"><strong>🗓 Thursday, December 11, 2025 | 7:00 PM ET</strong></p>
+                            <p class="text-sm text-gray-700">Recruiting for SVMP 2026. A kickoff meeting about the SVMPAA Campus Ambassador process and how to market the program.</p>
+                        </div>
+                        <a href="#ambassador-kickoff" class="nav-router event-button mt-4 md:mt-0">Learn More & RSVP</a>
                     </div>
 
                     <!-- NEW: 2+2 Program Information Session - Dec 17 AM -->
@@ -420,15 +443,6 @@
                     </div>
 
                 </div>
-
-                <!-- HBS Regional Sessions -->
-                <h3 class="text-2xl font-bold mb-6 text-gray-700">HBS Regional Information Sessions</h3>
-                <div class="space-y-4 mb-8">
-                    
-                    <!-- ALL NOVEMBER REGIONAL EVENTS REMOVED. This section is now empty of upcoming events. -->
-
-                </div>
-
 
                 <!-- Text for volunteering -->
                 <div class="text-center mt-16 mb-12">
@@ -497,6 +511,92 @@
         </div>
     </template>
     
+    <!-- NEW: Ambassador Kick-Off Detail Page -->
+    <template id="ambassador-kickoff-page">
+        <div class="page" id="ambassador-kickoff">
+             <div class="w-full h-64 md:h-80 bg-red-900 relative">
+                <!-- Fallback gradient if image fails, though placeholder provided -->
+                <div class="absolute inset-0 bg-gradient-to-br from-red-900 to-gray-900 flex items-center justify-center">
+                     <i data-feather="users" class="h-24 w-24 text-white/20"></i>
+                </div>
+                <img class="w-full h-full object-cover relative z-10 opacity-60 mix-blend-overlay" src="https://placehold.co/1200x400/991b1b/FFFFFF?text=Campus+Ambassadors" alt="Campus Ambassadors">
+            </div>
+            <div class="bg-white shadow-md relative z-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                    <span class="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider text-red-800 uppercase bg-red-100 rounded-full">Recruiting for SVMP 2026</span>
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">Campus Ambassador Program Kick-Off</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-gray-700">Dec 11, 2025 | 07:00 PM Eastern Time</p>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
+                     <!-- Left Column: Letter -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-red-800">
+                             <div class="prose prose-red max-w-none text-gray-700">
+                                <p class="text-lg leading-relaxed mb-6">
+                                    On behalf of the board, I hope you are all doing well during this busy time of year.
+                                </p>
+                                <p class="mb-6">
+                                    Each year our association encourages alumni to help connect talented students in their networks with the exceptional Harvard Business School Summer Venture in Management Program. With the application period beginning in the early spring, we are pleased to invite you to participate in the <strong>SVMPAA Campus Ambassador Program</strong>.
+                                </p>
+                                <p class="mb-6">
+                                    Your engagement plays an important role in expanding access to this impactful opportunity.
+                                </p>
+                                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Campus Ambassador Program Kick-Off Zoom:</h3>
+                                <p class="mb-6">
+                                    A kickoff meeting about the SVMPAA Campus Ambassador process and how to market the program will be taking place on <strong>December 11th at 7pm EST via Zoom</strong>.
+                                </p>
+                                <p>
+                                    If you plan to host an information session at your university or to an organization, this meeting will help you become an SVMPAA Ambassador.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Event Details & CTA -->
+                    <div>
+                         <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                            <h2 class="text-xl font-bold mb-4 text-gray-900">Event Details</h2>
+                             <ul class="space-y-4 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <i data-feather="calendar" class="h-5 w-5 text-red-800 mr-2 mt-0.5"></i>
+                                    <span>Dec 11, 2025</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="clock" class="h-5 w-5 text-red-800 mr-2 mt-0.5"></i>
+                                    <span>07:00 PM Eastern Time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="video" class="h-5 w-5 text-red-800 mr-2 mt-0.5"></i>
+                                    <span>Zoom Meeting</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-8">
+                                <a href="https://us06web.zoom.us/j/84802631337" target="_blank" class="block w-full text-center bg-red-800 text-white font-bold py-3 px-4 rounded hover:bg-red-900 transition duration-200">
+                                    Join Zoom / RSVP
+                                </a>
+                                <p class="text-xs text-gray-500 text-center mt-2">Click to join or register for the session.</p>
+                            </div>
+                         </div>
+                         
+                         <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                             <h3 class="font-bold text-gray-900 mb-2">Can't make it?</h3>
+                             <p class="text-sm text-gray-600 mb-4">You can still get involved by checking our volunteering page.</p>
+                             <a href="#get-involved" class="nav-router text-red-800 text-sm font-semibold hover:underline">Volunteer Opportunities &rarr;</a>
+                         </div>
+                    </div>
+                 </div>
+                 
+                 <div class="mt-12 text-center">
+                    <a href="#events" class="nav-router text-gray-600 hover:text-red-800 font-medium">&larr; Back to Events Calendar</a>
+                 </div>
+            </div>
+        </div>
+    </template>
+
     <template id="reunion-recap-page">
         <div class="page" id="reunion-recap">
              <!-- Hero Section -->
@@ -990,6 +1090,8 @@
                                 <div>
                                     <h3 class="font-bold text-lg mb-1">Campus Ambassador</h3>
                                     <p class="text-gray-600 text-sm">Be a point person for recruiting at your undergraduate school or organization.</p>
+                                    <!-- Added link to the new detail page -->
+                                    <a href="#ambassador-kickoff" class="nav-router text-red-800 text-xs font-bold hover:underline mt-1 inline-block">View Kick-Off Details &rarr;</a>
                                 </div>
                             </div>
                             <div class="flex items-start bg-gray-50 p-4 rounded-md">
@@ -1156,6 +1258,7 @@
                         <p class="text-lg leading-relaxed mb-10 text-gray-700">
                             The difference between applying and securing a fellowship is strategy. Review the core requirements, key eligibility, and application mechanism for the most highly sought-after awards globally.
                         </p>
+
                         <div class="space-y-10">
 
                             <!-- 1. Program: Rhodes Scholarship -->
@@ -1307,60 +1410,6 @@
         </div>
     </template>
 
-    <template id="sf-general-hbs-event-page">
-        <div class="page" id="sf-general-hbs-event">
-            <div class="w-full h-64 md:h-80">
-                <img class="w-full h-full object-cover" src="https://placehold.co/1200x400/1f2937/FFFFFF?text=HBS+San+Francisco+Session" alt="San Francisco Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=HBS+San+Francisco+Session';">
-            </div>
-               <div class="bg-white shadow-md">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">HBS Information Session: San Francisco (General)</h1>
-                    <p class="mt-4 text-lg md:text-xl font-semibold text-red-800 bg-red-50 inline-block px-4 py-2 rounded-full">Thursday, November 20, 2025 | 6:00 PM - 7:30 PM PT</p>
-                </div>
-            </div>
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-                <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2">
-                        <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="text-2xl font-bold mb-4">Event Details</h2>
-                            <div class="space-y-4 text-gray-700">
-                                <div class="flex items-start">
-                                    <i data-feather="map-pin" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
-                                    <div>
-                                        <h3 class="semibold">Location</h3>
-                                        <p>Specific location in San Francisco will be provided upon registration.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <i data-feather="message-circle" class="h-6 w-6 text-red-800 mr-3 mt-1 flex-shrink-0"></i>
-                                    <div>
-                                        <h3 class="semibold">About The Event</h3>
-                                        <p>An evening information session hosted by HBS Admissions for prospective students in the Bay Area.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="bg-white p-8 rounded-lg shadow-md">
-                            <h2 class="text-2xl font-bold mb-4">Host</h2>
-                            <p class="gray-700">Harvard Business School Admissions</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-12">
-                    <a href="https://apply.hbs.edu/register/?id=2d1ff8bc-21a7-4aa5-8a09-e1f5f8ca4064" target="_blank" class="inline-flex items-center bg-red-800 text-white font-semibold py-3 px-8 rounded-md hover:bg-red-900 transition text-lg">
-                        <i data-feather="check-circle" class="mr-2"></i>
-                        Register Now
-                    </a>
-                    <div class="mt-12">
-                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
-
 
     <script>
         // --- API & Utility Helpers (REMOVED) ---
@@ -1388,11 +1437,11 @@
                 'events': 'events-page',
                 'reunion-recap': 'reunion-recap-page',
                 'bridge-year-event': 'bridge-year-event-page',
+                'ambassador-kickoff': 'ambassador-kickoff-page', // NEW ROUTE ADDED
                 'la-event': 'la-event-page',
                 'sd-event': 'sd-event-page',
                 'chicago-event': 'chicago-event-page',
                 'arlington-event': 'arlington-event-page',
-                // 'sf-general-hbs-event': 'sf-general-hbs-event-page', // SF Event Route - REMOVED
                 'contact': 'contact-page',
                 'partnerships': 'partnerships-page',
                 'development': 'development-page',
@@ -1514,7 +1563,7 @@
                 // Set active class for the current main navigation link
                 let mainPageId = pageId;
                 // If it's a sub-page (like an event detail page or a resource page), highlight the relevant main navigation link
-                if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap')) {
+                if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap') || mainPageId === 'ambassador-kickoff') {
                     mainPageId = 'events';
                 } else if (mainPageId === 'scholarship-directory') { // Handle the new page (updated name)
                     mainPageId = 'development';
