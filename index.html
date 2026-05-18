@@ -203,43 +203,21 @@
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Featured Upcoming Events</h2>
                     <!-- Listing the top events plus the CTA -->
-                    <div class="space-y-6 mb-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="space-y-6 mb-8 max-w-4xl mx-auto">
 
-                        <!-- Featured: Campus Ambassador Kick-Off - Dec 11 -->
-                        <div class="card p-5 h-full border-t-4 border-red-800 flex flex-col justify-between shadow-lg transform scale-105 md:scale-100 md:hover:scale-105 transition-transform duration-300 bg-red-50">
-                             <div>
-                                <i data-feather="flag" class="h-6 w-6 text-red-800 mb-2"></i>
-                                <p class="text-xs font-bold text-red-800 uppercase">Alumni Call to Action</p>
-                                <h3 class="font-bold text-lg mb-1 text-gray-900">Campus Ambassador Kick-Off</h3>
-                                <p class="text-sm text-gray-700 mb-4">Dec 11 | 7:00 PM ET | Recruiting 2026</p>
-                                <p class="text-sm text-gray-600 mb-4 line-clamp-3">Help us connect talented students with SVMP. Join the board for this kick-off meeting.</p>
+                        <!-- Featured: 2026 Reunion -->
+                        <div class="card p-6 border-t-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center shadow-lg bg-red-50">
+                            <div class="max-w-2xl mb-4 md:mb-0">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-800 text-white uppercase tracking-wider mb-2">Registration is Open</span>
+                                <h3 class="font-bold text-2xl mb-1 text-gray-900">SVMPAA Reunion 2026</h3>
+                                <p class="text-sm text-gray-800 font-semibold mb-2">July 17th — July 19th, 2026</p>
+                                <p class="text-sm text-gray-700">After an incredible turnout last year, the SVMPAA Reunion is back! Secure your spot for our biggest weekend of the year.</p>
                             </div>
-                            <a href="#ambassador-kickoff" class="nav-router event-button w-full">Learn More & RSVP</a>
+                            <div class="flex flex-col gap-2 w-full md:w-auto">
+                                <a href="#reunion-2026" class="nav-router event-button w-full md:w-auto text-center">Learn More & RSVP</a>
+                            </div>
                         </div>
 
-                        <!-- 1. Life at HBS Chat - Dec 1 -->
-                        <div class="card p-5 h-full border-t-4 border-gray-600 flex flex-col justify-between">
-                            <div>
-                                <i data-feather="video" class="h-6 w-6 text-gray-600 mb-2"></i>
-                                <p class="text-xs font-medium text-gray-500 uppercase">Virtual Chat</p>
-                                <h3 class="font-bold text-lg mb-1 text-gray-900">HBS Chat with AASU</h3>
-                                <p class="text-sm text-gray-700 mb-4">Dec 1 | 4:00 PM ET | Virtual</p>
-                            </div>
-                            <a href="https://apply.hbs.edu/register/?id=5b5555c0-99fb-45e2-9409-efb5c0a3e9e5" target="_blank" class="event-button w-full">Register Now</a>
-                        </div>
-                        
-                        <!-- 2. Student Insights: Life at HBS - Dec 2 -->
-                        <div class="card p-5 h-full border-t-4 border-gray-600 flex flex-col justify-between">
-                            <div>
-                                <i data-feather="users" class="h-6 w-6 text-gray-600 mb-2"></i>
-                                <p class="text-xs font-medium text-gray-500 uppercase">Student Panel</p>
-                                <h3 class="font-bold text-lg mb-1 text-gray-900">Student Insights: Life at HBS</h3>
-                                <p class="text-sm text-gray-700 mb-4">Dec 2 | 5:30 PM ET | Virtual</p>
-                            </div>
-                            <a href="https://apply.hbs.edu/register/?id=8cc98335-e7ff-43e8-b905-8b8c7e856548" target="_blank" class="event-button w-full">Register Now</a>
-                        </div>
-                        
-                        <!-- 3. See all Events CTA (Shifted to fit grid if needed, or kept) -->
                     </div>
                     <div class="text-center mt-8">
                          <a href="#events" class="nav-router inline-flex items-center text-red-800 font-semibold hover:underline">
@@ -322,13 +300,6 @@
                         <p class="text-red-800 font-semibold mb-2">President</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
-                    <!-- Holly Harmon -->
-                    <div class="card text-center p-6">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/holly-pfp.jpeg" alt="Holly Harmon Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Holly';">
-                        <h3 class="font-bold text-xl">Holly Harmon</h3>
-                        <p class="text-red-800 font-semibold mb-2">Coordinator of the Board</p>
-                        <p class="text-gray-600 text-sm">SVMP 19’</p>
-                    </div>
                     <!-- Brian Oviedo -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/brian-pfp.png" alt="Brian Oviedo Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
@@ -342,20 +313,6 @@
                         <h3 class="font-bold text-xl">Tony Nguyen</h3>
                         <p class="text-red-800 font-semibold mb-2">Alumni Liaison - Internal Events</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
-                    </div>
-                    <!-- Dawson Templin -->
-                    <div class="card text-center p-6">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/dawson-pfp.jpeg" alt="Dawson Templin Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Dawson';">
-                        <h3 class="font-bold text-xl">Dawson Templin</h3>
-                        <p class="text-red-800 font-semibold mb-2">Director of Strategic Partnerships</p>
-                        <p class="text-gray-600 text-sm">SVMP 24’</p>
-                    </div>
-                    <!-- Paola Colon -->
-                    <div class="card text-center p-6">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/paola-pfp.jpeg" alt="Paola Colon Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Paola';">
-                        <h3 class="font-bold text-xl">Paola Colon</h3>
-                        <p class="text-red-800 font-semibold mb-2">Director of Alumni Relations</p>
-                        <p class="text-gray-600 text-sm">SVMP 23’</p>
                     </div>
                     <!-- Porter Alexander Tynes III -->
                     <div class="card text-center p-6">
@@ -387,59 +344,18 @@
                 <!-- MBA Informational Events (HBS & External) -->
                 <div class="space-y-4 mb-8">
                     
-                    <!-- NEW: Life at HBS Chat with the African American Student Union (AASU) - Dec 1 -->
-                    <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
-                        <div>
-                            <h4 class="font-bold text-xl text-gray-900 mb-1">Life at HBS Chat with the African American Student Union <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Monday, December 1, 2025 | 4:00 PM - 4:45 PM ET</strong></p>
-                            <p class="text-sm text-gray-700">Hear directly from current AASU students about the experience and community at HBS.</p>
-                        </div>
-                        <a href="https://apply.hbs.edu/register/?id=5b5555c0-99fb-45e2-9409-efb5c0a3e9e5" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
-                    </div>
-                    
-                    <!-- NEW: Student Insights: Life at HBS - Dec 2 -->
-                    <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
-                        <div>
-                            <h4 class="font-bold text-xl text-gray-900 mb-1">Student Insights: Life at HBS <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Tuesday, December 2, 2025 | 5:30 PM - 6:15 PM ET</strong></p>
-                            <p class="text-sm text-gray-700">A discussion panel featuring current HBS students sharing their perspectives on campus life and the academic rigor.</p>
-                        </div>
-                        <a href="https://apply.hbs.edu/register/?id=8cc98335-e7ff-43e8-b905-8b8c7e856548" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
-                    </div>
-
-                    <!-- NEW: SVMPAA Campus Ambassador Program Kick-Off Zoom - Dec 11 -->
+                    <!-- NEW: 2026 Reunion -->
                     <div class="card p-6 border-l-4 border-red-800 bg-red-50 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-100 transition shadow-sm">
                         <div class="max-w-2xl">
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 border border-red-200">
-                                    Alumni Only
-                                </span>
-                            </div>
-                            <h4 class="font-bold text-xl text-red-900 mb-1">SVMPAA Campus Ambassador Program Kick-Off Zoom</h4>
-                            <p class="text-sm text-gray-800 mb-2"><strong>🗓 Thursday, December 11, 2025 | 7:00 PM ET</strong></p>
-                            <p class="text-sm text-gray-700">Recruiting for SVMP 2026. A kickoff meeting about the SVMPAA Campus Ambassador process and how to market the program.</p>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-800 text-white uppercase tracking-wider mb-2">Registration is Open</span>
+                            <h4 class="font-bold text-2xl text-red-900 mb-1">SVMPAA Reunion 2026</h4>
+                            <p class="text-sm text-gray-800 mb-2"><strong>🗓 Friday, July 17 — Sunday, July 19, 2026</strong></p>
+                            <p class="text-sm text-gray-700">Following the massive success of our 2025 gathering, we are thrilled to announce SVMPAA Reunion 2026. Reconnect, grow, and celebrate with the community.</p>
                         </div>
-                        <a href="#ambassador-kickoff" class="nav-router event-button mt-4 md:mt-0">Learn More & RSVP</a>
-                    </div>
-
-                    <!-- NEW: 2+2 Program Information Session - Dec 17 AM -->
-                    <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
-                        <div>
-                            <h4 class="font-bold text-xl text-gray-900 mb-1">2+2 Program Information Session <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Wednesday, December 17, 2025 | 9:00 AM - 9:45 AM ET</strong></p>
-                            <p class="text-sm text-gray-700">An early morning session dedicated to the HBS 2+2 deferred admission program.</p>
+                        <div class="flex flex-col gap-3 mt-4 md:mt-0 w-full md:w-auto">
+                            <a href="#reunion-2026" class="nav-router event-button text-center">View Details</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-WMT8gxe5tbKaIPTL-vqpStzKvC6UEQDJbcyg9p6jOcEEQ/viewform" target="_blank" class="text-center px-4 py-2 border border-red-800 text-sm font-semibold rounded-md text-red-800 bg-white hover:bg-red-50 transition">Register Now</a>
                         </div>
-                        <a href="https://apply.hbs.edu/register/?id=6684ecaa-1f2b-4763-a5bd-5a4d8d1fc44c" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
-                    </div>
-                    
-                    <!-- NEW: Admissions MD Q&A (Virtual) - Dec 17 PM -->
-                    <div class="card p-6 border-l-4 border-gray-600 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-gray-50 transition">
-                        <div>
-                            <h4 class="font-bold text-xl text-gray-900 mb-1">Admissions Overview and Q&A with Managing Director <span class="text-sm font-normal text-gray-500">(Virtual)</span></h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>🗓 Wednesday, December 17, 2025 | 5:00 PM - 5:45 PM ET</strong></p>
-                            <p class="text-sm text-gray-700">A special session featuring the HBS Managing Director of MBA Admissions.</p>
-                        </div>
-                        <a href="https://apply.hbs.edu/register/?id=cb37de40-45ae-4aed-8d6a-062104d2d4e4" target="_blank" class="event-button mt-4 md:mt-0">Register Now</a>
                     </div>
 
                 </div>
@@ -511,81 +427,77 @@
         </div>
     </template>
     
-    <!-- NEW: Ambassador Kick-Off Detail Page -->
-    <template id="ambassador-kickoff-page">
-        <div class="page" id="ambassador-kickoff">
+    <!-- NEW: 2026 Reunion Detail Page -->
+    <template id="reunion-2026-page">
+        <div class="page" id="reunion-2026">
              <div class="w-full h-64 md:h-80 bg-red-900 relative">
-                <!-- Fallback gradient if image fails, though placeholder provided -->
                 <div class="absolute inset-0 bg-gradient-to-br from-red-900 to-gray-900 flex items-center justify-center">
-                     <i data-feather="users" class="h-24 w-24 text-white/20"></i>
+                     <i data-feather="calendar" class="h-24 w-24 text-white/20"></i>
                 </div>
-                <img class="w-full h-full object-cover relative z-10 opacity-60 mix-blend-overlay" src="https://placehold.co/1200x400/991b1b/FFFFFF?text=Campus+Ambassadors" alt="Campus Ambassadors">
+                <img class="w-full h-full object-cover relative z-10 opacity-60 mix-blend-overlay" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="Reunion 2026" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/991b1b/FFFFFF?text=Reunion+2026';">
             </div>
             <div class="bg-white shadow-md relative z-20">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-                    <span class="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider text-red-800 uppercase bg-red-100 rounded-full">Recruiting for SVMP 2026</span>
-                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">Campus Ambassador Program Kick-Off</h1>
-                    <p class="mt-4 text-lg md:text-xl font-semibold text-gray-700">Dec 11, 2025 | 07:00 PM Eastern Time</p>
+                    <span class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-white uppercase bg-red-800 rounded-full">Registration is Open</span>
+                    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">SVMPAA Reunion 2026</h1>
+                    <p class="mt-4 text-lg md:text-xl font-semibold text-gray-700">Friday, July 17 — Sunday, July 19, 2026</p>
                 </div>
             </div>
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                  <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                     <!-- Left Column: Letter -->
+                     <!-- Left Column: Copy -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-red-800">
                              <div class="prose prose-red max-w-none text-gray-700">
+                                <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-0">The SVMPAA Event of the Year is Here</h2>
                                 <p class="text-lg leading-relaxed mb-6">
-                                    On behalf of the board, I hope you are all doing well during this busy time of year.
+                                    After an absolutely unforgettable gathering in Boston and Cambridge last year, we are thrilled to invite you to the <strong>SVMPAA Reunion 2026!</strong> From <strong>Friday, July 17 through Sunday, July 19</strong>, alumni from across generations will converge once again for a weekend dedicated to connection, career advancement, and celebration.
                                 </p>
+                                
+                                <!-- Sneak Peek Callout to 2025 Recap -->
+                                <div class="bg-gray-50 border-l-4 border-gray-400 p-5 mb-8 rounded-r-lg shadow-sm">
+                                    <h3 class="text-lg font-bold text-gray-900 mb-2 mt-0">Curious what to expect?</h3>
+                                    <p class="mb-3 text-sm text-gray-700 leading-relaxed">Expect inspiring welcome plenaries, exclusive networking opportunities, and the unmatched energy of our vibrant community. Get a sneak peek by checking out our highlight reel and gallery from last year!</p>
+                                    <a href="#reunion-recap" class="nav-router inline-flex items-center text-red-800 font-semibold hover:underline text-sm">
+                                        Explore the 2025 Reunion Recap <i data-feather="arrow-right" class="ml-1 h-4 w-4"></i>
+                                    </a>
+                                </div>
+
                                 <p class="mb-6">
-                                    Each year our association encourages alumni to help connect talented students in their networks with the exceptional Harvard Business School Summer Venture in Management Program. With the application period beginning in the early spring, we are pleased to invite you to participate in the <strong>SVMPAA Campus Ambassador Program</strong>.
+                                    To help us finalize exclusive venues, lock in our weekend agenda, and ensure an incredible experience with accurate headcounts for catering and coordination, please secure your spot today by filling out our official registration form.
                                 </p>
+
+                                <div class="bg-red-50 p-6 rounded-lg my-8 text-center border border-red-100">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-0">REUNION DATES</h3>
+                                    <p class="text-red-800 font-bold text-lg mb-6">July 17th — July 19th, 2026</p>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-WMT8gxe5tbKaIPTL-vqpStzKvC6UEQDJbcyg9p6jOcEEQ/viewform" target="_blank" class="inline-block bg-red-800 text-white font-bold py-3 px-8 rounded hover:bg-red-900 transition duration-200 shadow-md">
+                                        Register for the Reunion Here
+                                    </a>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Stay Connected</h3>
                                 <p class="mb-6">
-                                    Your engagement plays an important role in expanding access to this impactful opportunity.
-                                </p>
-                                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Campus Ambassador Program Kick-Off Zoom:</h3>
-                                <p class="mb-6">
-                                    A kickoff meeting about the SVMPAA Campus Ambassador process and how to market the program will be taking place on <strong>December 11th at 7pm EST via Zoom</strong>.
+                                    Keep an eye out for upcoming announcements regarding the detailed weekend agenda, special events, hotel block information, and logistics as they continue to lock in over the next few weeks.
                                 </p>
                                 <p>
-                                    If you plan to host an information session at your university or to an organization, this meeting will help you become an SVMPAA Ambassador.
+                                    We can't wait to reconnect with our amazing community of alumni and construct a truly memorable weekend of celebrating shared memories and future milestones.
                                 </p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Right Column: Event Details & CTA -->
+                    <!-- Right Column: Links & CTA -->
                     <div>
                          <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-                            <h2 class="text-xl font-bold mb-4 text-gray-900">Event Details</h2>
-                             <ul class="space-y-4 text-sm text-gray-700">
-                                <li class="flex items-start">
-                                    <i data-feather="calendar" class="h-5 w-5 text-red-800 mr-2 mt-0.5"></i>
-                                    <span>Dec 11, 2025</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i data-feather="clock" class="h-5 w-5 text-red-800 mr-2 mt-0.5"></i>
-                                    <span>07:00 PM Eastern Time</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i data-feather="video" class="h-5 w-5 text-red-800 mr-2 mt-0.5"></i>
-                                    <span>Zoom Meeting</span>
-                                </li>
-                            </ul>
+                            <h2 class="text-xl font-bold mb-4 text-gray-900">Already registered?</h2>
+                            <p class="text-sm text-gray-700 mb-6">Keep in touch and coordinated with fellow alumni.</p>
                             
-                            <div class="mt-8">
-                                <a href="https://us06web.zoom.us/j/84802631337" target="_blank" class="block w-full text-center bg-red-800 text-white font-bold py-3 px-4 rounded hover:bg-red-900 transition duration-200">
-                                    Join Zoom / RSVP
+                            <div class="mt-4">
+                                <a href="https://groupme.com/join_group/114658370/DqKk46wN" target="_blank" class="flex items-center justify-center w-full bg-[#00AFF0] text-white font-bold py-3 px-4 rounded hover:bg-[#009ce6] transition duration-200 shadow">
+                                    <i data-feather="message-square" class="mr-2"></i> Join the Reunion GroupMe
                                 </a>
-                                <p class="text-xs text-gray-500 text-center mt-2">Click to join or register for the session.</p>
                             </div>
-                         </div>
-                         
-                         <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                             <h3 class="font-bold text-gray-900 mb-2">Can't make it?</h3>
-                             <p class="text-sm text-gray-600 mb-4">You can still get involved by checking our volunteering page.</p>
-                             <a href="#get-involved" class="nav-router text-red-800 text-sm font-semibold hover:underline">Volunteer Opportunities &rarr;</a>
                          </div>
                     </div>
                  </div>
@@ -1090,8 +1002,6 @@
                                 <div>
                                     <h3 class="font-bold text-lg mb-1">Campus Ambassador</h3>
                                     <p class="text-gray-600 text-sm">Be a point person for recruiting at your undergraduate school or organization.</p>
-                                    <!-- Added link to the new detail page -->
-                                    <a href="#ambassador-kickoff" class="nav-router text-red-800 text-xs font-bold hover:underline mt-1 inline-block">View Kick-Off Details &rarr;</a>
                                 </div>
                             </div>
                             <div class="flex items-start bg-gray-50 p-4 rounded-md">
@@ -1410,7 +1320,6 @@
         </div>
     </template>
 
-
     <script>
         // --- API & Utility Helpers (REMOVED) ---
 
@@ -1437,7 +1346,7 @@
                 'events': 'events-page',
                 'reunion-recap': 'reunion-recap-page',
                 'bridge-year-event': 'bridge-year-event-page',
-                'ambassador-kickoff': 'ambassador-kickoff-page', // NEW ROUTE ADDED
+                'reunion-2026': 'reunion-2026-page', // NEW ROUTE ADDED
                 'la-event': 'la-event-page',
                 'sd-event': 'sd-event-page',
                 'chicago-event': 'chicago-event-page',
@@ -1523,7 +1432,6 @@
                 }
             }
 
-
             function loadPage(pageId) {
                 mainContent.innerHTML = '';
                 
@@ -1563,7 +1471,7 @@
                 // Set active class for the current main navigation link
                 let mainPageId = pageId;
                 // If it's a sub-page (like an event detail page or a resource page), highlight the relevant main navigation link
-                if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap') || mainPageId === 'ambassador-kickoff') {
+                if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap') || mainPageId === 'reunion-2026') {
                     mainPageId = 'events';
                 } else if (mainPageId === 'scholarship-directory') { // Handle the new page (updated name)
                     mainPageId = 'development';
