@@ -50,7 +50,7 @@
         .carousel-item.active {
             display: block;
         }
-        /* Custom styles for tables within the long report (NO LONGER USED, but kept for general table styling) */
+        /* Custom styles for tables within the long report */
         .report-table th, .report-table td {
             padding: 0.75rem 1.5rem; /* Increased padding */
             border-bottom: 1px solid #e5e7eb;
@@ -78,12 +78,10 @@
         .event-button:hover {
             background-color: #7f1d1d; /* red-900 */
         }
-        /* Removed .loader styles */
     </style>
 </head>
-<body class="bg-gray-50 flocked-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -92,7 +90,6 @@
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
                     </a>
                 </div>
-                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#home" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Home</a>
@@ -104,13 +101,11 @@
                         <a href="#contact" class="nav-link nav-router px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Contact</a>
                     </div>
                 </div>
-                <!-- Newsletter Button -->
                 <div class="hidden md:block">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700">
                         Join Newsletter
                     </a>
                 </div>
-                <!-- Mobile Menu Button -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" id="mobile-menu-button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
@@ -119,7 +114,6 @@
                 </div>
             </div>
         </nav>
-        <!-- Mobile menu, show/hide based on menu state. -->
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="nav-link nav-router block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-800 hover:bg-red-50">Home</a>
@@ -141,14 +135,12 @@
     </header>
 
     <main id="main-content">
-        <!-- Page content will be injected here -->
-    </main>
+        </main>
 
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <!-- UPDATED: Logo size increased to h-16 -->
                     <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto mb-4 bg-white p-1 rounded" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
                     <p class="text-sm text-gray-400">Connecting and empowering the next generation of leaders.</p>
                 </div>
@@ -174,15 +166,13 @@
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; 2025 SVMP Alumni Association. All rights reserved.</p>
+                <p>© 2025 SVMP Alumni Association. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
-    <!-- Page Templates -->
     <template id="home-page">
         <div class="page" id="home">
-            <!-- Hero Section -->
             <div class="relative bg-gray-900 text-white">
                 <div class="absolute inset-0">
                     <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2172_jpg.JPEG" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Community';">
@@ -198,14 +188,11 @@
                 </div>
             </div>
 
-            <!-- Featured Upcoming Events Section -->
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold text-center mb-10">Featured Upcoming Events</h2>
-                    <!-- Listing the top events plus the CTA -->
                     <div class="space-y-6 mb-8 max-w-4xl mx-auto">
 
-                        <!-- Featured: 2026 Reunion -->
                         <div class="card p-6 border-t-4 border-red-800 flex flex-col md:flex-row justify-between items-start md:items-center shadow-lg bg-red-50">
                             <div class="max-w-2xl mb-4 md:mb-0">
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-800 text-white uppercase tracking-wider mb-2">Registration is Open</span>
@@ -227,7 +214,6 @@
                 </div>
             </section>
             
-            <!-- UPDATED SECTION: Navigation and Resources Overview -->
             <section class="py-16 bg-white border-t border-gray-200">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
                     <h2 class="text-3xl font-bold text-center mb-10 text-gray-900">Your Alumni Benefits & Resources</h2>
@@ -255,7 +241,6 @@
         <div class="page" id="about">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h1 class="text-4xl font-bold text-center mb-12">About SVMPAA</h1>
-                <!-- Mission, Vision, Values -->
                 <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
                     <div>
                         <i data-feather="target" class="h-10 w-10 mx-auto text-red-800 mb-3"></i>
@@ -274,7 +259,6 @@
                     </div>
                 </div>
                 
-                <!-- History -->
                 <div class="bg-white p-8 rounded-lg shadow-md mb-16">
                     <h2 class="text-3xl font-bold text-center mb-6">History of SVMPAA</h2>
                     <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed space-y-4">
@@ -290,38 +274,32 @@
                     </div>
                 </div>
 
-                <!-- Board Members -->
                 <h2 class="text-3xl font-bold text-center mb-10">Meet the Board</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Odina Eshxanova -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/odina-pfp.jpeg" alt="Odina Eshxanova Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Odina';">
                         <h3 class="font-bold text-xl">Odina Eshxanova</h3>
                         <p class="text-red-800 font-semibold mb-2">President</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
-                    <!-- Brian Oviedo -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/brian-pfp.png" alt="Brian Oviedo Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
                         <h3 class="font-bold text-xl">Brian Oviedo</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of Marketing</p>
                         <p class="text-gray-600 text-sm">SVMP 23’</p>
                     </div>
-                    <!-- Tony Nguyen -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/dcfd59c824b39a7f4be779cfa234a9638a844e67/images/tony.png" alt="Tony Nguyen Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Tony';">
                         <h3 class="font-bold text-xl">Tony Nguyen</h3>
                         <p class="text-red-800 font-semibold mb-2">Alumni Liaison - Internal Events</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
-                    <!-- Porter Alexander Tynes III -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/dcfd59c824b39a7f4be779cfa234a9638a844e67/images/porter.png" alt="Porter Alexander Tynes III Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Porter';">
                         <h3 class="font-bold text-xl">Porter Alexander Tynes III</h3>
                         <p class="text-red-800 font-semibold mb-2">Alumni Liaison - External Events</p>
                         <p class="text-gray-600 text-sm">SVMP 24’</p>
                     </div>
-                    <!-- Marvelous Ekeh -->
                     <div class="card text-center p-6">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/marvelous-pfp.jpeg" alt="Marvelous Ekeh Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Marvelous';">
                         <h3 class="font-bold text-xl">Marvelous Ekeh</h3>
@@ -338,13 +316,8 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h1 class="text-4xl font-bold text-center mb-12">SVMPAA Events</h1>
                 
-                <!-- Upcoming Events - NEW SECTION -->
                 <h2 class="text-3xl font-bold mb-8 text-gray-900 border-b pb-2">Upcoming Events</h2>
-                
-                <!-- MBA Informational Events (HBS & External) -->
                 <div class="space-y-4 mb-8">
-                    
-                    <!-- NEW: 2026 Reunion -->
                     <div class="card p-6 border-l-4 border-red-800 bg-red-50 flex flex-col md:flex-row justify-between items-start md:items-center hover:bg-red-100 transition shadow-sm">
                         <div class="max-w-2xl">
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-800 text-white uppercase tracking-wider mb-2">Registration is Open</span>
@@ -357,10 +330,8 @@
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-WMT8gxe5tbKaIPTL-vqpStzKvC6UEQDJbcyg9p6jOcEEQ/viewform" target="_blank" class="text-center px-4 py-2 border border-red-800 text-sm font-semibold rounded-md text-red-800 bg-white hover:bg-red-50 transition">Register Now</a>
                         </div>
                     </div>
-
                 </div>
 
-                <!-- Text for volunteering -->
                 <div class="text-center mt-16 mb-12">
                     <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
                         Interested in hosting a local meetup?
@@ -370,10 +341,8 @@
                     </a>
                 </div>
 
-                <!-- Past Events - Induction event removed -->
                 <h2 class="text-3xl font-bold mb-8">Past Event Highlights</h2>
                 <div class="grid md:grid-cols-1 gap-8 mb-12">
-                    <!-- Existing Past Event: 2025 Alumni Reunion -->
                     <a href="#reunion-recap" class="nav-router card overflow-hidden block hover:shadow-xl">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="Reunion Hero Image" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x192?text=Reunion';">
                         <div class="p-6">
@@ -382,15 +351,13 @@
                             <p class="text-gray-700 leading-relaxed mb-4">
                                 The 2025 Alumni Reunion was an incredible success, bringing together alumni from across the years for a memorable weekend...
                             </p>
-                            <span class="font-semibold text-red-800 hover:underline">Read More & View Photos &rarr;</span>
+                            <span class="font-semibold text-red-800 hover:underline">Read More & View Photos →</span>
                         </div>
                     </a>
                 </div>
 
-                <!-- UPDATED HEADING: Regional Meetups Section (Moved from Upcoming) - IMAGES NOW USING FINAL LINKS -->
                 <h3 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Regional Meetups - 2025 (Past)</h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Chicago Event (Now Past) - UPDATED IMAGE LINK -->
                     <a href="#chicago-event" class="nav-router card overflow-hidden block">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/chicago.jpeg" alt="Chicago Riverwalk" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=Chicago';">
                         <div class="p-4 text-center">
@@ -398,7 +365,6 @@
                             <p class="text-sm text-gray-600">Aug 27th | Riverwalk</p>
                         </div>
                     </a>
-                    <!-- Arlington Event (Now Past) - UPDATED IMAGE LINK -->
                     <a href="#arlington-event" class="nav-router card overflow-hidden block">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
                         <div class="p-4 text-center">
@@ -406,7 +372,6 @@
                             <p class="text-sm text-gray-600">Aug 29th | Arlington, VA</p>
                         </div>
                     </a>
-                    <!-- Los Angeles Event (Now Past) -->
                     <a href="#la-event" class="nav-router card overflow-hidden block">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/los-angeles-city-skyline.jpg" alt="Los Angeles Skyline" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=LA+Event';">
                         <div class="p-4 text-center">
@@ -414,7 +379,6 @@
                             <p class="text-sm text-gray-600">Aug 29th | Rocky and Riley’s</p>
                         </div>
                     </a>
-                    <!-- San Diego Event (Now Past) -->
                     <a href="#sd-event" class="nav-router card overflow-hidden block">
                         <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/San%20diego.jpg" alt="San Diego Waterfront" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=SD+Event';">
                         <div class="p-4 text-center">
@@ -427,7 +391,6 @@
         </div>
     </template>
     
-    <!-- NEW: 2026 Reunion Detail Page -->
     <template id="reunion-2026-page">
         <div class="page" id="reunion-2026">
              <div class="w-full h-64 md:h-80 bg-red-900 relative">
@@ -446,52 +409,114 @@
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                  <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                     <!-- Left Column: Copy -->
-                    <div class="lg:col-span-2">
+                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-red-800">
                              <div class="prose prose-red max-w-none text-gray-700">
-                                <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-0">The SVMPAA Event of the Year is Here</h2>
-                                <p class="text-lg leading-relaxed mb-6">
-                                    After an absolutely unforgettable gathering in Boston and Cambridge last year, we are thrilled to invite you to the <strong>SVMPAA Reunion 2026!</strong> From <strong>Friday, July 17 through Sunday, July 19</strong>, alumni from across generations will converge once again for a weekend dedicated to connection, career advancement, and celebration.
-                                </p>
+                                <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-0 border-b pb-2">Official Schedule & Itinerary</h2>
                                 
-                                <!-- Sneak Peek Callout to 2025 Recap -->
-                                <div class="bg-gray-50 border-l-4 border-gray-400 p-5 mb-8 rounded-r-lg shadow-sm">
-                                    <h3 class="text-lg font-bold text-gray-900 mb-2 mt-0">Curious what to expect?</h3>
-                                    <p class="mb-3 text-sm text-gray-700 leading-relaxed">Expect inspiring welcome plenaries, exclusive networking opportunities, and the unmatched energy of our vibrant community. Get a sneak peek by checking out our highlight reel and gallery from last year!</p>
-                                    <a href="#reunion-recap" class="nav-router inline-flex items-center text-red-800 font-semibold hover:underline text-sm">
-                                        Explore the 2025 Reunion Recap <i data-feather="arrow-right" class="ml-1 h-4 w-4"></i>
-                                    </a>
-                                </div>
-
-                                <p class="mb-6">
-                                    To help us finalize exclusive venues, lock in our weekend agenda, and ensure an incredible experience with accurate headcounts for catering and coordination, please secure your spot today by filling out our official registration form.
+                                <p class="text-lg leading-relaxed mb-6">
+                                    <strong>Hi SVMP Family,</strong><br><br>
+                                    Following up on our Save the Date, we are incredibly thrilled to share the official draft itinerary for the SVMPAA Reunion 2026! We have planned a full weekend of high-impact programming, alumni panel events, HBS campus experiences, and plenty of opportunities to network, catch up, and celebrate.
+                                </p>
+                                <p class="mb-8">
+                                    Please review the schedule below and make sure to officially register to secure your meals, materials, and credentials!
                                 </p>
 
-                                <div class="bg-red-50 p-6 rounded-lg my-8 text-center border border-red-100">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2 mt-0">REUNION DATES</h3>
-                                    <p class="text-red-800 font-bold text-lg mb-6">July 17th — July 19th, 2026</p>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-WMT8gxe5tbKaIPTL-vqpStzKvC6UEQDJbcyg9p6jOcEEQ/viewform" target="_blank" class="inline-block bg-red-800 text-white font-bold py-3 px-8 rounded hover:bg-red-900 transition duration-200 shadow-md">
-                                        Register for the Reunion Here
-                                    </a>
+                                <h3 class="text-xl font-bold text-red-900 bg-red-50 p-3 rounded-md mb-4 border-l-4 border-red-800 shadow-sm">Friday, July 17th</h3>
+                                <div class="space-y-4 mb-8 ml-2">
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">3:00 PM</span>
+                                        <span class="text-gray-700 font-medium">Flights, Arrivals & Hotel Check-In</span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">7:00 PM</span>
+                                        <span class="text-gray-700 font-medium">Alumni Welcome Cocktail Hour & Dinner</span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">10:00 PM</span>
+                                        <span class="text-gray-700 font-medium flex items-center">After Hours Night Out <span class="ml-2 text-[10px] font-bold bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full uppercase tracking-widest">Optional</span></span>
+                                    </div>
                                 </div>
 
-                                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Stay Connected</h3>
-                                <p class="mb-6">
-                                    Keep an eye out for upcoming announcements regarding the detailed weekend agenda, special events, hotel block information, and logistics as they continue to lock in over the next few weeks.
-                                </p>
-                                <p>
-                                    We can't wait to reconnect with our amazing community of alumni and construct a truly memorable weekend of celebrating shared memories and future milestones.
+                                <h3 class="text-xl font-bold text-red-900 bg-red-50 p-3 rounded-md mb-4 border-l-4 border-red-800 shadow-sm">
+                                    Saturday, July 18th <span class="text-sm font-normal text-red-700 block sm:inline sm:ml-2">(On-Campus @ HBS)</span>
+                                </h3>
+                                <div class="space-y-4 mb-8 ml-2">
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">7:00 AM</span>
+                                        <span class="text-gray-700 font-medium flex items-center">Morning Group Run <span class="ml-2 text-[10px] font-bold bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full uppercase tracking-widest">Optional</span></span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">9:00 AM</span>
+                                        <span class="text-gray-700 font-medium">Breakfast & Welcome Plenary<br><span class="text-sm text-gray-500 font-normal">Co-hosted with the HBS MBA Admissions Staff</span></span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">9:30 AM</span>
+                                        <span class="text-gray-700 font-medium">SVMPAA Board of Directors Presentation</span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">10:30 AM</span>
+                                        <span class="text-gray-700 font-medium">Morning Core Programming & Panel Events</span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">12:00 PM</span>
+                                        <span class="text-gray-700 font-medium">Networking Luncheon</span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">1:30 PM</span>
+                                        <span class="text-gray-700 font-medium">Afternoon Career & Leadership Modules</span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">5:00 PM</span>
+                                        <span class="text-gray-700 font-medium">Official SVMPAA Group Photo & Wrap Up</span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">6:00 PM</span>
+                                        <span class="text-gray-700 font-medium flex items-center">Alumni Dinner <span class="ml-2 text-[10px] font-bold bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full uppercase tracking-widest">On Your Own</span></span>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-start pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">9:00 PM</span>
+                                        <span class="text-gray-700 font-medium flex items-center">After Hours Night Out <span class="ml-2 text-[10px] font-bold bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full uppercase tracking-widest">Optional</span></span>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-red-900 bg-red-50 p-3 rounded-md mb-4 border-l-4 border-red-800 shadow-sm">Sunday, July 19th</h3>
+                                <div class="space-y-4 mb-8 ml-2">
+                                    <div class="flex flex-col sm:flex-row sm:items-start pb-2">
+                                        <span class="w-28 font-bold text-gray-900 flex-shrink-0">9:30 AM</span>
+                                        <span class="text-gray-700 font-medium flex items-center">Farewell Coffee & Goodbyes <span class="ml-2 text-[10px] font-bold bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full uppercase tracking-widest">Optional</span></span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-red-50 p-6 rounded-lg my-8 border border-red-200 text-center shadow-inner">
+                                    <h3 class="text-xl font-extrabold text-gray-900 mb-2 mt-0 uppercase tracking-wide">
+                                        Registration Deadline: <span class="text-red-800">Sunday, June 28th</span>
+                                    </h3>
+                                    <p class="font-bold text-gray-800 mb-3 text-lg">Secure Your Place on the Roster!</p>
+                                    <p class="mb-6 text-gray-700">
+                                        In order to finalize catering orders, secure custom alumni materials, and distribute safety/campus credentials, please ensure you complete official registration before the deadline.
+                                    </p>
+                                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh-WMT8gxe5tbKaIPTL-vqpStzKvC6UEQDJbcyg9p6jOcEEQ/viewform" target="_blank" class="inline-block bg-red-800 text-white font-bold py-3 px-8 rounded hover:bg-red-900 transition duration-200 shadow-md">
+                                            Register for Reunion
+                                        </a>
+                                        <a href="#events" class="nav-router inline-block bg-white text-red-800 border border-red-800 font-bold py-3 px-8 rounded hover:bg-red-50 transition duration-200 shadow-sm">
+                                            View Updates Hub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <p class="text-gray-700 italic border-l-2 border-gray-300 pl-4 mt-8">
+                                    Stay tuned for upcoming logistics notes regarding hotel room block access and speaker profiles over the next few weeks. We look forward to creating unforgettable milestones together in July!
                                 </p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Right Column: Links & CTA -->
                     <div>
-                         <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-                            <h2 class="text-xl font-bold mb-4 text-gray-900">Already registered?</h2>
-                            <p class="text-sm text-gray-700 mb-6">Keep in touch and coordinated with fellow alumni.</p>
+                         <div class="bg-white p-6 rounded-lg shadow-md mb-6 border-t-4 border-gray-900">
+                            <h2 class="text-xl font-bold mb-3 text-gray-900">Coordinate lodging & rides</h2>
+                            <p class="text-sm text-gray-700 mb-6">Connect with other SVMP graduates to coordinate travel ahead of the reunion.</p>
                             
                             <div class="mt-4">
                                 <a href="https://groupme.com/join_group/114658370/DqKk46wN" target="_blank" class="flex items-center justify-center w-full bg-[#00AFF0] text-white font-bold py-3 px-4 rounded hover:bg-[#009ce6] transition duration-200 shadow">
@@ -503,7 +528,7 @@
                  </div>
                  
                  <div class="mt-12 text-center">
-                    <a href="#events" class="nav-router text-gray-600 hover:text-red-800 font-medium">&larr; Back to Events Calendar</a>
+                    <a href="#events" class="nav-router text-gray-600 hover:text-red-800 font-medium">← Back to Events Calendar</a>
                  </div>
             </div>
         </div>
@@ -511,8 +536,7 @@
 
     <template id="reunion-recap-page">
         <div class="page" id="reunion-recap">
-             <!-- Hero Section -->
-            <div class="relative bg-gray-900 text-white">
+             <div class="relative bg-gray-900 text-white">
                 <div class="absolute inset-0">
                     <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Reunion" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Reunion';">
                     <div class="absolute inset-0 bg-gray-900/60"></div>
@@ -524,7 +548,6 @@
             </div>
             
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <!-- Event Description -->
                 <section class="mb-16">
                     <div class="max-w-3xl mx-auto text-center">
                         <p class="text-gray-700 leading-relaxed text-lg">
@@ -534,24 +557,20 @@
                     </div>
                 </section>
 
-                <!-- Reunion Reel -->
                 <section class="mb-16">
                     <h2 class="text-3xl font-bold text-center mb-8">Reunion Highlight Reel</h2>
                     <div class="max-w-xl mx-auto">
-                        <!-- Instagram Reel Embed (using aspect ratio for vertical video) -->
                         <div style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
                             <iframe src="https://www.instagram.com/reel/DMYpLUIxwFI/embed" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" class="rounded-lg shadow-2xl" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </section>
 
-                <!-- Image Carousel -->
                 <section class="mb-16">
                     <h2 class="text-3xl font-bold text-center mb-8">Event Gallery</h2>
                     <div id="image-carousel" class="relative max-w-3xl mx-auto shadow-2xl rounded-lg overflow-hidden">
                         <div id="carousel-inner" class="relative w-full h-96">
-                            <!-- Images will be inserted here by JS -->
-                        </div>
+                            </div>
                         <button id="prev-btn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75 transition">
                             <i data-feather="chevron-left"></i>
                         </button>
@@ -561,7 +580,6 @@
                     </div>
                 </section>
 
-                <!-- Google Drive Upload -->
                 <section class="text-center bg-red-50 py-12 rounded-lg">
                     <h2 class="text-3xl font-bold mb-4">Share Your Photos!</h2>
                     <p class="text-gray-700 max-w-2xl mx-auto mb-6">
@@ -573,7 +591,6 @@
                     </a>
                 </section>
 
-                <!-- Feedback Form -->
                 <section class="text-center mt-16">
                     <h2 class="text-3xl font-bold mb-4">We Value Your Feedback</h2>
                     <p class="text-gray-700 max-w-2xl mx-auto mb-6">
@@ -602,7 +619,6 @@
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                 <div class="max-w-3xl mx-auto">
-                    <!-- About the Event -->
                     <div class="bg-white p-8 rounded-lg shadow-md mb-12 text-center">
                         <h2 class="text-3xl font-bold mb-4">About the Event</h2>
                         <p class="text-gray-700 leading-relaxed text-lg">
@@ -610,7 +626,6 @@
                         </p>
                     </div>
 
-                    <!-- Key Takeaways -->
                     <div class="mb-12">
                         <h2 class="text-3xl font-bold text-center mb-8">What You'll Learn</h2>
                         <div class="grid md:grid-cols-3 gap-8 text-center">
@@ -632,7 +647,6 @@
                         </div>
                     </div>
 
-                    <!-- Featured Speaker -->
                     <div class="bg-white p-8 rounded-lg shadow-md mb-12">
                         <h2 class="text-3xl font-bold text-center mb-8">Featured Speaker</h2>
                         <div class="flex flex-col sm:flex-row items-center text-center sm:text-left">
@@ -652,7 +666,7 @@
                     </div>
     
                     <div class="mt-12 text-center">
-                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">← Back to All Events</a>
                     </div>
                 </div>
             </div>
@@ -672,7 +686,6 @@
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                    <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Event Details</h2>
@@ -695,7 +708,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column -->
                     <div>
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
@@ -712,7 +724,7 @@
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">← Back to All Events</a>
                     </div>
                 </div>
             </div>
@@ -732,7 +744,6 @@
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                    <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Event Details</h2>
@@ -755,7 +766,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column -->
                     <div>
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
@@ -772,7 +782,7 @@
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">← Back to All Events</a>
                     </div>
                 </div>
             </div>
@@ -782,7 +792,6 @@
     <template id="chicago-event-page">
         <div class="page" id="chicago-event">
             <div class="w-full h-64 md:h-80">
-                <!-- UPDATED: Chicago event image URL -->
                 <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/chicago.jpeg" alt="Chicago Riverwalk" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Chicago';">
             </div>
                <div class="bg-white shadow-md">
@@ -793,7 +802,6 @@
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                    <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Event Details</h2>
@@ -816,7 +824,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column -->
                     <div>
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
@@ -833,7 +840,7 @@
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">← Back to All Events</a>
                     </div>
                 </div>
             </div>
@@ -843,7 +850,6 @@
     <template id="arlington-event-page">
         <div class="page" id="arlington-event">
             <div class="w-full h-64 md:h-80">
-                <!-- UPDATED: Arlington event image URL -->
                 <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
             </div>
                <div class="bg-white shadow-md">
@@ -854,7 +860,6 @@
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
                 <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8">
-                    <!-- Left Column -->
                     <div class="lg:col-span-2">
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Event Details</h2>
@@ -877,7 +882,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column -->
                     <div>
                         <div class="bg-white p-8 rounded-lg shadow-md">
                             <h2 class="text-2xl font-bold mb-4">Meet Your Host</h2>
@@ -894,7 +898,7 @@
                         RSVP Here
                     </a>
                     <div class="mt-12">
-                        <a href="#events" class="nav-router text-red-800 hover:underline">&larr; Back to All Events</a>
+                        <a href="#events" class="nav-router text-red-800 hover:underline">← Back to All Events</a>
                     </div>
                 </div>
             </div>
@@ -907,10 +911,8 @@
                 <h1 class="text-4xl font-bold text-center mb-12">Partnerships</h1>
                 <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">We collaborate with leading organizations to provide exclusive benefits and opportunities to our alumni.</p>
 
-                <!-- Current Partners -->
                 <h2 class="text-3xl font-bold mb-8">Our Partners</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center text-center mb-16">
-                    <!-- Leland Partner Logo -->
                     <div class="p-4 col-span-full md:col-span-1 md:col-start-2">
                         <a href="https://www.joinleland.com/" target="_blank">
                             <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/leland.avif" alt="Leland Logo" class="h-28 w-auto mx-auto grayscale hover:grayscale-0 transition" onerror="this.onerror=null;this.src='https://placehold.co/200x112?text=Leland';">
@@ -918,7 +920,6 @@
                     </div>
                 </div>
 
-                <!-- Benefits -->
                 <div class="bg-white p-8 rounded-lg shadow-md mb-16">
                     <h2 class="text-3xl font-bold text-center mb-6">Partnership Benefits for Alumni</h2>
                     <ul class="list-disc list-inside max-w-2xl mx-auto space-y-2 text-gray-700">
@@ -929,7 +930,6 @@
                     </ul>
                 </div>
                 
-                <!-- Become a Partner -->
                 <div class="text-center">
                     <h2 class="text-3xl font-bold mb-4">Become a Partner</h2>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">Interested in connecting with a diverse and talented network of emerging leaders? Partner with SVMPAA to create mutually beneficial opportunities.</p>
@@ -939,7 +939,6 @@
         </div>
     </template>
     
-    <!-- RESTORED: Scholarship Directory (Detailed Static Version) -->
     <template id="development-page">
         <div class="page" id="development">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -951,20 +950,19 @@
                         <i data-feather="book-open" class="h-10 w-10 text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2 text-gray-900">Graduate Scholarship Directory</h2>
                         <p class="text-gray-600 mb-4">Explore our strategic analysis and directory of top-tier graduate, MBA, and Law School fellowships (Rhodes, KHS, Forté, Truman, etc.).</p>
-                        <span class="font-semibold text-red-800 hover:underline">View Full Directory &rarr;</span>
+                        <span class="font-semibold text-red-800 hover:underline">View Full Directory →</span>
                     </a>
                     <div class="card p-6">
                         <i data-feather="users" class="h-10 w-10 text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2">Mentorship Program</h2>
                         <p class="text-gray-600 mb-4">Connect with experienced alumni for guidance and support. Whether you're a mentor or mentee, this program fosters meaningful relationships.</p>
-                        <a href="#get-involved" class="nav-router font-semibold text-red-800 hover:underline">Get Involved &rarr;</a>
+                        <a href="#get-involved" class="nav-router font-semibold text-red-800 hover:underline">Get Involved →</a>
                     </div>
-                    <!-- New "Free Resume & LinkedIn Support" Box -->
                     <div class="card p-6">
                         <i data-feather="file-text" class="h-10 w-1- text-red-800 mb-3"></i>
                         <h2 class="text-2xl font-semibold mb-2">Free Resume & LinkedIn Support</h2>
                         <p class="text-gray-600 mb-4">Get personalized feedback and strategies to optimize your resume and LinkedIn profile for career advancement.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfE-9qhUdoNMXLpOd1yxEkMKQCLkDODXL0rCz6b7paK8wicUw/viewform?usp=header" target="_blank" class="font-semibold text-red-800 hover:underline">Access Form &rarr;</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfE-9qhUdoNMXLpOd1yxEkMKQCLkDODXL0rCz6b7paK8wicUw/viewform?usp=header" target="_blank" class="font-semibold text-red-800 hover:underline">Access Form →</a>
                     </div>
                 </div>
             </div>
@@ -975,7 +973,7 @@
         <div class="page" id="get-involved">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h1 class="text-4xl font-bold text-center mb-12">Get Involved</h1>
-                <div class="space-y-16"> <!-- Changed from grid lg:grid-cols-2 to space-y-16 for vertical stacking -->
+                <div class="space-y-16">
                     <div>
                         <h2 class="text-3xl font-bold mb-4">For Current SVMP Students</h2>
                         <p class="text-gray-600 mb-4">Your journey with the SVMP community is just beginning. The SVMP Alumni Association is your next step to stay connected and continue your growth.</p>
@@ -1033,7 +1031,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLdUUhcRhG81tS55cyIunZiBB-hHt4M4bS3HcdE2_NnUgP7w/viewform" target="_blank" class="font-semibold text-red-800 hover:underline mt-6 inline-block">Volunteer Form &rarr;</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLdUUhcRhG81tS55cyIunZiBB-hHt4M4bS3HcdE2_NnUgP7w/viewform" target="_blank" class="font-semibold text-red-800 hover:underline mt-6 inline-block">Volunteer Form →</a>
                     </div>
                 </div>
             </div>
@@ -1055,7 +1053,6 @@
         </div>
     </template>
 
-    <!-- RESTORED: Detailed Scholarship Directory Template -->
     <template id="scholarship-directory-page">
         <div class="page" id="scholarship-directory">
             <div class="bg-white py-20 border-b border-gray-200">
@@ -1071,7 +1068,6 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-7xl">
                 <div class="max-w-6xl mx-auto space-y-16 text-gray-800">
                     
-                    <!-- I. Actionable Deadlines & Directory -->
                     <section>
                         <h2 class="text-3xl font-bold mb-6 text-red-800 border-b pb-2">I. The Global Calendar: Critical Deadlines</h2>
                         
@@ -1162,7 +1158,6 @@
                         </div>
                     </section>
 
-                    <!-- II. Detailed Program Guides -->
                     <section>
                         <h2 class="text-3xl font-bold mb-8 text-red-800 border-b pb-2">II. Detailed Program Guides</h2>
                         <p class="text-lg leading-relaxed mb-10 text-gray-700">
@@ -1170,8 +1165,6 @@
                         </p>
 
                         <div class="space-y-10">
-
-                            <!-- 1. Program: Rhodes Scholarship -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="globe" class="h-6 w-6 text-red-800 mr-3"></i>1. Rhodes Scholarship (University of Oxford)</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">The world's oldest international scholarship, dedicated to developing individuals with the courage to effect change. It funds postgraduate study at the University of Oxford.</p>
@@ -1183,7 +1176,6 @@
                                 </ul>
                             </div>
                             
-                            <!-- 2. Program: Knight-Hennessy Scholars -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="flag" class="h-6 w-6 text-red-800 mr-3"></i>2. Knight-Hennessy Scholars (KHS - Stanford)</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">A fully funded program for future global leaders pursuing any graduate degree (Master’s, MBA, JD, PhD) at Stanford University.</p>
@@ -1196,7 +1188,6 @@
                                 </ul>
                             </div>
 
-                            <!-- 3. Program: Gates Cambridge Scholarship -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="book-open" class="h-6 w-6 text-red-800 mr-3"></i>3. Gates Cambridge Scholarship (University of Cambridge)</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">A prestigious fellowship for postgraduate study (Master’s, PhD) at Cambridge, exclusively for **non-UK citizens**. Focuses on those committed to improving the lives of others.</p>
@@ -1208,7 +1199,6 @@
                                 </ul>
                             </div>
 
-                            <!-- 4. Program: Fulbright U.S. Student Program -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="map" class="h-6 w-6 text-red-800 mr-3"></i>4. Fulbright U.S. Student Program</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">Provides fellowships for U.S. citizens to pursue graduate study, conduct research, or teach English abroad in over 140 countries.</p>
@@ -1221,7 +1211,6 @@
                                 </ul>
                             </div>
                             
-                            <!-- 5. Program: Paul & Daisy Soros Fellowships -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="award" class="h-6 w-6 text-red-800 mr-3"></i>5. Paul & Daisy Soros Fellowships for New Americans</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">Merit-based funding for **New Americans** (immigrants and children of immigrants) pursuing any full-time graduate degree in the United States.</p>
@@ -1234,7 +1223,6 @@
                                 </ul>
                             </div>
 
-                            <!-- 6. Program: Truman Scholarship -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="briefcase" class="h-6 w-6 text-red-800 mr-3"></i>6. Truman Scholarship</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">Prepares future public service leaders, offering up to $30,000 for graduate education (JD, MPP, MPA, MSW, etc.) focused on public sector careers.</p>
@@ -1247,7 +1235,6 @@
                                 </ul>
                             </div>
                             
-                            <!-- 7. Program: Equal Justice Works Fellowship - ICON ADDED -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="gavel" class="h-6 w-6 text-red-800 mr-3"></i>7. Equal Justice Works (EJW) Fellowship</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">Supports law graduates committed to public interest law, funding two years of project-based legal work at a non-profit organization.</p>
@@ -1260,7 +1247,6 @@
                                 </ul>
                             </div>
                             
-                            <!-- 8. Program: Skoll Scholarship (MBA) -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="users" class="h-6 w-6 text-red-800 mr-3"></i>8. Skoll Scholarship (Oxford MBA - Social Impact)</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">A highly specialized scholarship covering **full Oxford MBA tuition** for individuals who demonstrate exceptional entrepreneurial experience and a focus on social impact.</p>
@@ -1273,7 +1259,6 @@
                                 </ul>
                             </div>
 
-                            <!-- 9. Program: Forté Fellowship (MBA) -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="heart" class="h-6 w-6 text-red-800 mr-3"></i>9. Forté Fellowship (MBA - Women in Leadership)</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">Aims to increase the representation of women in business leadership by offering scholarships to women admitted to Forte's network of partner business schools.</p>
@@ -1285,7 +1270,6 @@
                                 </ul>
                             </div>
                             
-                            <!-- 10. Program: Reaching Out MBA (ROMBA) Fellowship -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="shuffle" class="h-6 w-6 text-red-800 mr-3"></i>10. Reaching Out MBA (ROMBA) Fellowship</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">Supports **LGBTQ+ students** applying to and attending partner MBA programs globally, nurturing future LGBTQ+ leadership in business.</p>
@@ -1297,7 +1281,6 @@
                                 </ul>
                             </div>
 
-                            <!-- 11. Program: Harvard Public Service Fellowship -->
                             <div class="card p-8 border-l-4 border-red-700 shadow-lg">
                                 <h3 class="text-2xl font-bold mb-3 text-gray-900 flex items-center"><i data-feather="activity" class="h-6 w-6 text-red-800 mr-3"></i>11. Harvard Presidential Public Service Fellowship (PPSF)</h3>
                                 <p class="leading-relaxed mb-4 text-gray-700">Provides financial support for Harvard students engaging in 8-week summer service placements and internships that serve the common good in the U.S.</p>
@@ -1314,23 +1297,12 @@
                 </div>
             </div>
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-                <!-- CHANGE 2: Reverted bottom link text -->
-                <a href="#development" class="nav-router text-red-800 hover:underline font-medium">&larr; Return to Professional Development</a>
+                <a href="#development" class="nav-router text-red-800 hover:underline font-medium">← Return to Professional Development</a>
             </div>
         </div>
     </template>
 
     <script>
-        // --- API & Utility Helpers (REMOVED) ---
-
-        /** Delays execution for a given number of milliseconds. */
-        function delay(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-
-
-        // --- Main SPA Logic (Updated) ---
-
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
 
@@ -1339,14 +1311,13 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // --- Basic SPA Router - Cleaned and Verified ---
             const routes = {
                 'home': 'home-page',
                 'about': 'about-page',
                 'events': 'events-page',
                 'reunion-recap': 'reunion-recap-page',
                 'bridge-year-event': 'bridge-year-event-page',
-                'reunion-2026': 'reunion-2026-page', // NEW ROUTE ADDED
+                'reunion-2026': 'reunion-2026-page', 
                 'la-event': 'la-event-page',
                 'sd-event': 'sd-event-page',
                 'chicago-event': 'chicago-event-page',
@@ -1362,7 +1333,6 @@
                 const carouselInner = document.getElementById('carousel-inner');
                 if (!carouselInner) return;
 
-                // Image URLs for the reunion recap carousel
                 const images = [
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2172_jpg.JPEG",
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c6299ddb6aa/images/IMG_2309.JPEG",
@@ -1372,7 +1342,7 @@
                     "https://raw.githubusercontent.com/svmp2025/svmpaa/fe24e6ad046241fbc039fd2221a1d77778380640/images/IMG_6817_(1).jpg"
                 ];
 
-                carouselInner.innerHTML = ''; // Clear existing content before inserting
+                carouselInner.innerHTML = ''; 
                 images.forEach((src, index) => {
                     const item = document.createElement('div');
                     item.className = 'carousel-item absolute w-full h-full';
@@ -1384,9 +1354,7 @@
                     img.alt = `Reunion Photo ${index + 1}`;
                     img.className = 'w-full h-full object-cover';
                     img.onerror=function() { 
-                        // If image fails to load, remove its container element to maintain layout integrity
                         this.parentElement.style.display = 'none';
-                        // Re-initialize carousel if removing an image changes total count
                         initCarousel(); 
                     };
                     item.appendChild(img);
@@ -1444,40 +1412,32 @@
                         
                         const pageElement = mainContent.querySelector('.page');
                         if(pageElement) {
-                            // Delay adding the active class to trigger the CSS animation
                             setTimeout(() => pageElement.classList.add('active'), 0);
                         }
                         
                         feather.replace();
                         
-                        // --- Dynamic Page Initialization ---
                         if (pageId === 'reunion-recap') {
                             initCarousel();
                         }
-                        
-                        // Removed dynamic directory initialization logic
                     }
                 }
                 
                 updateActiveLink(pageId);
-                window.scrollTo(0, 0); // Scroll to top on page change
-                if (mobileMenu) mobileMenu.classList.add('hidden'); // Close mobile menu after navigation
+                window.scrollTo(0, 0);
+                if (mobileMenu) mobileMenu.classList.add('hidden');
             }
 
             function updateActiveLink(pageId) {
-                // Clear all active classes
                 navLinks.forEach(link => link.classList.remove('active'));
 
-                // Set active class for the current main navigation link
                 let mainPageId = pageId;
-                // If it's a sub-page (like an event detail page or a resource page), highlight the relevant main navigation link
                 if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap') || mainPageId === 'reunion-2026') {
                     mainPageId = 'events';
-                } else if (mainPageId === 'scholarship-directory') { // Handle the new page (updated name)
+                } else if (mainPageId === 'scholarship-directory') { 
                     mainPageId = 'development';
                 }
                 
-
                 navLinks.forEach(link => {
                     const linkHash = link.href.split('#')[1];
                     if (linkHash === mainPageId) {
@@ -1491,7 +1451,6 @@
                 if(routes[hash]) {
                     loadPage(hash);
                 } else {
-                    // Fallback to home if hash is not found
                     loadPage('home'); 
                 }
             }
@@ -1499,8 +1458,6 @@
             document.body.addEventListener('click', function(e) {
                 const navRouterElement = e.target.closest('.nav-router');
                 if (navRouterElement) {
-                    // Only intercept internal hash links
-                    // CRITICAL FIX: Ensure the routing logic is executed for all hash changes
                     if (navRouterElement.hash && navRouterElement.origin === window.location.origin) {
                         e.preventDefault(); 
                         const newHash = navRouterElement.hash;
@@ -1508,7 +1465,6 @@
                         if(window.location.hash !== newHash) {
                             window.location.hash = newHash;
                         } else {
-                            // If clicking the same link, manually trigger loadPage (which handles the view change)
                             const pageId = newHash.substring(1);
                             if(routes[pageId]) {
                                 loadPage(pageId);
@@ -1526,7 +1482,6 @@
                 });
             }
 
-            // Initial load
             handleRouteChange();
         });
     </script>
