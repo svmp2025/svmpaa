@@ -273,11 +273,15 @@
                 <h1 class="text-4xl font-bold text-center mb-12">SVMPAA Events</h1>
                 
                 <h2 class="text-3xl font-bold mb-8 text-gray-900 border-b pb-2">Upcoming Events</h2>
+                <!-- Event listings below come from the "Events" tab of the SVMPAA Website Content Google Sheet.
+                     The HTML inside data-events="upcoming" and data-events="past" only shows if the Sheet can't be loaded. -->
+                <div data-events="upcoming">
                 <div class="space-y-4 mb-8">
                     <div class="card p-6 border-l-4 border-red-800 bg-red-50 shadow-sm">
                         <h4 class="font-bold text-xl text-red-900 mb-1">New events coming soon</h4>
                         <p class="text-gray-700">We're planning our next gatherings now. Check back soon or join our newsletter to hear about them first.</p>
                     </div>
+                </div>
                 </div>
 
                 <div class="text-center mt-16 mb-12">
@@ -289,6 +293,7 @@
                     </a>
                 </div>
 
+                <div data-events="past">
                 <h2 class="text-3xl font-bold mb-8">Past Event Highlights</h2>
                 <div class="grid md:grid-cols-1 gap-8 mb-12">
                     <a href="#reunion-2026" class="nav-router card overflow-hidden block hover:shadow-xl">
@@ -345,6 +350,7 @@
                             <p class="text-sm text-gray-600">Aug 31st | The Rose Wine Bar</p>
                         </div>
                     </a>
+                </div>
                 </div>
             </div>
         </div>
@@ -947,6 +953,14 @@
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfE-9qhUdoNMXLpOd1yxEkMKQCLkDODXL0rCz6b7paK8wicUw/viewform?usp=header" target="_blank" class="font-semibold text-red-800 hover:underline">Access Form →</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="event-detail-page">
+        <div class="page" id="event-detail">
+            <div data-event-detail>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center text-gray-500">Loading event…</div>
             </div>
         </div>
     </template>
@@ -1669,6 +1683,8 @@
         </div>
     </template>
 
+    <script src="assets/js/sheet-content.js"></script>
+    <script src="assets/js/events.js"></script>
     <script src="assets/js/mba-hub.js"></script>
     <script src="assets/js/site.js"></script>
 </body>
