@@ -78,6 +78,112 @@
         .event-button:hover {
             background-color: #7f1d1d; /* red-900 */
         }
+        /* ===== MBA Hub ===== */
+        .hub-balance { text-wrap: balance; }
+        .hub-nums { font-variant-numeric: tabular-nums; }
+        .hub-section { padding-block: 2.5rem 3rem; scroll-margin-top: 150px; }
+        .hub-noscrollbar { scrollbar-width: none; }
+        .hub-noscrollbar::-webkit-scrollbar { display: none; }
+
+        .hub-chip { display: inline-flex; align-items: center; gap: .4rem; padding: .5rem .9rem; border-radius: 9999px; border: 1px solid #d1d5db; background: #fff; color: #374151; font-size: .875rem; font-weight: 500; transition: background .15s, border-color .15s, color .15s; }
+        .hub-chip:hover { border-color: #991b1b; color: #991b1b; }
+        .hub-chip[aria-checked="true"], .hub-chip[aria-pressed="true"] { background: #991b1b; border-color: #991b1b; color: #fff; }
+        .hub-chip .hub-count { font-size: .75rem; opacity: .7; }
+        .hub-chip:focus-visible, .hub-subnav-btn:focus-visible, .hub-tab:focus-visible, .hub-step-btn:focus-visible, .hub-btn-outline:focus-visible { outline: 2px solid #991b1b; outline-offset: 2px; }
+
+        .hub-stage-panel { border: 1px solid #fecaca; background: #fef2f2; border-radius: .5rem; padding: 1.25rem 1.5rem; }
+
+        .hub-subnav { position: sticky; top: 80px; z-index: 40; }
+        .hub-subnav-btn { white-space: nowrap; padding: .55rem 1rem; border-radius: 9999px; border: 1px solid #e5e7eb; background: #fff; font-size: .9rem; font-weight: 500; color: #374151; }
+        .hub-subnav-btn:hover { color: #991b1b; border-color: #991b1b; }
+        .hub-subnav-btn.is-active { color: #fff; background: #991b1b; border-color: #991b1b; font-weight: 600; }
+
+        .hub-steps { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .5rem; counter-reset: step; }
+        @media (max-width: 1023px) { .hub-steps { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .25rem; } .hub-steps > li { flex: 0 0 9.5rem; scroll-snap-align: start; } }
+        .hub-step-btn { position: relative; width: 100%; height: 100%; text-align: left; padding: .9rem .9rem 1rem; border-radius: .5rem; border: 1px solid #e5e7eb; background: #fff; transition: border-color .15s, box-shadow .15s; }
+        .hub-step-btn:hover { border-color: #fca5a5; }
+        .hub-step-btn[aria-current="step"] { border-color: #991b1b; box-shadow: 0 0 0 1px #991b1b; }
+        .hub-step-btn .hub-step-when { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; }
+        .hub-step-btn .hub-step-title { display: block; font-weight: 600; color: #111827; margin-top: .2rem; line-height: 1.25; }
+        .hub-you { position: absolute; top: -.6rem; right: .5rem; font-size: .65rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; background: #991b1b; color: #fff; padding: .1rem .45rem; border-radius: 9999px; }
+
+        .hub-check { display: flex; gap: .7rem; align-items: flex-start; cursor: pointer; color: #374151; }
+        .hub-check input { margin-top: .2rem; width: 1.05rem; height: 1.05rem; accent-color: #991b1b; flex-shrink: 0; }
+        .hub-check input:checked + span { color: #9ca3af; text-decoration: line-through; }
+
+        .hub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; color: #374151; }
+        .hub-list li { position: relative; padding-left: 1.1rem; }
+        .hub-list li::before { content: ""; position: absolute; left: 0; top: .6em; width: .4rem; height: .4rem; border-radius: 9999px; background: #991b1b; }
+
+        .hub-path { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: .75rem; }
+        .hub-path li { display: flex; gap: .75rem; align-items: flex-start; background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; padding: .85rem 1rem; font-size: .9rem; color: #1f2937; }
+        .hub-path-col { grid-template-columns: 1fr; gap: .5rem; }
+        .hub-path-n { flex-shrink: 0; width: 1.6rem; height: 1.6rem; border-radius: 9999px; background: #991b1b; color: #fff; font-size: .8rem; font-weight: 700; display: grid; place-items: center; }
+
+        .hub-formula { font-size: .85rem; font-weight: 600; color: #991b1b; background: #fef2f2; border-radius: .375rem; padding: .5rem .75rem; }
+
+        .hub-table th, .hub-table td { padding: .8rem 1.25rem; text-align: left; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
+        .hub-table thead th { background: #f9fafb; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; }
+        .hub-table thead th:nth-child(2), .hub-table thead th:nth-child(3) { color: #111827; font-size: .9rem; letter-spacing: 0; text-transform: none; }
+        .hub-table tbody th { font-weight: 600; color: #111827; white-space: nowrap; }
+        .hub-table tbody tr:last-child > * { border-bottom: 0; }
+        .hub-table td { color: #374151; min-width: 11rem; }
+
+        .hub-tab { white-space: nowrap; padding: .75rem 1rem; font-size: .9rem; font-weight: 500; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+        .hub-tab:hover { color: #991b1b; }
+        .hub-tab[aria-selected="true"] { color: #991b1b; border-bottom-color: #991b1b; font-weight: 600; }
+
+        .hub-btn-outline { display: inline-flex; align-items: center; gap: .4rem; padding: 8px 16px; font-size: .875rem; font-weight: 600; border-radius: .375rem; border: 1px solid #991b1b; color: #991b1b; background: #fff; }
+        .hub-btn-outline:hover { background: #fef2f2; }
+
+        .hub-res { background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; padding: 1.5rem; display: flex; flex-direction: column; min-width: 0; transition: box-shadow .3s, border-color .3s; scroll-margin-top: 150px; }
+        .hub-res.is-flash { border-color: #991b1b; box-shadow: 0 0 0 3px #fecaca; }
+        .hub-tag { display: inline-block; font-size: .7rem; font-weight: 600; padding: .15rem .55rem; border-radius: 9999px; background: #f3f4f6; color: #374151; }
+        .hub-tag-cat { background: #fef2f2; color: #991b1b; }
+
+        .hub-acc { background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; }
+        .hub-acc summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem 1.1rem; font-weight: 600; color: #111827; }
+        .hub-acc summary::-webkit-details-marker { display: none; }
+        .hub-acc summary::after { content: "+"; font-size: 1.25rem; color: #991b1b; line-height: 1; }
+        .hub-acc[open] summary::after { content: "–"; }
+        .hub-acc ul { padding: 0 1.1rem 1rem; }
+
+        @media (prefers-reduced-motion: reduce) { .page.active { animation: none; } .hub-res { transition: none; } }
+
+        .hub-more { background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; }
+        .hub-more > summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; }
+        .hub-more > summary::-webkit-details-marker { display: none; }
+        .hub-more > summary::after { content: "Show"; flex-shrink: 0; font-size: .8rem; font-weight: 600; color: #991b1b; border: 1px solid #fecaca; border-radius: 9999px; padding: .2rem .7rem; }
+        .hub-more[open] > summary::after { content: "Hide"; }
+        .hub-more > summary:focus-visible, .hub-res-more > summary:focus-visible { outline: 2px solid #991b1b; outline-offset: 2px; }
+        .hub-more-title { display: block; font-weight: 600; color: #111827; }
+        .hub-more-sub { display: block; font-size: .85rem; color: #6b7280; margin-top: .1rem; }
+        .hub-more-body { padding: 0 1.25rem 1.25rem; }
+        .hub-res-more > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: .35rem; font-size: .875rem; font-weight: 600; color: #991b1b; }
+        .hub-res-more > summary::-webkit-details-marker { display: none; }
+        .hub-res-more > summary::after { content: "+"; font-size: 1rem; line-height: 1; }
+        .hub-res-more[open] > summary::after { content: "\2013"; }
+
+        /* Phase cards: reserve two lines for the timing label so titles line up across the row. */
+        @media (min-width: 1024px) { .hub-step-btn .hub-step-when { min-height: 3em; } }
+        @media (max-width: 1023px) { .hub-steps { padding-top: .75rem; } }
+        @media (max-width: 640px) {
+            .hub-res { padding: 1.15rem; }
+            .hub-stage-panel { padding: 1rem 1.1rem; }
+        }
+        /* Scroll hints for the tab bar and phase row */
+        .hub-scroll { position: relative; }
+        .hub-scroll::before, .hub-scroll::after { content: ""; position: absolute; top: 0; bottom: 0; width: 3.5rem; pointer-events: none; z-index: 1; opacity: 0; transition: opacity .2s; }
+        .hub-scroll::before { left: 0; background: linear-gradient(to left, rgba(249, 250, 251, 0), #f9fafb 75%); }
+        .hub-scroll::after { right: 0; background: linear-gradient(to right, rgba(249, 250, 251, 0), #f9fafb 75%); }
+        .hub-scroll.can-prev::before, .hub-scroll.can-next::after { opacity: 1; }
+        .hub-scroll-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 2.25rem; height: 2.25rem; border-radius: 9999px; background: #fff; border: 1px solid #d1d5db; box-shadow: 0 1px 4px rgb(0 0 0 / .15); display: grid; place-items: center; color: #991b1b; }
+        .hub-scroll-btn:hover { border-color: #991b1b; }
+        .hub-scroll-btn:focus-visible { outline: 2px solid #991b1b; outline-offset: 2px; }
+        .hub-scroll-prev { left: 0; }
+        .hub-scroll-next { right: 0; }
+        /* Keep hidden elements hidden even when a component sets its own display. */
+        #mba-hub [hidden] { display: none !important; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -1022,53 +1128,386 @@
 
     <template id="mba-hub-page">
         <div class="page" id="mba-hub">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="text-center mb-12">
-                    <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wide uppercase rounded-full bg-red-50 text-red-800">Coming Soon</span>
-                    <h1 class="text-4xl font-bold mb-4">MBA Hub</h1>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Your home for the MBA journey, from deciding whether an MBA is right for you to test prep, applications, interviews, and matriculation. We're building it now.</p>
-                </div>
+            <!-- HERO + STAGE PICKER -->
+            <section class="bg-white border-b border-gray-200">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10">
+                    <div class="max-w-3xl">
+                        <p class="text-xs font-semibold tracking-wider uppercase text-red-800 mb-3">SVMPAA MBA Hub</p>
+                        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 hub-balance">Your MBA journey, one step at a time</h1>
+                        <p class="text-lg text-gray-600">A timeline, the programs worth knowing, test guidance, and interview prep, gathered by SVMP alumni who have been through it. Start by telling us where you are.</p>
+                    </div>
 
-                <h2 class="text-2xl font-bold text-center mb-8">What's on the way</h2>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="card p-6">
-                        <i data-feather="calendar" class="h-10 w-10 text-red-800 mb-3"></i>
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900">Application Timeline</h2>
-                        <p class="text-gray-600">A clear roadmap of when to test, research schools, write essays, and submit each round.</p>
+                    <div class="mt-8">
+                        <p id="mba-stage-label" class="text-sm font-semibold text-gray-900 mb-3">Where are you right now?</p>
+                        <div class="flex flex-wrap gap-2" role="radiogroup" aria-labelledby="mba-stage-label" data-hub="stages"></div>
                     </div>
-                    <div class="card p-6">
-                        <i data-feather="edit-3" class="h-10 w-10 text-red-800 mb-3"></i>
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900">GRE &amp; GMAT Prep</h2>
-                        <p class="text-gray-600">Guidance on choosing a test, building a study plan, and discounted resources from our partners.</p>
-                    </div>
-                    <div class="card p-6">
-                        <i data-feather="briefcase" class="h-10 w-10 text-red-800 mb-3"></i>
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900">HBS Applicant Toolkit</h2>
-                        <p class="text-gray-600">Admissions criteria, essays, recommendations, interviews, financial aid, and 2+2.</p>
-                    </div>
-                    <div class="card p-6">
-                        <i data-feather="dollar-sign" class="h-10 w-10 text-red-800 mb-3"></i>
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900">Financing Your MBA</h2>
-                        <p class="text-gray-600">How to evaluate cost and ROI, plus scholarships and fellowships worth knowing about.</p>
-                    </div>
-                    <div class="card p-6">
-                        <i data-feather="users" class="h-10 w-10 text-red-800 mb-3"></i>
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900">Workshops &amp; Programs</h2>
-                        <p class="text-gray-600">MBA 101, an Application Accelerator, and Mock Interview Week, led with HBS alumni.</p>
-                    </div>
-                    <div class="card p-6">
-                        <i data-feather="link" class="h-10 w-10 text-red-800 mb-3"></i>
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900">Partner Resources</h2>
-                        <p class="text-gray-600">Offers and coaching from MBA admissions and test-prep organizations.</p>
-                    </div>
-                </div>
 
-                <div class="card p-8 text-center max-w-2xl mx-auto">
-                    <h2 class="text-2xl font-semibold mb-2">Be the first to know</h2>
-                    <p class="text-gray-600 mb-6">Join our newsletter and we'll let you know when the MBA Hub launches.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGknX8LM3f_hUiE4-oPKlIrwAYHYXJhJjBrc9unjd9bYozPw/viewform" target="_blank" class="event-button inline-block">Join Newsletter</a>
+                    <div class="hub-stage-panel mt-6" data-hub="stage-panel" hidden></div>
                 </div>
+            </section>
+
+            <!-- STICKY SECTION NAV -->
+            <nav class="hub-subnav bg-gray-50/95 backdrop-blur border-b border-gray-200" aria-label="MBA Hub sections">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="hub-scroll" data-hub="subnav-wrap">
+                    <button type="button" class="hub-scroll-btn hub-scroll-prev" aria-label="Scroll tabs left" hidden><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                    <div class="flex gap-2 overflow-x-auto py-3 hub-noscrollbar" role="tablist" aria-label="MBA Hub sections" data-hub="subnav" data-scroll-track>
+                        <button type="button" data-go="mba-timeline" id="hub-tab-timeline" role="tab" aria-controls="mba-timeline" aria-selected="false" class="hub-subnav-btn">Timeline</button>
+                        <button type="button" data-go="mba-resources" id="hub-tab-resources" role="tab" aria-controls="mba-resources" aria-selected="false" class="hub-subnav-btn">Programs &amp; Resources</button>
+                        <button type="button" data-go="mba-tests" id="hub-tab-tests" role="tab" aria-controls="mba-tests" aria-selected="false" class="hub-subnav-btn">GMAT vs. GRE</button>
+                        <button type="button" data-go="mba-hbs" id="hub-tab-hbs" role="tab" aria-controls="mba-hbs" aria-selected="false" class="hub-subnav-btn">HBS Toolkit</button>
+                        <button type="button" data-go="mba-interview" id="hub-tab-interview" role="tab" aria-controls="mba-interview" aria-selected="false" class="hub-subnav-btn">Interview Prep</button>
+                    </div>
+                    <button type="button" class="hub-scroll-btn hub-scroll-next" aria-label="Scroll tabs right" hidden><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- TIMELINE -->
+                <section id="mba-timeline" class="hub-section" role="tabpanel" aria-labelledby="hub-tab-timeline">
+                    <div class="max-w-2xl mb-4">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Application timeline</h2>
+                        <p class="text-gray-600">Seven phases, from deciding whether an MBA fits to your first day of class. Pick a phase to see what to do.</p>
+                    </div>
+
+                    <p class="hub-template-line flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-600 mb-4">
+                        <i data-feather="file-text" class="h-4 w-4 text-red-800 flex-shrink-0"></i>
+                        <span>Want your own copy with dates from your deadline?</span>
+                        <a href="https://docs.google.com/spreadsheets/d/1EFwqAU59q4zm9A8lwkdchTWRrQyAAEbzXQVfEbZ7c80/copy" target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-semibold text-red-800 hover:underline">Copy the Google Sheets template <i data-feather="arrow-up-right" class="h-3.5 w-3.5"></i></a>
+                    </p>
+
+                    <div class="hub-scroll" data-hub="steps-wrap">
+                        <button type="button" class="hub-scroll-btn hub-scroll-prev" aria-label="Scroll phases left" hidden><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                        <ol class="hub-steps hub-noscrollbar" data-hub="steps" data-scroll-track></ol>
+                        <button type="button" class="hub-scroll-btn hub-scroll-next" aria-label="Scroll phases right" hidden><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 mt-4" data-hub="phase-detail" aria-live="polite"></div>
+                </section>
+
+                <!-- RESOURCES -->
+                <section id="mba-resources" class="hub-section" role="tabpanel" aria-labelledby="hub-tab-resources">
+                    <div class="max-w-2xl mb-6">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Programs &amp; resources</h2>
+                        <p class="text-gray-600">You don't have to do this alone. These organizations offer application coaching, test prep, fellowships, and community. Filter by what you need.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filter resources" data-hub="filters"></div>
+                    <div class="grid md:grid-cols-2 gap-5 items-start" data-hub="resources"></div>
+                    <div class="text-center mt-6"><button type="button" class="hub-btn-outline" data-hub="res-more" hidden>Show all programs</button></div>
+                    <p class="text-xs text-gray-500 mt-6">Eligibility rules, fees, and deadlines change each cycle. Confirm details on each organization's site before you apply.</p>
+                </section>
+
+                <!-- GMAT VS GRE -->
+                <section id="mba-tests" class="hub-section" role="tabpanel" aria-labelledby="hub-tab-tests">
+                    <div class="max-w-2xl mb-6">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">GMAT vs. GRE</h2>
+                        <p class="text-gray-600">Both are widely accepted for MBA admissions, and neither is automatically better. Take the one your target schools accept and where you show your strongest ability.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="font-semibold text-lg text-gray-900 mb-3">Lean GMAT if</h3>
+                            <ul class="hub-list">
+                                <li>You're focused on MBA and business programs</li>
+                                <li>Data analysis and critical reasoning are strengths</li>
+                                <li>You'd rather skip vocabulary-heavy verbal questions</li>
+                                <li>You don't want an essay section</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="font-semibold text-lg text-gray-900 mb-3">Lean GRE if</h3>
+                            <ul class="hub-list">
+                                <li>You may apply to other kinds of graduate programs</li>
+                                <li>Vocabulary and reading are strengths</li>
+                                <li>You prefer more traditional math content</li>
+                                <li>You want an on-screen calculator throughout Quant</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5 mt-5">
+                            <div class="bg-red-50 border border-red-100 rounded-lg p-5">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-red-800 mb-1">When to test</p>
+                                <p class="text-gray-900 font-semibold mb-1">6–12 months before your first deadline</p>
+                                <p class="text-sm text-gray-700">That leaves room to prepare, retake if needed, and give essays your full attention later.</p>
+                            </div>
+                            <div class="bg-red-50 border border-red-100 rounded-lg p-5">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-red-800 mb-1">What score to target</p>
+                                <p class="text-gray-900 font-semibold mb-1">There's no universal "good" score</p>
+                                <p class="text-sm text-gray-700">Look up the ranges your target programs report and set your goal from your school list. The score is one part of your application.</p>
+                            </div>
+                        </div>
+
+                    <div class="space-y-3 mt-6">
+                        <details class="hub-more">
+                            <summary><span><span class="hub-more-title">Full side-by-side comparison</span><span class="hub-more-sub">Length, sections, scoring, essay, and calculator rules</span></span></summary>
+                            <div class="hub-more-body">
+                                <div class="overflow-x-auto border border-gray-100 rounded-md">
+                        <table class="hub-table w-full text-sm">
+                            <thead>
+                                <tr><th scope="col" class="w-1/4"></th><th scope="col">GMAT</th><th scope="col">GRE</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Designed for</th><td>Business and management programs</td><td>Graduate programs, including MBAs</td></tr>
+                                <tr><th scope="row">Length</th><td class="hub-nums">About 2 hr 15 min</td><td class="hub-nums">About 1 hr 58 min</td></tr>
+                                <tr><th scope="row">Sections</th><td>Quantitative, Verbal, Data Insights</td><td>Quantitative, Verbal, Analytical Writing</td></tr>
+                                <tr><th scope="row">Score scale</th><td class="hub-nums">205–805</td><td class="hub-nums">130–170 Quant + 130–170 Verbal, plus Writing (0–6)</td></tr>
+                                <tr><th scope="row">Math</th><td>Quantitative reasoning and data analysis</td><td>Arithmetic, algebra, geometry, data analysis</td></tr>
+                                <tr><th scope="row">Verbal</th><td>Reading comprehension and critical reasoning</td><td>Reading comprehension, reasoning, vocabulary</td></tr>
+                                <tr><th scope="row">Essay</th><td>None</td><td>One analytical essay</td></tr>
+                                <tr><th scope="row">Calculator</th><td>Data Insights only, not Quant</td><td>Available for Quant</td></tr>
+                                <tr><th scope="row">Flexibility</th><td>Mainly business programs</td><td>Also accepted by many non-MBA programs</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                            </div>
+                        </details>
+                        <details class="hub-more">
+                            <summary><span><span class="hub-more-title">Not sure yet? Follow the 6-step diagnostic path</span><span class="hub-more-sub">How to pick a test with real data instead of a guess</span></span></summary>
+                            <div class="hub-more-body">
+                                <ol class="hub-path">
+                            <li><span class="hub-path-n">1</span><span>Check your target schools' testing policies</span></li>
+                            <li><span class="hub-path-n">2</span><span>Take an official GMAT diagnostic</span></li>
+                            <li><span class="hub-path-n">3</span><span>Take an official GRE diagnostic</span></li>
+                            <li><span class="hub-path-n">4</span><span>Compare your percentiles and how each test felt</span></li>
+                            <li><span class="hub-path-n">5</span><span>Choose your exam and set a target score</span></li>
+                            <li><span class="hub-path-n">6</span><span>Build a study plan and book a test date</span></li>
+                        </ol>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-6">
+                            <a href="https://www.mba.com/" target="_blank" rel="noopener" class="hub-btn-outline"><i data-feather="external-link" class="h-4 w-4"></i>Official GMAT prep</a>
+                            <a href="https://www.ets.org/gre.html" target="_blank" rel="noopener" class="hub-btn-outline"><i data-feather="external-link" class="h-4 w-4"></i>Official GRE prep</a>
+                        </div>
+                </section>
+
+                <!-- HBS TOOLKIT -->
+                <section id="mba-hbs" class="hub-section" role="tabpanel" aria-labelledby="hub-tab-hbs">
+                    <div class="max-w-2xl mb-6">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">HBS applicant toolkit</h2>
+                        <p class="text-gray-600">What Harvard Business School looks for, and how to show it in your essays, activities, and interview.</p>
+                    </div>
+
+                    <div class="flex gap-1 border-b border-gray-200 overflow-x-auto hub-noscrollbar" role="tablist" aria-label="HBS toolkit" data-hub="tabs">
+                        <button type="button" role="tab" id="hbs-tab-criteria" aria-controls="hbs-panel-criteria" aria-selected="true" class="hub-tab">What HBS looks for</button>
+                        <button type="button" role="tab" id="hbs-tab-essays" aria-controls="hbs-panel-essays" aria-selected="false" class="hub-tab">Essays</button>
+                        <button type="button" role="tab" id="hbs-tab-ec" aria-controls="hbs-panel-ec" aria-selected="false" class="hub-tab">Extracurriculars</button>
+                        <button type="button" role="tab" id="hbs-tab-interview" aria-controls="hbs-panel-interview" aria-selected="false" class="hub-tab">Interview</button>
+                        <button type="button" role="tab" id="hbs-tab-check" aria-controls="hbs-panel-check" aria-selected="false" class="hub-tab">Before you submit</button>
+                    </div>
+
+                    <div class="pt-6">
+                        <div role="tabpanel" id="hbs-panel-criteria" aria-labelledby="hbs-tab-criteria">
+                            <p class="text-gray-700 max-w-2xl mb-6">HBS describes its ideal candidates with three traits. Its mission is to educate leaders who make a difference in the world, and your application as a whole should show how you have led, grown, and created impact.</p>
+                            <div class="grid md:grid-cols-3 gap-5">
+                                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                                    <i data-feather="trending-up" class="h-7 w-7 text-red-800 mb-3"></i>
+                                    <h3 class="font-semibold text-lg mb-2">Business-minded</h3>
+                                    <p class="text-gray-600 text-sm">How will you use business to create meaningful impact?</p>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                                    <i data-feather="users" class="h-7 w-7 text-red-800 mb-3"></i>
+                                    <h3 class="font-semibold text-lg mb-2">Leadership-focused</h3>
+                                    <p class="text-gray-600 text-sm">How have you influenced, mobilized, or developed others?</p>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                                    <i data-feather="sunrise" class="h-7 w-7 text-red-800 mb-3"></i>
+                                    <h3 class="font-semibold text-lg mb-2">Growth-oriented</h3>
+                                    <p class="text-gray-600 text-sm">How have you learned, evolved, challenged yourself, and helped others learn?</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mt-6 max-w-2xl">HBS isn't looking for one career, activity, title, or "perfect" candidate. Your goal isn't to look like an HBS applicant. It's to make it easy for HBS to understand who you are, what you value, how you've led and grown, and where you're going.</p>
+                            <a href="https://www.hbs.edu/mba/admissions/who-are-we-looking-for" target="_blank" rel="noopener" class="inline-flex items-center gap-1 mt-4 font-semibold text-red-800 hover:underline">Read HBS's own description <i data-feather="arrow-up-right" class="h-4 w-4"></i></a>
+                        </div>
+
+                        <div role="tabpanel" id="hbs-panel-essays" aria-labelledby="hbs-tab-essays" hidden>
+                            <div class="bg-gray-900 text-white rounded-lg p-6 mb-6">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-red-300 mb-2">The golden rule</p>
+                                <p class="text-xl font-semibold mb-2">Your essays should add to your application, not repeat it.</p>
+                                <p class="text-gray-300">Your résumé tells HBS what you did. Your essays show why you did it, how you think, what you value, and who you're becoming.</p>
+                            </div>
+                            <p class="text-gray-700 max-w-2xl mb-5">HBS uses three essays, one for each trait. The strongest are personal, specific, and reflective, with meaningful experiences that aren't fully captured elsewhere in your application.</p>
+                            <div class="grid md:grid-cols-3 gap-5">
+                                <div class="bg-white border border-gray-200 rounded-lg p-6 flex flex-col">
+                                    <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Essay 1</p>
+                                    <h3 class="font-semibold text-lg mb-1">Business-minded</h3>
+                                    <p class="text-sm text-gray-600 mb-4">Show how you think about impact. What has shaped the way you see business, organizations, or the problems you want to solve?</p>
+                                    <ul class="hub-list text-sm mb-4">
+                                        <li>A meaningful experience or problem</li>
+                                        <li>Why it mattered to you</li>
+                                        <li>How it shaped your perspective</li>
+                                        <li>How that connects to your future</li>
+                                    </ul>
+                                    <p class="hub-formula mt-auto">Experience → Insight → Future impact</p>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-6 flex flex-col">
+                                    <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Essay 2</p>
+                                    <h3 class="font-semibold text-lg mb-1">Leadership-focused</h3>
+                                    <p class="text-sm text-gray-600 mb-4">Show how you lead, not just where you held a title. Work, community, and extracurriculars all count.</p>
+                                    <ul class="hub-list text-sm mb-4">
+                                        <li>A specific situation and the people in it</li>
+                                        <li>Your actions and decisions</li>
+                                        <li>The impact you had on others</li>
+                                        <li>What it taught you about leading</li>
+                                    </ul>
+                                    <p class="hub-formula mt-auto">Challenge → Action → Impact → Reflection</p>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-6 flex flex-col">
+                                    <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Essay 3</p>
+                                    <h3 class="font-semibold text-lg mb-1">Growth-oriented</h3>
+                                    <p class="text-sm text-gray-600 mb-4">Show self-awareness. Don't tell HBS you grew; show how you changed.</p>
+                                    <ul class="hub-list text-sm mb-4">
+                                        <li>A challenge, mistake, or realization</li>
+                                        <li>What you learned</li>
+                                        <li>How your thinking changed</li>
+                                        <li>What you do differently today</li>
+                                    </ul>
+                                    <p class="hub-formula mt-auto">Before → Experience → Learning → After</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-5 mt-6">
+                                <div class="rounded-lg p-5 border border-gray-200 bg-white">
+                                    <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2"><i data-feather="x-circle" class="h-5 w-5 text-red-700"></i>Avoid</h4>
+                                    <p class="text-sm text-gray-700">Repeating your résumé, generic leadership stories, heavy praise of HBS, writing what you think they want to hear, accomplishments without reflection, and over-polished language that loses your voice.</p>
+                                </div>
+                                <div class="rounded-lg p-5 border border-gray-200 bg-white">
+                                    <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2"><i data-feather="check-circle" class="h-5 w-5 text-green-700"></i>Prioritize</h4>
+                                    <p class="text-sm text-gray-700">Specificity, authenticity, reflection, vulnerability, impact, and growth. Don't try to sound impressive. Help the reader understand you.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" id="hbs-panel-ec" aria-labelledby="hbs-tab-ec" hidden>
+                            <div class="max-w-2xl">
+                                <p class="text-2xl font-semibold text-gray-900 mb-3">Depth and impact beat a long list.</p>
+                                <p class="text-gray-700 mb-4">You don't need a prestigious title or a long list of organizations. HBS says leadership can happen at work, in extracurriculars, or in your community, and doesn't require formal authority. One or two meaningful activities can be stronger than filling every slot.</p>
+                                <p class="text-sm font-semibold text-gray-900 mb-2">For each activity, be ready to answer:</p>
+                            </div>
+                            <ol class="hub-path mb-6">
+                                <li><span class="hub-path-n">1</span><span>Why did I care?</span></li>
+                                <li><span class="hub-path-n">2</span><span>What did I do?</span></li>
+                                <li><span class="hub-path-n">3</span><span>Who did I impact?</span></li>
+                                <li><span class="hub-path-n">4</span><span>What did I learn?</span></li>
+                            </ol>
+                            <p class="text-gray-700"><span class="font-semibold">What matters:</span> commitment, initiative, impact, purpose, and leadership. Not simply membership.</p>
+                        </div>
+
+                        <div role="tabpanel" id="hbs-panel-interview" aria-labelledby="hbs-tab-interview" hidden>
+                            <div class="grid md:grid-cols-3 gap-5 mb-6">
+                                <div class="bg-white border border-gray-200 rounded-lg p-5"><p class="text-3xl font-bold text-red-800 hub-nums">30 min</p><p class="text-sm text-gray-600 mt-1">Length of the HBS interview</p></div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-5"><p class="text-lg font-semibold text-gray-900">Admissions Board</p><p class="text-sm text-gray-600 mt-1">Your interviewer is a board member who has already read your application</p></div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-5"><p class="text-lg font-semibold text-gray-900">Tailored to you</p><p class="text-sm text-gray-600 mt-1">Know your application deeply, but don't memorize scripts</p></div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-3">Be ready to discuss</h3>
+                                    <ul class="hub-list">
+                                        <li>Your career decisions and transitions</li>
+                                        <li>Leadership experiences</li>
+                                        <li>Challenges and failures</li>
+                                        <li>Your industry and organization</li>
+                                        <li>Your goals, and why an MBA now</li>
+                                        <li>Why HBS</li>
+                                        <li>Anything in your application</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-3">Practice telling each story this way</h3>
+                                    <ol class="hub-path hub-path-col">
+                                        <li><span class="hub-path-n">1</span><span>What happened</span></li>
+                                        <li><span class="hub-path-n">2</span><span>What you did</span></li>
+                                        <li><span class="hub-path-n">3</span><span>Why you did it</span></li>
+                                        <li><span class="hub-path-n">4</span><span>What resulted</span></li>
+                                        <li><span class="hub-path-n">5</span><span>What you learned</span></li>
+                                    </ol>
+                                    <button type="button" data-go="mba-interview" class="mt-4 inline-flex items-center gap-1 font-semibold text-red-800 hover:underline">Practice with our question bank <i data-feather="arrow-down" class="h-4 w-4"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" id="hbs-panel-check" aria-labelledby="hbs-tab-check" hidden>
+                            <div class="grid lg:grid-cols-2 gap-6">
+                                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                                    <h3 class="font-semibold text-lg mb-1">Essay check</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Check each one off once it's true for every essay.</p>
+                                    <div class="space-y-3" data-hub="checklist">
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-1"><span>I answered the actual question</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-2"><span>A specific story sits behind each answer</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-3"><span>I explained <em>why</em> the experience mattered</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-4"><span>Each essay reveals something new about me</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-5"><span>There's reflection, not just accomplishment</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-6"><span>It sounds like me, not like "an MBA applicant"</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-7"><span>My three essays show different sides of me</span></label>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                                    <h3 class="font-semibold text-lg mb-1">The HBS test</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Read your whole application once more and ask:</p>
+                                    <div class="space-y-3" data-hub="checklist">
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-8"><span><strong>Business:</strong> Have I shown what problems I want to solve and why they matter?</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-9"><span><strong>Leadership:</strong> Have I shown how I create impact through and with others?</span></label>
+                                        <label class="hub-check"><input type="checkbox" id="hbs-chk-10"><span><strong>Growth:</strong> Have I shown how my experiences changed the way I think and lead?</span></label>
+                                    </div>
+                                    <div class="mt-5 rounded-md bg-red-50 border border-red-100 p-4">
+                                        <p class="font-semibold text-gray-900">The authenticity test</p>
+                                        <p class="text-sm text-gray-700 mt-1">Could another applicant put their name on this and submit it? If yes, go deeper.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- INTERVIEW PREP -->
+                <section id="mba-interview" class="hub-section" role="tabpanel" aria-labelledby="hub-tab-interview">
+                    <div class="max-w-2xl mb-6">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Interview prep</h2>
+                        <p class="text-gray-600">Common questions from MBA interviews, grouped by theme. Practice out loud: draw a question, answer it in two minutes, then draw another.</p>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8">
+                        <div class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Question theme" data-hub="q-filters"></div>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" data-hub="q-meta"></p>
+                        <p class="text-2xl sm:text-3xl font-semibold text-gray-900 min-h-[5rem] hub-balance" data-hub="q-text" aria-live="polite"></p>
+                        <div class="flex flex-wrap items-center gap-3 mt-6">
+                            <button type="button" class="event-button inline-flex items-center gap-2" data-hub="q-next"><i data-feather="shuffle" class="h-4 w-4"></i>Next question</button>
+                            <button type="button" class="hub-btn-outline" data-hub="q-timer">Start 2-minute timer</button>
+                            <span class="text-sm text-gray-500 hub-nums" data-hub="q-clock"></span>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">All questions to prepare</h3>
+                            <p class="text-sm text-gray-500 mb-3">Open a theme to see its questions.</p>
+                            <div class="space-y-2" data-hub="q-all"></div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-3">Questions to ask your interviewer</h3>
+                            <p class="text-sm text-gray-500 mb-3">Have two or three ready. Choose ones that fit who you're talking to.</p>
+                            <div class="space-y-2" data-hub="ask-all"></div>
+                        </div>
+                    </div>
+                </section>
             </div>
+
+            <!-- FEEDBACK -->
+            <section class="bg-white border-t border-gray-200 mt-4">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                    <div class="flex flex-wrap items-center justify-between gap-6">
+                        <div class="max-w-xl">
+                            <h2 class="text-xl font-semibold text-gray-900 mb-1">Help us improve the MBA Hub</h2>
+                            <p class="text-gray-600">Spot something outdated, have a resource to suggest, or want a topic covered? Email us your feedback.</p>
+                            <p class="text-xs text-gray-500 mt-3">Content reviewed November 2026. Admissions requirements change each cycle, so always confirm details with each school.</p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <a href="mailto:svmpalumniassociation@gmail.com?subject=MBA%20Hub%20feedback" class="font-semibold text-red-800 underline hover:text-red-900 break-all">svmpalumniassociation@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </template>
 
@@ -1406,6 +1845,423 @@
     </template>
 
     <script>
+/* SVMPAA MBA Hub: data + behavior. Edit content in MBA_HUB_DATA; call initMbaHub(container) after the page renders. */
+(function () {
+    var MBA_HUB_DATA = {
+        phases: [
+            { when: '12–18 months before', short: 'Explore', title: 'Explore & prepare',
+              tasks: ['Decide whether an MBA fits your goals', 'Research programs and career paths', 'Assess your applicant profile', 'Take a GMAT or GRE diagnostic'],
+              related: [{ label: 'GMAT vs. GRE', go: 'mba-tests' }, { label: 'mba.com', res: 'mbacom' }, { label: 'MLT MBA Prep', res: 'mlt' }] },
+            { when: '9–12 months before', short: 'Test', title: 'Test & research',
+              tasks: ['Prepare for and take the GMAT or GRE', 'Build your target school list', 'Connect with students and alumni'],
+              related: [{ label: 'Choosing a test', go: 'mba-tests' }, { label: 'Test prep resources', filter: 'test' }] },
+            { when: '6–9 months before', short: 'Strategize', title: 'Build your strategy',
+              tasks: ['Finalize your school list', 'Define your career goals and "Why MBA?"', 'Identify recommenders', 'Develop your MBA résumé'],
+              related: [{ label: 'What HBS looks for', go: 'mba-hbs', tab: 'criteria' }, { label: 'Strategy tools', filter: 'strategy' }] },
+            { when: '3–6 months before', short: 'Apply', title: 'Prepare applications',
+              tasks: ['Request recommendations', 'Draft and refine essays', 'Complete application materials', 'Research scholarships and financing'],
+              related: [{ label: 'HBS essays', go: 'mba-hbs', tab: 'essays' }, { label: 'Fellowships', filter: 'fellowships' }, { label: 'The Consortium', res: 'consortium' }] },
+            { when: '1–3 months before', short: 'Submit', title: 'Finalize & submit',
+              tasks: ['Review essays and résumé', 'Confirm recommendations and test scores', 'Submit applications'],
+              related: [{ label: 'Before-you-submit check', go: 'mba-hbs', tab: 'check' }] },
+            { when: 'After submitting', short: 'Interview', title: 'Interview',
+              tasks: ['Prepare your story and career goals', 'Research each school’s interview format', 'Complete mock interviews'],
+              related: [{ label: 'Interview question bank', go: 'mba-interview' }, { label: 'HBS interview', go: 'mba-hbs', tab: 'interview' }] },
+            { when: 'After admission', short: 'Decide', title: 'Decide & prepare',
+              tasks: ['Compare schools and scholarship offers', 'Determine financing', 'Select your program', 'Prepare for matriculation'],
+              related: [{ label: 'Fellowships', filter: 'fellowships' }, { label: 'mba.com financing tools', res: 'mbacom' }] }
+        ],
+
+        stages: [
+            { id: 'exploring', label: 'Just exploring', phase: 0, note: 'Start by deciding whether an MBA fits your goals, and learn what programs look for.', recs: ['mbacom', 'mlt', 'forte-launch'] },
+            { id: 'early', label: '1–2 years out', phase: 0, note: 'You have time to build your profile. Structured pre-MBA programs pay off most at this stage.', recs: ['mlt', 'forte-launch', 'riordan'] },
+            { id: 'testing', label: 'Studying for the test', phase: 1, note: 'Pick your test with a diagnostic, then commit to a study plan and date.', recs: ['gmat', 'gre'], go: { label: 'Compare GMAT and GRE', go: 'mba-tests' } },
+            { id: 'applying', label: 'Applying now', phase: 3, note: 'Focus on essays, recommenders, and programs that waive fees or bring fellowship funding.', recs: ['mlt', 'forte-launch', 'consortium'], go: { label: 'Open the HBS essay guide', go: 'mba-hbs', tab: 'essays' } },
+            { id: 'interviewing', label: 'Interviewing', phase: 5, note: 'Know your application cold and practice telling your stories out loud.', recs: ['mbamission', 'applicantlab'], go: { label: 'Practice interview questions', go: 'mba-interview' } },
+            { id: 'admitted', label: 'Admitted', phase: 6, note: 'Congratulations. Compare offers, line up financing, and look for fellowships.', recs: ['consortium', 'forte-fellows', 'romba'] }
+        ],
+
+        categories: [
+            { id: 'pipeline', label: 'Application programs' },
+            { id: 'fellowships', label: 'Fellowships & communities' },
+            { id: 'test', label: 'GMAT & GRE' },
+            { id: 'research', label: 'School research' },
+            { id: 'strategy', label: 'Strategy tools' }
+        ],
+
+        resources: [
+            { id: 'mlt', cat: 'pipeline', name: 'MLT MBA Prep', org: 'Management Leadership for Tomorrow',
+              desc: 'A structured admissions program with personalized coaching, application strategy, school engagement, and a strong peer network.',
+              bestFor: 'Candidates who want high-touch support through the whole process.',
+              note: 'Several pathways are offered; check current eligibility.', tags: ['Coaching', 'Eligibility applies'],
+              links: [{ label: 'Visit MLT', url: 'https://mlt.org/mba-prep/' }] },
+            { id: 'consortium', cat: 'pipeline', name: 'The Consortium', org: 'Consortium for Graduate Study in Management',
+              desc: 'One common application to multiple member schools, with consideration for Consortium membership and fellowship funding.',
+              bestFor: 'Applicants to member schools who share the Consortium’s mission of expanding access.',
+              note: 'Eligibility rests on citizenship or residency, a bachelor’s degree, and commitment to the mission, not race or ethnicity.',
+              tags: ['Fellowship funding', 'Reduced app costs'],
+              links: [{ label: 'Visit the Consortium', url: 'https://cgsm.org/prospective-students/' }] },
+            { id: 'forte-launch', cat: 'pipeline', name: 'Forté MBALaunch', org: 'Forté Foundation',
+              desc: 'Structured application prep with admissions guidance, workshops, networking, and access to participating schools.',
+              bestFor: 'Candidates who want a structured plan and a peer cohort.',
+              note: 'Participants can get application fee waivers. A self-paced On Demand version is also available.',
+              tags: ['Fee waivers', 'Self-paced option'],
+              links: [{ label: 'Visit MBALaunch', url: 'https://www.fortefoundation.org/pre-mba/mbalaunch/' }] },
+            { id: 'riordan', cat: 'pipeline', name: 'Riordan MBA Fellows', org: 'UCLA Anderson',
+              desc: 'A pre-MBA program with admissions guidance, GMAT/GRE prep, mentorship, leadership development, and a personal MBA action plan.',
+              bestFor: 'Early-career professionals planning to apply in the next few years.',
+              note: 'Includes required in-person sessions at UCLA.', tags: ['Early career', 'In person'],
+              links: [{ label: 'Visit Riordan', url: 'https://www.anderson.ucla.edu/specialized-academic-programs/riordan-programs/riordan-mba-fellows-program' }] },
+            { id: 'forte-fellows', cat: 'fellowships', name: 'Forté Fellowships', org: 'Forté Foundation',
+              desc: 'Fellowships awarded through participating schools to MBA candidates committed to advancing women in business, plus mentorship and employer access.',
+              bestFor: 'Admitted or applying candidates at Forté partner schools.',
+              note: 'Fellows are selected by the participating schools.', tags: ['Funding', 'Community'],
+              links: [{ label: 'Visit Forté Fellows', url: 'https://www.fortefoundation.org/mba/fellows/' }] },
+            { id: 'romba', cat: 'fellowships', name: 'Reaching Out MBA (ROMBA)', org: 'Reaching Out',
+              desc: 'Programming, professional development, and fellowships centered on LGBTQ+ inclusion and leadership in business education.',
+              bestFor: 'Candidates who want community and fellowship support at partner schools.',
+              note: 'ROMBA Fellows are selected by partner schools; there is no separate fellowship application.',
+              tags: ['Funding', 'Community'],
+              links: [{ label: 'Visit ROMBA', url: 'https://reachingoutmba.org/' }, { label: 'Fellowship', url: 'https://reachingoutmba.org/fellowship/' }] },
+            { id: 'gmat', cat: 'test', name: 'GMAT Official Prep', org: 'mba.com',
+              desc: 'Practice questions, study materials, and full-length practice exams from the makers of the GMAT.',
+              bestFor: 'Anyone considering the GMAT. Start here.',
+              note: 'The free Official Starter Kit includes sample questions and two full-length practice exams.', tags: ['Free starter kit'],
+              links: [{ label: 'Visit mba.com', url: 'https://www.mba.com/' }] },
+            { id: 'gre', cat: 'test', name: 'GRE Official Resources', org: 'ETS',
+              desc: 'The official source for GRE information, prep materials, practice tests, registration, and score reporting.',
+              bestFor: 'Anyone considering the GRE.',
+              note: 'More than 1,300 business schools accept the GRE for at least some MBA programs. Confirm each school’s policy.',
+              tags: ['Official'],
+              links: [{ label: 'Visit ETS', url: 'https://www.ets.org/gre.html' }] },
+            { id: 'mbacom', cat: 'research', name: 'mba.com', org: 'GMAC',
+              desc: 'More than GMAT prep: school exploration, program research, application guidance, admissions events, scholarships, and ROI and salary tools.',
+              bestFor: 'Your first stop when you’re still exploring.',
+              note: '', tags: ['Free', 'Financing tools'],
+              links: [{ label: 'Visit mba.com', url: 'https://www.mba.com/' }] },
+            { id: 'mbamission', cat: 'strategy', name: 'mbaMission', org: 'Admissions consulting',
+              desc: 'Free guides on strategy, school selection, essays, résumés, recommendations, and interviews, plus the self-guided onTrack platform and paid consulting.',
+              bestFor: 'Detailed, school-specific guidance, free or paid.',
+              note: 'Its free library includes a complete start-to-finish admissions guide.', tags: ['Free guides', 'Paid options'],
+              links: [{ label: 'Visit mbaMission', url: 'https://www.mbamission.com/' }, { label: 'Free guides', url: 'https://www.mbamission.com/resources/mbamission-free-guides/' }] },
+            { id: 'applicantlab', cat: 'strategy', name: 'ApplicantLab', org: 'Self-guided platform',
+              desc: 'A step-by-step platform covering positioning, "Why MBA?", school research, essays, résumés, recommenders, interviews, and checklists.',
+              bestFor: 'Structured guidance at a lower cost than full-service consulting.',
+              note: 'You can add one-on-one consulting if you want it.', tags: ['Paid', 'Self-paced'],
+              links: [{ label: 'Visit ApplicantLab', url: 'https://www.applicantlab.com/' }] }
+        ],
+
+        questionThemes: [
+            { id: 'story', label: 'Your story & goals', qs: ['Walk me through your résumé.', 'Why this program?', 'Why an MBA, and why now?', 'What are your short-term goals?', 'What are your long-term goals?', 'What else should we know? What do you wish we had asked?'] },
+            { id: 'lead', label: 'Leadership & teams', qs: ['Tell me about a time you had to lead someone.', 'What’s your leadership style?', 'Tell me about a time you led a team. What was your greatest accomplishment?', 'Tell me about a time you had to influence someone more senior than you.', 'How have you dealt with a difficult client, boss, coworker, or team?', 'What makes a good or bad leader? Who is a leader you admire?'] },
+            { id: 'perspective', label: 'Perspective & inclusion', qs: ['What’s your definition of diversity?', 'Tell me about a time you made an effort to get to know someone with a different background.', 'Tell me about a time you made an environment more inclusive.', 'Tell me about working with someone of a different identity. What did you learn?'] },
+            { id: 'self', label: 'Self-awareness', qs: ['Tell me about your biggest failure, at work or in general.', 'What are your top strengths?', 'What are your top weaknesses?', 'Tell me about an ethical dilemma you faced.'] },
+            { id: 'curve', label: 'Curveballs', qs: ['What is the biggest challenge facing your industry today?', 'Teach me something.', 'What is a book you’ve read recently?'] }
+        ],
+
+        askThemes: [
+            { label: 'About the experience', qs: ['What was the most powerful lesson you learned in business school?', 'What do you see as the program’s greatest strength?', 'What’s your favorite thing about the curriculum? About the culture?', 'What’s one thing about the school that surprises people?', 'What’s your favorite tradition at the school?', 'What’s your most memorable moment there?', 'What skill did you use most during the MBA?'] },
+            { label: 'About outcomes', qs: ['What has your career path been like since the MBA?', 'What has been most valuable about the alumni network?', 'How did the curriculum help you switch careers?', 'How has the school supported you since graduating?', 'How do you stay in touch with classmates now?'] },
+            { label: 'About fit', qs: ['Knowing my goals, where would you focus your time as a student?', 'What traits do successful students here share?', 'What led you to choose this program? (alumni)', 'How do you see the program changing in the next 5–10 years? (admissions)'] }
+        ]
+    };
+
+    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+    function icons() { if (window.feather) window.feather.replace(); }
+
+    window.initMbaHub = function (root) {
+        root = root || document;
+        var D = MBA_HUB_DATA;
+        var $ = function (k) { return root.querySelector('[data-hub="' + k + '"]'); };
+        var state = { stage: null };
+        var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var resById = {};
+        D.resources.forEach(function (r) { resById[r.id] = r; });
+        var activePhase = 0, activeFilter = 'all';
+
+        /* ---------- navigation helpers (the site uses #hash routing, so in-page links scroll instead) ---------- */
+        function scrollToId(id) {
+            var el = root.querySelector('#' + id);
+            if (el) el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        }
+        /* Horizontal scrollers (section tabs, timeline phases) show arrows and a fade when more is off-screen. */
+        function scrollHints(wrap) {
+            var track = wrap.querySelector('[data-scroll-track]');
+            var prev = wrap.querySelector('.hub-scroll-prev'), next = wrap.querySelector('.hub-scroll-next');
+            function update() {
+                var max = track.scrollWidth - track.clientWidth;
+                var canPrev = track.scrollLeft > 4, canNext = track.scrollLeft < max - 4;
+                prev.hidden = !canPrev; next.hidden = !canNext;
+                wrap.classList.toggle('can-prev', canPrev); wrap.classList.toggle('can-next', canNext);
+            }
+            function by(d) { track.scrollBy({ left: d * track.clientWidth * 0.7, behavior: reduceMotion ? 'auto' : 'smooth' }); }
+            prev.addEventListener('click', function () { by(-1); });
+            next.addEventListener('click', function () { by(1); });
+            track.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+            return { update: update, reveal: function (el) {
+                var l = el.offsetLeft - track.offsetLeft, r = l + el.offsetWidth;
+                if (l < track.scrollLeft + 40) track.scrollTo({ left: Math.max(0, l - 40), behavior: reduceMotion ? 'auto' : 'smooth' });
+                else if (r > track.scrollLeft + track.clientWidth - 40) track.scrollTo({ left: r - track.clientWidth + 40, behavior: reduceMotion ? 'auto' : 'smooth' });
+            } };
+        }
+        var tabScroll = scrollHints(root.querySelector('[data-hub="subnav-wrap"]'));
+        var stepScroll = scrollHints(root.querySelector('[data-hub="steps-wrap"]'));
+
+        /* One section shows at a time; the sticky bar switches between them. */
+        var SECTION_IDS = ['mba-timeline', 'mba-resources', 'mba-tests', 'mba-hbs', 'mba-interview'];
+        function navIsStuck() {
+            var nav = root.querySelector('.hub-subnav');
+            return !!nav && nav.getBoundingClientRect().top < 100;
+        }
+        function showSection(id, scroll) {
+            if (SECTION_IDS.indexOf(id) === -1) id = 'mba-timeline';
+            SECTION_IDS.forEach(function (s) { var el = root.querySelector('#' + s); if (el) el.hidden = s !== id; });
+            root.querySelectorAll('[data-hub="subnav"] [data-go]').forEach(function (b) {
+                var on = b.dataset.go === id;
+                b.classList.toggle('is-active', on); b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1;
+                if (on) tabScroll.reveal(b);
+            });
+            if (scroll) scrollToId(id);
+        }
+        function go(t) {
+            if (t.tab) selectTab(t.tab);
+            if (t.filter) { showSection('mba-resources', true); setFilter(t.filter); return; }
+            if (t.res) { showSection('mba-resources', false); showResource(t.res); return; }
+            if (t.go) showSection(t.go, true);
+        }
+        function showResource(id) {
+            resExpanded = true; setFilter('all');
+            var card = root.querySelector('#res-' + id);
+            if (!card) return;
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            card.classList.add('is-flash');
+            setTimeout(function () { card.classList.remove('is-flash'); }, 1800);
+        }
+        function linkBtn(t, cls) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = cls || 'hub-chip';
+            b.innerHTML = esc(t.label) + ' <i data-feather="arrow-right" class="h-3.5 w-3.5"></i>';
+            b.addEventListener('click', function () { go(t); });
+            return b;
+        }
+
+        /* ---------- stage picker ---------- */
+        var stagesEl = $('stages'), panel = $('stage-panel');
+        D.stages.forEach(function (s) {
+            var b = document.createElement('button');
+            b.type = 'button'; b.className = 'hub-chip'; b.setAttribute('role', 'radio');
+            b.setAttribute('aria-checked', 'false'); b.dataset.stage = s.id; b.textContent = s.label;
+            b.addEventListener('click', function () { setStage(state.stage === s.id ? null : s.id, true); });
+            stagesEl.appendChild(b);
+        });
+        function setStage(id, user) {
+            state.stage = id;
+            stagesEl.querySelectorAll('[data-stage]').forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.stage === id)); });
+            var s = D.stages.filter(function (x) { return x.id === id; })[0];
+            if (!s) { panel.hidden = true; highlightRecs([]); renderSteps(); return; }
+            var p = D.phases[s.phase];
+            panel.innerHTML =
+                '<div class="grid md:grid-cols-3 gap-6">' +
+                '<div><p class="text-xs font-semibold uppercase tracking-wider text-red-800 mb-1">You’re in: ' + esc(p.title) + '</p>' +
+                '<p class="text-xs text-gray-500 mb-2">' + esc(p.when) + ' applying</p><p class="text-gray-800">' + esc(s.note) + '</p></div>' +
+                '<div class="hidden md:block"><p class="text-sm font-semibold text-gray-900 mb-2">What to do now</p>' +
+                '<ul class="hub-list text-sm">' + p.tasks.slice(0, 3).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+                '</div><div><p class="text-sm font-semibold text-gray-900 mb-2">Start with</p><div class="flex flex-wrap gap-2" data-recs></div></div></div>';
+            var recs = panel.querySelector('[data-recs]');
+            s.recs.forEach(function (rid) { recs.appendChild(linkBtn({ label: resById[rid].name, res: rid })); });
+            if (s.go) recs.appendChild(linkBtn(s.go));
+            panel.hidden = false;
+            activePhase = s.phase;
+            renderSteps(); renderPhase();
+            highlightRecs(s.recs);
+        }
+        function highlightRecs(ids) {
+            root.querySelectorAll('.hub-res [data-rec-badge]').forEach(function (n) { n.hidden = ids.indexOf(n.dataset.recBadge) === -1; });
+            /* Recommended programs move to the top of the list so they're never behind "Show all". */
+            var order = ids.concat(D.resources.map(function (r) { return r.id; }).filter(function (rid) { return ids.indexOf(rid) === -1; }));
+            order.forEach(function (rid) { resEl.appendChild(root.querySelector('#res-' + rid)); });
+            setFilter(activeFilter);
+        }
+
+        /* ---------- timeline ---------- */
+        var stepsEl = $('steps'), detail = $('phase-detail');
+        function renderSteps() {
+            var stage = D.stages.filter(function (x) { return x.id === state.stage; })[0];
+            stepsEl.innerHTML = '';
+            D.phases.forEach(function (p, pi) {
+                var li = document.createElement('li');
+                li.innerHTML = '<button type="button" class="hub-step-btn"' + (pi === activePhase ? ' aria-current="step"' : '') + '>' +
+                    (stage && stage.phase === pi ? '<span class="hub-you">You</span>' : '') +
+                    '<span class="hub-step-when">' + esc(p.when) + '</span><span class="hub-step-title">' + esc(p.title) + '</span></button>';
+                li.firstChild.addEventListener('click', function () { activePhase = pi; renderSteps(); renderPhase(); });
+                stepsEl.appendChild(li);
+            });
+            stepScroll.update();
+            var cur = stepsEl.querySelector('[aria-current="step"]');
+            if (cur) stepScroll.reveal(cur.parentNode);
+        }
+        function renderPhase() {
+            var p = D.phases[activePhase];
+            detail.innerHTML =
+                '<div class="grid md:grid-cols-3 gap-6"><div class="md:col-span-2">' +
+                '<p class="text-xs font-semibold uppercase tracking-wider text-gray-500">Phase ' + (activePhase + 1) + ' of ' + D.phases.length + ' · ' + esc(p.when) + '</p>' +
+                '<h3 class="text-2xl font-bold text-gray-900 mt-1 mb-4">' + esc(p.title) + '</h3><ul class="hub-list">' +
+                p.tasks.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></div>' +
+                '<div><p class="text-sm font-semibold text-gray-900 mb-2">Helpful for this phase</p><div class="flex flex-wrap gap-2" data-related></div>' +
+                '<div class="flex gap-2 mt-6">' +
+                (activePhase > 0 ? '<button type="button" class="hub-btn-outline" data-step="-1">← Previous</button>' : '') +
+                (activePhase < D.phases.length - 1 ? '<button type="button" class="hub-btn-outline" data-step="1">Next phase →</button>' : '') +
+                '</div></div></div>';
+            var rel = detail.querySelector('[data-related]');
+            p.related.forEach(function (t) { rel.appendChild(linkBtn(t)); });
+            detail.querySelectorAll('[data-step]').forEach(function (b) {
+                b.addEventListener('click', function () { activePhase += Number(b.dataset.step); renderSteps(); renderPhase(); });
+            });
+            icons();
+        }
+
+        /* ---------- resources ---------- */
+        var filtersEl = $('filters'), resEl = $('resources'), resMore = $('res-more');
+        var RES_PREVIEW = 6, resExpanded = false;
+        [{ id: 'all', label: 'All' }].concat(D.categories).forEach(function (c) {
+            var n = c.id === 'all' ? D.resources.length : D.resources.filter(function (r) { return r.cat === c.id; }).length;
+            var b = document.createElement('button');
+            b.type = 'button'; b.className = 'hub-chip'; b.dataset.filter = c.id; b.setAttribute('aria-pressed', 'false');
+            b.innerHTML = esc(c.label) + ' <span class="hub-count hub-nums">' + n + '</span>';
+            b.addEventListener('click', function () { setFilter(c.id); });
+            filtersEl.appendChild(b);
+        });
+        var catLabel = {};
+        D.categories.forEach(function (c) { catLabel[c.id] = c.label; });
+        D.resources.forEach(function (r) {
+            var card = document.createElement('article');
+            card.className = 'hub-res'; card.id = 'res-' + r.id; card.dataset.cat = r.cat;
+            card.innerHTML =
+                '<div class="flex flex-wrap items-center gap-2 mb-3"><span class="hub-tag hub-tag-cat">' + esc(catLabel[r.cat]) + '</span>' +
+                r.tags.map(function (t) { return '<span class="hub-tag">' + esc(t) + '</span>'; }).join('') +
+                '<span class="hub-tag" style="background:#991b1b;color:#fff" data-rec-badge="' + r.id + '" hidden>Recommended for you</span></div>' +
+                '<h3 class="text-xl font-semibold text-gray-900">' + esc(r.name) + '</h3><p class="text-sm text-gray-500 mb-3">' + esc(r.org) + '</p>' +
+                '<p class="text-gray-800 mb-3"><span class="font-semibold">Best for:</span> ' + esc(r.bestFor) + '</p>' +
+                '<details class="hub-res-more mb-4"><summary>What they offer</summary>' +
+                '<p class="text-gray-700 mt-2">' + esc(r.desc) + '</p>' +
+                (r.note ? '<p class="text-sm text-gray-500 mt-2">' + esc(r.note) + '</p>' : '') + '</details>' +
+                '<div class="flex flex-wrap gap-3 mt-auto">' + r.links.map(function (l, i) {
+                    return '<a href="' + l.url + '" target="_blank" rel="noopener" class="' + (i === 0 ? 'event-button inline-flex items-center gap-1' : 'hub-btn-outline') + '">' + esc(l.label) + ' <i data-feather="arrow-up-right" class="h-4 w-4"></i></a>';
+                }).join('') + '</div>';
+            resEl.appendChild(card);
+        });
+        function setFilter(id) {
+            activeFilter = id;
+            filtersEl.querySelectorAll('[data-filter]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === id)); });
+            var shown = 0;
+            resEl.querySelectorAll('.hub-res').forEach(function (c) {
+                var match = id === 'all' || c.dataset.cat === id;
+                c.hidden = !match || (id === 'all' && !resExpanded && shown >= RES_PREVIEW);
+                if (match) shown++;
+            });
+            var hiddenCount = id === 'all' && !resExpanded ? Math.max(0, D.resources.length - RES_PREVIEW) : 0;
+            resMore.hidden = hiddenCount === 0;
+            resMore.textContent = 'Show all ' + D.resources.length + ' programs';
+        }
+        resMore.addEventListener('click', function () { resExpanded = true; setFilter('all'); });
+        setFilter('all');
+
+        /* ---------- HBS tabs ---------- */
+        var tabs = root.querySelectorAll('[data-hub="tabs"] [role="tab"]');
+        function selectTab(key) {
+            tabs.forEach(function (t) {
+                var on = t.id === 'hbs-tab-' + key;
+                t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
+                root.querySelector('#' + t.getAttribute('aria-controls')).hidden = !on;
+            });
+        }
+        tabs.forEach(function (t, i) {
+            t.addEventListener('click', function () { selectTab(t.id.replace('hbs-tab-', '')); });
+            t.addEventListener('keydown', function (e) {
+                var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+                if (!d) return;
+                var n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); n.click();
+            });
+        });
+        selectTab('criteria');
+
+        /* ---------- interview practice ---------- */
+        var qTheme = 'all', lastQ = null;
+        var qf = $('q-filters');
+        [{ id: 'all', label: 'All themes' }].concat(D.questionThemes).forEach(function (t) {
+            var b = document.createElement('button');
+            b.type = 'button'; b.className = 'hub-chip'; b.dataset.theme = t.id; b.textContent = t.label;
+            b.setAttribute('aria-pressed', String(t.id === 'all'));
+            b.addEventListener('click', function () {
+                qTheme = t.id;
+                qf.querySelectorAll('[data-theme]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.theme === t.id)); });
+                drawQuestion();
+            });
+            qf.appendChild(b);
+        });
+        function pool() {
+            var out = [];
+            D.questionThemes.forEach(function (t) { if (qTheme === 'all' || qTheme === t.id) t.qs.forEach(function (q) { out.push({ q: q, theme: t.label }); }); });
+            return out;
+        }
+        function drawQuestion() {
+            var p = pool(), pick;
+            do { pick = p[Math.floor(Math.random() * p.length)]; } while (p.length > 1 && lastQ && pick.q === lastQ);
+            lastQ = pick.q;
+            $('q-text').textContent = pick.q;
+            $('q-meta').textContent = pick.theme + ' · ' + p.length + ' questions in this set';
+        }
+        $('q-next').addEventListener('click', drawQuestion);
+        drawQuestion();
+
+        var timer = null, clock = $('q-clock'), tBtn = $('q-timer');
+        tBtn.addEventListener('click', function () {
+            if (timer) { clearInterval(timer); timer = null; tBtn.textContent = 'Start 2-minute timer'; clock.textContent = ''; return; }
+            var left = 120;
+            var tick = function () {
+                clock.textContent = Math.floor(left / 60) + ':' + String(left % 60).padStart(2, '0') + ' left';
+                if (left-- <= 0) { clearInterval(timer); timer = null; tBtn.textContent = 'Start 2-minute timer'; clock.textContent = 'Time. Wrap up your answer.'; }
+            };
+            tick(); timer = setInterval(tick, 1000); tBtn.textContent = 'Stop timer';
+        });
+
+        function accordion(el, groups, open) {
+            groups.forEach(function (g, i) {
+                var d = document.createElement('details');
+                d.className = 'hub-acc'; if (open && i === 0) d.open = true;
+                d.innerHTML = '<summary>' + esc(g.label) + ' <span class="text-sm font-normal text-gray-500 ml-auto mr-2 hub-nums">' + g.qs.length + '</span></summary>' +
+                    '<ul class="hub-list text-sm">' + g.qs.map(function (q) { return '<li>' + esc(q) + '</li>'; }).join('') + '</ul>';
+                el.appendChild(d);
+            });
+        }
+        accordion($('q-all'), D.questionThemes, false);
+        accordion($('ask-all'), D.askThemes, false);
+
+        /* ---------- section tabs ---------- */
+        var subBtns = Array.prototype.slice.call(root.querySelectorAll('[data-hub="subnav"] [data-go]'));
+        subBtns.forEach(function (b, i) {
+            b.addEventListener('click', function () { showSection(b.dataset.go, navIsStuck()); });
+            b.addEventListener('keydown', function (e) {
+                var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+                if (!d) return;
+                var n = subBtns[(i + d + subBtns.length) % subBtns.length]; n.focus(); n.click();
+            });
+        });
+        root.querySelectorAll('.hub-section [data-go]').forEach(function (b) {
+            b.addEventListener('click', function () { showSection(b.dataset.go, true); });
+        });
+
+        /* ---------- first render ---------- */
+        renderSteps(); renderPhase();
+        showSection('mba-timeline', false);
+        icons();
+    };
+})();
+    </script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
 
@@ -1523,6 +2379,9 @@
                         
                         if (pageId === 'reunion-recap') {
                             initCarousel();
+                        }
+                        if (pageId === 'mba-hub' && window.initMbaHub) {
+                            window.initMbaHub(mainContent);
                         }
                     }
                 }
