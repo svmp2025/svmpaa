@@ -120,6 +120,31 @@
     };
 
     function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+    function attr(t) { return esc(t).replace(/"/g, '&quot;'); }
+    function safeUrl(u) { u = (u || '').trim(); return /^https?:\/\//i.test(u) ? u : ''; }
+    function slugify(t) { return (t || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+
+    /* Turns rows from the "MBA Resources" tab of the website content Sheet into resource entries. */
+    function resourcesFromSheet(rows, categories) {
+        var byLabel = {}, used = {};
+        categories.forEach(function (c) { byLabel[c.label.toLowerCase()] = c.id; });
+        return rows.filter(window.SVMPAA_CONTENT.isShown).map(function (r) {
+            var cat = byLabel[(r.Category || '').toLowerCase()];
+            var url = safeUrl(r['Link URL']);
+            if (!r.Name || !cat || !url) return null;
+            var id = slugify(r.ID || r.Name) || 'resource';
+            while (used[id]) id += '-2';
+            used[id] = true;
+            var links = [{ label: r['Link text'] || 'Visit ' + r.Name, url: url }];
+            var url2 = safeUrl(r['Second link URL']);
+            if (url2) links.push({ label: r['Second link text'] || 'Learn more', url: url2 });
+            return {
+                id: id, cat: cat, name: r.Name, org: r.Organization || '', desc: r['What they offer'] || '',
+                bestFor: r['Best for'] || '', note: r.Note || '',
+                tags: (r.Tags || '').split(',').map(function (t) { return t.trim(); }).filter(Boolean), links: links
+            };
+        }).filter(Boolean);
+    }
     function icons() { if (window.feather) window.feather.replace(); }
 
     window.initMbaHub = function (root) {
@@ -224,7 +249,7 @@
                 '<ul class="hub-list text-sm">' + p.tasks.slice(0, 3).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
                 '</div><div><p class="text-sm font-semibold text-gray-900 mb-2">Start with</p><div class="flex flex-wrap gap-2" data-recs></div></div></div>';
             var recs = panel.querySelector('[data-recs]');
-            s.recs.forEach(function (rid) { recs.appendChild(linkBtn({ label: resById[rid].name, res: rid })); });
+            s.recs.filter(function (rid) { return resById[rid]; }).forEach(function (rid) { recs.appendChild(linkBtn({ label: resById[rid].name, res: rid })); });
             if (s.go) recs.appendChild(linkBtn(s.go));
             panel.hidden = false;
             activePhase = s.phase;
@@ -235,7 +260,7 @@
             root.querySelectorAll('.hub-res [data-rec-badge]').forEach(function (n) { n.hidden = ids.indexOf(n.dataset.recBadge) === -1; });
             /* Recommended programs move to the top of the list so they're never behind "Show all". */
             var order = ids.concat(D.resources.map(function (r) { return r.id; }).filter(function (rid) { return ids.indexOf(rid) === -1; }));
-            order.forEach(function (rid) { resEl.appendChild(root.querySelector('#res-' + rid)); });
+            order.forEach(function (rid) { var card = root.querySelector('#res-' + rid); if (card) resEl.appendChild(card); });
             setFilter(activeFilter);
         }
 
@@ -279,34 +304,45 @@
         /* ---------- resources ---------- */
         var filtersEl = $('filters'), resEl = $('resources'), resMore = $('res-more');
         var RES_PREVIEW = 6, resExpanded = false;
-        [{ id: 'all', label: 'All' }].concat(D.categories).forEach(function (c) {
-            var n = c.id === 'all' ? D.resources.length : D.resources.filter(function (r) { return r.cat === c.id; }).length;
-            var b = document.createElement('button');
-            b.type = 'button'; b.className = 'hub-chip'; b.dataset.filter = c.id; b.setAttribute('aria-pressed', 'false');
-            b.innerHTML = esc(c.label) + ' <span class="hub-count hub-nums">' + n + '</span>';
-            b.addEventListener('click', function () { setFilter(c.id); });
-            filtersEl.appendChild(b);
-        });
         var catLabel = {};
         D.categories.forEach(function (c) { catLabel[c.id] = c.label; });
-        D.resources.forEach(function (r) {
-            var card = document.createElement('article');
-            card.className = 'hub-res'; card.id = 'res-' + r.id; card.dataset.cat = r.cat;
-            card.innerHTML =
-                '<div class="flex flex-wrap items-center gap-2 mb-3"><span class="hub-tag hub-tag-cat">' + esc(catLabel[r.cat]) + '</span>' +
-                r.tags.map(function (t) { return '<span class="hub-tag">' + esc(t) + '</span>'; }).join('') +
-                '<span class="hub-tag" style="background:#991b1b;color:#fff" data-rec-badge="' + r.id + '" hidden>Recommended for you</span></div>' +
-                '<h3 class="text-xl font-semibold text-gray-900">' + esc(r.name) + '</h3><p class="text-sm text-gray-500 mb-3">' + esc(r.org) + '</p>' +
-                '<p class="text-gray-800 mb-3"><span class="font-semibold">Best for:</span> ' + esc(r.bestFor) + '</p>' +
-                '<details class="hub-res-more mb-4"><summary>What they offer</summary>' +
-                '<p class="text-gray-700 mt-2">' + esc(r.desc) + '</p>' +
-                (r.note ? '<p class="text-sm text-gray-500 mt-2">' + esc(r.note) + '</p>' : '') + '</details>' +
-                '<div class="flex flex-wrap gap-3 mt-auto">' + r.links.map(function (l, i) {
-                    return '<a href="' + l.url + '" target="_blank" rel="noopener" class="' + (i === 0 ? 'event-button inline-flex items-center gap-1' : 'hub-btn-outline') + '">' + esc(l.label) + ' <i data-feather="arrow-up-right" class="h-4 w-4"></i></a>';
-                }).join('') + '</div>';
-            resEl.appendChild(card);
-        });
+        function buildResources() {
+            resById = {};
+            D.resources.forEach(function (r) { resById[r.id] = r; });
+            filtersEl.innerHTML = '';
+            [{ id: 'all', label: 'All' }].concat(D.categories).forEach(function (c) {
+                var n = c.id === 'all' ? D.resources.length : D.resources.filter(function (r) { return r.cat === c.id; }).length;
+                if (!n) return;
+                var b = document.createElement('button');
+                b.type = 'button'; b.className = 'hub-chip'; b.dataset.filter = c.id; b.setAttribute('aria-pressed', 'false');
+                b.innerHTML = esc(c.label) + ' <span class="hub-count hub-nums">' + n + '</span>';
+                b.addEventListener('click', function () { setFilter(c.id); });
+                filtersEl.appendChild(b);
+            });
+            resEl.innerHTML = '';
+            D.resources.forEach(function (r) {
+                var card = document.createElement('article');
+                card.className = 'hub-res'; card.id = 'res-' + r.id; card.dataset.cat = r.cat;
+                card.innerHTML =
+                    '<div class="flex flex-wrap items-center gap-2 mb-3"><span class="hub-tag hub-tag-cat">' + esc(catLabel[r.cat]) + '</span>' +
+                    r.tags.map(function (t) { return '<span class="hub-tag">' + esc(t) + '</span>'; }).join('') +
+                    '<span class="hub-tag" style="background:#991b1b;color:#fff" data-rec-badge="' + attr(r.id) + '" hidden>Recommended for you</span></div>' +
+                    '<h3 class="text-xl font-semibold text-gray-900">' + esc(r.name) + '</h3><p class="text-sm text-gray-500 mb-3">' + esc(r.org) + '</p>' +
+                    (r.bestFor ? '<p class="text-gray-800 mb-3"><span class="font-semibold">Best for:</span> ' + esc(r.bestFor) + '</p>' : '') +
+                    (r.desc || r.note ? '<details class="hub-res-more mb-4"><summary>What they offer</summary>' +
+                        (r.desc ? '<p class="text-gray-700 mt-2">' + esc(r.desc) + '</p>' : '') +
+                        (r.note ? '<p class="text-sm text-gray-500 mt-2">' + esc(r.note) + '</p>' : '') + '</details>' : '') +
+                    '<div class="flex flex-wrap gap-3 mt-auto">' + r.links.map(function (l, i) {
+                        return '<a href="' + attr(l.url) + '" target="_blank" rel="noopener" class="' + (i === 0 ? 'event-button inline-flex items-center gap-1' : 'hub-btn-outline') + '">' + esc(l.label) + ' <i data-feather="arrow-up-right" class="h-4 w-4"></i></a>';
+                    }).join('') + '</div>';
+                resEl.appendChild(card);
+            });
+            if (activeFilter !== 'all' && !D.resources.some(function (r) { return r.cat === activeFilter; })) activeFilter = 'all';
+            setFilter(activeFilter);
+            icons();
+        }
         function setFilter(id) {
+            if (!filtersEl.querySelector('[data-filter="' + id + '"]')) id = 'all';
             activeFilter = id;
             filtersEl.querySelectorAll('[data-filter]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === id)); });
             var shown = 0;
@@ -320,7 +356,7 @@
             resMore.textContent = 'Show all ' + D.resources.length + ' programs';
         }
         resMore.addEventListener('click', function () { resExpanded = true; setFilter('all'); });
-        setFilter('all');
+        buildResources();
 
         /* ---------- HBS tabs ---------- */
         var tabs = root.querySelectorAll('[data-hub="tabs"] [role="tab"]');
@@ -411,5 +447,17 @@
         renderSteps(); renderPhase();
         showSection('mba-timeline', false);
         icons();
+
+        /* Swap in the latest programs from the website content Sheet. Built-in programs stay if it can't load. */
+        if (window.SVMPAA_CONTENT) {
+            window.SVMPAA_CONTENT.load('MBA Resources', ['Name', 'Category', 'Link URL']).then(function (rows) {
+                var list = resourcesFromSheet(rows, D.categories);
+                if (!list.length || !resEl.isConnected) return;
+                D.resources = list;
+                buildResources();
+                var s = D.stages.filter(function (x) { return x.id === state.stage; })[0];
+                if (s) setStage(s.id, false);
+            }).catch(function () { /* keep built-in programs */ });
+        }
     };
 })();
