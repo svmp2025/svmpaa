@@ -4,187 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVMP Alumni Association</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Active link styling for main and mobile nav */
-        .nav-link.active {
-            color: #991b1b; /* dark red */
-            font-weight: 600;
-        }
-        /* SPA transition styles */
-        .page {
-            display: none;
-        }
-        .page.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Card hover effect */
-        .card {
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-        /* Carousel visibility and transition styles */
-        .carousel-item {
-            display: none;
-            transition: opacity 0.5s ease-in-out;
-            position: absolute; /* Ensures slides stack properly for transition */
-        }
-        .carousel-item.active {
-            display: block;
-        }
-        /* Custom styles for tables within the long report */
-        .report-table th, .report-table td {
-            padding: 0.75rem 1.5rem; /* Increased padding */
-            border-bottom: 1px solid #e5e7eb;
-            text-align: left;
-            font-size: 0.875rem;
-        }
-        .report-table th {
-            background-color: #f3f4f6;
-            font-weight: 600;
-            color: #1f2937;
-        }
-        /* Standardized Event Button Style */
-        .event-button {
-             padding: 8px 16px;
-             font-size: 0.875rem;
-             font-weight: 600;
-             border-radius: 0.375rem;
-             color: white !important;
-             background-color: #991b1b; /* red-800 */
-             transition: background-color 0.2s;
-             flex-shrink: 0;
-             text-decoration: none;
-             text-align: center;
-        }
-        .event-button:hover {
-            background-color: #7f1d1d; /* red-900 */
-        }
-        /* ===== MBA Hub ===== */
-        .hub-balance { text-wrap: balance; }
-        .hub-nums { font-variant-numeric: tabular-nums; }
-        .hub-section { padding-block: 2.5rem 3rem; scroll-margin-top: 150px; }
-        .hub-noscrollbar { scrollbar-width: none; }
-        .hub-noscrollbar::-webkit-scrollbar { display: none; }
-
-        .hub-chip { display: inline-flex; align-items: center; gap: .4rem; padding: .5rem .9rem; border-radius: 9999px; border: 1px solid #d1d5db; background: #fff; color: #374151; font-size: .875rem; font-weight: 500; transition: background .15s, border-color .15s, color .15s; }
-        .hub-chip:hover { border-color: #991b1b; color: #991b1b; }
-        .hub-chip[aria-checked="true"], .hub-chip[aria-pressed="true"] { background: #991b1b; border-color: #991b1b; color: #fff; }
-        .hub-chip .hub-count { font-size: .75rem; opacity: .7; }
-        .hub-chip:focus-visible, .hub-subnav-btn:focus-visible, .hub-tab:focus-visible, .hub-step-btn:focus-visible, .hub-btn-outline:focus-visible { outline: 2px solid #991b1b; outline-offset: 2px; }
-
-        .hub-stage-panel { border: 1px solid #fecaca; background: #fef2f2; border-radius: .5rem; padding: 1.25rem 1.5rem; }
-
-        .hub-subnav { position: sticky; top: 80px; z-index: 40; }
-        .hub-subnav-btn { white-space: nowrap; padding: .55rem 1rem; border-radius: 9999px; border: 1px solid #e5e7eb; background: #fff; font-size: .9rem; font-weight: 500; color: #374151; }
-        .hub-subnav-btn:hover { color: #991b1b; border-color: #991b1b; }
-        .hub-subnav-btn.is-active { color: #fff; background: #991b1b; border-color: #991b1b; font-weight: 600; }
-
-        .hub-steps { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .5rem; counter-reset: step; }
-        @media (max-width: 1023px) { .hub-steps { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .25rem; } .hub-steps > li { flex: 0 0 9.5rem; scroll-snap-align: start; } }
-        .hub-step-btn { position: relative; width: 100%; height: 100%; text-align: left; padding: .9rem .9rem 1rem; border-radius: .5rem; border: 1px solid #e5e7eb; background: #fff; transition: border-color .15s, box-shadow .15s; }
-        .hub-step-btn:hover { border-color: #fca5a5; }
-        .hub-step-btn[aria-current="step"] { border-color: #991b1b; box-shadow: 0 0 0 1px #991b1b; }
-        .hub-step-btn .hub-step-when { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; }
-        .hub-step-btn .hub-step-title { display: block; font-weight: 600; color: #111827; margin-top: .2rem; line-height: 1.25; }
-        .hub-you { position: absolute; top: -.6rem; right: .5rem; font-size: .65rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; background: #991b1b; color: #fff; padding: .1rem .45rem; border-radius: 9999px; }
-
-        .hub-check { display: flex; gap: .7rem; align-items: flex-start; cursor: pointer; color: #374151; }
-        .hub-check input { margin-top: .2rem; width: 1.05rem; height: 1.05rem; accent-color: #991b1b; flex-shrink: 0; }
-        .hub-check input:checked + span { color: #9ca3af; text-decoration: line-through; }
-
-        .hub-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; color: #374151; }
-        .hub-list li { position: relative; padding-left: 1.1rem; }
-        .hub-list li::before { content: ""; position: absolute; left: 0; top: .6em; width: .4rem; height: .4rem; border-radius: 9999px; background: #991b1b; }
-
-        .hub-path { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: .75rem; }
-        .hub-path li { display: flex; gap: .75rem; align-items: flex-start; background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; padding: .85rem 1rem; font-size: .9rem; color: #1f2937; }
-        .hub-path-col { grid-template-columns: 1fr; gap: .5rem; }
-        .hub-path-n { flex-shrink: 0; width: 1.6rem; height: 1.6rem; border-radius: 9999px; background: #991b1b; color: #fff; font-size: .8rem; font-weight: 700; display: grid; place-items: center; }
-
-        .hub-formula { font-size: .85rem; font-weight: 600; color: #991b1b; background: #fef2f2; border-radius: .375rem; padding: .5rem .75rem; }
-
-        .hub-table th, .hub-table td { padding: .8rem 1.25rem; text-align: left; vertical-align: top; border-bottom: 1px solid #f3f4f6; }
-        .hub-table thead th { background: #f9fafb; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; }
-        .hub-table thead th:nth-child(2), .hub-table thead th:nth-child(3) { color: #111827; font-size: .9rem; letter-spacing: 0; text-transform: none; }
-        .hub-table tbody th { font-weight: 600; color: #111827; white-space: nowrap; }
-        .hub-table tbody tr:last-child > * { border-bottom: 0; }
-        .hub-table td { color: #374151; min-width: 11rem; }
-
-        .hub-tab { white-space: nowrap; padding: .75rem 1rem; font-size: .9rem; font-weight: 500; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -1px; }
-        .hub-tab:hover { color: #991b1b; }
-        .hub-tab[aria-selected="true"] { color: #991b1b; border-bottom-color: #991b1b; font-weight: 600; }
-
-        .hub-btn-outline { display: inline-flex; align-items: center; gap: .4rem; padding: 8px 16px; font-size: .875rem; font-weight: 600; border-radius: .375rem; border: 1px solid #991b1b; color: #991b1b; background: #fff; }
-        .hub-btn-outline:hover { background: #fef2f2; }
-
-        .hub-res { background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; padding: 1.5rem; display: flex; flex-direction: column; min-width: 0; transition: box-shadow .3s, border-color .3s; scroll-margin-top: 150px; }
-        .hub-res.is-flash { border-color: #991b1b; box-shadow: 0 0 0 3px #fecaca; }
-        .hub-tag { display: inline-block; font-size: .7rem; font-weight: 600; padding: .15rem .55rem; border-radius: 9999px; background: #f3f4f6; color: #374151; }
-        .hub-tag-cat { background: #fef2f2; color: #991b1b; }
-
-        .hub-acc { background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; }
-        .hub-acc summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem 1.1rem; font-weight: 600; color: #111827; }
-        .hub-acc summary::-webkit-details-marker { display: none; }
-        .hub-acc summary::after { content: "+"; font-size: 1.25rem; color: #991b1b; line-height: 1; }
-        .hub-acc[open] summary::after { content: "–"; }
-        .hub-acc ul { padding: 0 1.1rem 1rem; }
-
-        @media (prefers-reduced-motion: reduce) { .page.active { animation: none; } .hub-res { transition: none; } }
-
-        .hub-more { background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; }
-        .hub-more > summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; }
-        .hub-more > summary::-webkit-details-marker { display: none; }
-        .hub-more > summary::after { content: "Show"; flex-shrink: 0; font-size: .8rem; font-weight: 600; color: #991b1b; border: 1px solid #fecaca; border-radius: 9999px; padding: .2rem .7rem; }
-        .hub-more[open] > summary::after { content: "Hide"; }
-        .hub-more > summary:focus-visible, .hub-res-more > summary:focus-visible { outline: 2px solid #991b1b; outline-offset: 2px; }
-        .hub-more-title { display: block; font-weight: 600; color: #111827; }
-        .hub-more-sub { display: block; font-size: .85rem; color: #6b7280; margin-top: .1rem; }
-        .hub-more-body { padding: 0 1.25rem 1.25rem; }
-        .hub-res-more > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: .35rem; font-size: .875rem; font-weight: 600; color: #991b1b; }
-        .hub-res-more > summary::-webkit-details-marker { display: none; }
-        .hub-res-more > summary::after { content: "+"; font-size: 1rem; line-height: 1; }
-        .hub-res-more[open] > summary::after { content: "\2013"; }
-
-        /* Phase cards: reserve two lines for the timing label so titles line up across the row. */
-        @media (min-width: 1024px) { .hub-step-btn .hub-step-when { min-height: 3em; } }
-        @media (max-width: 1023px) { .hub-steps { padding-top: .75rem; } }
-        @media (max-width: 640px) {
-            .hub-res { padding: 1.15rem; }
-            .hub-stage-panel { padding: 1rem 1.1rem; }
-        }
-        /* Scroll hints for the tab bar and phase row */
-        .hub-scroll { position: relative; }
-        .hub-scroll::before, .hub-scroll::after { content: ""; position: absolute; top: 0; bottom: 0; width: 3.5rem; pointer-events: none; z-index: 1; opacity: 0; transition: opacity .2s; }
-        .hub-scroll::before { left: 0; background: linear-gradient(to left, rgba(249, 250, 251, 0), #f9fafb 75%); }
-        .hub-scroll::after { right: 0; background: linear-gradient(to right, rgba(249, 250, 251, 0), #f9fafb 75%); }
-        .hub-scroll.can-prev::before, .hub-scroll.can-next::after { opacity: 1; }
-        .hub-scroll-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 2.25rem; height: 2.25rem; border-radius: 9999px; background: #fff; border: 1px solid #d1d5db; box-shadow: 0 1px 4px rgb(0 0 0 / .15); display: grid; place-items: center; color: #991b1b; }
-        .hub-scroll-btn:hover { border-color: #991b1b; }
-        .hub-scroll-btn:focus-visible { outline: 2px solid #991b1b; outline-offset: 2px; }
-        .hub-scroll-prev { left: 0; }
-        .hub-scroll-next { right: 0; }
-        /* Keep hidden elements hidden even when a component sets its own display. */
-        #mba-hub [hidden] { display: none !important; }
-    </style>
+    <script src="https://unpkg.com/feather-icons@4.29.2/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -193,7 +18,7 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
                     <a href="#home" class="nav-router">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
+                        <img src="images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
                     </a>
                 </div>
                 <div class="hidden md:block">
@@ -249,7 +74,7 @@
         <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto mb-4 bg-white p-1 rounded" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
+                    <img src="images/svmpaa-logo.png" alt="SVMPAA Logo" class="h-16 w-auto mb-4 bg-white p-1 rounded" onerror="this.onerror=null;this.src='https://placehold.co/100x64?text=Logo';">
                     <p class="text-sm text-gray-400">Connecting and empowering the next generation of leaders.</p>
                 </div>
                 <div>
@@ -283,7 +108,7 @@
         <div class="page" id="home">
             <div class="relative bg-gray-900 text-white">
                 <div class="absolute inset-0">
-                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2172_jpg.JPEG" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Community';">
+                    <img class="w-full h-full object-cover" src="images/IMG_2172_jpg.JPEG" alt="SVMPAA Alumni Community" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Community';">
                     <div class="absolute inset-0 bg-gray-900/60"></div>
                 </div>
                 <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
@@ -378,13 +203,13 @@
                 <h2 class="text-3xl font-bold text-center mb-10">Meet the Board</h2>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card text-center p-6">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/odina-pfp.jpeg" alt="Odina Eshxanova Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Odina';">
+                        <img src="images/odina-pfp.jpeg" alt="Odina Eshxanova Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Odina';">
                         <h3 class="font-bold text-xl">Odina Eshxanova</h3>
                         <p class="text-red-800 font-semibold mb-2">Co-President</p>
                         <p class="text-gray-600 text-sm">SVMP 22’</p>
                     </div>
                     <div class="card text-center p-6">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/brian-pfp.png" alt="Brian Oviedo Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
+                        <img src="images/brian-pfp.png" alt="Brian Oviedo Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
                         <h3 class="font-bold text-xl">Brian Oviedo</h3>
                         <p class="text-red-800 font-semibold mb-2">Co-President</p>
                         <p class="text-gray-600 text-sm">SVMP 23’</p>
@@ -414,13 +239,13 @@
                         <p class="text-gray-600 text-sm">SVMP 26’</p>
                     </div>
                     <div class="card text-center p-6">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/f89990b99697a6e144a7148a34e0049d3b991e68/images/Image_20260715_201103_939.webp" alt="Brian McHugh Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
+                        <img src="images/Image_20260715_201103_939.webp" alt="Brian McHugh Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Brian';">
                         <h3 class="font-bold text-xl">Brian McHugh</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of External Relations</p>
                         <p class="text-gray-600 text-sm">SVMP 24’</p>
                     </div>
                     <div class="card text-center p-6">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/marvelous-pfp.jpeg" alt="Marvelous Ekeh Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Marvelous';">
+                        <img src="images/marvelous-pfp.jpeg" alt="Marvelous Ekeh Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/128x128?text=Marvelous';">
                         <h3 class="font-bold text-xl">Marvelous Ekeh</h3>
                         <p class="text-red-800 font-semibold mb-2">Director of National Recruiting</p>
                         <p class="text-gray-600 text-sm">SVMP 23’</p>
@@ -467,7 +292,7 @@
                 <h2 class="text-3xl font-bold mb-8">Past Event Highlights</h2>
                 <div class="grid md:grid-cols-1 gap-8 mb-12">
                     <a href="#reunion-2026" class="nav-router card overflow-hidden block hover:shadow-xl">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="Reunion 2026" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/991b1b/FFFFFF?text=Reunion+2026';">
+                        <img src="images/alumni-ai1.png" alt="Reunion 2026" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/991b1b/FFFFFF?text=Reunion+2026';">
                         <div class="p-6">
                             <h3 class="font-bold text-2xl mb-2">2026 Alumni Reunion</h3>
                             <p class="text-gray-500 text-sm mb-4">July 17-19, 2026 | Boston & Cambridge, MA</p>
@@ -478,7 +303,7 @@
                         </div>
                     </a>
                     <a href="#reunion-recap" class="nav-router card overflow-hidden block hover:shadow-xl">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="Reunion Hero Image" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x192?text=Reunion';">
+                        <img src="images/alumni-ai1.png" alt="Reunion Hero Image" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x192?text=Reunion';">
                         <div class="p-6">
                             <h3 class="font-bold text-2xl mb-2">2025 Alumni Reunion</h3>
                             <p class="text-gray-500 text-sm mb-4">July 18-20, 2025 | Boston & Cambridge, MA</p>
@@ -493,28 +318,28 @@
                 <h3 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Regional Meetups - 2025 (Past)</h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <a href="#chicago-event" class="nav-router card overflow-hidden block">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/chicago.jpeg" alt="Chicago Riverwalk" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=Chicago';">
+                        <img src="images/chicago.jpeg" alt="Chicago Riverwalk" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=Chicago';">
                         <div class="p-4 text-center">
                             <h4 class="font-bold text-lg mb-1">Chicago: Meet-Up</h4>
                             <p class="text-sm text-gray-600">Aug 27th | Riverwalk</p>
                         </div>
                     </a>
                     <a href="#arlington-event" class="nav-router card overflow-hidden block">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
+                        <img src="images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
                         <div class="p-4 text-center">
                             <h4 class="font-bold text-lg mb-1">Arlington: Happy Hour</h4>
                             <p class="text-sm text-gray-600">Aug 29th | Arlington, VA</p>
                         </div>
                     </a>
                     <a href="#la-event" class="nav-router card overflow-hidden block">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/los-angeles-city-skyline.jpg" alt="Los Angeles Skyline" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=LA+Event';">
+                        <img src="images/los-angeles-city-skyline.jpg" alt="Los Angeles Skyline" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=LA+Event';">
                         <div class="p-4 text-center">
                             <h4 class="font-bold text-lg mb-1">Los Angeles: Happy Hour</h4>
                             <p class="text-sm text-gray-600">Aug 29th | Rocky and Riley’s</p>
                         </div>
                     </a>
                     <a href="#sd-event" class="nav-router card overflow-hidden block">
-                        <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/San%20diego.jpg" alt="San Diego Waterfront" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=SD+Event';">
+                        <img src="images/San%20diego.jpg" alt="San Diego Waterfront" onerror="this.onerror=null;this.src='https://placehold.co/300x96?text=SD+Event';">
                         <div class="p-4 text-center">
                             <h4 class="font-bold text-lg mb-1">San Diego: Happy Hour</h4>
                             <p class="text-sm text-gray-600">Aug 31st | The Rose Wine Bar</p>
@@ -531,7 +356,7 @@
                 <div class="absolute inset-0 bg-gradient-to-br from-red-900 to-gray-900 flex items-center justify-center">
                      <i data-feather="calendar" class="h-24 w-24 text-white/20"></i>
                 </div>
-                <img class="w-full h-full object-cover relative z-10 opacity-60 mix-blend-overlay" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="Reunion 2026" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/991b1b/FFFFFF?text=Reunion+2026';">
+                <img class="w-full h-full object-cover relative z-10 opacity-60 mix-blend-overlay" src="images/alumni-ai1.png" alt="Reunion 2026" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/991b1b/FFFFFF?text=Reunion+2026';">
             </div>
             <div class="bg-white shadow-md relative z-20">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
@@ -687,7 +512,7 @@
         <div class="page" id="reunion-recap">
              <div class="relative bg-gray-900 text-white">
                 <div class="absolute inset-0">
-                    <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/alumni-ai1.png" alt="SVMPAA Alumni Reunion" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Reunion';">
+                    <img class="w-full h-full object-cover" src="images/alumni-ai1.png" alt="SVMPAA Alumni Reunion" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Alumni+Reunion';">
                     <div class="absolute inset-0 bg-gray-900/60"></div>
                 </div>
                 <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
@@ -758,7 +583,7 @@
     <template id="bridge-year-event-page">
         <div class="page" id="bridge-year-event">
             <div class="w-full h-64 md:h-80">
-                <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/df0e8a57ea9284f6532af47631bc2185de6a10d2/images/1755563953149.jpeg" alt="The Bridge Year Event" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Event';">
+                <img class="w-full h-full object-cover" src="images/1755563953149.jpeg" alt="The Bridge Year Event" onerror="this.onerror=null;this.src='https://placehold.co/1200x600?text=Event';">
             </div>
             <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
@@ -799,7 +624,7 @@
                     <div class="bg-white p-8 rounded-lg shadow-md mb-12">
                         <h2 class="text-3xl font-bold text-center mb-8">Featured Speaker</h2>
                         <div class="flex flex-col sm:flex-row items-center text-center sm:text-left">
-                            <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/2b65f810720bb7e18203d237e49a75323e659765/images/1686005050026.jpeg" alt="Ashley Renée Reid" class="w-32 h-32 rounded-full mx-auto sm:mx-0 sm:mr-8 mb-4 sm:mb-0 object-cover flex-shrink-0">
+                            <img src="images/1686005050026.jpeg" alt="Ashley Renée Reid" class="w-32 h-32 rounded-full mx-auto sm:mx-0 sm:mr-8 mb-4 sm:mb-0 object-cover flex-shrink-0">
                             <div>
                                 <h3 class="text-2xl font-bold">Ashley Renée Reid</h3>
                                 <p class="text-red-800 font-semibold">Principal & Director of Platform at Union Heritage</p>
@@ -825,7 +650,7 @@
     <template id="la-event-page">
         <div class="page" id="la-event">
             <div class="w-full h-64 md:h-80">
-                <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/los-angeles-city-skyline.jpg" alt="Los Angeles Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Los+Angeles';">
+                <img class="w-full h-full object-cover" src="images/los-angeles-city-skyline.jpg" alt="Los Angeles Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Los+Angeles';">
             </div>
                <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
@@ -883,7 +708,7 @@
     <template id="sd-event-page">
         <div class="page" id="sd-event">
             <div class="w-full h-64 md:h-80">
-                <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/8d72aa501415ff36f6cbffc244cd23e904497d55/images/San%20diego.jpg" alt="San Diego Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=San+Diego';">
+                <img class="w-full h-full object-cover" src="images/San%20diego.jpg" alt="San Diego Skyline" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=San+Diego';">
             </div>
                <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
@@ -941,7 +766,7 @@
     <template id="chicago-event-page">
         <div class="page" id="chicago-event">
             <div class="w-full h-64 md:h-80">
-                <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/chicago.jpeg" alt="Chicago Riverwalk" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Chicago';">
+                <img class="w-full h-full object-cover" src="images/chicago.jpeg" alt="Chicago Riverwalk" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Chicago';">
             </div>
                <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
@@ -999,7 +824,7 @@
     <template id="arlington-event-page">
         <div class="page" id="arlington-event">
             <div class="w-full h-64 md:h-80">
-                <img class="w-full h-full object-cover" src="https://raw.githubusercontent.com/svmp2025/svmpaa/194bb4efdadd6282385b05e8b02411bf83644a29/images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
+                <img class="w-full h-full object-cover" src="images/arlington.jpg" alt="Arlington, VA" onerror="this.onerror=null;this.src='https://placehold.co/1200x400?text=Arlington';">
             </div>
                <div class="bg-white shadow-md">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
@@ -1064,7 +889,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start text-center mb-16 max-w-4xl mx-auto">
     <div class="p-4">
         <a href="https://www.joinleland.com/" target="_blank" class="block mb-4">
-            <img src="https://raw.githubusercontent.com/svmp2025/svmpaa/main/images/leland.avif" alt="Leland Logo" class="h-28 w-auto mx-auto grayscale hover:grayscale-0 transition" onerror="this.onerror=null;this.src='https://placehold.co/200x112?text=Leland';">
+            <img src="images/leland.avif" alt="Leland Logo" class="h-28 w-auto mx-auto grayscale hover:grayscale-0 transition" onerror="this.onerror=null;this.src='https://placehold.co/200x112?text=Leland';">
         </a>
         <p class="text-gray-700 text-sm">Our partner for graduate school admissions and career coaching, providing exclusive resources and guidance.</p>
     </div>
@@ -1844,609 +1669,7 @@
         </div>
     </template>
 
-    <script>
-/* SVMPAA MBA Hub: data + behavior. Edit content in MBA_HUB_DATA; call initMbaHub(container) after the page renders. */
-(function () {
-    var MBA_HUB_DATA = {
-        phases: [
-            { when: '12–18 months before', short: 'Explore', title: 'Explore & prepare',
-              tasks: ['Decide whether an MBA fits your goals', 'Research programs and career paths', 'Assess your applicant profile', 'Take a GMAT or GRE diagnostic'],
-              related: [{ label: 'GMAT vs. GRE', go: 'mba-tests' }, { label: 'mba.com', res: 'mbacom' }, { label: 'MLT MBA Prep', res: 'mlt' }] },
-            { when: '9–12 months before', short: 'Test', title: 'Test & research',
-              tasks: ['Prepare for and take the GMAT or GRE', 'Build your target school list', 'Connect with students and alumni'],
-              related: [{ label: 'Choosing a test', go: 'mba-tests' }, { label: 'Test prep resources', filter: 'test' }] },
-            { when: '6–9 months before', short: 'Strategize', title: 'Build your strategy',
-              tasks: ['Finalize your school list', 'Define your career goals and "Why MBA?"', 'Identify recommenders', 'Develop your MBA résumé'],
-              related: [{ label: 'What HBS looks for', go: 'mba-hbs', tab: 'criteria' }, { label: 'Strategy tools', filter: 'strategy' }] },
-            { when: '3–6 months before', short: 'Apply', title: 'Prepare applications',
-              tasks: ['Request recommendations', 'Draft and refine essays', 'Complete application materials', 'Research scholarships and financing'],
-              related: [{ label: 'HBS essays', go: 'mba-hbs', tab: 'essays' }, { label: 'Fellowships', filter: 'fellowships' }, { label: 'The Consortium', res: 'consortium' }] },
-            { when: '1–3 months before', short: 'Submit', title: 'Finalize & submit',
-              tasks: ['Review essays and résumé', 'Confirm recommendations and test scores', 'Submit applications'],
-              related: [{ label: 'Before-you-submit check', go: 'mba-hbs', tab: 'check' }] },
-            { when: 'After submitting', short: 'Interview', title: 'Interview',
-              tasks: ['Prepare your story and career goals', 'Research each school’s interview format', 'Complete mock interviews'],
-              related: [{ label: 'Interview question bank', go: 'mba-interview' }, { label: 'HBS interview', go: 'mba-hbs', tab: 'interview' }] },
-            { when: 'After admission', short: 'Decide', title: 'Decide & prepare',
-              tasks: ['Compare schools and scholarship offers', 'Determine financing', 'Select your program', 'Prepare for matriculation'],
-              related: [{ label: 'Fellowships', filter: 'fellowships' }, { label: 'mba.com financing tools', res: 'mbacom' }] }
-        ],
-
-        stages: [
-            { id: 'exploring', label: 'Just exploring', phase: 0, note: 'Start by deciding whether an MBA fits your goals, and learn what programs look for.', recs: ['mbacom', 'mlt', 'forte-launch'] },
-            { id: 'early', label: '1–2 years out', phase: 0, note: 'You have time to build your profile. Structured pre-MBA programs pay off most at this stage.', recs: ['mlt', 'forte-launch', 'riordan'] },
-            { id: 'testing', label: 'Studying for the test', phase: 1, note: 'Pick your test with a diagnostic, then commit to a study plan and date.', recs: ['gmat', 'gre'], go: { label: 'Compare GMAT and GRE', go: 'mba-tests' } },
-            { id: 'applying', label: 'Applying now', phase: 3, note: 'Focus on essays, recommenders, and programs that waive fees or bring fellowship funding.', recs: ['mlt', 'forte-launch', 'consortium'], go: { label: 'Open the HBS essay guide', go: 'mba-hbs', tab: 'essays' } },
-            { id: 'interviewing', label: 'Interviewing', phase: 5, note: 'Know your application cold and practice telling your stories out loud.', recs: ['mbamission', 'applicantlab'], go: { label: 'Practice interview questions', go: 'mba-interview' } },
-            { id: 'admitted', label: 'Admitted', phase: 6, note: 'Congratulations. Compare offers, line up financing, and look for fellowships.', recs: ['consortium', 'forte-fellows', 'romba'] }
-        ],
-
-        categories: [
-            { id: 'pipeline', label: 'Application programs' },
-            { id: 'fellowships', label: 'Fellowships & communities' },
-            { id: 'test', label: 'GMAT & GRE' },
-            { id: 'research', label: 'School research' },
-            { id: 'strategy', label: 'Strategy tools' }
-        ],
-
-        resources: [
-            { id: 'mlt', cat: 'pipeline', name: 'MLT MBA Prep', org: 'Management Leadership for Tomorrow',
-              desc: 'A structured admissions program with personalized coaching, application strategy, school engagement, and a strong peer network.',
-              bestFor: 'Candidates who want high-touch support through the whole process.',
-              note: 'Several pathways are offered; check current eligibility.', tags: ['Coaching', 'Eligibility applies'],
-              links: [{ label: 'Visit MLT', url: 'https://mlt.org/mba-prep/' }] },
-            { id: 'consortium', cat: 'pipeline', name: 'The Consortium', org: 'Consortium for Graduate Study in Management',
-              desc: 'One common application to multiple member schools, with consideration for Consortium membership and fellowship funding.',
-              bestFor: 'Applicants to member schools who share the Consortium’s mission of expanding access.',
-              note: 'Eligibility rests on citizenship or residency, a bachelor’s degree, and commitment to the mission, not race or ethnicity.',
-              tags: ['Fellowship funding', 'Reduced app costs'],
-              links: [{ label: 'Visit the Consortium', url: 'https://cgsm.org/prospective-students/' }] },
-            { id: 'forte-launch', cat: 'pipeline', name: 'Forté MBALaunch', org: 'Forté Foundation',
-              desc: 'Structured application prep with admissions guidance, workshops, networking, and access to participating schools.',
-              bestFor: 'Candidates who want a structured plan and a peer cohort.',
-              note: 'Participants can get application fee waivers. A self-paced On Demand version is also available.',
-              tags: ['Fee waivers', 'Self-paced option'],
-              links: [{ label: 'Visit MBALaunch', url: 'https://www.fortefoundation.org/pre-mba/mbalaunch/' }] },
-            { id: 'riordan', cat: 'pipeline', name: 'Riordan MBA Fellows', org: 'UCLA Anderson',
-              desc: 'A pre-MBA program with admissions guidance, GMAT/GRE prep, mentorship, leadership development, and a personal MBA action plan.',
-              bestFor: 'Early-career professionals planning to apply in the next few years.',
-              note: 'Includes required in-person sessions at UCLA.', tags: ['Early career', 'In person'],
-              links: [{ label: 'Visit Riordan', url: 'https://www.anderson.ucla.edu/specialized-academic-programs/riordan-programs/riordan-mba-fellows-program' }] },
-            { id: 'forte-fellows', cat: 'fellowships', name: 'Forté Fellowships', org: 'Forté Foundation',
-              desc: 'Fellowships awarded through participating schools to MBA candidates committed to advancing women in business, plus mentorship and employer access.',
-              bestFor: 'Admitted or applying candidates at Forté partner schools.',
-              note: 'Fellows are selected by the participating schools.', tags: ['Funding', 'Community'],
-              links: [{ label: 'Visit Forté Fellows', url: 'https://www.fortefoundation.org/mba/fellows/' }] },
-            { id: 'romba', cat: 'fellowships', name: 'Reaching Out MBA (ROMBA)', org: 'Reaching Out',
-              desc: 'Programming, professional development, and fellowships centered on LGBTQ+ inclusion and leadership in business education.',
-              bestFor: 'Candidates who want community and fellowship support at partner schools.',
-              note: 'ROMBA Fellows are selected by partner schools; there is no separate fellowship application.',
-              tags: ['Funding', 'Community'],
-              links: [{ label: 'Visit ROMBA', url: 'https://reachingoutmba.org/' }, { label: 'Fellowship', url: 'https://reachingoutmba.org/fellowship/' }] },
-            { id: 'gmat', cat: 'test', name: 'GMAT Official Prep', org: 'mba.com',
-              desc: 'Practice questions, study materials, and full-length practice exams from the makers of the GMAT.',
-              bestFor: 'Anyone considering the GMAT. Start here.',
-              note: 'The free Official Starter Kit includes sample questions and two full-length practice exams.', tags: ['Free starter kit'],
-              links: [{ label: 'Visit mba.com', url: 'https://www.mba.com/' }] },
-            { id: 'gre', cat: 'test', name: 'GRE Official Resources', org: 'ETS',
-              desc: 'The official source for GRE information, prep materials, practice tests, registration, and score reporting.',
-              bestFor: 'Anyone considering the GRE.',
-              note: 'More than 1,300 business schools accept the GRE for at least some MBA programs. Confirm each school’s policy.',
-              tags: ['Official'],
-              links: [{ label: 'Visit ETS', url: 'https://www.ets.org/gre.html' }] },
-            { id: 'mbacom', cat: 'research', name: 'mba.com', org: 'GMAC',
-              desc: 'More than GMAT prep: school exploration, program research, application guidance, admissions events, scholarships, and ROI and salary tools.',
-              bestFor: 'Your first stop when you’re still exploring.',
-              note: '', tags: ['Free', 'Financing tools'],
-              links: [{ label: 'Visit mba.com', url: 'https://www.mba.com/' }] },
-            { id: 'mbamission', cat: 'strategy', name: 'mbaMission', org: 'Admissions consulting',
-              desc: 'Free guides on strategy, school selection, essays, résumés, recommendations, and interviews, plus the self-guided onTrack platform and paid consulting.',
-              bestFor: 'Detailed, school-specific guidance, free or paid.',
-              note: 'Its free library includes a complete start-to-finish admissions guide.', tags: ['Free guides', 'Paid options'],
-              links: [{ label: 'Visit mbaMission', url: 'https://www.mbamission.com/' }, { label: 'Free guides', url: 'https://www.mbamission.com/resources/mbamission-free-guides/' }] },
-            { id: 'applicantlab', cat: 'strategy', name: 'ApplicantLab', org: 'Self-guided platform',
-              desc: 'A step-by-step platform covering positioning, "Why MBA?", school research, essays, résumés, recommenders, interviews, and checklists.',
-              bestFor: 'Structured guidance at a lower cost than full-service consulting.',
-              note: 'You can add one-on-one consulting if you want it.', tags: ['Paid', 'Self-paced'],
-              links: [{ label: 'Visit ApplicantLab', url: 'https://www.applicantlab.com/' }] }
-        ],
-
-        questionThemes: [
-            { id: 'story', label: 'Your story & goals', qs: ['Walk me through your résumé.', 'Why this program?', 'Why an MBA, and why now?', 'What are your short-term goals?', 'What are your long-term goals?', 'What else should we know? What do you wish we had asked?'] },
-            { id: 'lead', label: 'Leadership & teams', qs: ['Tell me about a time you had to lead someone.', 'What’s your leadership style?', 'Tell me about a time you led a team. What was your greatest accomplishment?', 'Tell me about a time you had to influence someone more senior than you.', 'How have you dealt with a difficult client, boss, coworker, or team?', 'What makes a good or bad leader? Who is a leader you admire?'] },
-            { id: 'perspective', label: 'Perspective & inclusion', qs: ['What’s your definition of diversity?', 'Tell me about a time you made an effort to get to know someone with a different background.', 'Tell me about a time you made an environment more inclusive.', 'Tell me about working with someone of a different identity. What did you learn?'] },
-            { id: 'self', label: 'Self-awareness', qs: ['Tell me about your biggest failure, at work or in general.', 'What are your top strengths?', 'What are your top weaknesses?', 'Tell me about an ethical dilemma you faced.'] },
-            { id: 'curve', label: 'Curveballs', qs: ['What is the biggest challenge facing your industry today?', 'Teach me something.', 'What is a book you’ve read recently?'] }
-        ],
-
-        askThemes: [
-            { label: 'About the experience', qs: ['What was the most powerful lesson you learned in business school?', 'What do you see as the program’s greatest strength?', 'What’s your favorite thing about the curriculum? About the culture?', 'What’s one thing about the school that surprises people?', 'What’s your favorite tradition at the school?', 'What’s your most memorable moment there?', 'What skill did you use most during the MBA?'] },
-            { label: 'About outcomes', qs: ['What has your career path been like since the MBA?', 'What has been most valuable about the alumni network?', 'How did the curriculum help you switch careers?', 'How has the school supported you since graduating?', 'How do you stay in touch with classmates now?'] },
-            { label: 'About fit', qs: ['Knowing my goals, where would you focus your time as a student?', 'What traits do successful students here share?', 'What led you to choose this program? (alumni)', 'How do you see the program changing in the next 5–10 years? (admissions)'] }
-        ]
-    };
-
-    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
-    function icons() { if (window.feather) window.feather.replace(); }
-
-    window.initMbaHub = function (root) {
-        root = root || document;
-        var D = MBA_HUB_DATA;
-        var $ = function (k) { return root.querySelector('[data-hub="' + k + '"]'); };
-        var state = { stage: null };
-        var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var resById = {};
-        D.resources.forEach(function (r) { resById[r.id] = r; });
-        var activePhase = 0, activeFilter = 'all';
-
-        /* ---------- navigation helpers (the site uses #hash routing, so in-page links scroll instead) ---------- */
-        function scrollToId(id) {
-            var el = root.querySelector('#' + id);
-            if (el) el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-        }
-        /* Horizontal scrollers (section tabs, timeline phases) show arrows and a fade when more is off-screen. */
-        function scrollHints(wrap) {
-            var track = wrap.querySelector('[data-scroll-track]');
-            var prev = wrap.querySelector('.hub-scroll-prev'), next = wrap.querySelector('.hub-scroll-next');
-            function update() {
-                var max = track.scrollWidth - track.clientWidth;
-                var canPrev = track.scrollLeft > 4, canNext = track.scrollLeft < max - 4;
-                prev.hidden = !canPrev; next.hidden = !canNext;
-                wrap.classList.toggle('can-prev', canPrev); wrap.classList.toggle('can-next', canNext);
-            }
-            function by(d) { track.scrollBy({ left: d * track.clientWidth * 0.7, behavior: reduceMotion ? 'auto' : 'smooth' }); }
-            prev.addEventListener('click', function () { by(-1); });
-            next.addEventListener('click', function () { by(1); });
-            track.addEventListener('scroll', update, { passive: true });
-            window.addEventListener('resize', update);
-            update();
-            return { update: update, reveal: function (el) {
-                var l = el.offsetLeft - track.offsetLeft, r = l + el.offsetWidth;
-                if (l < track.scrollLeft + 40) track.scrollTo({ left: Math.max(0, l - 40), behavior: reduceMotion ? 'auto' : 'smooth' });
-                else if (r > track.scrollLeft + track.clientWidth - 40) track.scrollTo({ left: r - track.clientWidth + 40, behavior: reduceMotion ? 'auto' : 'smooth' });
-            } };
-        }
-        var tabScroll = scrollHints(root.querySelector('[data-hub="subnav-wrap"]'));
-        var stepScroll = scrollHints(root.querySelector('[data-hub="steps-wrap"]'));
-
-        /* One section shows at a time; the sticky bar switches between them. */
-        var SECTION_IDS = ['mba-timeline', 'mba-resources', 'mba-tests', 'mba-hbs', 'mba-interview'];
-        function navIsStuck() {
-            var nav = root.querySelector('.hub-subnav');
-            return !!nav && nav.getBoundingClientRect().top < 100;
-        }
-        function showSection(id, scroll) {
-            if (SECTION_IDS.indexOf(id) === -1) id = 'mba-timeline';
-            SECTION_IDS.forEach(function (s) { var el = root.querySelector('#' + s); if (el) el.hidden = s !== id; });
-            root.querySelectorAll('[data-hub="subnav"] [data-go]').forEach(function (b) {
-                var on = b.dataset.go === id;
-                b.classList.toggle('is-active', on); b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1;
-                if (on) tabScroll.reveal(b);
-            });
-            if (scroll) scrollToId(id);
-        }
-        function go(t) {
-            if (t.tab) selectTab(t.tab);
-            if (t.filter) { showSection('mba-resources', true); setFilter(t.filter); return; }
-            if (t.res) { showSection('mba-resources', false); showResource(t.res); return; }
-            if (t.go) showSection(t.go, true);
-        }
-        function showResource(id) {
-            resExpanded = true; setFilter('all');
-            var card = root.querySelector('#res-' + id);
-            if (!card) return;
-            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            card.classList.add('is-flash');
-            setTimeout(function () { card.classList.remove('is-flash'); }, 1800);
-        }
-        function linkBtn(t, cls) {
-            var b = document.createElement('button');
-            b.type = 'button';
-            b.className = cls || 'hub-chip';
-            b.innerHTML = esc(t.label) + ' <i data-feather="arrow-right" class="h-3.5 w-3.5"></i>';
-            b.addEventListener('click', function () { go(t); });
-            return b;
-        }
-
-        /* ---------- stage picker ---------- */
-        var stagesEl = $('stages'), panel = $('stage-panel');
-        D.stages.forEach(function (s) {
-            var b = document.createElement('button');
-            b.type = 'button'; b.className = 'hub-chip'; b.setAttribute('role', 'radio');
-            b.setAttribute('aria-checked', 'false'); b.dataset.stage = s.id; b.textContent = s.label;
-            b.addEventListener('click', function () { setStage(state.stage === s.id ? null : s.id, true); });
-            stagesEl.appendChild(b);
-        });
-        function setStage(id, user) {
-            state.stage = id;
-            stagesEl.querySelectorAll('[data-stage]').forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.stage === id)); });
-            var s = D.stages.filter(function (x) { return x.id === id; })[0];
-            if (!s) { panel.hidden = true; highlightRecs([]); renderSteps(); return; }
-            var p = D.phases[s.phase];
-            panel.innerHTML =
-                '<div class="grid md:grid-cols-3 gap-6">' +
-                '<div><p class="text-xs font-semibold uppercase tracking-wider text-red-800 mb-1">You’re in: ' + esc(p.title) + '</p>' +
-                '<p class="text-xs text-gray-500 mb-2">' + esc(p.when) + ' applying</p><p class="text-gray-800">' + esc(s.note) + '</p></div>' +
-                '<div class="hidden md:block"><p class="text-sm font-semibold text-gray-900 mb-2">What to do now</p>' +
-                '<ul class="hub-list text-sm">' + p.tasks.slice(0, 3).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
-                '</div><div><p class="text-sm font-semibold text-gray-900 mb-2">Start with</p><div class="flex flex-wrap gap-2" data-recs></div></div></div>';
-            var recs = panel.querySelector('[data-recs]');
-            s.recs.forEach(function (rid) { recs.appendChild(linkBtn({ label: resById[rid].name, res: rid })); });
-            if (s.go) recs.appendChild(linkBtn(s.go));
-            panel.hidden = false;
-            activePhase = s.phase;
-            renderSteps(); renderPhase();
-            highlightRecs(s.recs);
-        }
-        function highlightRecs(ids) {
-            root.querySelectorAll('.hub-res [data-rec-badge]').forEach(function (n) { n.hidden = ids.indexOf(n.dataset.recBadge) === -1; });
-            /* Recommended programs move to the top of the list so they're never behind "Show all". */
-            var order = ids.concat(D.resources.map(function (r) { return r.id; }).filter(function (rid) { return ids.indexOf(rid) === -1; }));
-            order.forEach(function (rid) { resEl.appendChild(root.querySelector('#res-' + rid)); });
-            setFilter(activeFilter);
-        }
-
-        /* ---------- timeline ---------- */
-        var stepsEl = $('steps'), detail = $('phase-detail');
-        function renderSteps() {
-            var stage = D.stages.filter(function (x) { return x.id === state.stage; })[0];
-            stepsEl.innerHTML = '';
-            D.phases.forEach(function (p, pi) {
-                var li = document.createElement('li');
-                li.innerHTML = '<button type="button" class="hub-step-btn"' + (pi === activePhase ? ' aria-current="step"' : '') + '>' +
-                    (stage && stage.phase === pi ? '<span class="hub-you">You</span>' : '') +
-                    '<span class="hub-step-when">' + esc(p.when) + '</span><span class="hub-step-title">' + esc(p.title) + '</span></button>';
-                li.firstChild.addEventListener('click', function () { activePhase = pi; renderSteps(); renderPhase(); });
-                stepsEl.appendChild(li);
-            });
-            stepScroll.update();
-            var cur = stepsEl.querySelector('[aria-current="step"]');
-            if (cur) stepScroll.reveal(cur.parentNode);
-        }
-        function renderPhase() {
-            var p = D.phases[activePhase];
-            detail.innerHTML =
-                '<div class="grid md:grid-cols-3 gap-6"><div class="md:col-span-2">' +
-                '<p class="text-xs font-semibold uppercase tracking-wider text-gray-500">Phase ' + (activePhase + 1) + ' of ' + D.phases.length + ' · ' + esc(p.when) + '</p>' +
-                '<h3 class="text-2xl font-bold text-gray-900 mt-1 mb-4">' + esc(p.title) + '</h3><ul class="hub-list">' +
-                p.tasks.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></div>' +
-                '<div><p class="text-sm font-semibold text-gray-900 mb-2">Helpful for this phase</p><div class="flex flex-wrap gap-2" data-related></div>' +
-                '<div class="flex gap-2 mt-6">' +
-                (activePhase > 0 ? '<button type="button" class="hub-btn-outline" data-step="-1">← Previous</button>' : '') +
-                (activePhase < D.phases.length - 1 ? '<button type="button" class="hub-btn-outline" data-step="1">Next phase →</button>' : '') +
-                '</div></div></div>';
-            var rel = detail.querySelector('[data-related]');
-            p.related.forEach(function (t) { rel.appendChild(linkBtn(t)); });
-            detail.querySelectorAll('[data-step]').forEach(function (b) {
-                b.addEventListener('click', function () { activePhase += Number(b.dataset.step); renderSteps(); renderPhase(); });
-            });
-            icons();
-        }
-
-        /* ---------- resources ---------- */
-        var filtersEl = $('filters'), resEl = $('resources'), resMore = $('res-more');
-        var RES_PREVIEW = 6, resExpanded = false;
-        [{ id: 'all', label: 'All' }].concat(D.categories).forEach(function (c) {
-            var n = c.id === 'all' ? D.resources.length : D.resources.filter(function (r) { return r.cat === c.id; }).length;
-            var b = document.createElement('button');
-            b.type = 'button'; b.className = 'hub-chip'; b.dataset.filter = c.id; b.setAttribute('aria-pressed', 'false');
-            b.innerHTML = esc(c.label) + ' <span class="hub-count hub-nums">' + n + '</span>';
-            b.addEventListener('click', function () { setFilter(c.id); });
-            filtersEl.appendChild(b);
-        });
-        var catLabel = {};
-        D.categories.forEach(function (c) { catLabel[c.id] = c.label; });
-        D.resources.forEach(function (r) {
-            var card = document.createElement('article');
-            card.className = 'hub-res'; card.id = 'res-' + r.id; card.dataset.cat = r.cat;
-            card.innerHTML =
-                '<div class="flex flex-wrap items-center gap-2 mb-3"><span class="hub-tag hub-tag-cat">' + esc(catLabel[r.cat]) + '</span>' +
-                r.tags.map(function (t) { return '<span class="hub-tag">' + esc(t) + '</span>'; }).join('') +
-                '<span class="hub-tag" style="background:#991b1b;color:#fff" data-rec-badge="' + r.id + '" hidden>Recommended for you</span></div>' +
-                '<h3 class="text-xl font-semibold text-gray-900">' + esc(r.name) + '</h3><p class="text-sm text-gray-500 mb-3">' + esc(r.org) + '</p>' +
-                '<p class="text-gray-800 mb-3"><span class="font-semibold">Best for:</span> ' + esc(r.bestFor) + '</p>' +
-                '<details class="hub-res-more mb-4"><summary>What they offer</summary>' +
-                '<p class="text-gray-700 mt-2">' + esc(r.desc) + '</p>' +
-                (r.note ? '<p class="text-sm text-gray-500 mt-2">' + esc(r.note) + '</p>' : '') + '</details>' +
-                '<div class="flex flex-wrap gap-3 mt-auto">' + r.links.map(function (l, i) {
-                    return '<a href="' + l.url + '" target="_blank" rel="noopener" class="' + (i === 0 ? 'event-button inline-flex items-center gap-1' : 'hub-btn-outline') + '">' + esc(l.label) + ' <i data-feather="arrow-up-right" class="h-4 w-4"></i></a>';
-                }).join('') + '</div>';
-            resEl.appendChild(card);
-        });
-        function setFilter(id) {
-            activeFilter = id;
-            filtersEl.querySelectorAll('[data-filter]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === id)); });
-            var shown = 0;
-            resEl.querySelectorAll('.hub-res').forEach(function (c) {
-                var match = id === 'all' || c.dataset.cat === id;
-                c.hidden = !match || (id === 'all' && !resExpanded && shown >= RES_PREVIEW);
-                if (match) shown++;
-            });
-            var hiddenCount = id === 'all' && !resExpanded ? Math.max(0, D.resources.length - RES_PREVIEW) : 0;
-            resMore.hidden = hiddenCount === 0;
-            resMore.textContent = 'Show all ' + D.resources.length + ' programs';
-        }
-        resMore.addEventListener('click', function () { resExpanded = true; setFilter('all'); });
-        setFilter('all');
-
-        /* ---------- HBS tabs ---------- */
-        var tabs = root.querySelectorAll('[data-hub="tabs"] [role="tab"]');
-        function selectTab(key) {
-            tabs.forEach(function (t) {
-                var on = t.id === 'hbs-tab-' + key;
-                t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
-                root.querySelector('#' + t.getAttribute('aria-controls')).hidden = !on;
-            });
-        }
-        tabs.forEach(function (t, i) {
-            t.addEventListener('click', function () { selectTab(t.id.replace('hbs-tab-', '')); });
-            t.addEventListener('keydown', function (e) {
-                var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-                if (!d) return;
-                var n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); n.click();
-            });
-        });
-        selectTab('criteria');
-
-        /* ---------- interview practice ---------- */
-        var qTheme = 'all', lastQ = null;
-        var qf = $('q-filters');
-        [{ id: 'all', label: 'All themes' }].concat(D.questionThemes).forEach(function (t) {
-            var b = document.createElement('button');
-            b.type = 'button'; b.className = 'hub-chip'; b.dataset.theme = t.id; b.textContent = t.label;
-            b.setAttribute('aria-pressed', String(t.id === 'all'));
-            b.addEventListener('click', function () {
-                qTheme = t.id;
-                qf.querySelectorAll('[data-theme]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.theme === t.id)); });
-                drawQuestion();
-            });
-            qf.appendChild(b);
-        });
-        function pool() {
-            var out = [];
-            D.questionThemes.forEach(function (t) { if (qTheme === 'all' || qTheme === t.id) t.qs.forEach(function (q) { out.push({ q: q, theme: t.label }); }); });
-            return out;
-        }
-        function drawQuestion() {
-            var p = pool(), pick;
-            do { pick = p[Math.floor(Math.random() * p.length)]; } while (p.length > 1 && lastQ && pick.q === lastQ);
-            lastQ = pick.q;
-            $('q-text').textContent = pick.q;
-            $('q-meta').textContent = pick.theme + ' · ' + p.length + ' questions in this set';
-        }
-        $('q-next').addEventListener('click', drawQuestion);
-        drawQuestion();
-
-        var timer = null, clock = $('q-clock'), tBtn = $('q-timer');
-        tBtn.addEventListener('click', function () {
-            if (timer) { clearInterval(timer); timer = null; tBtn.textContent = 'Start 2-minute timer'; clock.textContent = ''; return; }
-            var left = 120;
-            var tick = function () {
-                clock.textContent = Math.floor(left / 60) + ':' + String(left % 60).padStart(2, '0') + ' left';
-                if (left-- <= 0) { clearInterval(timer); timer = null; tBtn.textContent = 'Start 2-minute timer'; clock.textContent = 'Time. Wrap up your answer.'; }
-            };
-            tick(); timer = setInterval(tick, 1000); tBtn.textContent = 'Stop timer';
-        });
-
-        function accordion(el, groups, open) {
-            groups.forEach(function (g, i) {
-                var d = document.createElement('details');
-                d.className = 'hub-acc'; if (open && i === 0) d.open = true;
-                d.innerHTML = '<summary>' + esc(g.label) + ' <span class="text-sm font-normal text-gray-500 ml-auto mr-2 hub-nums">' + g.qs.length + '</span></summary>' +
-                    '<ul class="hub-list text-sm">' + g.qs.map(function (q) { return '<li>' + esc(q) + '</li>'; }).join('') + '</ul>';
-                el.appendChild(d);
-            });
-        }
-        accordion($('q-all'), D.questionThemes, false);
-        accordion($('ask-all'), D.askThemes, false);
-
-        /* ---------- section tabs ---------- */
-        var subBtns = Array.prototype.slice.call(root.querySelectorAll('[data-hub="subnav"] [data-go]'));
-        subBtns.forEach(function (b, i) {
-            b.addEventListener('click', function () { showSection(b.dataset.go, navIsStuck()); });
-            b.addEventListener('keydown', function (e) {
-                var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-                if (!d) return;
-                var n = subBtns[(i + d + subBtns.length) % subBtns.length]; n.focus(); n.click();
-            });
-        });
-        root.querySelectorAll('.hub-section [data-go]').forEach(function (b) {
-            b.addEventListener('click', function () { showSection(b.dataset.go, true); });
-        });
-
-        /* ---------- first render ---------- */
-        renderSteps(); renderPhase();
-        showSection('mba-timeline', false);
-        icons();
-    };
-})();
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            feather.replace();
-
-            const mainContent = document.getElementById('main-content');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            const routes = {
-                'home': 'home-page',
-                'about': 'about-page',
-                'events': 'events-page',
-                'reunion-recap': 'reunion-recap-page',
-                'bridge-year-event': 'bridge-year-event-page',
-                'reunion-2026': 'reunion-2026-page', 
-                'la-event': 'la-event-page',
-                'sd-event': 'sd-event-page',
-                'chicago-event': 'chicago-event-page',
-                'arlington-event': 'arlington-event-page',
-                'contact': 'contact-page',
-                'partnerships': 'partnerships-page',
-                'development': 'development-page',
-                'mba-hub': 'mba-hub-page',
-                'scholarship-directory': 'scholarship-directory-page', 
-                'get-involved': 'get-involved-page',
-            };
-
-            function initCarousel() {
-                const carouselInner = document.getElementById('carousel-inner');
-                if (!carouselInner) return;
-
-                const images = [
-                    "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c629ddb6aa/images/IMG_2172_jpg.JPEG",
-                    "https://raw.githubusercontent.com/svmp2025/svmpaa/849490b3275fa078b9e858a7980c80c6299ddb6aa/images/IMG_2309.JPEG",
-                    "https://raw.githubusercontent.com/svmp2025/svmpaa/39ba824926c3648a661c5b9a0a0fb06d063dbac1/images/IMG_2256.JPEG",
-                    "https://raw.githubusercontent.com/svmp2025/svmpaa/c3aaa4f60525f3da03b885a39dede5978a4eedd5/images/IMG_6726.jpg",
-                    "https://raw.githubusercontent.com/svmp2025/svmpaa/c3aaa4f60525f3da03b885a39dede5978a4eedd5/images/IMG_6800.jpg",
-                    "https://raw.githubusercontent.com/svmp2025/svmpaa/fe24e6ad046241fbc039fd2221a1d77778380640/images/IMG_6817_(1).jpg"
-                ];
-
-                carouselInner.innerHTML = ''; 
-                images.forEach((src, index) => {
-                    const item = document.createElement('div');
-                    item.className = 'carousel-item absolute w-full h-full';
-                    if (index === 0) item.classList.add('active', 'opacity-100');
-                    else item.classList.add('opacity-0');
-                    
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.alt = `Reunion Photo ${index + 1}`;
-                    img.className = 'w-full h-full object-cover';
-                    img.onerror=function() { 
-                        this.parentElement.style.display = 'none';
-                        initCarousel(); 
-                    };
-                    item.appendChild(img);
-                    carouselInner.appendChild(item);
-                });
-
-                const prevBtn = document.getElementById('prev-btn');
-                const nextBtn = document.getElementById('next-btn');
-                let currentIndex = 0;
-                const items = Array.from(carouselInner.querySelectorAll('.carousel-item')).filter(item => item.style.display !== 'none');
-                const totalItems = items.length;
-
-                if (totalItems <= 1) {
-                    if(prevBtn) prevBtn.style.display = 'none';
-                    if(nextBtn) nextBtn.style.display = 'none';
-                    return;
-                } else {
-                     if(prevBtn) prevBtn.style.display = 'block';
-                     if(nextBtn) nextBtn.style.display = 'block';
-                }
-
-                function showSlide(index) {
-                    items.forEach((item) => {
-                        item.style.opacity = '0';
-                        item.classList.remove('active');
-                    });
-                    items[index].classList.add('active');
-                    items[index].style.opacity = '1';
-                }
-
-                if(prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                        showSlide(currentIndex);
-                    });
-                }
-
-                if(nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        currentIndex = (currentIndex + 1) % totalItems;
-                        showSlide(currentIndex);
-                    });
-                }
-            }
-
-            function loadPage(pageId) {
-                mainContent.innerHTML = '';
-                
-                const templateId = routes[pageId];
-                if (templateId) {
-                    const template = document.getElementById(templateId);
-                    if (template) {
-                        const clone = template.content.cloneNode(true);
-                        mainContent.appendChild(clone);
-                        
-                        const pageElement = mainContent.querySelector('.page');
-                        if(pageElement) {
-                            setTimeout(() => pageElement.classList.add('active'), 0);
-                        }
-                        
-                        feather.replace();
-                        
-                        if (pageId === 'reunion-recap') {
-                            initCarousel();
-                        }
-                        if (pageId === 'mba-hub' && window.initMbaHub) {
-                            window.initMbaHub(mainContent);
-                        }
-                    }
-                }
-                
-                updateActiveLink(pageId);
-                window.scrollTo(0, 0);
-                if (mobileMenu) mobileMenu.classList.add('hidden');
-            }
-
-            function updateActiveLink(pageId) {
-                navLinks.forEach(link => link.classList.remove('active'));
-
-                let mainPageId = pageId;
-                if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap') || mainPageId === 'reunion-2026') {
-                    mainPageId = 'events';
-                } else if (mainPageId === 'scholarship-directory') { 
-                    mainPageId = 'development';
-                }
-                
-                navLinks.forEach(link => {
-                    const linkHash = link.href.split('#')[1];
-                    if (linkHash === mainPageId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            function handleRouteChange() {
-                const hash = window.location.hash.substring(1) || 'home';
-                if(routes[hash]) {
-                    loadPage(hash);
-                } else {
-                    loadPage('home'); 
-                }
-            }
-            
-            document.body.addEventListener('click', function(e) {
-                const navRouterElement = e.target.closest('.nav-router');
-                if (navRouterElement) {
-                    if (navRouterElement.hash && navRouterElement.origin === window.location.origin) {
-                        e.preventDefault(); 
-                        const newHash = navRouterElement.hash;
-                        
-                        if(window.location.hash !== newHash) {
-                            window.location.hash = newHash;
-                        } else {
-                            const pageId = newHash.substring(1);
-                            if(routes[pageId]) {
-                                loadPage(pageId);
-                            }
-                        }
-                    }
-                }
-            });
-
-            window.addEventListener('hashchange', handleRouteChange);
-            
-            if(mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', function () {
-                    if (mobileMenu) mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            handleRouteChange();
-        });
-    </script>
+    <script src="assets/js/mba-hub.js"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
