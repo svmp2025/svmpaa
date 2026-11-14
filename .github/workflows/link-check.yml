@@ -1,0 +1,28 @@
+# Checks every link on the site once a week and lists any that are broken.
+# It only reports: it never changes the site and never blocks a merge.
+name: Link check
+
+on:
+  schedule:
+    - cron: "17 14 * * 1"   # Mondays, 9:17 a.m. Central
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --accept 200,206,429,999
+            --exclude-mail
+            index.html assets/js/mba-hub.js assets/js/site.js
+          fail: false
+          jobSummary: true
