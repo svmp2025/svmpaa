@@ -96,10 +96,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    /* Event detail pages (#event-...) are built from the website content Sheet by events.js. */
+    function isEventDetail(pageId) {
+        return pageId.indexOf('event-') === 0 && !!window.SVMPAA_EVENTS;
+    }
+
     function loadPage(pageId) {
         mainContent.innerHTML = '';
 
-        const templateId = routes[pageId];
+        const templateId = routes[pageId] || (isEventDetail(pageId) ? 'event-detail-page' : null);
         if (templateId) {
             const template = document.getElementById(templateId);
             if (template) {
@@ -119,6 +124,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (pageId === 'mba-hub' && window.initMbaHub) {
                     window.initMbaHub(mainContent);
                 }
+                if (pageId === 'events' && window.SVMPAA_EVENTS) {
+                    window.SVMPAA_EVENTS.renderList(mainContent);
+                }
+                if (isEventDetail(pageId)) {
+                    window.SVMPAA_EVENTS.renderDetail(mainContent, pageId);
+                }
             }
         }
 
@@ -131,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.forEach(link => link.classList.remove('active'));
 
         let mainPageId = pageId;
-        if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap') || mainPageId === 'reunion-2026') {
+        if (mainPageId.endsWith('-event') || mainPageId.endsWith('-recap') || mainPageId === 'reunion-2026' || mainPageId.indexOf('event-') === 0) {
             mainPageId = 'events';
         } else if (mainPageId === 'scholarship-directory') { 
             mainPageId = 'development';
@@ -147,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleRouteChange() {
         const hash = window.location.hash.substring(1) || 'home';
-        if(routes[hash]) {
+        if(routes[hash] || isEventDetail(hash)) {
             loadPage(hash);
         } else {
             loadPage('home'); 
@@ -165,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.hash = newHash;
                 } else {
                     const pageId = newHash.substring(1);
-                    if(routes[pageId]) {
+                    if(routes[pageId] || isEventDetail(pageId)) {
                         loadPage(pageId);
                     }
                 }
